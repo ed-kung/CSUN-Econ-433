@@ -144,21 +144,31 @@ Adding `LOGHRS` to the regression reduced the magnitude of the coefficient on `F
 
 What if women choose to work in lower paid industry than men? To rule out this explanation, we can control for industry of occupation. 
 
-Industry is encoded in the variable `IND`. However, you can't just toss `IND` into the regression equation because `IND` is a categorical (or factor) variable. Meaning it is coded as numbers but the numbers themselves have no meaning. Thankfully, R knows how to handle categorical variables in regressions as long as you tell them that they are categorical.
+Industry is encoded in the variable `IND`. However, you can't just toss `IND` into the regression equation because `IND` is a categorical (or factor) variable. Meaning it is coded as numbers but the numbers themselves have no meaning. Thankfully, R knows how to handle categorical variables in regressions as long as you tell it which are categorical.
 
 3. Add the following lines to your script and execute:
 
         # Run a regression of LOGWAGE on FEMALE, LOGHRS, IND
         # Store the results in r3
-        r3 <- felm(LOGWAGE ~ FEMALE + LOGHRS + as.factor(IND), data=df)
+        r3 <- felm(LOGWAGE ~ FEMALE + LOGHRS | IND, data=df)
     
-If you type `summary(r3)` in the console, you will get a huge table. This is because every possible value of `IND` gets a coefficient. By including a factor variable in the regression equation, R estimates a separate coefficient for each possible value (excluding a base value). The model you're estimating is:
+This line of code estimates a linear model, telling R that `IND` is a factor variable because it comes after the pipe |. When you include a factor variable in the regression, you estimate the following model:
 
 $$\ln Y_i = \beta_0 + \beta_1 FEMALE_i + \beta_2 \ln HOURS_i + \beta_3 (INDUSTRY_i==1) + \beta_4 (INDUSTRY_i==2) + \ldots + \epsilon_i$$
 
-That is, a separate effect of each industry on the outcome is estimated. This type of encoding of factor variables is known as "dummy variable" encoding or "one-hot encoding".
+That is, a separate coefficient is estimated for each possible value of the industry, excluding a base level. The coefficients estimate how much each industry contributes to the outcome, over and above the base value. This type of encoding for a factor variable is known as "dummy variable encoding" or "one hot encoding".
 
-### Using Stargazer to prettify and compare results
+If you type `summary(r3)` in the console, you will get this result:
+
+                Estimate Std. Error t value Pr(>|t|)    
+    FEMALETRUE -0.188183   0.004765  -39.49   <2e-16 ***
+    LOGHRS      1.146079   0.005876  195.05   <2e-16 ***
+    ---
+    Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+By default, the factor variable coefficients are not shown because the table would be too large (there are 268 industry codes). But the results show that controlling for industry does not significantly affect the estimated male-female wage differential.
+
+### Using Stargazer to compare results
 
 `Stargazer` is a package that gives you more control over the display of your regression results. It also lets you compare results between two or more regressions.
 
@@ -191,9 +201,24 @@ You should get output that looks like:
     ===============================================================================
     Note:                                               *p<0.1; **p<0.05; ***p<0.01
 
-From this table, you can see the regression coefficients on the variables `FEMALE` and `LOGHRS` from models `r1`, `r2`, and `r3`.
+This lets us see how our coefficient of interest, `FEMALE`, changes as more controls are added.
 
-The results suggest that controlling for industry (`r3`) does not significantly affect the estimated male-female wage differential.
+### Assignment
+
+In addition to the three regression you already ran, run these as well:
+
+- `r4`: In addition to hours worked and industry, create a variable `COLLEGE` which indicates whether the person has a bachelors' degree or higher. Create another variable `MARRIED` to indicate whether the person is married. Include both variables in the regression.
+
+- `r5`: In addition to the college indicator, control for the field of study (`DEGFIELD`), the occupation (`OCC`), and the race (`RACE`). These are factor variables. Hint: To control for more than one factor variable, you can use the notation `felm(Y ~ X1 + X2 | F1 + F2 + F3)`
+
+Put all 5 regressions together in one table using stargazer. Make sure the coefficients for `FEMALE`, `COLLEGE`, `MARRIED`, and `LOGHRS` are shown in the table. What is the male-female wage differential once college, marriage, hours, industry, occupation, and degree of study are all controlled for?
+
+### Takeaways
+
+- You can estimate linear models using regression analysis in R
+- YOu can interpret the output of linear regressions in R
+- You can compare regression results using stargazer
+
 
 
 
