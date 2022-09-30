@@ -115,6 +115,19 @@ With the data, you estimated a value of $10.93$ for $\beta_0$ and $-0.334$ for $
 
 ### Controlling for hours worked
 
+You could criticize the previous regression by saying that it doesn't control for hours worked. Hours worked is a confounding factor because it may be correlated with gender and it also affects total wage income. 
+
+2. To control for hours worked, add the following lines to your script and execute:
+
+        # Run a regresion of LOGWAGE on FEMALE and LOGHRS
+        # Store the result in r2
+        r2 <- felm(LOGWAGE ~ FEMALE + LOGHRS, data=df)
+        
+        # Show the results of r2
+        summary(r2)
+        
+You should see the following results:
+
 
 
 
