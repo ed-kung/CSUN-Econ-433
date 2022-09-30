@@ -17,9 +17,27 @@ The terms $\beta_1$, $\beta_2$, and $\beta_3$ are known as *coefficients*. The c
 
 The term $\epsilon$ is called the error term, or residual. The error term represents factors which affect the outcome that the researcher cannot observe. A standard assumption is that the error term is independent of and uncorrelated with the covariates. If this assumption fails, then we have *confounding factors* which complicate the analysis.
 
-The goal of regression analysis is to estimate the value of the coefficients that produce a best fit for the data. That is, $\beta_1$, $\beta_2$, and $\beta_3$ are chosen to make the observed values of $Y$ as close as possible to the observed values of $\beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3$. In technical terms, the coefficients are chosen to minimize the sum of the squared residuals.
+The goal of regression analysis is to estimate the value of the coefficients that produce a best fit for the data. That is, $\beta_1$, $\beta_2$, and $\beta_3$ are chosen to make the observed values of $Y$ as close as possible to the calculated values of $\beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3$. In technical terms, the coefficients are chosen to minimize the sum of the squared residuals.
 
 R has a robust set of tools for conducting regression analysis on linear models. That is what you will explore in this lesson.
+
+### A linear model of wage income
+
+Here, we derive a linear model of annual wage income. Let $i$ denote a person and let $Y_i$ denote the annual wage income of person $i$. 
+
+$$Y_i = w_i h_i$$
+
+where $w_i$ is the hourly wage rate and $h_i$ is the number of hours worked annually.
+
+We will model the wage rate as follows:
+
+$$w_i = e^{\beta_1 X_{i1} + \ldots + \beta_K X_{iK} + \epsilon_i}$$
+
+where $X_{i1}$, $\ldots$, $X_{iK}$ are $K$ different variables which might affect wage rate, like education level or industry of occupation.
+
+Taking natural logs of both sides, we get:
+
+$$\ln w_i = \beta_1 X_{i1} + \ldots + \beta_K X_{iK} + \epsilon_i$$
 
 
 
