@@ -120,6 +120,20 @@ You should see a scatter plot showing average income on the Y axis and college s
 
 The plot shows that there's a tight, but not perfect, relationship between education and income at the county level.
 
+### Assignment
+
+Your assignment is to write a script that creates a scatter plot showing unemployment rate in a county on the Y axis and college share on the X axis. The size of the dot should represent the population of the county. For the population to calculate on, please use individuals aged 25 to 65 that are in the labor force.
+
+### Takeaways
+
+- You can create line plots, scatter plots, and bar charts in R.
+- You know where to look if you want to generate more complex charts and graphs.
+
+
+
+
+
+
 
 
 
