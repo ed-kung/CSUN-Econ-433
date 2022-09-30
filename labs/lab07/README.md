@@ -74,14 +74,15 @@ You will use your data from California 2019 to answer the question: Are women pa
         
         # Load the data and merge
         df1 <- read.csv("IPUMS_ACS2019_CA_1.csv")
-        df2 <- read.csv("IPUMS_ACS2019_CA_1.csv")
+        df2 <- read.csv("IPUMS_ACS2019_CA_2.csv")
         df <- inner_join(df1, df2, by=c("YEAR","SERIAL","PERNUM"))
-        
-        # Focus on employed individuals aged 25 to 65
-        df <- filter(df, AGE>=25, AGE<=65, EMPSTAT==1)
-        
+
         # Deal with missing values in INCWAGE
         df$INCWAGE <- ifelse(df$INCWAGE>=999998, NA, df$INCWAGE)
+        
+        # Focus on employed individuals aged 25 to 65
+        # that make positive wage income
+        df <- filter(df, AGE>=25, AGE<=65, EMPSTAT==1, INCWAGE>0)
         
         # Create female variable
         df$FEMALE <- df$SEX==2
