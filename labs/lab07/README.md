@@ -11,5 +11,7 @@ A *linear* model specifies the outcome variable as a linear equation in the cova
 
 $$Y = \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \epsilon$$
 
-In this model, the outcome is $$Y$$ and the covariates are $$X_1$$, $$X_2$$, and $$X_3$$. The *coefficients* are 
+In this model, the outcome is $Y$ and the covariates are $X_1$, $X_2$, and $X_3$. $\beta_1$, $\beta_2$, and $\beta_3$ are known as *coefficients*. The coefficient on a covariate shows how much the outcome changes for each unit change in the covariate.
+
+
 
