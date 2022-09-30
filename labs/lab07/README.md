@@ -9,7 +9,7 @@ A model relates an outcome variable to one or more variables called covariates. 
 
 A *linear* model specifies the outcome variable as a linear equation in the covariates. An example of a linear model is:
 
-$$Y = \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \epsilon$$
+$$Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \epsilon$$
 
 In this model, the outcome is $Y$ and the covariates are $X_1$, $X_2$, and $X_3$. 
 
@@ -17,7 +17,9 @@ The terms $\beta_1$, $\beta_2$, and $\beta_3$ are known as *coefficients*. The c
 
 The term $\epsilon$ is called the error term, or residual. The error term represents factors which affect the outcome that the researcher cannot observe. A standard assumption is that the error term is independent of and uncorrelated with the covariates. If this assumption fails, then we have *confounding factors* which complicate the analysis.
 
-The goal of regression analysis is to estimate the value of the coefficients that produce a best fit for the data. That is, $\beta_1$, $\beta_2$, and $\beta_3$ are chosen to make the observed values of $Y$ as close as possible to the calculated values of $\beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3$. In technical terms, the coefficients are chosen to minimize the sum of the squared residuals.
+The term $\beta_0$ is called the *intercept*. The intercept is the value that the outcome takes if all the covariates and residuals are equal to zero.
+
+The goal of regression analysis is to estimate the value of the coefficients and intercept that produce a best fit for the data. That is, $\beta_0$, $\beta_1$, $\beta_2$, and $\beta_3$ are chosen to make the observed values of $Y$ as close as possible to the calculated values of $\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3$. In technical terms, the intercept and coefficients are chosen to minimize the sum of the squared residuals.
 
 R has a robust set of tools for conducting regression analysis on linear models. That is what you will explore in this lesson.
 
@@ -31,13 +33,13 @@ where $w_i$ is the hourly wage rate and $h_i$ is the number of hours worked annu
 
 We will model the wage rate as follows:
 
-$$w_i = e^{\beta_1 X_{i1} + \ldots + \beta_K X_{iK} + \epsilon_i}$$
+$$w_i = e^{\beta_0 + \beta_1 X_{i1} + \ldots + \beta_K X_{iK} + \epsilon_i}$$
 
 where $X_{i1}$, $\ldots$, $X_{iK}$ are $K$ different variables which might affect wage rate, like education level or industry of occupation. The residual term, $\epsilon_i$, represents unobserved factors that could affect wage rate, like a person's grit or personality.
 
 Taking natural logs of both sides, we get:
 
-$$\ln w_i = \beta_1 X_{i1} + \ldots + \beta_K X_{iK} + \epsilon_i$$
+$$\ln w_i = \beta_0 + \beta_1 X_{i1} + \ldots + \beta_K X_{iK} + \epsilon_i$$
 
 Noting that:
 
@@ -45,7 +47,7 @@ $$\ln Y_i = \ln w_i + \ln h_i$$
 
 we can write the final equation:
 
-$$\ln Y_i = \beta_1 X_{i1} + \ldots + \beta_K X_{iK} + \ln h_i + \epsilon_i$$
+$$\ln Y_i = \beta_0 + \beta_1 X_{i1} + \ldots + \beta_K X_{iK} + \ln h_i + \epsilon_i$$
 
 The final equation says that log-wage is a linear equation of the covariates $X_{i1}, \ldots , X_{iK}$, log hours-worked, and a residual term. Since it is a linear equation, we can estimate it using standard tools in R.
 
@@ -90,16 +92,25 @@ You will use your data from California 2019 to answer the question: Are women pa
         # Create log wage variable
         df$LOGWAGE <- log(df$INCWAGE)
         
-        # Create log hours worked variable
-        df$LOGHRS <- log(df$UHRSWORK)
-        
-        # Run a regression of LOGWAGE on LOGHRS and FEMALE
+        # Run a regression of LOGWAGE on FEMALE
         # and store the results in r1
-        r1 <- felm(LOGWAGE ~ FEMALE + LOGHRS, data=df)
+        r1 <- felm(LOGWAGE ~ FEMALE, data=df)
         
         # Show the regression results
         summary(r1)
         
+You should see a table that looks like this:
+
+    Coefficients:
+                 Estimate Std. Error t value Pr(>|t|)    
+    (Intercept)  6.201672   0.023691  261.78   <2e-16 ***
+    FEMALETRUE  -0.173834   0.004831  -35.98   <2e-16 ***
+    LOGHRS       1.278083   0.006343  201.49   <2e-16 ***
+    ---
+    Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+    
+
+
         
 
 
