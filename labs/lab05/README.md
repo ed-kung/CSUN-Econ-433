@@ -32,7 +32,23 @@ You will start by calculating the average income in California counties in the y
         
 ### Recoding Missing Values
 
-According to 
+The goal for this lab session is to compute average income by county/year. Average income is contained in the variable `INCWAGE`.
+
+Unfortunately, the income data has some missing values that we need to take care of first. According to [IPUMS](https://usa.ipums.org/usa-action/variables/INCWAGE#description_section), special numerical codes are used to designate not applicable / missing values for the income variable, `INCWAGE`. According to the IPUMS website:
+
+- 999999 = N/A
+- 999998 = Missing
+
+So before we take averages, we need to transform `INCWAGE` to a missing value whenever we see the values 999999 or 999998. If we don't, R will think that these people make $999,999 a year~
+
+2. Add the following lines to your script and execute:
+
+        df$INCWAGE <- ifelse(df$INCWAGE>=999998, NA, df$INCWAGE)  # encode missing values for INCWAGE
+        
+R has a special value for missing data called NA. This line of code makes it so that INCWAGE gets a value of NA if INCWAGE is 999999 or 999998. Later, when calculating statistics for INCWAGE, you can tell R how it should treat the missing values.
+
+### Grouping and Summarizing
+
 
 
 
