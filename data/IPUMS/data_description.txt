@@ -1,0 +1,39 @@
+Filename: IPUMS_ACS2019_CA_1.csv
+
+Sample: All individuals in California surveyed in the ACS 2019. Each row is an individual person.
+
+Unique identifier: [YEAR, SERIAL, PERNUM]
+
+Fields:
+YEAR - The year of the data; in this case just 2019
+SERIAL - A serial number identifying the household (persons with the same serial number are from the same household)
+PERNUM - A number identifying separate people in each household 
+HHWT - The household weight. The number of households in the population that this household represents.
+PERWT - The person weight. The number of people in the population that this person represents.
+STATEFIP - The state FIPS code for this person’s place of residence. In this data it’s always 6 for California. (See https://www.nrcs.usda.gov/wps/portal/nrcs/detail/?cid=nrcs143_013696)
+COUNTYFIP - The county FIPS code for this person’s place of residence. (See https://www.nrcs.usda.gov/wps/portal/nrcs/detail/national/home/?cid=nrcs143_013697 and https://usa.ipums.org/usa-action/variables/COUNTYFIP#description_section) 
+AGE - The person’s age 
+SEX - The person’s sex (see codebook)
+MARST - The person’s marital status (see codebook)
+RACE - The person’s race (see codebook)
+HISPAN - The person’s hispanic origin, if any (see codebook)
+EMPSTAT - The person’s labor force status (see codebook)
+INCWAGE - The person’s income from wages and salary. (See https://usa.ipums.org/usa-action/variables/INCWAGE#codes_section for missing values information)
+
+
+
+Filename: IPUMS_ACS2019_CA_2.csv
+
+Sample: All individuals in California surveyed in the ACS 2019. Each row is an individual person.
+
+Unique identifier: [YEAR, SERIAL, PERNUM]
+
+Fields:
+YEAR - The year of the data; in this case just 2019
+SERIAL - A serial number identifying the household (persons with the same serial number are from the same household)
+PERNUM - A number identifying separate people in each household 
+EDUCD - The person’s educational attainment (see codebook)
+DEGFIELD - The field in which the person received his or her bachelor’s degree, if any (see codebook)
+OCC - The person’s primary occupation (list of occupation codes: https://usa.ipums.org/usa/volii/occ2018.shtml)
+IND - The person’s industry of occupation (see https://usa.ipums.org/usa/volii/ind2017.shtml)
+UHRSWORK - The usual number of hours worked per week

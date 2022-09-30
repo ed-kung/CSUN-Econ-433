@@ -1,0 +1,124 @@
+SEX                 Sex
+1                   Male
+2                   Female
+
+MARST               Marital status
+1                   Married, spouse present
+2                   Married, spouse absent
+3                   Separated
+4                   Divorced
+5                   Widowed
+6                   Never married/single
+
+RACE                Race [general version]
+1                   White
+2                   Black/African American
+3                   American Indian or Alaska Native
+4                   Chinese
+5                   Japanese
+6                   Other Asian or Pacific Islander
+7                   Other race, nec
+8                   Two major races
+9                   Three or more major races
+
+HISPAN              Hispanic origin [general version]
+0                   Not Hispanic
+1                   Mexican
+2                   Puerto Rican
+3                   Cuban
+4                   Other
+9                   Not Reported
+
+EMPSTAT             Employment status [general version]
+0                   N/A
+1                   Employed
+2                   Unemployed
+3                   Not in labor force
+
+EDUCD               Educational attainment [detailed version]
+000                 N/A or no schooling
+001                 N/A
+002                 No schooling completed
+010                 Nursery school to grade 4
+011                 Nursery school, preschool
+012                 Kindergarten
+013                 Grade 1, 2, 3, or 4
+014                 Grade 1
+015                 Grade 2
+016                 Grade 3
+017                 Grade 4
+020                 Grade 5, 6, 7, or 8
+021                 Grade 5 or 6
+022                 Grade 5
+023                 Grade 6
+024                 Grade 7 or 8
+025                 Grade 7
+026                 Grade 8
+030                 Grade 9
+040                 Grade 10
+050                 Grade 11
+060                 Grade 12
+061                 12th grade, no diploma
+062                 High school graduate or GED
+063                 Regular high school diploma
+064                 GED or alternative credential
+065                 Some college, but less than 1 year
+070                 1 year of college
+071                 1 or more years of college credit, no degree
+080                 2 years of college
+081                 Associate's degree, type not specified
+082                 Associate's degree, occupational program
+083                 Associate's degree, academic program
+090                 3 years of college
+100                 4 years of college
+101                 Bachelor's degree
+110                 5+ years of college
+111                 6 years of college (6+ in 1960-1970)
+112                 7 years of college
+113                 8+ years of college
+114                 Master's degree
+115                 Professional degree beyond a bachelor's degree
+116                 Doctoral degree
+999                 Missing
+
+DEGFIELD            Field of degree [general version]
+00                  N/A
+11                  Agriculture
+13                  Environment and Natural Resources
+14                  Architecture
+15                  Area, Ethnic, and Civilization Studies
+19                  Communications
+20                  Communication Technologies
+21                  Computer and Information Sciences
+22                  Cosmetology Services and Culinary Arts
+23                  Education Administration and Teaching
+24                  Engineering
+25                  Engineering Technologies
+26                  Linguistics and Foreign Languages
+29                  Family and Consumer Sciences
+32                  Law
+33                  English Language, Literature, and Composition
+34                  Liberal Arts and Humanities
+35                  Library Science
+36                  Biology and Life Sciences
+37                  Mathematics and Statistics
+38                  Military Technologies
+40                  Interdisciplinary and Multi-Disciplinary Studies (General)
+41                  Physical Fitness, Parks, Recreation, and Leisure
+48                  Philosophy and Religious Studies
+49                  Theology and Religious Vocations
+50                  Physical Sciences
+51                  Nuclear, Industrial Radiology, and Biological Technologies
+52                  Psychology
+53                  Criminal Justice and Fire Protection
+54                  Public Affairs, Policy, and Social Work
+55                  Social Sciences
+56                  Construction Services
+57                  Electrical and Mechanic Repairs and Technologies
+58                  Precision Production and Industrial Arts
+59                  Transportation Sciences and Technologies
+60                  Fine Arts
+61                  Medical and Health Sciences and Services
+62                  Business
+64                  History
+
