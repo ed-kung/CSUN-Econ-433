@@ -30,7 +30,7 @@ You will start by calculating the average income in California counties in the y
         df <- rbind(df1, df2)         # append the two datasets vertically
         df <- filter(df, EMPSTAT==1)  # focus on employed individuals only
         
-### Recoding Missing Values
+#### Recoding missing values
 
 The goal for this lab session is to compute average wage income by county/year. Wage income is contained in the variable `INCWAGE`.
 
@@ -47,7 +47,7 @@ So before we take averages, we need to transform `INCWAGE` to a missing value wh
         
 R has a special value for missing data called NA. This line of code makes it so that `INCWAGE` gets a value of NA if INCWAGE is 999999 or 999998. Later, when calculating statistics for `INCWAGE`, you can tell R how it should treat the missing values.
 
-### Grouping and Summarizing
+#### Calculating statistics by group
 
 Our goal is to calculate average wage income by county/year. Counties are defined by `STATEFIP` and `COUNTYFIP`. See [here](https://www.nrcs.usda.gov/wps/portal/nrcs/detail/national/home/?cid=nrcs143_013697) for more information about how counties are coded in the US.
 
@@ -72,7 +72,7 @@ Type `View(dfg)` in the console or click on `dfg` in the Environment tab to take
 
 Note: The above code block makes use of the `%>%` pipe operator. The pipe operator feeds the result of the current line into the first argument of the next line. It is useful for chaining together multiple commands in which the output of one command is used as input for the next command. Don't worry if you don't fully understand it yet. You can copy the code and make modifications to achieve the desired results. With more practice you will start to build an understanding of how the pipe operator works.
 
-### Making the county codes human-readable
+#### Making the county codes human-readable
 
 If you looked at `dfg`, you would have seen that the county codes are still numerical. Let's change that by merging on the names of the counties, which are contained in the file `COUNTY_CODES.csv`.
 
@@ -82,7 +82,64 @@ If you looked at `dfg`, you would have seen that the county codes are still nume
         ccodes <- read.csv("COUNTY_CODES.csv")
         dfg <- inner_join(dfg, ccodes, by=c("STATEFIP", "COUNTYFIP"))
 
-Now type `View(dfg)` in the console and you can see which counties are the largest, have the highest wages, and grew the fastest from 2014 to 2019.
+Now type `View(dfg)` in the console and you can see the statistics for the different counties in the different years.
+
+Note: Not all counties are shown because IPUMS only labels the most populous counties. This is to prevent someone from finding out private information about an individual using the IPUMS data.
+
+#### Reshaping long to wide
+
+When dealing with a time dimension, it's often useful to reshape the data so that the time value is on the columns. This lets us more easily see the evolution of a unit of observation over time.
+
+5. Add these lines to your script and execute:
+
+        # Reshape long to wide
+        dfg_wide <- pivot_wider(
+          dfg, 
+          id_cols = c("STATEFIP", "COUNTYFIP", "COUNTY"), 
+          names_from = "YEAR", 
+          values_from = "MEAN_WAGE"
+        )
+
+`pivot_wider` reshapes a dataset from long to wide format. The rows will be unique combinations of the values you specify in `is_cols`. The columns will be the values that you specify in `names_from`. And the value in the cells will be taken from the value you specify in `values_from`. In this example, unique combinations of `STATEFIP`, `COUNTYFIP`, `COUNTY` will be on the rows, `YEAR` will be on the columns, and the `MEAN_WAGE` for each county/year will be in the table cells.
+
+Inspect the resulting dataframe with `View(dfg_wide)` in the console to get a sense of what the new data looks like. Reshaping from long to wide is especially useful for calculating changes over time. For example, enter these lines into your script:
+
+6.
+
+        # Calculate percent change in mean wage from 2014 to 2019
+        dfg_wide$pct_chg <- log(dfg_wide$'2019') - log(dfg_wide$'2014') 
+        
+and inspect the dataframe again with `View(dfg_wide)`. You will see a new column calculating the percent change from 2014 to 2019.
+
+#### Reshaping wide to long
+
+Sometimes you find datasets in wide format and you want to make it into long format. 
+
+7. Add the following lines of code to your script and execute:
+
+        # Reshape wide to long
+        dfg_long <- pivot_longer(
+          dfg_wide, 
+          cols = c("2014", "2019"), 
+          names_to = "YEAR", 
+          values_to = "MEAN_WAGE"
+        )
+        
+This reverses the wide format data to long format data. Type `View(dfg_long)` in the console to see what it looks like. Long format can be more useful than wide format depending on the task. Long format is often required for panel regressions, which we'll cover later.
+
+### Assignment
+
+Write a script to calculate the average wage by the field of a persons Bachelor's degree by year. Focus only on individuals with Bachelor's degrees (`EDUCD>=101 & EDUCD<=116`) and those that are employed (`EMPSTAT==1`). Hint: You'll need to use the `filter` command that you learned in Lab 4. Reshape the data so that the years are on the columns.
+
+Good luck!
+
+### Takeaways
+
+- You can compute grouped summary statitics in R.
+- You can reshape tables from long to wide format and from wide to long.
+
+
+
 
 
 
