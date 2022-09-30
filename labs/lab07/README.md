@@ -61,7 +61,7 @@ For this lab, you will need the `dplyr`, `lfe`, and `stargazer` packages. Make s
 
 Make sure these files are in your working directory before beginning.
 
-### Regressing log-wage-income on gender
+### Regressing log wage-income on gender
 
 You will use your data from California 2019 to answer the question: Are women paid less than men? This is a politically sensitive topic that requires much deeper analysis than just this lab. However, the data that we have available is good for demonstrating the usefulness of regressions.
 
@@ -101,17 +101,20 @@ You will use your data from California 2019 to answer the question: Are women pa
         
 You should see a table that looks like this:
 
-    Coefficients:
                  Estimate Std. Error t value Pr(>|t|)    
-    (Intercept)  6.201672   0.023691  261.78   <2e-16 ***
-    FEMALETRUE  -0.173834   0.004831  -35.98   <2e-16 ***
-    LOGHRS       1.278083   0.006343  201.49   <2e-16 ***
+    (Intercept) 10.929408   0.003714 2943.10   <2e-16 ***
+    FEMALETRUE  -0.333895   0.005409  -61.73   <2e-16 ***
     ---
     Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
     
+The model you just estimated is the following:
 
+$$\ln Y_i = \beta_0 + \beta_1 FEMALE_i + \epsilon_i$$
 
-        
+With the data, you estimated a value of $10.93$ for $\beta_0$ and $-0.334$ for $\beta_1$. The model suggests that log wage income for females is $0.334$ less than log wage income for men. Since log-differences are approximately equal to percentage differences, this suggests that women make 33% less than men do.
+
+### Controlling for hours worked
+
 
 
 
