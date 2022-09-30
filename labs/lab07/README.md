@@ -33,11 +33,47 @@ We will model the wage rate as follows:
 
 $$w_i = e^{\beta_1 X_{i1} + \ldots + \beta_K X_{iK} + \epsilon_i}$$
 
-where $X_{i1}$, $\ldots$, $X_{iK}$ are $K$ different variables which might affect wage rate, like education level or industry of occupation.
+where $X_{i1}$, $\ldots$, $X_{iK}$ are $K$ different variables which might affect wage rate, like education level or industry of occupation. The residual term, $\epsilon_i$, represents unobserved factors that could affect wage rate, like a person's grit or personality.
 
 Taking natural logs of both sides, we get:
 
 $$\ln w_i = \beta_1 X_{i1} + \ldots + \beta_K X_{iK} + \epsilon_i$$
+
+Noting that:
+
+$$\ln Y_i = \ln w_i + \ln h_i$$
+
+we can write the final equation:
+
+$$\ln Y_i = \beta_1 X_{i1} + \ldots + \beta_K X_{iK} + \ln h_i + \epsilon_i$$
+
+The final equation says that log-wage is a linear equation of the covariates $X_{i1}, \ldots , X_{iK}$, log hours-worked, and a residual term. Since it is a linear equation, we can estimate it using standard tools in R.
+
+
+### Setup
+
+For this lab, you will need the `dplyr`, `lfe`, and `stargazer` packages. Make sure they are installed and loaded using `install.packages` and `library`. You will also need the files:
+
+- `IPUMS_ACS2019_CA_1.csv`
+- `IPUMS_ACS2019_CA_2.csv`
+
+Make sure these files are in your working directory before beginning.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

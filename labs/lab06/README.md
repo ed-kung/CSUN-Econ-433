@@ -13,8 +13,8 @@ In this lab you will learn how to create some simple graphs in R.
 
 For this lesson you will need the `dplyr` and `ggplot2` packages. Make sure they are installed with `install.packages("dplyr")` and `install.packages("ggplot2")` and loaded with `library(dplyr)` and `library(ggplot2)`. You will also need the files:
 
-- `IPUMS_ACS2014_CA_1.csv`
-- `IPUMS_ACS2014_CA_2.csv`
+- `IPUMS_ACS2019_CA_1.csv`
+- `IPUMS_ACS2019_CA_2.csv`
 - `DEGFIELD_CODES.csv`
 
 Make sure these files are in your working directory before beginning.
