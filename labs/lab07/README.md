@@ -158,7 +158,45 @@ $$\ln Y_i = \beta_0 + \beta_1 FEMALE_i + \beta_2 \ln HOURS_i + \beta_3 (INDUSTRY
 
 That is, a separate effect of each industry on the outcome is estimated. This type of encoding of factor variables is known as "dummy variable" encoding or "one-hot encoding".
 
-### Making the results prettier
+### Using Stargazer to prettify and compare results
+
+`Stargazer` is a package that gives you more control over the display of your regression results. It also lets you compare results between two or more regressions.
+
+4. Add the following lines to your script and execute:
+
+        # Compare regression results
+        stargazer(r1, r2, r3, type="text", 
+          keep = c("FEMALE", "LOGHRS")
+        )
+
+You should get output that looks like:
+
+    ===============================================================================
+                                            Dependent variable:                    
+                        -----------------------------------------------------------
+                                                  LOGWAGE                          
+                                (1)                 (2)                 (3)        
+    -------------------------------------------------------------------------------
+    FEMALE                   -0.334***           -0.174***           -0.188***     
+                              (0.005)             (0.005)             (0.005)      
+                                                                                   
+    LOGHRS                                       1.278***            1.146***      
+                                                  (0.006)             (0.006)      
+                                                                                   
+    -------------------------------------------------------------------------------
+    Observations              140,615             140,615             140,615      
+    R2                         0.026               0.245               0.383       
+    Adjusted R2                0.026               0.245               0.382       
+    Residual Std. Error 1.013 (df = 140613) 0.892 (df = 140612) 0.807 (df = 140345)
+    ===============================================================================
+    Note:                                               *p<0.1; **p<0.05; ***p<0.01
+
+From this table, you can see the regression coefficients on the variables `FEMALE` and `LOGHRS` from models `r1`, `r2`, and `r3`.
+
+The results suggest that controlling for industry (`r3`) does not significantly affect the estimated male-female wage differential.
+
+
+
 
 
 
