@@ -148,9 +148,9 @@ Industry is encoded in the variable `IND`. However, you can't just toss `IND` in
 
 3. Add the following lines to your script and execute:
 
-    # Run a regression of LOGWAGE on FEMALE, LOGHRS, IND
-    # Store the results in r3
-    r3 <- felm(LOGWAGE ~ FEMALE + LOGHRS + as.factor(IND), data=df)
+        # Run a regression of LOGWAGE on FEMALE, LOGHRS, IND
+        # Store the results in r3
+        r3 <- felm(LOGWAGE ~ FEMALE + LOGHRS + as.factor(IND), data=df)
     
 If you type `summary(r3)` in the console, you will get a huge table. This is because every possible value of `IND` gets a coefficient. By including a factor variable in the regression equation, R estimates a separate coefficient for each possible value (excluding a base value). The model you're estimating is:
 
