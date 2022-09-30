@@ -129,7 +129,7 @@ This reverses the wide format data to long format data. Type `View(dfg_long)` in
 
 ### Assignment
 
-Write a script to calculate the average wage by the field of a persons Bachelor's degree by year. Focus only on individuals with Bachelor's degrees (`EDUCD>=101 & EDUCD<=116`) and those that are employed (`EMPSTAT==1`). Hint: You'll need to use the `filter` command that you learned in Lab 4. Reshape the data so that the years are on the columns.
+Write a script to calculate the average wage by the field of a persons Bachelor's degree by year. Focus only on individuals with Bachelor's degrees (`EDUCD>=101 & EDUCD<=116`) and those that are employed (`EMPSTAT==1`). Hint: You'll need to use the `filter` command that you learned in Lab 4. Make sure the degree codes are human readable. Reshape the data so that the years are on the columns.
 
 Good luck!
 
