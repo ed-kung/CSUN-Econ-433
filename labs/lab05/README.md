@@ -32,22 +32,65 @@ You will start by calculating the average income in California counties in the y
         
 ### Recoding Missing Values
 
-The goal for this lab session is to compute average income by county/year. Average income is contained in the variable `INCWAGE`.
+The goal for this lab session is to compute average wage income by county/year. Wage income is contained in the variable `INCWAGE`.
 
 Unfortunately, the income data has some missing values that we need to take care of first. According to [IPUMS](https://usa.ipums.org/usa-action/variables/INCWAGE#description_section), special numerical codes are used to designate not applicable / missing values for the income variable, `INCWAGE`. According to the IPUMS website:
 
 - 999999 = N/A
 - 999998 = Missing
 
-So before we take averages, we need to transform `INCWAGE` to a missing value whenever we see the values 999999 or 999998. If we don't, R will think that these people make $999,999 a year~
+So before we take averages, we need to transform `INCWAGE` to a missing value whenever we see the values 999999 or 999998. If we don't, R will think that these people make $999,999 a year!
 
 2. Add the following lines to your script and execute:
 
         df$INCWAGE <- ifelse(df$INCWAGE>=999998, NA, df$INCWAGE)  # encode missing values for INCWAGE
         
-R has a special value for missing data called NA. This line of code makes it so that INCWAGE gets a value of NA if INCWAGE is 999999 or 999998. Later, when calculating statistics for INCWAGE, you can tell R how it should treat the missing values.
+R has a special value for missing data called NA. This line of code makes it so that `INCWAGE` gets a value of NA if INCWAGE is 999999 or 999998. Later, when calculating statistics for `INCWAGE`, you can tell R how it should treat the missing values.
 
 ### Grouping and Summarizing
+
+Our goal is to calculate average wage income by county/year. Counties are defined by `STATEFIP` and `COUNTYFIP`. See [here](https://www.nrcs.usda.gov/wps/portal/nrcs/detail/national/home/?cid=nrcs143_013697) for more information about how counties are coded in the US.
+
+To calculate average wage income by county/year, we need to first group the variables by `STATEFIP`, `COUNTYFIP`, and `YEAR`. Then we need to calculate the average wage income for each of these groups. Thankfully, R `dplyr` has a convenient way to calculate summary statistics by groups. 
+
+3. Add the following lines to your script and execute:
+
+        # Compute summary statistics by county and year
+        dfg <- df %>%
+          group_by(STATEFIP, COUNTYFIP, YEAR) %>% 
+          summarize(
+            EMPLOYED_POP = sum(PERWT),
+            MEAN_WAGE = weighted.mean(INCWAGE, PERWT, na.rm=TRUE)
+          )
+
+This code block collapses df down to a dataset where each row is a unique combination of `STATEFIP`, `COUNTYFIP`, and `YEAR`. For each such combination, it calculates two variables, `EMPLOYED_POP` and `MEAN_WAGE`, where:
+
+- `EMPLOYED_POP` is the sum of `PERWT` within each group. Remember, `PERWT` is the number of people each row in the data approximately represents.
+- `MEAN_WAGE` is the mean of `INCWAGE`, weighted by `PERWT`, within each group.
+
+Type `View(dfg)` in the console or click on `dfg` in the Environment tab to take a look at the new data frame. 
+
+Note: The above code block makes use of the `%>%` pipe operator. The pipe operator feeds the result of the current line into the first argument of the next line. It is useful for chaining together multiple commands in which the output of one command is used as input for the next command. Don't worry if you don't fully understand it yet. You can copy the code and make modifications to achieve the desired results. With more practice you will start to build an understanding of how the pipe operator works.
+
+### Making the county codes human-readable
+
+If you looked at `dfg`, you would have seen that the county codes are still numerical. Let's change that by merging on the names of the counties, which are contained in the file `COUNTY_CODES.csv`.
+
+4. Add these lines to the your script and execute:
+
+        # Merge on county names
+        ccodes <- read.csv("COUNTY_CODES.csv")
+        dfg <- inner_join(dfg, ccodes, by=c("STATEFIP", "COUNTYFIP"))
+
+Now type `View(dfg)` in the console and you can see which counties are the largest, have the highest wages, and grew the fastest from 2014 to 2019.
+
+
+
+
+
+
+
+
 
 
 
