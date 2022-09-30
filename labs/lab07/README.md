@@ -59,8 +59,47 @@ For this lab, you will need the `dplyr`, `lfe`, and `stargazer` packages. Make s
 
 Make sure these files are in your working directory before beginning.
 
+### Regressing log-wage-income on gender
 
+You will use your data from California 2019 to answer the question: Are women paid less than men? This is a politically sensitive topic that requires much deeper analysis than just this lab. However, the data that we have available is good for demonstrating the usefulness of regressions.
 
+1. Create the following script and execute it:
+
+        rm(list=ls()) # clear the workspace
+        
+        # Load required libraries
+        library(dplyr)
+        library(lfe)
+        library(stargazer)
+        
+        # Load the data and merge
+        df1 <- read.csv("IPUMS_ACS2019_CA_1.csv")
+        df2 <- read.csv("IPUMS_ACS2019_CA_1.csv")
+        df <- inner_join(df1, df2, by=c("YEAR","SERIAL","PERNUM"))
+        
+        # Focus on employed individuals aged 25 to 65
+        df <- filter(df, AGE>=25, AGE<=65, EMPSTAT==1)
+        
+        # Deal with missing values in INCWAGE
+        df$INCWAGE <- ifelse(df$INCWAGE>=999998, NA, df$INCWAGE)
+        
+        # Create female variable
+        df$FEMALE <- df$SEX==2
+        
+        # Create log wage variable
+        df$LOGWAGE <- log(df$INCWAGE)
+        
+        # Create log hours worked variable
+        df$LOGHRS <- log(df$UHRSWORK)
+        
+        # Run a regression of LOGWAGE on LOGHRS and FEMALE
+        # and store the results in r1
+        r1 <- felm(LOGWAGE ~ FEMALE + LOGHRS, data=df)
+        
+        # Show the regression results
+        summary(r1)
+        
+        
 
 
 
