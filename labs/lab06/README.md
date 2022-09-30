@@ -87,7 +87,7 @@ Now you will make a horizontal bar chart showing the percentage of the college-e
         
         # Bar chart
         ggplot(data=pop_by_deg) + 
-          geom_col(aes(x=DegreeField), y=POPSHARE) + 
+          geom_col(aes(x=DegreeField, y=POPSHARE)) + 
           coord_flip()
          
 You should see a bar chart showing the share of college-educated population with each degree field. Bar charts are useful for visualizing numerical values against non-numerical categories. `coord_flip()` in the code above changes the bar chart from vertical to horizontal. We did that so that the degree fields are more readable. Try running the code without `coord_flip()` to see what happens.
