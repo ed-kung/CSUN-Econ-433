@@ -119,6 +119,9 @@ You could criticize the previous regression by saying that it doesn't control fo
 
 2. To control for hours worked, add the following lines to your script and execute:
 
+        # Create log hours worked variable
+        df$LOGHRS <- log(df$UHRSWORK)
+
         # Run a regresion of LOGWAGE on FEMALE and LOGHRS
         # Store the result in r2
         r2 <- felm(LOGWAGE ~ FEMALE + LOGHRS, data=df)
@@ -128,7 +131,34 @@ You could criticize the previous regression by saying that it doesn't control fo
         
 You should see the following results:
 
+                 Estimate Std. Error t value Pr(>|t|)    
+    (Intercept)  6.201672   0.023691  261.78   <2e-16 ***
+    FEMALETRUE  -0.173834   0.004831  -35.98   <2e-16 ***
+    LOGHRS       1.278083   0.006343  201.49   <2e-16 ***
+    ---
+    Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
+Adding `LOGHRS` to the regression reduced the magnitude of the coefficient on `FEMALE`. It suggests that part of the 33% raw earnings differential between men and women is due to differences in hours worked. However, differences remain. After controlling for hours worked, the model still shows that females make 17% less than men do.
+
+### Controlling for industry of occupation
+
+What if women choose to work in lower paid industry than men? To rule out this explanation, we can control for industry of occupation. 
+
+Industry is encoded in the variable `IND`. However, you can't just toss `IND` into the regression equation because `IND` is a categorical (or factor) variable. Meaning it is coded as numbers but the numbers themselves have no meaning. Thankfully, R knows how to handle categorical variables in regressions as long as you tell them that they are categorical.
+
+3. Add the following lines to your script and execute:
+
+    # Run a regression of LOGWAGE on FEMALE, LOGHRS, IND
+    # Store the results in r3
+    r3 <- felm(LOGWAGE ~ FEMALE + LOGHRS + as.factor(IND), data=df)
+    
+If you type `summary(r3)` in the console, you will get a huge table. This is because every possible value of `IND` gets a coefficient. By including a factor variable in the regression equation, R estimates a separate coefficient for each possible value (excluding a base value). The model you're estimating is:
+
+$$\ln Y_i = \beta_0 + \beta_1 FEMALE_i + \beta_2 \ln HOURS_i + \beta_3 (INDUSTRY_i==1) + \beta_4 (INDUSTRY_i==2) + \ldots + \epsilon_i$$
+
+That is, a separate effect of each industry on the outcome is estimated. This type of encoding of factor variables is known as "dummy variable" encoding or "one-hot encoding".
+
+### Making the results prettier
 
 
 
