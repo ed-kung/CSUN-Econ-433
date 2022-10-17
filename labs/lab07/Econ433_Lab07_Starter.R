@@ -33,15 +33,15 @@ df$COLLEGE <- df$EDUCD>=101 & df$EDUCD<=116
 df$MARRIED <- df$MARST>=1 & df$MARST<=2
 
 r1 <- felm(LOGWAGE ~ FEMALE, data=df, weights=df$PERWT)
-r2 <- ##
-r3 <- ##
-r4 <- ##
-r5 <- ##
+r2 <- # YOUR INPUT HERE
+r3 <- # YOUR INPUT HERE
+r4 <- # YOUR INPUT HERE
+r5 <- # YOUR INPUT HERE
 
 stargazer(
-    r1, r2, r3, r4, r5,
+    # YOUR INPUT HERE,
     type="text", 
-    keep = c("FEMALE", "LOGHRS", "COLLEGE", "MARRIED", "AGE"),
+    keep = # YOUR INPUT HERE,
     add.lines=list(
         c("Industry FE", "N", "N", "Y", "Y", "Y"), 
         c("Occupation FE", "N", "N", "N", "N", "Y"), 

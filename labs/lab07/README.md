@@ -102,8 +102,8 @@ You will use your data from California 2019 to answer the question: Are women pa
 You should see a table that looks like this:
 
                  Estimate Std. Error t value Pr(>|t|)    
-    (Intercept) 10.929408   0.003714 2943.10   <2e-16 ***
-    FEMALETRUE  -0.333895   0.005409  -61.73   <2e-16 ***
+    (Intercept) 10.859859   0.003574 3038.32   <2e-16 ***
+    FEMALETRUE  -0.313058   0.005271  -59.39   <2e-16 ***
     ---
     Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
     
@@ -113,7 +113,7 @@ $$\ln Y_i = \beta_0 + \beta_1 FEMALE_i + \epsilon_i$$
 
 Note that because you are using weighted survey data, it was important to specify the weights in the regression command, `felm`.
 
-With the data, you estimated a value of $10.93$ for $\beta_0$ and $-0.334$ for $\beta_1$. The model suggests that log wage income for females is $0.334$ less than log wage income for men. Since log-differences are approximately equal to percentage differences, this suggests that women make 33% less than men do.
+With the data, you estimated a value of $10.86$ for $\beta_0$ and $-0.313$ for $\beta_1$. The model suggests that log wage income for females is $0.313$ less than log wage income for men. Since log-differences are approximately equal to percentage differences, this suggests that women make 31% less than men do.
 
 ### Controlling for hours worked
 
@@ -134,13 +134,13 @@ You could criticize the previous regression by saying that it doesn't control fo
 You should see the following results:
 
                  Estimate Std. Error t value Pr(>|t|)    
-    (Intercept)  6.201672   0.023691  261.78   <2e-16 ***
-    FEMALETRUE  -0.173834   0.004831  -35.98   <2e-16 ***
-    LOGHRS       1.278083   0.006343  201.49   <2e-16 ***
+    (Intercept)  6.178838   0.023871  258.84   <2e-16 ***
+    FEMALETRUE  -0.162114   0.004724  -34.32   <2e-16 ***
+    LOGHRS       1.266368   0.006401  197.84   <2e-16 ***
     ---
     Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Adding `LOGHRS` to the regression reduced the magnitude of the coefficient on `FEMALE`. It suggests that part of the 33% raw earnings differential between men and women is due to differences in hours worked. However, differences remain. After controlling for hours worked, the model still shows that females make 17% less than men do.
+Adding `LOGHRS` to the regression reduced the magnitude of the coefficient on `FEMALE`. It suggests that part of the 31% raw earnings differential between men and women is due to differences in hours worked. However, differences remain. After controlling for hours worked, the model still shows that females make 16% less than men do.
 
 ### Controlling for industry of occupation
 
@@ -163,12 +163,12 @@ That is, a separate coefficient is estimated for each possible value of the indu
 If you type `summary(r3)` in the console, you will get this result:
 
                 Estimate Std. Error t value Pr(>|t|)    
-    FEMALETRUE -0.188183   0.004765  -39.49   <2e-16 ***
-    LOGHRS      1.146079   0.005876  195.05   <2e-16 ***
+    FEMALETRUE -0.187187   0.004684  -39.96   <2e-16 ***
+    LOGHRS      1.143053   0.005931  192.73   <2e-16 ***
     ---
     Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-By default, the factor variable coefficients are not shown because the table would be too large (there are 268 industry codes). But the results show that controlling for industry does not significantly affect the estimated male-female wage differential.
+By default, the factor variable coefficients are not shown because the table would be too large (there are 268 industry codes). But the results show that controlling for industry actually slightly [i]increases[/i] the estimated male-female wage differential. So you can't explain the male-female wage differential by saying that women work in lower-paid industries; at least not for California in 2019.
 
 ### Using Stargazer to compare results
 
@@ -186,25 +186,26 @@ By default, the factor variable coefficients are not shown because the table wou
 
 You should get output that looks like:
 
-    ===============================================================================
-                                            Dependent variable:                    
-                        -----------------------------------------------------------
-                                                  LOGWAGE                          
-                                (1)                 (2)                 (3)        
-    -------------------------------------------------------------------------------
-    FEMALE                   -0.334***           -0.174***           -0.188***     
-                              (0.005)             (0.005)             (0.005)      
-                                                                                   
-    LOGHRS                                       1.278***            1.146***      
-                                                  (0.006)             (0.006)      
-                                                                                   
-    -------------------------------------------------------------------------------
-    Observations              140,615             140,615             140,615      
-    R2                         0.026               0.245               0.383       
-    Adjusted R2                0.026               0.245               0.382       
-    Residual Std. Error 1.013 (df = 140613) 0.892 (df = 140612) 0.807 (df = 140345)
-    ===============================================================================
-    Note:                                               *p<0.1; **p<0.05; ***p<0.01
+    ================================================================================
+                                            Dependent variable:                     
+                        ------------------------------------------------------------
+                                                  LOGWAGE                           
+                                (1)                  (2)                 (3)        
+    --------------------------------------------------------------------------------
+    FEMALE                   -0.313***            -0.162***           -0.187***     
+                              (0.005)              (0.005)             (0.005)      
+                                                                                    
+    LOGHRS                                        1.266***            1.143***      
+                                                   (0.006)             (0.006)      
+                                                                                    
+    --------------------------------------------------------------------------------
+    Industry FE                  N                    N                   Y         
+    Observations              140,615              140,615             140,615      
+    R2                         0.024                0.237               0.377       
+    Adjusted R2                0.024                0.237               0.375       
+    Residual Std. Error 10.149 (df = 140613) 8.976 (df = 140612) 8.120 (df = 140345)
+    ================================================================================
+    Note:                                                *p<0.1; **p<0.05; ***p<0.01
 
 This lets us see how our coefficient of interest, `FEMALE`, changes as more controls are added. The table shows us that controlling for hours worked explains much of the overall difference between male and female earnings, but not all of it. By contrast, different industries of work do not appear to explain much of the male-female wage differential.
 
