@@ -32,13 +32,24 @@ df$COLLEGE <- df$EDUCD>=101 & df$EDUCD<=116
 # Create marriage variable
 df$MARRIED <- df$MARST>=1 & df$MARST<=2
 
-r1 <- ##
+r1 <- felm(LOGWAGE ~ FEMALE, data=df, weights=df$PERWT)
 r2 <- ##
 r3 <- ##
 r4 <- ##
 r5 <- ##
 
-stargazer(##
+stargazer(
+    r1, r2, r3, r4, r5,
+    type="text", 
+    keep = c("FEMALE", "LOGHRS", "COLLEGE", "MARRIED", "AGE"),
+    add.lines=list(
+        c("Industry FE", "N", "N", "Y", "Y", "Y"), 
+        c("Occupation FE", "N", "N", "N", "N", "Y"), 
+        c("College Major FE", "N", "N", "N", "N", "Y"), 
+        c("Race FE", "N", "N", "N", "N", "Y"), 
+        c("County FE", "N", "N", "N", "N", "Y") 
+    )
 )
+
 
 

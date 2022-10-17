@@ -94,7 +94,7 @@ You will use your data from California 2019 to answer the question: Are women pa
         
         # Run a regression of LOGWAGE on FEMALE
         # and store the results in r1
-        r1 <- felm(LOGWAGE ~ FEMALE, data=df)
+        r1 <- felm(LOGWAGE ~ FEMALE, data=df, weights=df$PERWT)
         
         # Show the regression results
         summary(r1)
@@ -111,6 +111,8 @@ The model you just estimated is the following:
 
 $$\ln Y_i = \beta_0 + \beta_1 FEMALE_i + \epsilon_i$$
 
+Note that because you are using weighted survey data, it was important to specify the weights in the regression command, `felm`.
+
 With the data, you estimated a value of $10.93$ for $\beta_0$ and $-0.334$ for $\beta_1$. The model suggests that log wage income for females is $0.334$ less than log wage income for men. Since log-differences are approximately equal to percentage differences, this suggests that women make 33% less than men do.
 
 ### Controlling for hours worked
@@ -124,7 +126,7 @@ You could criticize the previous regression by saying that it doesn't control fo
 
         # Run a regresion of LOGWAGE on FEMALE and LOGHRS
         # Store the result in r2
-        r2 <- felm(LOGWAGE ~ FEMALE + LOGHRS, data=df)
+        r2 <- felm(LOGWAGE ~ FEMALE + LOGHRS, data=df, weights=df$PERWT)
         
         # Show the results of r2
         summary(r2)
@@ -150,13 +152,13 @@ Industry is encoded in the variable `IND`. However, you can't just toss `IND` in
 
         # Run a regression of LOGWAGE on FEMALE, LOGHRS, IND
         # Store the results in r3
-        r3 <- felm(LOGWAGE ~ FEMALE + LOGHRS | IND, data=df)
+        r3 <- felm(LOGWAGE ~ FEMALE + LOGHRS | IND, data=df, weights=df$PERWT)
     
 This line of code estimates a linear model, telling R that `IND` is a factor variable because it comes after the pipe |. When you include a factor variable in the regression, you estimate the following model:
 
 $$\ln Y_i = \beta_0 + \beta_1 FEMALE_i + \beta_2 \ln HOURS_i + \beta_3 (INDUSTRY_i==1) + \beta_4 (INDUSTRY_i==2) + \ldots + \epsilon_i$$
 
-That is, a separate coefficient is estimated for each possible value of the industry, excluding a base level. The coefficients estimate how much each industry contributes to the outcome, over and above the base value. This type of encoding for a factor variable is known as "dummy variable encoding" or "one hot encoding".
+That is, a separate coefficient is estimated for each possible value of the industry, excluding a base level. The base level is chosen automatically by R. The coefficients estimate how much each industry contributes to the outcome, over and above the base level. When a separate effect is estimated for each possible value of a variable, we call these "fixed effects". Adding fixed effects to a model is also sometimes known as "dummy variable encoding" or "one hot encoding".
 
 If you type `summary(r3)` in the console, you will get this result:
 
@@ -176,7 +178,10 @@ By default, the factor variable coefficients are not shown because the table wou
 
         # Compare regression results
         stargazer(r1, r2, r3, type="text", 
-          keep = c("FEMALE", "LOGHRS")
+          keep = c("FEMALE", "LOGHRS"),
+          add.lines = list(
+            c("Industry FE", "N", "N", "Y")
+          )
         )
 
 You should get output that looks like:
@@ -201,17 +206,17 @@ You should get output that looks like:
     ===============================================================================
     Note:                                               *p<0.1; **p<0.05; ***p<0.01
 
-This lets us see how our coefficient of interest, `FEMALE`, changes as more controls are added.
+This lets us see how our coefficient of interest, `FEMALE`, changes as more controls are added. The table shows us that controlling for hours worked explains much of the overall difference between male and female earnings, but not all of it. By contrast, different industries of work do not appear to explain much of the male-female wage differential.
 
 ### Assignment
 
 In addition to the three regression you already ran, run these as well:
 
-- `r4`: In addition to hours worked and industry, create a variable `COLLEGE` which indicates whether the person has a bachelors' degree or higher. Create another variable `MARRIED` to indicate whether the person is married. Include both variables in the regression.
+- `r4`: In addition to hours worked and industry, create a variable `COLLEGE` which indicates whether the person has a bachelors' degree or higher. Create another variable `MARRIED` to indicate whether the person is married. Include both variables and `AGE` in the regression.
 
-- `r5`: In addition to the college indicator, control for the field of study (`DEGFIELD`), the occupation (`OCC`), and the race (`RACE`). These are factor variables. Hint: To control for more than one factor variable, you can use the notation `felm(Y ~ X1 + X2 | F1 + F2 + F3)`
+- `r5`: In addition to the college indicator, control for the field of study (`DEGFIELD`), the occupation (`OCC`), the race (`RACE`), and the county of residence (`COUNTYFIP`). These are all factor variables that you can include as fixed effects. Hint: To control for more than one factor variable, you can use the notation `felm(Y ~ X1 + X2 | F1 + F2 + F3)` where `F1`, `F2`, and `F3` are the factor variables.
 
-Put all 5 regressions together in one table using stargazer. Make sure the coefficients for `FEMALE`, `COLLEGE`, `MARRIED`, and `LOGHRS` are shown in the table. What is the male-female wage differential once college, marriage, hours, industry, occupation, and degree of study are all controlled for?
+Put all 5 regressions together in one table using stargazer. Make sure the coefficients for `FEMALE`, `COLLEGE`, `MARRIED`, `AGE`, and `LOGHRS` are shown in the table. Then answer the questions on the Canvas assignment and show me your regression output.
 
 ### Takeaways
 
