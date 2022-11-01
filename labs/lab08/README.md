@@ -6,11 +6,8 @@ In this lab you will conduct regression analysis on your own using a simulated d
 ### Setup
 For this lab you will need the `dplyr`, `lfe`, and `stargazer` packages. Make sure these are installed and loaded using `install.packages` and `library`. You will also need the files:
 
-- `students.csv`
-- `classes.csv`
-
-These files are availalbe in this repository's [data directory](https://github.com/ed-kung/CSUN-Econ-433/tree/main/data).
-
+- [students.csv](https://github.com/ed-kung/CSUN-Econ-433/raw/main/data/class_size/students.csv)
+- [classes.csv](https://github.com/ed-kung/CSUN-Econ-433/raw/main/data/class_size/classes.csv)
 
 ### Data Description
 
