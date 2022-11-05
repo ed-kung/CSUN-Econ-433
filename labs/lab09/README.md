@@ -30,9 +30,9 @@ Start a new script. You can use `lab09_starter.R` as a base for the script.
 
 4. The plot is a bit messy since there are many cities and they have different baseline levels of Airbnb. It might be good to plot the average of log Airbnb over time by the treatment/control groups. (The treatment group is the group of cities that passed Airbnb regulations and the control group is the group of cities that did not.) 
 
-5. To make this plot, you first need to define a variable called `treatment` that equals 1 if the city passed regulations in 2015 and 0 otherwise.
+    To make this plot, you first need to define a variable called `treatment` that equals 1 if the city passed regulations in 2015 and 0 otherwise.
 
-6. Then, you need to group the data by (`treatment`, `year`) and calculate the average of `log_airbnb` within those groups. Call the collapsed dataframe `df2`.
+    Then, you need to group the data by (`treatment`, `year`) and calculate the average of `log_airbnb` within those groups. Call the collapsed dataframe `df2`.
 
 7. With `df2`, plot the average of `log_airbnb` over time by treatment/control groups. What do you notice about the treatment group relative to the control group? Do they look like they are trending differently prior to treatment? What about after treatment?
 
@@ -41,6 +41,20 @@ Start a new script. You can use `lab09_starter.R` as a base for the script.
     $$Y_{it} = \beta_0 + \beta_1 Treatment_{i} + \beta_2 Post_{t} + \beta_3 Treatment_{i} \times Post_{t} + \epsilon_{it}$$
 
     Here $i$ is a city and $t$ is a year. $Treatment_{i}$ is equal to 1 if the city is in the treatment group and 0 otherwise. $Post_{t}$ is equal to 1 if the year is greater than 2015 and 0 otherwise. $\beta_3$ is the coefficient of interest, as it tells us how the outcome variable changes for the treatment group after treatment occurs.
+
+9. Estimate the model above. Call the regression result `r1`. Examine the result using `stargazer`. What is the estimated value of $\beta_3$? Is the estimate statistically significant? 
+
+10. Now add log population, log income, and log tourists to the regression as controls. Call the regression result `r2`. Examine the result using `stargazer`. What is the estimated value of $\beta_3$? 
+
+11. Finally, add city fixed effects. Call the regression result `r3`. Put `r1`, `r2`, and `r3` together in one table using `stargazer`. What is the estimated value of $\beta_3$ when city fixed effects are added? Is it statistically significant?
+
+12. Interpret your coefficient estimate and explain why the coefficient on $Treatment_{i}$ disappears in `r3`.
+
+### Takeaways
+
+- You can conduct diff-in-diff analysis by plotting the outcome variable over time separately for treatment and control groups.
+- You can conduct diff-in-diff analysis using linear regressions.
+
 
 
 
