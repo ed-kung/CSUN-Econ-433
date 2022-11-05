@@ -40,7 +40,7 @@ Start a new script. You can use `lab09_starter.R` as a base for the script.
 
 $$Y_{it} = \beta_0 + \beta_1 Treatment_{i} + \beta_2 Post_{t} + \beta_3 Treatment_{i} \times Post_{t} + \epsilon_{it}$$
 
-  Here $i$ is a city and $t$ is a year. $Treatment_{i}$ is equal to 1 if the city is in the treatment group and 0 otherwise. $Post_{t}$ is equal to 1 if the year is greater than 2015 and 0 otherwise. $\beta_3$ is the coefficient of interest, as it tells us how the outcome variable changes for the treatment group after treatment occurs.
+    Here $i$ is a city and $t$ is a year. $Treatment_{i}$ is equal to 1 if the city is in the treatment group and 0 otherwise. $Post_{t}$ is equal to 1 if the year is greater than 2015 and 0 otherwise. $\beta_3$ is the coefficient of interest, as it tells us how the outcome variable changes for the treatment group after treatment occurs.
 
 
 
