@@ -16,41 +16,41 @@ unique(df$city)
 unique(df$year)
 
 # Define log variables
-df$log_airbnb <- 'your input'
-df$log_pop <- 'your input'
-df$log_inc <- 'your input'
-df$log_tourists <- 'your input'
+df$log_airbnb <- YOUR_INPUT
+df$log_pop <- YOUR_INPUT
+df$log_inc <- YOUR_INPUT
+df$log_tourists <- YOUR_INPUT
 
 # Plot log airbnb over time for each city
-ggplot(data='your input') +
-  geom_line(aes(x='your input', y='your input', color=city)) +  
-  geom_vline(xintercept='your input', linetype='dashed') +     # this adds a vertical line at the treatment date!
+ggplot(data=YOUR_INPUT) +
+  geom_line(aes(x=YOUR_INPUT, y=YOUR_INPUT, color=city)) +  
+  geom_vline(xintercept=YOUR_INPUT, linetype='dashed') +     # this adds a vertical line at the treatment date!
   theme_bw()
 
 # Define a variable that equals 1 if the city is treated and 0 otherwise
-df$treatment <- df$city %in% c('your input', 'your input', 'your input', 'your input')
+df$treatment <- df$city %in% c(YOUR_INPUT, YOUR_INPUT, YOUR_INPUT, YOUR_INPUT)
 
 # Calculate the average of log_airbnb by treatment/year
 df2 <- df %>%
-  group_by('your input') %>%
+  group_by(YOUR_INPUT) %>%
   summarize(
-    avg_log_airbnb = 'your input'
+    avg_log_airbnb = YOUR_INPUT
   )
 
 # Plot average of log_airbnb by treatment/year
-ggplot(data='your input') + 
-  geom_line(aes(x='your input', y='your input', color='your input')) + 
-  geom_vline(xintercept='your input', linetype='dashed') + 
+ggplot(data=YOUR_INPUT) + 
+  geom_line(aes(x=YOUR_INPUT, y=YOUR_INPUT, color=YOUR_INPUT)) + 
+  geom_vline(xintercept=YOUR_INPUT, linetype='dashed') + 
   theme_bw()
 
 
 # Regressions
-df$post <- 'your input'         # this variable should be equal to 1 if the year>2015, 0 otherwise
-df$treatXpost <- 'your input'   # this variable should equal 1 if year>2015 AND the city is treated, 0 otherwise
+df$post <- YOUR_INPUT         # this variable should be equal to 1 if the year>2015, 0 otherwise
+df$treatXpost <- YOUR_INPUT   # this variable should equal 1 if year>2015 AND the city is treated, 0 otherwise
 
-r1 <- felm('your input', data=df) 
-r2 <- felm('your input', data=df)
-r3 <- felm('your input', data=df)
+r1 <- felm(YOUR_INPUT, data=df) 
+r2 <- felm(YOUR_INPUT, data=df)
+r3 <- felm(YOUR_INPUT, data=df)
 
 stargazer(r1, r2, r3, type="text")
 
