@@ -27,15 +27,17 @@ ggplot(data='your input') +
   geom_vline(xintercept='your input', linetype='dashed') +     # this adds a vertical line at the treatment date!
   theme_bw()
 
-# Plot averaged log airbnb by treatment and control
+# Define a variable that equals 1 if the city is treated and 0 otherwise
 df$treatment <- df$city %in% c('your input', 'your input', 'your input', 'your input')
 
+# Calculate the average of log_airbnb by treatment/year
 df2 <- df %>%
   group_by('your input') %>%
   summarize(
     avg_log_airbnb = 'your input'
   )
 
+# Plot average of log_airbnb by treatment/year
 ggplot(data='your input') + 
   geom_line(aes(x='your input', y='your input', color='your input')) + 
   geom_vline(xintercept='your input', linetype='dashed') + 
