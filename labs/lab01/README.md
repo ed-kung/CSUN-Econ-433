@@ -28,12 +28,12 @@ An example of aggregated data:
 
 **American Community Survey** - Every year the Census Bureau collects information on a random sample of U.S. households. This survey is known as the ACS. Because the data is collected on a much smaller sample than the Decennial Census, the ACS is able to ask more detailed questions.
 
-### Instructions
+## Instructions
 
 I will walk you through the process of signing up for IPUMS and downloading ACS microdata for the state of California in 2019.
 
 
-#### Account Creation
+### Account Creation
 
 1. Go to www.ipums.org.
 2. Click on the "IPUMS USA" logo.
@@ -41,7 +41,7 @@ I will walk you through the process of signing up for IPUMS and downloading ACS 
 4. Click "Apply for Access" and fill out the form. For occupation category, select "undergraduate student". For specific occupation title, select "student". For field of research, select "economics". Under general research statement, type "I will use this data to study the gender wage gap" because that will be one of our exercises. For "How did you learn about this database?", select "Teacher or professor". Click all the required boxes and click "SUBMIT".
 5. Wait until you receive account access, then log in once you do. 
 
-#### Selecting Variables
+### Selecting Variables
 
 Once you have your account created, you can begin creating a data extract.
 
@@ -83,7 +83,7 @@ Now that we've taken a tour of the technical variables, we're ready to select th
 
 17. Finally, let's add some geographic information to our data. Go to "HOUSEHOLD->GEOGRAPHIC" and add `STATEFIP` and `COUNTYFIP` to your cart. This will let us know the person's state and county of residence.
 
-#### Selecting Samples, Cases, and Creating the Extract
+### Selecting Samples, Cases, and Creating the Extract
 
 We're done selecting our variables! Now let's narrow our request down to data from the state of California in 2019.
 
@@ -97,9 +97,22 @@ We're done selecting our variables! Now let's narrow our request down to data fr
 
 22. You are now ready to create your data extract! Click "SUBMIT EXTRACT".
 
-#### Downloading and Viewing the Data Extract
+### Downloading and Viewing the Data Extract
 
+It will take a few minutes for the extract to be ready. Once it's ready, you should receive an email indicating so. You can also refresh the page to check if it's ready.
 
+23. Once the extract is ready, click "Download CSV". Download it to anywhere on your computer.
+
+24. The file type is .gz, which is a type of compression like .zip. Extract it using any Windows program compatible with .gz files, like 7-zip or WinRAR. The resulting .csv file should be about 44 MB in size.
+
+25. Open the file in Excel. How many rows are there? With your Excel knowledge, do you think you'd be able to make sense of this data and perform analytics on it using just Excel? 
+
+26. Show me your opened file in Excel and take the lab quiz to be dismissed.
+
+## Takeaways
+
+- You know what the Decennial Census and the ACS are. You know what IPUMS is.
+- You can create custom ACS microdata extracts using IPUMS.
 
 
 
