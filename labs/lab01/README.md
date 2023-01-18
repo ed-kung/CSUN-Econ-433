@@ -32,10 +32,22 @@ An example of aggregated data:
 
 I will walk you through the process of signing up for IPUMS and downloading ACS microdata for the state of California in 2019.
 
+
+#### Account Creation
+
 1. Go to www.ipums.org.
 2. Click on the "IPUMS USA" logo.
-3. Click "Get Data". You will be taken to IPUMS' data selection interface. Here you will select the variables (columns) that you want to include as well as the samples (surveys) that you want to include.
-4. First, we will see what variables are preselected. 
+3. Click "REGISTER" on the top-right corner.
+4. Click "Apply for Access" and fill out the form. For occupation category, select "undergraduate student". For specific occupation title, select "student". For field of research, select "economics". Under general research statement, type "I will use this data to study the gender wage gap" because that will be one of our exercises. For "How did you learn about this database?", select "Teacher or professor". Click all the required boxes and click "SUBMIT".
+5. Wait until you receive account access, then log in once you do. 
+
+#### Selecting Variables
+
+Once you have your account created, you can begin creating a data extract.
+
+6. Go back to usa.ipums.org/usa and click "Get Data". You will be taken to IPUMS' data selection interface. Here you will select the variables (columns) that you want to include as well as the samples (surveys) that you want to include.
+
+7. First, we will see what variables are preselected. 
 
     In the "HOUSEHOLD" dropdown menu, click "TECHNICAL". Notice that the variables `YEAR`, `MULTYEAR`, `SAMPLE`, `SERIAL`, `CBSERIAL`, `HHWT`, `CLUSTER`, and `STRATA` have a label that says "preselected" next to them. 
   
@@ -43,18 +55,51 @@ I will walk you through the process of signing up for IPUMS and downloading ACS 
 
     The preselected variables contain technical data about survey sampling which are necessary for calculating accurate statistics. For now, we will only care about the meaning of four of these variables: `YEAR`, `SERIAL`, `PERNUM`, and `PERWT`. 
   
-5. You can click on any variable's name to get more information about its meaning. Go back to "HOUSEHOLD->TECHNICAL" and click on the variable `YEAR`. You will see a description of the variable. The meaning of `YEAR` is quite obvious. 
+8. You can click on any variable's name to get more information about its meaning. Go back to "HOUSEHOLD->TECHNICAL" and click on the variable `YEAR`. You will see a description of the variable. The meaning of `YEAR` is quite obvious. 
 
-6. Go back and click on `SERIAL`. `SERIAL` is the unique identification number for each household in a survey. 
+9. Go back and click on `SERIAL`. `SERIAL` is the unique identification number for each household in a survey. 
 
-7. Now go to "PERSON->TECHNICAL" and click on `PERNUM`. `PERNUM` numbers the unique persons within each household. Combined with `SERIAL`, `SERIAL` and `PERNUM` uniquely identify each person within IPUMS. 
+10. Now go to "PERSON->TECHNICAL" and click on `PERNUM`. `PERNUM` numbers the unique persons within each household. Combined with `SERIAL`, `SERIAL` and `PERNUM` uniquely identify each person within IPUMS. 
 
     **Unique Identifiers** - A dataset contains rows and columns. Each row represents a record and each column (a.k.a. variable) contains information about that record. In data analytics, it is always important to know which variables uniquely identify a record in your dataset, because if you have duplicate records with the same unique identifiers then you know you have an error in the data. 
     
     In the IPUMS data, each record is a person and the variables `SERIAL`, `PERNUM` together uniquely identify a record. If we find records with duplicate values of `SERIAL`, `PERNUM`, we'll know we did something wrong. 
   
-8. Finally, go back and click on `PERWT`. `PERWT` indicates how many persons in the U.S. population are represented by a given person in the IPUMS sample. In other words, it is a *sampling weight*.
+11. Finally, go back and click on `PERWT`. `PERWT` indicates how many persons in the U.S. population are represented by a given person in the IPUMS sample. In other words, it is a *sampling weight*.
 
     **Sampling Weight** - The ACS methodology does not survey every person in the U.S. with equal probability. It oversamples underrepresented groups to ensure that there is a sufficient quantity of data about that group. Because of the weighted sampling, researchers need to know how many people each survey respondent represents in the population in order to calculate accurate statistics. Oversampled groups will have smaller sampling weights whereas undersampled groups will have larger sampling weights.
 
-9.   
+Now that we've taken a tour of the technical variables, we're ready to select the variables we're interested in! For today, we will extract data on a person's sex, age, marital status, race, employment status, income, and education for the state of California in 2019. 
+
+12. Go to "PERSON->DEMOGRAPHIC" and click on the + symbol under "Add to cart" for the variables: `SEX`, `AGE`, and `MARST`. You can click on any of these variables to find out more information about them. Try clicking on `MARST` and then clicking on "CODES" to see the list of values that `MARST` can take and their meanings.
+
+13. Go to "PERSON->RACE, ETHNICITY, and NATIVITY" and add the `RACE` and `HISPAN` variables to your cart. You can click on either variable to see a list of codes and their meanings, as well as some historical detail about how race and Hispanic origin were recorded by the Census Bureau.
+
+14. Go to "PERSON->EDUCATION" and add `EDUC` and `DEGFIELD` to your cart. Click on the variables to find out more about each variable.
+
+15. Go to "PERSON->WORK" and add `EMPSTAT` to your cart.
+
+16. Go to "PERSON->INCOME" and add `INCTOT` and `INCWAGE` to your cart.
+
+17. Finally, let's add some geographic information to our data. Go to "HOUSEHOLD->GEOGRAPHIC" and add `STATEFIP` and `COUNTYFIP` to your cart. This will let us know the person's state and county of residence.
+
+#### Selecting Samples, Cases, and Creating the Extract
+
+We're done selecting our variables! Now let's narrow our request down to data from the state of California in 2019.
+
+18. On the main data selection screen, click "SELECT SAMPLES". Uncheck "Default sample from each year" and check "ACS" for the year 2019. Make sure you only have that one box checked, then click "SUBMIT SAMPLE SELECTIONS".
+
+19. Your data cart should say "17 VARIABLES" and "1 SAMPLE". Click "VIEW CART" to review your variable and sample selections, then click "CREATE DATA EXTRACT".
+
+20. We want to narrow the data down to California so the data is not too large. Click "SELECT CASES". Check "STATEFIP" and click "SUBMIT". Click "06 California" and click "SUBMIT". On the Extract Request page it should say "STATEFIP (1 of 62 codes)" under "SELECT CASES".
+
+21. Finally, the default data format used by IPUMS is .dat, but we prefer .csv (comma separated values). Under "Data Format" click "Change". Select "csv" and click "Apply Selection". 
+
+22. You are now ready to create your data extract! Click "SUBMIT EXTRACT".
+
+#### Downloading and Viewing the Data Extract
+
+
+
+
+
