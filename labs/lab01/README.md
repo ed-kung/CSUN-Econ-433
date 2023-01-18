@@ -37,11 +37,11 @@ I will walk you through the process of signing up for IPUMS and downloading ACS 
 3. Click "Get Data". You will be taken to IPUMS' data selection interface. Here you will select the variables (columns) that you want to include as well as the samples (surveys) that you want to include.
 4. First, we will see what variables are preselected. 
 
-  In the "HOUSEHOLD" dropdown menu, click "TECHNICAL". Notice that the variables `YEAR`, `MULTYEAR`, `SAMPLE`, `SERIAL`, `CBSERIAL`, `HHWT`, `CLUSTER`, and `STRATA` have a label that says "preselected" next to them. 
+    In the "HOUSEHOLD" dropdown menu, click "TECHNICAL". Notice that the variables `YEAR`, `MULTYEAR`, `SAMPLE`, `SERIAL`, `CBSERIAL`, `HHWT`, `CLUSTER`, and `STRATA` have a label that says "preselected" next to them. 
   
-  In the "PERSON" dropdown menu, click "TECHNICAL". Notice that `PERNUM` and `PERWT` are preselected.
+    In the "PERSON" dropdown menu, click "TECHNICAL". Notice that `PERNUM` and `PERWT` are preselected.
 
-  The preselected variables contain technical data about survey sampling which are necessary for calculating accurate statistics. For now, we will only care about the meaning of four of these variables: `YEAR`, `SERIAL`, `PERNUM`, and `PERWT`. 
+    The preselected variables contain technical data about survey sampling which are necessary for calculating accurate statistics. For now, we will only care about the meaning of four of these variables: `YEAR`, `SERIAL`, `PERNUM`, and `PERWT`. 
   
 5. You can click on any variable's name to get more information about its meaning. Go back to "HOUSEHOLD->TECHNICAL" and click on the variable `YEAR`. You will see a description of the variable. The meaning of `YEAR` is quite obvious. 
 
@@ -49,12 +49,12 @@ I will walk you through the process of signing up for IPUMS and downloading ACS 
 
 7. Now go to "PERSON->TECHNICAL" and click on `PERNUM`. `PERNUM` numbers the unique persons within each household. Combined with `SERIAL`, `SERIAL` and `PERNUM` uniquely identify each person within IPUMS. 
 
-  **Unique Identifiers** - A dataset contains rows and columns. Each row represents a record and each column (a.k.a. variable) contains information about that record. In data analytics, it is always important to know which variables uniquely identify a record in your dataset, because if you have duplicate records with the same unique identifiers then you know you have an error in the data. 
+    **Unique Identifiers** - A dataset contains rows and columns. Each row represents a record and each column (a.k.a. variable) contains information about that record. In data analytics, it is always important to know which variables uniquely identify a record in your dataset, because if you have duplicate records with the same unique identifiers then you know you have an error in the data. 
     
-  In the IPUMS data, each record is a person and the variables `SERIAL`, `PERNUM` together uniquely identify a record. If we find records with duplicate values of `SERIAL`, `PERNUM`, we'll know we did something wrong. 
+    In the IPUMS data, each record is a person and the variables `SERIAL`, `PERNUM` together uniquely identify a record. If we find records with duplicate values of `SERIAL`, `PERNUM`, we'll know we did something wrong. 
   
 8. Finally, go back and click on `PERWT`. `PERWT` indicates how many persons in the U.S. population are represented by a given person in the IPUMS sample. In other words, it is a *sampling weight*.
 
-  **Sampling Weight** - The ACS methodology does not survey every person in the U.S. with equal probability. It oversamples underrepresented groups to ensure that there is a sufficient quantity of data about that group. Because of the weighted sampling, researchers need to know how many people each survey respondent represents in the population in order to calculate accurate statistics. Oversampled groups will have smaller sampling weights whereas undersampled groups will have larger sampling weights.
+    **Sampling Weight** - The ACS methodology does not survey every person in the U.S. with equal probability. It oversamples underrepresented groups to ensure that there is a sufficient quantity of data about that group. Because of the weighted sampling, researchers need to know how many people each survey respondent represents in the population in order to calculate accurate statistics. Oversampled groups will have smaller sampling weights whereas undersampled groups will have larger sampling weights.
 
 9.   
