@@ -24,5 +24,13 @@ An example of aggregated data:
 | FL    | $90,000        |
 | ...   | ...            |
 
-- **Decennial Census**: Every 10 years the Census Bureau 
+**Decennial Census** - Every 10 years the Census Bureau collects information on every person living in the U.S. Because this is a huge data collection effort, it only occurs once every decade and the questions asked are not as detailed as in the ACS.
 
+**American Community Survey** - Every year the Census Bureau collects information on a random sample of U.S. households. This survey is known as the ACS. Because the data is collected on a much smaller sample than the Decennial Census, the ACS is able to ask more detailed questions.
+
+### Instructions
+
+I will walk you through the process of signing up for IPUMS and downloading ACS microdata for the state of California in 2019.
+
+1. Go to www.ipums.org.
+2. 
