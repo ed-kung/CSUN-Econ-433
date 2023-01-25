@@ -33,7 +33,7 @@ In this lab, you will download a data file that I have downloaded in advance fro
 
 5. In R Studio, click the "Upload" button under the "Files" tab, as shown in the screenshot, and upload `IPUMS_ACS2019_CA_1.csv`. 
 
-!(screenshot1.png)
+![Upload screenshot](screenshot1.png)
 
 
 
