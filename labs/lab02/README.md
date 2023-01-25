@@ -13,7 +13,7 @@ In this lab you will be introduced to R, a programming language designed specifi
 
 **Data science? I thought this was an economics class.**
 
-Yes, it is an economics class. But the study of economics (including public economics) is becoming more and more data driven. Economists, if they are equipped with the right empirical skill set, are well positioned to make impactful contributions to organizations by combining theory and evidence.
+Yes, it is an economics class. But the study of economics (including public economics) is becoming more and more data driven. Economists, if they are equipped with the right empirical skill set, are well positioned to make impactful contributions to their organizations by combining solid economic theory with compelling statistical evidence.
 
 ## Lab Work 
 
@@ -118,14 +118,48 @@ The reason R loaded them as integers is because R does not know when a variable 
 
 15. Type `summary(df$MARST)` to show a summary of the variable `MARST`. You will see that 148,220 rows have a value of 1, 9,460 rows have a value of 2, and so on. You can check the [IPUMS website](https://usa.ipums.org/usa-action/variables/MARST#codes_section) for the definitions of these numerical codes.
 
+16. Type `summary(df$INCWAGE)` to show a summary of the variable `INCWAGE`. `INCWAGE` is a numeric variable so you will see that the `summary()` command gives a different kind of output. When summarizing a categorical variable, `summary()` shows a frequency table. When summarizing a numeric variable, `summary()` shows the minimum, 25th percentile, median, mean, 75th percentile, and maximum.
+
+    Note that in this data, the 25th percentile of `INCWAGE` (i.e. salary and wage income) is zero. This is because the dataset contains both working adults and non-working adults and children. So it is not surprising that over 25 percent of the data has zero wage and salary income.
+
+### Referencing variables 
+
+To change the data type of `MARST` from integer to categorical, we used the code `df$MARST <- as.factor(df$MARST)`. Let's dissect this code.
+
+First, let's discuss the use of `df$MARST`. The `$` symbol is used to reference a variable in a dataframe by placing it between the name of the dataframe and the name of the variable. For example, `df$MARST` was used to reference `MARST` in `df`. If we had another dataframe called `my_data` and a variable called `HEIGHT` in it, we would use `my_data$HEIGHT`.
+
+Second, let's discuss the use of `<-`. You already used `<-` when you loaded the data with `df <- read.csv("IPUMS_ACS2019_CA_1.csv")`. The `<-` symbol is used to assign the object on the right hand side of `<-` to the object on the left hand side of `<-`. If the object on the left hand side already exists, it is replaced.
+
+So now let's look back at `df$MARST <- as.factor(df$MARST)`. This line of code replaces assigns `as.factor(df$MARST)` to `df$MARST`. Since `df$MARST` already exists (as an integer column), it is replaced by `as.factor(df$MARST)` (a categorical column). Any future references to `df$MARST` will return a categorical column.
+
+17. Let's put what we learned into practice. Type `df$INC_DIV_AGE <- df$INCWAGE / df$AGE`. This line of code creates a new variable called `INC_DIV_AGE` which is equal to `INCWAGE` divided by `AGE`. Type `summary(df$INC_DIV_AGE)` to show some summary statistics about this new variable.
+
+## Assignment
+
+To be dismissed and earn your grade for this lab, do the following.
+
+1. Change the following variables in `df` from integers to factors: `SERIAL`, `PERNUM`, `STATEFIP`, `COUNTYFIP`, `SEX`, `MARST`, `RACE`, `HISPAN`, `EMPSTAT`.
+
+2. Create a new variable in `df` called `INC_TIMES_AGE` which is equal to `INCWAGE` multiplied by `AGE`.
+
+3. Show me a summary of your data with `str(df)` and `summary(df)`.
+
+4. Take the lab quiz.
 
 
+## Takeaways
 
+- You can use R Studio Cloud.
+- You know how to do basic tasks in R, including:
+    - Loading data from files
+    - Viewing your data
+    - Summarizing your data
+    - Changing data types
+    - Referencing variables with `$`
+    - Making assignments with `<-`
+- You understand the concept of data types.
+- You can use R's help system.
 
-
-### Summarizing variables
-
-11. In R, you can reference a specific column in a specific data frame using `$`. For example, to reference the column `INCWAGE` in dataframe `df`, 
 
 
 
