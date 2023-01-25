@@ -85,7 +85,27 @@ Now you have the data inside your R Studio Cloud account and you can begin explo
          $ EMPSTAT  : int  2 3 3 3 3 3 1 3 3 3 ...
          $ INCWAGE  : num  23100 0 6000 0 2000 0 9800 0 0 0 ...
          
-    This shows...
+    The output shows a wealth of important information. First, it shows that `df` is a `data.frame` object. Second, it shows the number of rows (a.k.a. observations) and the number of columns (a.k.a. variables). Third, it lists important information for each of the variables in the data. For each variable it shows the:
+    
+    - Name
+    
+    - Data Type
+    
+    - The value of the first rows in that column
+    
+### Data Types
+
+Now I will take a brief moment to explain **data types**. **Data type** is an extremely important concept in data science. Each column (or variable) has its own data type. The data type tells you what kind of the data the variable is meant to represent. Column data types include:
+
+- Numeric
+
+- Dates
+
+- Strings
+
+- Categorical (or factors)
+
+
 
 ### Summarizing variables
 
