@@ -27,14 +27,23 @@ In this lab, you will download a data file that I have downloaded in advance fro
 
 3. Name the project whatever you want. Suggestion: "Econ 433".
 
-### Upload the Data
+### Upload the data
 
 4. Download `IPUMS_ACS2019_CA_1.csv` from Canvas. This is an IPUMS data extract containing data from the 2019 ACS for the state of California, similar to what you extracted in Lab 01.
 
-5. In R Studio, click the "Upload" button under the "Files" tab, as shown in the screenshot, and upload `IPUMS_ACS2019_CA_1.csv`. 
+5. In R Studio, click the "Upload" button under the "Files" tab, as shown in the screenshot, and upload `IPUMS_ACS2019_CA_1.csv`. You should now see it in your files list.
 
 ![Upload screenshot](screenshot1.png)
 
+### Playing around with R
 
+Now you have the data inside your R Studio Cloud account and you can begin exploring!
 
+6. First, we have to load the data into the current session's work environment. Do so by typing `df <- read.csv("IPUMS_ACS2019_CA_1.csv")` into the console and hitting enter. 
+
+    This loads the CSV file into your session's work environment as a **data frame**. A data frame is a type of object in R that can be referenced by name and manipulated. A data frame is essentially a table with rows and columns containing data. Think of a data frame like an Excel worksheet. By typing `df <- read.csv("IPUMS_ACS2019_CA_1.csv")`, you are telling R to read the file `IPUMS_ACS2019_CA_1.csv` and store the data in a data frame that you've decided to name `df`. 
+    
+    The choice of the name `df` is arbitrary. If you had typed `my_data <- read.csv("IPUMS_ACS2019_CA_1.csv")` instead, you would have loaded the data into a data frame named `my_data`. Think of the name of the data frame like the name of an Excel worksheet. It doesn't really matter what you call it, but you can use the name to reference data from it.
+    
+7. 
 
