@@ -86,12 +86,10 @@ Now you have the data inside your R Studio Cloud account and you can begin explo
          $ INCWAGE  : num  23100 0 6000 0 2000 0 9800 0 0 0 ...
          
     The output shows a wealth of important information. First, it shows that `df` is a `data.frame` object. Second, it shows the number of rows (a.k.a. observations) and the number of columns (a.k.a. variables). Third, it lists important information for each of the variables in the data. For each variable it shows the:
-    
     - Name
-    
     - Data Type
-    
     - The value of the first rows in that column
+    For example, `str(df)` shows us that the variable `INCWAGE` has a numeric datatype (`num`), and its first few values are `23100`, `0`, and `6000`.
     
 ### Data Types
 
