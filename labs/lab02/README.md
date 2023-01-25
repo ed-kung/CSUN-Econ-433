@@ -15,4 +15,9 @@ In this lab you will be introduced to R, a programming language designed specifi
 
 In this lab, you will download a data file that I have downloaded in advance from IPUMS. You will load the data file into R and conduct some basic data exploration tasks. 
 
- 
+Download the data: [IPUMS_ACS2019_CA_1.csv](https://raw.githubusercontent.com/ed-kung/CSUN-Econ-433/main/data/IPUMS_CA/IPUMS_ACS2019_CA_1.csv)
+
+
+### Setup 
+
+
