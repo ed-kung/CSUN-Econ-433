@@ -89,19 +89,31 @@ Now you have the data inside your R Studio Cloud account and you can begin explo
     - Name
     - Data Type
     - The value of the first rows in that column
+    
     For example, `str(df)` shows us that the variable `INCWAGE` has a numeric datatype (`num`), and its first few values are `23100`, `0`, and `6000`.
     
 ### Data Types
 
-Now I will take a brief moment to explain **data types**. **Data type** is an extremely important concept in data science. Each column (or variable) has its own data type. The data type tells you what kind of the data the variable is meant to represent. Column data types include:
+Now I will take a brief moment to explain **data types**. **Data type** is an extremely important concept in data science. Each column (or variable) has its own data type. The data type tells you what kind of the data the variable is meant to represent. Common data types include:
 
+- Integer
 - Numeric
-
 - Dates
-
 - Strings
-
 - Categorical (or factors)
+
+Data types are important because it tells you how the data should be interpreted. It also tells you what you can and can't do with the data. For example, numbers (integers and numeric) can be added, subtracted, multiplied, and divided. Dates can only be subtracted to get the number of days between two dates, but they cannot be added, multiplied, or divided. Strings (meaning text data) cannot be added, subtracted, multiplied, or divided at all. 
+
+Categorical data (or factor data) are data in which the values can be one of a set of categories. Marital status is a good example of categorical data. People can be married, separated, divorced, widowed, or never married. State of residence is another example of categorical data. People can be located in one of 50 states.
+
+### Changing Data Types
+
+Notice that in `df`, the data type for both `STATEFIP` and `MARST` is integer when really they should be categorical. In fact, `SERIAL`, `PERNUM`, `STATEFIP`, `COUNTYFIP`, `SEX`, `MARST`, `RACE`, `HISPAN`, and `EMPSTAT` are all integers when they should be categorical. 
+
+The reason R loaded them as integers is because R does not know when a variable is meant to be categorical or not. When R looked at `IPUMS_ACS2019_CA_1.csv`, all it could see is that there were integers in the column for `MARST` (since IPUMS codes all its categorical variables in integers). Since R saw that there were integers in the `MARST` column, it loaded `MARST` with the integer data type.
+    
+13. Fortunately, it is easy for us to change the data type of a variable. To change the data type of `MARST` from integer to categorical, type `df$MARST <- as.factor(df$MARST)`. 
+
 
 
 
