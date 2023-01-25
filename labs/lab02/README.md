@@ -114,6 +114,12 @@ The reason R loaded them as integers is because R does not know when a variable 
     
 13. Fortunately, it is easy for us to change the data type of a variable. To change the data type of `MARST` from integer to categorical, type `df$MARST <- as.factor(df$MARST)`. 
 
+14. Now type `str(df)` again. You will see that `MARST` now has the data type of `factor`, which is what we want.
+
+15. Type `summary(df$MARST)` to show a summary of the variable `MARST`. You will see that 148,220 rows have a value of 1, 9,460 rows have a value of 2, and so on. You can check the [IPUMS website](https://usa.ipums.org/usa-action/variables/MARST#codes_section) for the definitions of these numerical codes.
+
+
+
 
 
 
