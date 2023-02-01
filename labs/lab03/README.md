@@ -39,15 +39,9 @@ To write your first script, enter the following into the script editor. Then sav
     
     df <- read.csv("IPUMS_ACS2019_CA_1.csv")  # Load the data
     
-    # Change EMPSTAT to a factor variable
-    df$EMPSTAT <- factor(
-        df$EMPSTAT, 
-        levels=c(0,1,2,3), 
-        labels=c("N/A", "Employed", "Unemployed", "Not in Labor Force")
-    ) 
+    df$EMPSTAT <- as.factor(df$EMPSTAT)  # Change EMPSTAT to a factor
     
-    # Show a frequency table for EMPSTAT
-    table(df$EMPSTAT) 
+    table(df$EMPSTAT)  # Show a frequency table for EMPSTAT
 
 Once you've entered this script into the script editor and saved it, hit `CTRL+SHIFT+ENTER` to run the entire script. You should see the following output in your console window:
 
@@ -62,32 +56,62 @@ You can continue to hit `CTRL+ENTER` to continue excuting your code line-by-line
 
 Let's take a look at a few important elements of the script.
 
-1. The first line of the script is
+The first line of the script is
 
-        rm(list=ls())   # Resets the workspace so that you can start fresh
+    rm(list=ls())   # Resets the workspace so that you can start fresh
     
-    The command `rm(list=ls())` deletes everything in your current workspace. (It doesn't delete files, only objects which have been temporarily loaded into R's memory.) It's a good idea to start every script with `rm(list=ls())` so that you start with a fresh working environment. If you don't start fresh, then objects currently existing in R's temporary memory may affect the processing of your script, leading to unexpected behavior.
+The command `rm(list=ls())` deletes everything in your current workspace. (It doesn't delete files, only objects which have been temporarily loaded into R's memory.) It's a good idea to start every script with `rm(list=ls())` so that you start with a fresh working environment. If you don't start fresh, then objects currently existing in R's temporary memory may affect the processing of your script, leading to unexpected behavior.
 
-    `rm(list=ls())` is followed by `# Resets the workspace so that you can start fresh`. This is known as a **comment**. Programmers put comments in their code to help explain what a particular piece of code does. To make a comment in R, put the comment at the end of a line of code and precede it with the hashtag symbol `#`.
+`rm(list=ls())` is followed by `# Resets the workspace so that you can start fresh`. This is known as a **comment**. Programmers put comments in their code to help explain what a particular piece of code does. To make a comment in R, put the comment at the end of a line of code and precede it with the hashtag symbol `#`.
 
-2. The next line of code is `library(dplyr)`. This loads the package `dplyr` into your workspace. It's standard practice to load all your script's required packages at the start of the script.
+The next line of code is `library(dplyr)`. This loads the package `dplyr` into your workspace. It's standard practice to load all your script's required packages at the start of the script.
 
-3. The next line of code is `df <- read.csv("IPUMS_ACS2019_CA_1.csv")`. We already saw this command in Lab 02. It simply loads the data in `IPUMS_ACS2019_CA_1.csv` into a dataframe we called `df`.
+The next three lines of code are things you've already seen in Lab 02. First, the CSV file is loaded into a dataframe called `df`. Then, the `EMPSTAT` variable is converted to a factor. Finally, a frequency table for `EMPSTAT` is shown.
 
-4. The next block of code is actually a single command spread out across multiple lines. If you put the cursor anywhere in this block and hit `CTRL+ENTER`, R will execute the entire block.
+### Filtering
 
-        # Change EMPSTAT to a factor variable
-        df$EMPSTAT <- factor(
-            df$EMPSTAT, 
-            levels=c(0,1,2,3), 
-            labels=c("N/A", "Employed", "Unemployed", "Not in Labor Force")
-        ) 
-        
-    Let's dissect this block of code slowly. 
+If you look at the frequency table for `EMPSTAT` and consult the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/EMPSTAT#codes_section), you will see that our data has a very large number of people not in the labor force (`EMPSTAT=3`). This is because the data contains not only working age adults, but also children and senior citizens.
+
+Suppose we are interested only in working age adults, which we define as people between the ages of 25 and 65. We want to remove anyone outside this range from our data. How can we do that?
+
+The `filter` function from `dplyr` lets us keep or remove rows based on whether or not they meet a condition. This process is known as **filtering**. You can think of it as passing the data through a filter, so some rows are filtered out and some are allowed to pass through.
+
+Add the command `df <- filter(df, AGE>=25 & AGE<=65)` to your script, right after you load the data. The filter command takes as its arguments the dataframe you want to filter, `df` in this case, and then the condition you want to filter on, in this case `AGE>=25 & AGE<=65`. The `&` symbol means "and", so we want to keep rows where `AGE>=25` AND `AGE<=65`.
+
+The final script should look like this: 
+
+    rm(list=ls())  # Resets the workspace so you can start fresh
+    library(dplyr) # Loads the dplyr library
     
+    df <- read.csv("IPUMS_ACS2019_CA_1.csv")  # Load the data
+    
+    df <- filter(df, AGE>=25 & AGE<=65)  # Keep only working age adults
+    
+    df$EMPSTAT <- as.factor(df$EMPSTAT)  # Change EMPSTAT to a factor
+    
+    table(df$EMPSTAT)  # Show a frequency table for EMPSTAT
+    
+Run the whole script from the top by hitting `CTRL+SHIFT+ENTER`. Your output should look like:
+
+         1      2      3 
+    150966   6281  48005 
+
+Notice that the number of observations that are not in the labor force dropped significantly. And the number of observations with `EMPSTAT=0` dropped entirely, now that we are filtering on working-age adults.
+
+### Appending
+
+Currently, we are using the file `IPUMS_ACS2019_CA_1.csv`, which contains data from California in 2019 only. What if we wanted to add data from other years or other states?
+
+Dataframes can be combined vertically using the R command `rbind`. This is a procedure known as **appending**. In order to append two datasets together, they need to have the same columns. The image below illustrates the append operation.
+
+![appending data](appending.png)
 
 
 
 
 
 
+
+
+
+ 
