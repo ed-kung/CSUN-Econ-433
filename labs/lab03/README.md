@@ -127,11 +127,35 @@ Also try tabulting the years with `table(df$YEAR)`. You should get:
 
 ### Merging
 
-Now we are using the data files labeled `_1` for both 2014 and 2019. These files contain information about basic demographics like age, race, sex, and basic work information like employment status and wages. But what if we want other information, like educational attainment, that's contained in a separate file? That's what merging is for.
+Now we are using the data files labeled `_1` for both 2014 and 2019. These files contain information about basic demographics like age, race, sex, and basic work information like employment status and wages. But what if we want other information, like educational attainment, that's contained in a separate file? To add that data to our dataframe we need to perform an operation known as **merging**.
 
 **Merging** data means combining data horizontally. That is, for the same set of observations (rows) in one dataframe you attach new columns from another dataframe. This is useful when the data columns you need are split into multiple files. The image below illustrates the merging operation.
 
 ![merging dataframes](merging.png)
+
+**Key variables**. In order to merge, you must merge on one or more *key variables*. The key variable should be a **unique identifier** for each row in both dataframes. That is, no two rows should have the same combination of values for the key variables.[^1] As mentioned in Lab 02, the unique identifiers for the ACS data are `SERIAL` and `PERNUM`. If we include data from different years, we also have to include `YEAR` as a key variable. So our key variables will be `YEAR`, `SERIAL`, and `PERNUM`.
+
+There are four different merge commands in R: `inner_join`, `left_join`, `right_join`, and `full_join`. The difference between them is how they deal with rows for which matching keys are not found in either the left or the right dataframe. (Left and right is simply the terminology for the two dataframes being merged.) 
+
+**Inner join**. In an inner join, only rows where the keys are found in both the left and right dataframes are included in the merged dataframe.
+
+**Left join**. In a left join, all rows in the left dataframe are kept, even if their keys are not found in the right dataframe. Rows without keys in the right dataframe will have missing values for columns coming from the right dataframe. Rows without keys in the left dataframe are tossed.
+
+**Right join**. In a right join, all rows in the right dataframe are kept, even if their keys are not found in the left dataframe. Rows without keys in the left dataframe will have missing values for columns coming from the left dataframe. Rows without keys in the right dataframe are tossed.
+
+**Full join**. In a full join, all rows from both dataframes are kept. Rows without keys in either the left or the right dataframe will have missing values for the corresponding columns.
+
+The image below illustrates the four types of merges.
+
+![types of joins](joins.png)
+
+I recommend only using inner joins or left joins and never right joins or full joins unless you already have a very deep understanding of your data.
+
+
+
+
+[^1]: There are more complex merges in which one of the dataframes can have multiple rows with the same keys. These are called many-to-one or one-to-many merges. These merges should be avoided unless the researcher already has a deep understanding of the datasets.
+
 
 
 
