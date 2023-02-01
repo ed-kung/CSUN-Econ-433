@@ -39,9 +39,9 @@ To write your first script, enter the following into the script editor. Then sav
     
     df <- read.csv("IPUMS_ACS2019_CA_1.csv")  # Load the data
     
-    df$MARST <- as.factor(df$MARST) # Change MARST to a factor variable
+    df$EMPSTAT <- as.factor(df$EMPSTAT) # Change EMPSTAT to a factor variable
     
-    table(df$MARST) # Show a frequency table for the MARST variable
+    table(df$EMPSTAT) # Show a frequency table for the EMPSTAT variable
 
 Once you've entered this script into the script editor and saved it, hit `CTRL+SHIFT+ENTER` to run the entire script. You should see the following output in your console window:
 
@@ -63,6 +63,11 @@ The first line of the script is
 The command `rm(list=ls())` deletes everything in your current workspace. (It doesn't delete files, only objects which have been temporarily loaded into R's memory.) It's a good idea to start every script with `rm(list=ls())` so that you start with a fresh working environment. If you don't start fresh, then objects currently existing in R's temporary memory may affect the processing of your script, leading to unexpected behavior.
 
 `rm(list=ls())` is followed by `# Resets the workspace so that you can start fresh`. This is known as a **comment**. Programmers put comments in their code to help explain what a particular piece of code does. To make a comment in R, put the comment at the end of a line of code and precede it with the hashtag symbol `#`.
+
+The next line of code is `library(dplyr)`. This loads the package `dplyr` into your workspace. It's standard practice to load all your script's required packages at the start of the script.
+
+The next lines of code simply repeat operations you did in Lab 2. `df <- read.csv("IPUMS_ACS2019_CA_1.csv")` loads the CSV file into a dataframe called `df`. `df$EMPSTAT <- as.factor(df$EMPSTAT)` changes the datatype of `EMPSTAT` to categorical. `table(df$EMPSTAT)` shows a frequency table for `EMPSTAT`.
+
 
 
 
