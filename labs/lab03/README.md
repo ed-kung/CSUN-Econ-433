@@ -145,13 +145,71 @@ There are four different merge commands in R: `inner_join`, `left_join`, `right_
 
 **Full join**. In a full join, all rows from both dataframes are kept. Rows without keys in either the left or the right dataframe will have missing values for the corresponding columns.
 
-The image below illustrates the four types of merges.
+The image below illustrates the four types of merges. I recommend only using inner joins or left joins and never right joins or full joins unless you already have a very deep understanding of your data.
 
 ![types of joins](joins.png)
 
-I recommend only using inner joins or left joins and never right joins or full joins unless you already have a very deep understanding of your data.
+### Finalizing the IPUMS data
+
+Now let's merge the two IPUMS datasets for California in 2019. We will use `inner_join` because we know that the keys are the same in both datasets. Run the following script:
+
+    rm(list=ls())  # Clear the workspace
+    library(dplyr) # Load dplyr
+    
+    # Load and join the 2019 data
+    df2019_1 <- read.csv("IPUMS_ACS2019_CA_1.csv")
+    df2019_2 <- read.csv("IPUMS_ACS2019_CA_2.csv")
+    df <- inner_join(df2019_1, df2019_2, by=c("YEAR","SERIAL","PERNUM"))
+    
+    # Show the structure of the data
+    str(df) 
+    
+Note that the key variables are supplied to `inner_join` via the argument `by`, and the key variables are inputted as a list of variable names. (In R, `c(...)` creates a list of terms.) 
+
+If you run the script, you should see that `df` has 38,0091 rows and 19 columns.
+
+## Assignment
+
+To be dismissed and earn your grade for this lab, you have to debug the following script:
+
+    rm(list=ls())
+    library(dplyr)
+    
+    df2019_1 <- read.csv("IPUMS_CA2019_CA_1.csv")
+    df2019_2 <- read.csv("IPUMS_CA2019_CA_2.csv")
+    df <- inner_join(df2019_1, df2019_2, by=c(YEAR,SERIAL,PERNUM))
+    
+    df2014_1 <- read.csv("IPUMS_CA2014_CA_1.csv")
+    df2014_2 <- read.csv("IPUMS_CA2014_CA_2.csv")
+    df <- inner_join(df2014_1, df2014_2, by=c(YEAR,SERIAL,PERNUM))
+    
+    df <- rbind(df2014, df2019)
+    
+    df <- filter(df, AGE>=25 & AGE<=65)
+    
+    str(df)
+
+The script is supposed to:
+
+1. Merge the two 2014 files
+2. Merge the two 2019 files
+3. Append the resulting 2014 and 2019 dataframes together
+4. Filter on working-age, married (with spouse present), men
+5. Show the structure of the data
+
+However, the script has errors. You have to fix the script so that it runs and accomplishes its tasks accurately. 
+
+Show me the script and its output, then take the lab quiz, to be dismissed.
 
 
+## Takeaways
+
+- You can write R scripts.
+- You can perform the following data operations in R:
+  - Filtering
+  - Appending
+  - Merging
+- You know the different types of joins.
 
 
 [^1]: There are more complex merges in which one of the dataframes can have multiple rows with the same keys. These are called many-to-one or one-to-many merges. These merges should be avoided unless the researcher already has a deep understanding of the datasets.
