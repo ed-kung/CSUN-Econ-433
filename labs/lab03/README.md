@@ -183,7 +183,7 @@ To be dismissed and earn your grade for this lab, you have to debug the followin
     df2014_2 <- read.csv(IPUMS_CA2014_CA_2.csv)
     df <- inner_join(df2014_1, df2014_2, by=c(YEAR,SERIAL,PERNUM)
     
-    df <- rbind(df2014, df2019)
+    df <- rbind(df2014 df2019)
     
     df <- filter(df, AGE>=25 & AGE<=65)
     
@@ -194,7 +194,7 @@ The script is supposed to:
 1. Merge the two 2014 files
 2. Merge the two 2019 files
 3. Append the resulting 2014 and 2019 dataframes together
-4. Filter on working-age, married (with spouse present), men
+4. Filter on working-age, married (with spouse present), men (Hint: To write a condition that checks whether a variable is equal to a value, use the double equals sign `==`, e.g. `MARST==1`)
 5. Show the structure of the data
 
 However, the script has errors. You have to fix the script so that it runs and accomplishes its tasks accurately. 
