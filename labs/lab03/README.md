@@ -30,6 +30,8 @@ To start a new R script, click the button with the green plus on the top-left co
 
 ![Starting a new script](screenshot1.png)
 
+### My First Script
+
 To write your first script, enter the following into the script editor. Then save it by hitting `CTRL+S` or by using the icons or menus. You can name the script anything you like, but the filename should end in `.R`. Suggested filename: `my_script.R`. 
 
     rm(list=ls())  # Resets the workspace so you can start fresh
@@ -41,7 +43,26 @@ To write your first script, enter the following into the script editor. Then sav
     
     table(df$MARST) # Show a frequency table for the MARST variable
 
-Once you've entered this script into the script editor and saved it, hit `CTRL+SHIFT+ENTER` to run the entire script. 
+Once you've entered this script into the script editor and saved it, hit `CTRL+SHIFT+ENTER` to run the entire script. You should see the following output in your console window:
+
+         1      2      3      4      5      6 
+    148220   9460   5230  29945  17136 170100 
+
+Instead of running the whole script at once, you can also execute lines of code one at a time. This is useful when developing a new script or when debugging. To execute a single line of code, click on that line of code in the editor window so that the cursor shows up on that line. Then hit `CTRL+ENTER`. R will run that single line of code. Try it by clicking on the `rm(list=ls())` line then hitting `CTRL+ENTER`. It should reset your workspace.
+
+You can continue to hit `CTRL+ENTER` to continue excuting your code line-by-line. This is known as "stepping through" your code and it's very helpful for debugging.
+
+### Anatomy of a Script
+
+Let's take a look at a few important elements of the script.
+
+The first line of the script is
+
+    rm(list=ls())   # Resets the workspace so that you can start fresh
+    
+The command `rm(list=ls())` deletes everything in your current workspace. (It doesn't delete files, only objects which have been temporarily loaded into R's memory.) It's a good idea to start every script with `rm(list=ls())` so that you start with a fresh working environment. If you don't start fresh, then objects currently existing in R's temporary memory may affect the processing of your script, leading to unexpected behavior.
+
+`rm(list=ls())` is followed by `# Resets the workspace so that you can start fresh`. This is known as a **comment**. Programmers put comments in their code to help explain what a particular piece of code does. To make a comment in R, put the comment at the end of a line of code and precede it with the hashtag symbol `#`.
 
 
 
