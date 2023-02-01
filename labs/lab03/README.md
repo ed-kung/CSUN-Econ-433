@@ -149,7 +149,7 @@ The image below illustrates the four types of merges. I recommend only using inn
 
 ![types of joins](joins.png)
 
-### Finalizing the IPUMS data
+### Merging the IPUMS data
 
 Now let's merge the two IPUMS datasets for California in 2019. We will use `inner_join` because we know that the keys are the same in both datasets. Run the following script:
 
@@ -176,12 +176,12 @@ To be dismissed and earn your grade for this lab, you have to debug the followin
     library(dplyr)
     
     df2019_1 <- read.csv("IPUMS_CA2019_CA_1.csv")
-    df2019_2 <- read.csv("IPUMS_CA2019_CA_2.csv")
+    df2019_2 <- read.csv(IPUMS_CA2019_CA_2.csv)
     df <- inner_join(df2019_1, df2019_2, by=c(YEAR,SERIAL,PERNUM))
     
     df2014_1 <- read.csv("IPUMS_CA2014_CA_1.csv")
-    df2014_2 <- read.csv("IPUMS_CA2014_CA_2.csv")
-    df <- inner_join(df2014_1, df2014_2, by=c(YEAR,SERIAL,PERNUM))
+    df2014_2 <- read.csv(IPUMS_CA2014_CA_2.csv)
+    df <- inner_join(df2014_1, df2014_2, by=c(YEAR,SERIAL,PERNUM)
     
     df <- rbind(df2014, df2019)
     
