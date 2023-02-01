@@ -39,14 +39,20 @@ To write your first script, enter the following into the script editor. Then sav
     
     df <- read.csv("IPUMS_ACS2019_CA_1.csv")  # Load the data
     
-    df$EMPSTAT <- as.factor(df$EMPSTAT) # Change EMPSTAT to a factor variable
+    # Change EMPSTAT to a factor variable
+    df$EMPSTAT <- as.factor(
+        df$EMPSTAT, 
+        levels=c(0,1,2,3), 
+        labels=c("N/A", "Employed", "Unemployed", "Not in Labor Force")
+    ) 
     
-    table(df$EMPSTAT) # Show a frequency table for the EMPSTAT variable
+    # Show a frequency table for EMPSTAT
+    table(df$EMPSTAT) 
 
 Once you've entered this script into the script editor and saved it, hit `CTRL+SHIFT+ENTER` to run the entire script. You should see the following output in your console window:
 
-         1      2      3      4      5      6 
-    148220   9460   5230  29945  17136 170100 
+         0      1      2      3 
+     66593 182239   9218 122041 
 
 Instead of running the whole script at once, you can also execute lines of code one at a time. This is useful when developing a new script or when debugging. To execute a single line of code, click on that line of code in the editor window so that the cursor shows up on that line. Then hit `CTRL+ENTER`. R will run that single line of code. Try it by clicking on the `rm(list=ls())` line then hitting `CTRL+ENTER`. It should reset your workspace.
 
