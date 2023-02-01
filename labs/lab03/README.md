@@ -62,26 +62,28 @@ You can continue to hit `CTRL+ENTER` to continue excuting your code line-by-line
 
 Let's take a look at a few important elements of the script.
 
-The first line of the script is
+1. The first line of the script is
 
-    rm(list=ls())   # Resets the workspace so that you can start fresh
+        rm(list=ls())   # Resets the workspace so that you can start fresh
     
-The command `rm(list=ls())` deletes everything in your current workspace. (It doesn't delete files, only objects which have been temporarily loaded into R's memory.) It's a good idea to start every script with `rm(list=ls())` so that you start with a fresh working environment. If you don't start fresh, then objects currently existing in R's temporary memory may affect the processing of your script, leading to unexpected behavior.
+    The command `rm(list=ls())` deletes everything in your current workspace. (It doesn't delete files, only objects which have been temporarily loaded into R's memory.) It's a good idea to start every script with `rm(list=ls())` so that you start with a fresh working environment. If you don't start fresh, then objects currently existing in R's temporary memory may affect the processing of your script, leading to unexpected behavior.
 
-`rm(list=ls())` is followed by `# Resets the workspace so that you can start fresh`. This is known as a **comment**. Programmers put comments in their code to help explain what a particular piece of code does. To make a comment in R, put the comment at the end of a line of code and precede it with the hashtag symbol `#`.
+    `rm(list=ls())` is followed by `# Resets the workspace so that you can start fresh`. This is known as a **comment**. Programmers put comments in their code to help explain what a particular piece of code does. To make a comment in R, put the comment at the end of a line of code and precede it with the hashtag symbol `#`.
 
-The next line of code is `library(dplyr)`. This loads the package `dplyr` into your workspace. It's standard practice to load all your script's required packages at the start of the script.
+2. The next line of code is `library(dplyr)`. This loads the package `dplyr` into your workspace. It's standard practice to load all your script's required packages at the start of the script.
 
-The next line of code is `df <- read.csv("IPUMS_ACS2019_CA_1.csv")`. We already saw this command in Lab 02. It simply loads the data in `IPUMS_ACS2019_CA_1.csv` into a dataframe we called `df`.
+3. The next line of code is `df <- read.csv("IPUMS_ACS2019_CA_1.csv")`. We already saw this command in Lab 02. It simply loads the data in `IPUMS_ACS2019_CA_1.csv` into a dataframe we called `df`.
 
-The next block of code is actually a single command spread out across multiple lines. If you put the cursor anywhere in this block and hit `CTRL+ENTER`, R will execute the entire block.
+4. The next block of code is actually a single command spread out across multiple lines. If you put the cursor anywhere in this block and hit `CTRL+ENTER`, R will execute the entire block.
 
-    # Change EMPSTAT to a factor variable
-    df$EMPSTAT <- factor(
-        df$EMPSTAT, 
-        levels=c(0,1,2,3), 
-        labels=c("N/A", "Employed", "Unemployed", "Not in Labor Force")
-    ) 
+        # Change EMPSTAT to a factor variable
+        df$EMPSTAT <- factor(
+            df$EMPSTAT, 
+            levels=c(0,1,2,3), 
+            labels=c("N/A", "Employed", "Unemployed", "Not in Labor Force")
+        ) 
+        
+    Let's dissect this block of code slowly. 
     
 
 
