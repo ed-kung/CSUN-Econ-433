@@ -40,7 +40,7 @@ To write your first script, enter the following into the script editor. Then sav
     df <- read.csv("IPUMS_ACS2019_CA_1.csv")  # Load the data
     
     # Change EMPSTAT to a factor variable
-    df$EMPSTAT <- as.factor(
+    df$EMPSTAT <- factor(
         df$EMPSTAT, 
         levels=c(0,1,2,3), 
         labels=c("N/A", "Employed", "Unemployed", "Not in Labor Force")
@@ -72,11 +72,17 @@ The command `rm(list=ls())` deletes everything in your current workspace. (It do
 
 The next line of code is `library(dplyr)`. This loads the package `dplyr` into your workspace. It's standard practice to load all your script's required packages at the start of the script.
 
-The next lines of code simply repeat operations you did in Lab 2. `df <- read.csv("IPUMS_ACS2019_CA_1.csv")` loads the CSV file into a dataframe called `df`. `df$EMPSTAT <- as.factor(df$EMPSTAT)` changes the datatype of `EMPSTAT` to categorical. `table(df$EMPSTAT)` shows a frequency table for `EMPSTAT`.
+The next line of code is `df <- read.csv("IPUMS_ACS2019_CA_1.csv")`. We already saw this command in Lab 02. It simply loads the data in `IPUMS_ACS2019_CA_1.csv` into a dataframe we called `df`.
 
+The next block of code is actually a single command spread out across multiple lines. If you put the cursor anywhere in this block and hit `CTRL+ENTER`, R will execute the entire block.
 
-
-
+    # Change EMPSTAT to a factor variable
+    df$EMPSTAT <- factor(
+        df$EMPSTAT, 
+        levels=c(0,1,2,3), 
+        labels=c("N/A", "Employed", "Unemployed", "Not in Labor Force")
+    ) 
+    
 
 
 
