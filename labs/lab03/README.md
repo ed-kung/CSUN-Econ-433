@@ -102,9 +102,49 @@ Notice that the number of observations that are not in the labor force dropped s
 
 Currently, we are using the file `IPUMS_ACS2019_CA_1.csv`, which contains data from California in 2019 only. What if we wanted to add data from other years or other states?
 
-Dataframes can be combined vertically using the R command `rbind`. This is a procedure known as **appending**. In order to append two datasets together, they need to have the same columns. The image below illustrates the append operation.
+Dataframes can be combined vertically using the R command `rbind`. This is a procedure known as **appending**. In order to append two datasets together, they need to have the same columns. The image below illustrates the append operation. Appending is useful when the data rows you need are split into multiple files
 
 ![appending data](appending.png)
+
+Now let's create a dataframe which appends `IPUMS_ACS2019_CA_1.csv` with `IPUMS_ACS2014_CA_1.csv`. The resulting dataframe will have California data for both 2014 and 2019. In your script, replace `df <- read.csv("IPUMS_ACS2019_CA_1.csv")` with
+
+    df2014 <- read.csv("IPUMS_ACS2014_CA_1.csv")
+    df2019 <- read.csv("IPUMS_ACS2019_CA_1.csv")
+    df <- rbind(df2014, df2019)
+    
+This block of code loads the 2014 data into `df2014`, the 2019 data into `df2019`, then appends the two dataframes into a new dataframe called `df`.
+
+Re-run your entire script from the top (including the filtering operation). Your frequency table for `EMPSTAT` should now look like:
+
+         1      2      3 
+    290189  16657  99655 
+
+Also try tabulting the years with `table(df$YEAR)`. You should get:
+
+      2014   2019 
+    201249 205252 
+
+
+### Merging
+
+Now we are using the data files labeled `_1` for both 2014 and 2019. These files contain information about basic demographics like age, race, sex, and basic work information like employment status and wages. But what if we want other information, like educational attainment, that's contained in a separate file? That's what merging is for.
+
+**Merging** data means combining data horizontally. That is, for the same set of observations (rows) in one dataframe you attach new columns from another dataframe. This is useful when the data columns you need are split into multiple files. The image below illustrates the merging operation.
+
+![merging dataframes](merging.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
