@@ -177,15 +177,15 @@ To be dismissed and earn your grade for this lab, you have to debug the followin
     
     df2019_1 <- read.csv("IPUMS_CA2019_CA_1.csv")
     df2019_2 <- read.csv(IPUMS_CA2019_CA_2.csv)
-    df <- inner_join(df2019_1, df2019_2, by=c(YEAR,SERIAL,PERNUM))
+    df <- inner_join(df2019_1, df2019_2, by=(YEAR,SERIAL,PERNUM))
     
     df2014_1 <- read.csv("IPUMS_CA2014_CA_1.csv")
     df2014_2 <- read.csv(IPUMS_CA2014_CA_2.csv)
-    df <- inner_join(df2014_1, df2014_2, by=c(YEAR,SERIAL,PERNUM)
+    df <- inner_join(df2014_1, df2014_2, by=(YEAR,SERIAL,PERNUM)
     
     df <- rbind(df2014 df2019)
     
-    df <- filter(df, AGE>=25 & AGE<=65)
+    df <- filter(df, AGE>=25 & AGE<=65 & MARST=1)
     
     str(df)
 
