@@ -88,5 +88,10 @@ The following script shows an example for how we calculate average income of emp
     # View the table
     View(grouped_df)
 
+You should get output that looks like the following image. What do you notice about the relative income of men and women? How about between the years 2014 and 2019?
+
+![screenshot](screenshot1.png)
+
+
 
 
