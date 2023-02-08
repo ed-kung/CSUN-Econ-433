@@ -112,6 +112,12 @@ Now let's walk through the script to see what each line of code does.
           
     There is a lot to talk about in this command, so we will go over it slowly.
     
+    **The Pipe Operator**
+    
+    First, let's talk about `%>%`. This is called the **pipe operator**. The pipe operator "pipes" the output of one command into the input of another command. For example, `f(x) %>% g(y)` is equivalent to writing `g(f(x), y)`. Essentially, the pipe operator evalues the expression on the left, then feeds that result into the first argument of the function on the right.
+    
+    So when we write `df %>% group_by(...) %>% summarize(...)`, we are asking R to first take `df`, then feed it into `group_by(...)`, then take the result of `group_by(df, ...)` and feed it into `summarize(...)`.
+    
     
 
 
