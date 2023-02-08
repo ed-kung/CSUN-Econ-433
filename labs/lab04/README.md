@@ -40,6 +40,53 @@ Create a new script that contains the following code:
     
 Save this script as `dataload.R`.
 
+`dataload.R` is a script that loads the entire 2014 and 2019 ACS data and puts it in a dataframe called `df`. The last line of the script removes the temporary dataframes that we used to create `df`. Since we won't be needing them after creating `df`, we remove them to keep our working environment tidy. 
+
+The purpose of saving `dataload.R` as its own script is that we can now re-use this data loading procedure in other scripts without having to re-write the entire 
+
+### Calling a Script from Another Script
+
+The purpose of having `dataload.R` as its own script is that we can now re-use this procedure in other scripts without having to re-write it each time. To call a script from another script, we use the command `source("<NAME OF SCRIPT>")`. 
+
+Try it out with the following script, which calls `dataload.R`:
+
+    rm(list=ls())  # Clear the workspace
+    library(dplyr) # Load dplyr
+    
+    source("dataload.R")  # Load the data
+    
+    str(df)  # Show the structure of the data
+    
+Run this script from the top with `CTRL+SHIFT+ENTER`. You should get output showing that `df` has 752644 rows and 19 columns.
+
+Now that we've written `dataload.R`, any time we need to work with the entire 2014 and 2019 ACS data, we can simply call `dataload.R` and get the data with one command.
+
+### Calculating Group-Based Summary Statistics
+
+A common task in data analysis is to compute summary statistics for different groups within your data. For example, we may be interested in calculating the average income for college and non-college educated workers. We may further want to break that down by male and female, or by year, or by geographic location. There are many different ways to cut the data, each of which can yield different insights. 
+
+The following script shows an example for how we calculate average income of employed workers by college education, year, and sex, using our ACS data from California in 2014 and 2019.
+
+    rm(list=ls())    # Clear the workspace
+    library(dplyr)   # Load dplyr
+    
+    source("dataload.R")   # Load the data
+    
+    # Keep only employed, working-age adults
+    df <- filter(df, EMPSTAT==1 & AGE>=25 & AGE<=65)
+    
+    # Create a variable for whether the person has bachelors degree or higher
+    df$COLLEGE <- (df$EDUCD>=101 & df$EDUCD<999)
+    
+    # Calculate average income by college education, year, and sex
+    grouped_df <- df %>% 
+      group_by(COLLEGE, YEAR, SEX) %>%
+      summarize(
+        AVERAGE_INCOME = weighted.mean(INCWAGE, PERWT)
+      )
+    
+    # View the table
+    View(grouped_df)
 
 
 
