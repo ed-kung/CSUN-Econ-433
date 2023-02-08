@@ -167,7 +167,7 @@ Now let's walk through the script to see what each line of code does.
     
     The formula for calculating a weighted average is:
     
-    $$\text{Weighted Mean} = \frac{\sum_{i=1}^{N} W_i X_i}{\sum_{i=1}^{N} W_i}$$
+    $$\text{Weighted Mean} = \frac{\sum^{N}_{i=1} W_i X_i}{\sum^{N}_{i=1} W_i}$$
     
     where $W_i$ are the weights (in this case, `PERWT`).
     
