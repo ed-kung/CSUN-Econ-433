@@ -100,7 +100,19 @@ Now let's walk through the script to see what each line of code does.
 
 3. `df <- filter(df, EMPSTAT==1 & AGE>=25 & AGE<=65)` filters the data on employed individuals (`EMPSTAT==1`) and working-age individuals (`AGE>=25` and `AGE<=65`).
 
-4. `df$COLLEGE <- (df$EDUCD>=101 & df$EDUCD<999)` creates a new variable called `COLLEGE`. This variable is a **boolean** variable, meaning it can be either `TRUE` or `FALSE`. The truth value of the variable is defined as being equal to the truth value of `(df$EDUCD>=101 & df$EDUCD<999)`. That is, `COLLEGE` is equal to `TRUE` if `EDUCD` is greater than or equal to 101 and strictly less than 999. The IPUMS codes for the `EDUCD` variable is shown [here](https://usa.ipums.org/usa-action/variables/EDUC#codes_section) (under "detailed codes"). From these codes, we see that a value of 101 indicates that the individual has achieved a bachelor's degree, and that higher values indicate higher levels of education, until the value of 999 which indicates that the data is missing.
+4. `df$COLLEGE <- (df$EDUCD>=101 & df$EDUCD<999)` creates a new variable called `COLLEGE`. This variable is a **boolean** variable, meaning it can be either `TRUE` or `FALSE`. The truth value of `COLLEGE` is defined as being equal to the truth value of `(df$EDUCD>=101 & df$EDUCD<999)`. That is, `COLLEGE` is equal to `TRUE` if `EDUCD` is greater than or equal to 101 and strictly less than 999. The IPUMS codes for the `EDUCD` variable is shown [here](https://usa.ipums.org/usa-action/variables/EDUC#codes_section) (under "detailed codes"). From these codes, we see that a value of 101 indicates that the individual has achieved a bachelor's degree, and that higher values indicate higher levels of education, until the value of 999 which indicates that the data is missing. So to interpret `COLLEGE` in words: it is an indicator for whether the individual has attained a bachelor's degree or higher.
+
+5. The next command is a single command spread out over multiple lines:
+
+        grouped_df <- df %>%
+          group_by(COLLEGE, YEAR, SEX) %>% 
+          summarize(
+            AVERAGE_INCOME = weighted.mean(INCWAGE, PERWT)
+          )
+          
+    There is a lot to talk about in this command, so we will go over it slowly.
+    
+    
 
 
 
