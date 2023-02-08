@@ -167,9 +167,19 @@ Now let's walk through the script to see what each line of code does.
     
     The formula for calculating a weighted average is:
     
-    $$\text{Weighted Mean} = \frac{\sum_{i=1}{N} W_i X_i}{\sum_{i=1}{N} W_i}$$
+    $$\text{Weighted Mean} = \frac{\sum_{i=1}^{N} W_i X_i}{\sum_{i=1}^{N} W_i}$$
     
     where $W_i$ are the weights (in this case, `PERWT`).
+    
+    Because `PERWT` is the number of people a row represents, we can calculate total population by adding up `PERWT`. For example, to calculate total population in California by year, we would use:
+    
+        df %>% 
+        group_by(YEAR) %>% 
+        summarize(
+          TOTAL_POPULATION = sum(PERWT)
+        )
+    
+    
     
     
     
