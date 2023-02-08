@@ -88,9 +88,21 @@ The following script shows an example for how we calculate average income of emp
     # View the table
     View(grouped_df)
 
-You should get output that looks like the following image. What do you notice about the relative income of men and women? How about between the years 2014 and 2019?
+You should get output that looks like the following image. What do you notice about the relative income of the college vs. non-college educated? What do you notice about the differences between men and women? How about between the years 2014 and 2019?
 
 ![screenshot](screenshot1.png)
+
+Now let's walk through the script to see what each line of code does.
+
+1. The first few lines of code are boilerplate. `rm(list=ls())` clears the workspace, which we should do at the start of every new task. `library(dplyr)` loads the required `dplyr` library.
+
+2. `source("dataload.R")` is the script we created to cobble together the four data files into one dataframe.
+
+3. `df <- filter(df, EMPSTAT==1 & AGE>=25 & AGE<=65)` filters the data on employed individuals (`EMPSTAT==1`) and working-age individuals (`AGE>=25` and `AGE<=65`).
+
+4. `df$COLLEGE <- (df$EDUCD>=101 & df$EDUCD<999)` creates a new variable called `COLLEGE`. This variable is a **boolean** variable, meaning it can be either `TRUE` or `FALSE`. The truth value of the variable is defined as being equal to the truth value of `(df$EDUCD>=101 & df$EDUCD<999)`. That is, `COLLEGE` is equal to `TRUE` if `EDUCD` is greater than or equal to 101 and strictly less than 999. The IPUMS codes for the `EDUCD` variable is shown [here](https://usa.ipums.org/usa-action/variables/EDUC#codes_section) (under "detailed codes"). From these codes, we see that a value of 101 indicates that the individual has achieved a bachelor's degree, and that higher values indicate higher levels of education, until the value of 999 which indicates that the data is missing.
+
+
 
 
 
