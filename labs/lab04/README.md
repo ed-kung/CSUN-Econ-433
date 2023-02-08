@@ -167,7 +167,7 @@ Now let's walk through the script to see what each line of code does.
     
     The formula for calculating a weighted average is:
     
-    $$\text{Weighted Mean} = \frac{\sum^{N}_{i=1} W_i X_i}{\sum^{N}_{i=1} W_i}$$
+    $$\text{Weighted Mean} = \frac{\sum W_i X_i}{\sum W_i}$$
     
     where $W_i$ are the weights (in this case, `PERWT`).
     
@@ -179,7 +179,49 @@ Now let's walk through the script to see what each line of code does.
           TOTAL_POPULATION = sum(PERWT)
         )
     
+### dplyr Cheat Sheet 
+
+By now you have learned a number of important data operations in R. It can be difficult to remember how to do everything properly. This is where using a cheat sheet comes in handy. I have found this [cheat sheet](https://www.rstudio.com/wp-content%2Fuploads%2F2015%2F02%2Fdata-wrangling-cheatsheet.pdf%2F) useful for remembering how to perform common tasks.
+
+
+## Assignment
+
+To be dismissed and earn your grade for this lab, you have to create a script that calculates for each `COUNTYFIP` and `YEAR` the (1) total population in the labor force, (2) the unemployment rate, (3) the percent of individuals in the labor force with bachelors' degrees or higher.
+
+Here is the skeleton of a script to get you started:
+
+    rm(list=ls())    # Clear the workspace
+    library(dplyr)   # Load dplyr
     
+    # Load the ACS data
+    
+    # Keep only people in the labor force
+
+    # Create a variable for whether the person is unemployed
+    
+    # Create a variable for whether the person has a bachelors degree or higher
+    
+    # Calculate total population, unemployment rate, and college rate by 
+    # county and year
+    
+    # View the table
+    View(grouped_df)
+
+Hints:
+- Total population can be calculated by summing `PERWT`.
+- You'll need to filter on values for `EMPSTAT`. Use the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/EMPSTAT#codes_section) for reference.
+- To calculate the percent of people who are unemployed or who have bachelor's degrees, you can calculate the weighted mean of a boolean variable.
+
+Once you are done, show me your script and your output to receive your grade, then take the lab quiz.
+
+## Takeaways
+
+- You know how to call a script from another script in R.
+- You can calculate group-based summary statitics in R.
+- You know how to calculate weighted means and percentages.
+- You know how to use the pipe operator in R.
+
+
     
     
     
