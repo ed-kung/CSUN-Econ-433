@@ -136,7 +136,7 @@ Now let's walk through the script to see what each line of code does.
           ...
         )
         
-    `X1`, `X2`, etc., are the variables to define groups by. `STAT1`, `STAT2`, etc., are the names of the summary variables you want to create (you can call them anything). So, for example, to calculate the weighted mean of `INCWAGE` and the median of `AGE` by `SEX` and `YEAR` in our data, we would have used:
+    `X1`, `X2`, etc., are the variables to define groups by. `STAT1`, `STAT2`, etc., are the names of the summary variables you want to create (you can call them anything). For example, to calculate the weighted mean of `INCWAGE` and the median of `AGE` by `SEX` and `YEAR` in our data, we would have used:
     
         df %>%
         group_by(SEX, YEAR) %>% 
@@ -145,7 +145,7 @@ Now let's walk through the script to see what each line of code does.
           BAR = median(AGE)          
         )
     
-    Notice that we can call our summary variables anything we want. In this case, we called the weighted mean of `INCWAGE` `FOO` and we called the median of `AGE` `BAR`.
+    Notice that we can call our summary variables anything we want. In this case, we called `FOO` the weighted mean of `INCWAGE` and we called `BAR` the median of `AGE`.
     
     Going back to our script, our script has:
     
@@ -178,6 +178,10 @@ Now let's walk through the script to see what each line of code does.
         summarize(
           TOTAL_POPULATION = sum(PERWT)
         )
+
+    **Other Statistics**
+    
+    Besides the weighted mean, you can also calculate other statistics like the minimum, maximum, median, standard deviation, etc. The cheat sheet linked to below shows some of the statistics that can be calculated.    
     
 ### dplyr Cheat Sheet 
 
@@ -186,7 +190,11 @@ By now you have learned a number of important data operations in R. It can be di
 
 ## Assignment
 
-To be dismissed and earn your grade for this lab, you have to create a script that calculates for each `COUNTYFIP` and `YEAR` the (1) total population in the labor force, (2) the unemployment rate, (3) the percent of individuals in the labor force with bachelors' degrees or higher.
+To be dismissed and earn your grade for this lab, you have to create a script that calculates for each `COUNTYFIP` and `YEAR`:
+
+1. The total population in the labor force (`POP_LF`)
+2. The unemployment rate (`UNEMP_RATE`)
+3. The percent of individuals in hte labor force with bachelor's degrees or higher (`BA_RATE`)
 
 Here is the skeleton of a script to get you started:
 
