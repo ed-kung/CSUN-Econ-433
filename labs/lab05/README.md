@@ -1,4 +1,4 @@
-# ECON 433 - Lab Session 6
+# ECON 433 - Lab Session 5
 ## Data Visualization
 
 In this lab you will learn how to create some simple charts in R. You will learn about how to create line plots, bar charts, and scatter plots. 
@@ -144,8 +144,11 @@ The following script creates a bar chart showing the average income by field of 
 	# Let R know about missing values for DEGFIELD 
 	df$DEGFIELD[ df$DEGFIELD==0] <- NA
 	
-	# Keep only data from 2019 and people with a valid college degree field 
-	df <- filter(df, YEAR==2019 & ~is.na(DEGFIELD))
+	# Keep only data from 2019 
+	df <- filter(df, YEAR==2019)
+	
+	# Keep only working people with a valid college degree field 
+	df <- filter(df, EMPSTAT==1 & !is.na(DEGFIELD))
 	
 	# Create a new dataframe that contains the average income for each DEGFIELD
 	df_inc_by_degfield <- df %>% 
@@ -156,7 +159,7 @@ The following script creates a bar chart showing the average income by field of 
 
     # Create the bar chart 
     ggplot(data=df_inc_by_degfield) + 
-      geom_col(aes(x=AGE, y=AVG_INCOME)) + 
+      geom_col(aes(x=DEGFIELD, y=AVG_INCOME)) + 
       ggtitle("Average Income by Degree Field, California 2019") +
       xlab("Degree Field") + 
       ylab("Average Wage Income")
