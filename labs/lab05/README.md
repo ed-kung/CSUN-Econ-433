@@ -181,7 +181,14 @@ How can we create a bar chart with the actual value labels? One idea is to creat
 
 The file `DEGFIELD_CODES.csv` contains the necessary information. `DEGFIELD_CODES.csv` has two variables: `DEGFIELD`, which is the numerical code, and `DegreeField`, which is the human-readable label. The first few lines of `DEGFIELD_CODES.csv` are shown below:
 
-![First few lines of DEGFIELD_CODES.csv](screenshot4.png)
+| DEGFIELD | DegreeField                            |
+| -------- | -------------------------------------- |
+| 00       | NA                                     |
+| 11       | Agriculture                            |
+| 13       | Environmental and Natural Resources    |
+| 14       | Architecture                           |
+| 15       | Area, Ethnic, and Civilization Studies |
+| ...      | ...                                    |
 
 Let's now create a bar chart that uses `DegreeField` instead of `DEGFIELD`. To do so, modify the script from the previous section with the following changes:
 
