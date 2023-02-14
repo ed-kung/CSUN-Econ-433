@@ -63,7 +63,7 @@ The following script creates a line plot showing how average income changes with
 	  
 Run the script from the top (`CTRL+SHIFT+ENTER`) and you should see a line plot in the "Plots" window as shown in the screenshot below:
 
-[Screenshot of line plot](screenshot1.png)
+![Screenshot of line plot](screenshot1.png)
 
 Let's walk through each element of this script.
 
@@ -113,9 +113,17 @@ There's a lot more that you can control about the look and feel of the chart. Ho
 
 ### Multiple Color Coded Line Plots 
 
+One of the powerful features of `ggplot2` is that it allows you to quickly and automatically create completed plots. In the example below, we create *two* line plots on the same axis. The first plot shows average income by age for males and the second shows it for females. We don't have to change much of the code to make this happen. Simply take the previous script and make the following changes:
 
-	
-  	
+- Add `df$SEX <- as.factor(df$SEX)` after `source("dataload.R")`. This tells R to treat `SEX` as a factor variable.
+
+- Change `group_by(AGE)` to `group_by(SEX, AGE)` so that we are creating a dataframe that calculates average income by sex and age.
+
+- Change `geom_line(aes(x=AGE, y=AVG_INCOME))` to `geom_line(aes(x=AGE, y=AVG_INCOME, color=SEX))`. When you specify a variable name for `color` in `aes`, R automatically knows to create separate color coded plots, one for each value of the variable you told it to color by.
+
+Run your modified script from the top using `CTRL+SHIFT+ENTER`. You should see the following result:
+
+
 
 	  
 ## Takeaways
