@@ -16,11 +16,12 @@ For today's lab you will need the following files. They should already be upload
 - `IPUMS_ACS2019_CA_1.csv`
 - `IPUMS_ACS2019_CA_2.csv`
 
-You will also need a new file:
+You will also need two new files:
 
 - `DEGFIELD_CODES.csv`
+- `OCC_CODES.csv`
 
-Download this file from Canvas and upload it to the cloud.
+Download these files from Canvas and upload it to the cloud.
 
 For today's lab you will also need the packages `dplyr`, `ggplot2`, and `scales`. `dplyr` should already be installed from previous labs. If it isn't, install it with `install.packages("dplyr")`. Also install `ggplot2` and `scales` with `install.packages("ggplot2")` and `install.packages("scales")`. `ggplot2` is the standard library for creating charts in R. `scales` adds some useful functionality for making charts prettier.
 
@@ -273,6 +274,41 @@ Modify the previous script in the following ways:
 Run the new script. You should see the following result:
 
 ![Scatter plot with population for marker size](screenshot7.png)
+
+## Assignment
+
+To be dismissed and earn your grade for this lab, you will create a script that does the following:
+
+- For the working age population (25 to 65) that is in the labor force, create a horizontal bar chart showing the unemployment rate by field of college degree. Use 2019 data only and make sure to use `DegreeField` instead of `DEGFIELD` so the chart is human-readable.
+
+You can use the following incomplete script to get started:
+
+    rm(list=ls())    # Clear the workspace
+	library(dplyr)   # Load the required libraries
+	library(ggplot2)
+	library(scales)
+	
+	# Load the data
+	source("dataload.R")
+	
+	# Keep only 2019 data
+	# YOUR CODE HERE
+	
+	# Keep only working age people in the labor force
+	# YOUR CODE HERE
+	
+	# Create a variable indicating the person is unemployed
+	# YOUR CODE HERE
+	
+	# Create a dataframe summarizing unemployment rate by degree field
+	# YOUR CODE HERE
+        	  
+	# Merge on degree field labels
+	# YOUR CODE HERE
+	
+	# Create the bar chart
+    # YOUR CODE HERE	
+
 	  
 ## Takeaways
 
