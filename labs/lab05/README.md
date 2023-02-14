@@ -125,6 +125,42 @@ Run your modified script from the top using `CTRL+SHIFT+ENTER`. You should see t
 
 ![Screenshot of multiple color coded line pltos](screenshot2.png)
 
+### Bar Charts
+
+A bar chart shows the relationship between a numerical variable and a categorical variable. Example: Average income for each type of college degree. Average income is numeric but type of college degree is categorical.
+
+The following script creates a bar chart showing the average income by field of college degree (`DEGFIELD`).
+
+    rm(list=ls())    # Clear the workspace
+	library(dplyr)   # Load libraries
+	library(ggplot2) 
+	
+	# Load the data
+	source("dataload.R")  
+	
+	# Let R know about missing values for INCWAGE 
+	df$INCWAGE[ df$INCWAGE>=999998] <- NA
+	
+	# Let R know about missing values for DEGFIELD 
+	df$DEGFIELD[ df$DEGFIELD==0] <- NA
+	
+	# Keep only data from 2019 and people with a valid college degree field 
+	df <- filter(df, YEAR==2019 & ~is.na(DEGFIELD))
+	
+	# Create a new dataframe that contains the average income for each DEGFIELD
+	df_inc_by_degfield <- df %>% 
+	  group_by(DEGFIELD) %>% 
+	  summarize(
+	    AVG_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE)
+	  )
+
+    # Create the bar chart 
+    ggplot(data=df_inc_by_degfield) + 
+      geom_col(aes(x=AGE, y=AVG_INCOME)) + 
+      ggtitle("Average Income by Degree Field, California 2019") +
+      xlab("Degree Field") + 
+      ylab("Average Wage Income")
+
 
 	  
 ## Takeaways
