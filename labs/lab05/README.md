@@ -219,36 +219,36 @@ Scatter plots are used to visualize each observation in a dataset along two vari
 To create a scatter plot, call `geom_point` from within a `ggplot` code block. Run the following script to create a scatter plot that shows for each county in our data the share of the employed working-age population with college degrees and the average income of the employed working-age population:
 
     rm(list=ls())    # Clear the workspace
-	library(dplyr)   # Load libraries
-	library(ggplot2) 
-	library(scales)
-	
-	# Load the data
-	source("dataload.R")  
-	
-	# Let R know about missing values for INCWAGE 
-	df$INCWAGE[ df$INCWAGE>=999998] <- NA
-	
-	# Keep only data from 2019 
-	df <- filter(df, YEAR==2019)
-	
-	# Keep only employed working age adults
-	df <- filter(df, EMPSTAT==1 & AGE>=25 & AGE<=65)
-	
-	# Create a variable indicating the person has a college education
-	df$COLLEGE <- df$EDUCD>=101 & df$EDUCD<=116
-	
-	# Create a new dataframe that contains the average income and college share for each county
-	df_counties <- df %>% 
-	  group_by(COUNTYFIP) %>% 
-	  summarize(
-	    AVG_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE), 
-		COLLEGE_SHARE = weighted.mean(COLLEGE, PERWT, na.rm=TRUE)
-	  )
-
+    library(dplyr)   # Load libraries
+    library(ggplot2) 
+    library(scales)
+    
+    # Load the data
+    source("dataload.R")  
+    
+    # Let R know about missing values for INCWAGE 
+    df$INCWAGE[ df$INCWAGE>=999998] <- NA
+    
+    # Keep only data from 2019 
+    df <- filter(df, YEAR==2019)
+    
+    # Keep only employed working age adults
+    df <- filter(df, EMPSTAT==1 & AGE>=25 & AGE<=65)
+    
+    # Create a variable indicating the person has a college education
+    df$COLLEGE <- df$EDUCD>=101 & df$EDUCD<=116
+    
+    # Create a new dataframe that contains the average income and college share for each county
+    df_counties <- df %>% 
+      group_by(COUNTYFIP) %>% 
+      summarize(
+        AVG_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE), 
+        COLLEGE_SHARE = weighted.mean(COLLEGE, PERWT, na.rm=TRUE)
+      )
+    
     # Create the scatter plot
     ggplot(data=df_counties) + 
-	  geom_point(aes(x=COLLEGE_SHARE, y=AVERAGE_INCOME)) + 
+	  geom_point(aes(x=COLLEGE_SHARE, y=AVG_INCOME)) + 
       ggtitle("Average Income vs. College Share, California Counties 2019") +
       xlab("College Share") + 
       ylab("Average Income") + 
@@ -258,11 +258,26 @@ You should see a result like this:
 
 ![Scatter plot](screenshot6.png)
 
+The scatter plot shows a clear positive relationship between college share and the average income across counties.
 
+### Controlling the Size of the Marker
 
+In scatter plots, the size of the dot can be used to show additional information. For example, we can use the size of the dot to show the county's population.
+
+Modify the previous script in the following ways:
+
+- Add `POPULATION = sum(PERWT)` to the summary statistics to calculate.
+
+- Change `geom_point(aes(x=COLLEGE_SHARE, y=AVG_INCOME))` to `geom_point(aes(x=COLLEGE_SHARE, y=AVG_INCOME, size=POPULATION))`. This tells R to use `POPULATION` for the marker size in the scatter plot.
+
+Run the new script. You should see the following result:
+
+![Scatter plot with population for marker size](screenshot7.png)
 	  
 ## Takeaways
 
 - You can perform indexing operations in R. 
 - You can create line plots, bar charts, and scatter plots in R. 
-	
+- You can create multiple color coded line plots.
+- You can create both horizontal and vertical bar charts.
+- You can control the marker size of a scatter plot.	
