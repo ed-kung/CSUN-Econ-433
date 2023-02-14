@@ -132,7 +132,7 @@ Run your modified script from the top using `CTRL+SHIFT+ENTER`. You should see t
 
 A bar chart shows the relationship between a numerical variable and a categorical variable. Example: Average income for each type of college degree. Average income is numeric but type of college degree is categorical.
 
-The following script creates a bar chart showing the average income by field of college degree (`DEGFIELD`).
+The following script creates a bar chart showing the average income by field of college degree (`DEGFIELD`). To create a bar chart, we call `geom_col` from within a `ggplot` code block.
 
     rm(list=ls())    # Clear the workspace
 	library(dplyr)   # Load libraries
@@ -171,18 +171,45 @@ The following script creates a bar chart showing the average income by field of 
 
 Run the script from the top and you should see the following chart:
 
+![Screenshot of bar chart](screenshot3.png)
 
-### Merging on Value Labels
+### Improving the Bar Chart
 
 Unfortunately, the chart is not very useful because the `DEGFIELD` values are still using their numerical codes! If we wanted to present this chart in an actual meeting, we would have to label the chart with `DEGFIELD`'s actual value labels as given in the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/DEGFIELD#codes_section). 
 
 How can we create a bar chart with the actual value labels? One idea is to create a new variable that contains the actual value labels and to use that in the bar chart instead of the numerical codes. But how can we create that new variable? One idea is to merge our current data to a dataset containing both the value code and the value label, using `DEGFIELD` as the merging key.
 
-The file `DEGFIELD_CODES.csv` contains the necessary information. The first few lines of `DEGFIELD_CODES.csv` are shown below:
+The file `DEGFIELD_CODES.csv` contains the necessary information. `DEGFIELD_CODES.csv` has two variables: `DEGFIELD`, which is the numerical code, and `DegreeField`, which is the human-readable label. The first few lines of `DEGFIELD_CODES.csv` are shown below:
 
 ![First few lines of DEGFIELD_CODES.csv](screenshot4.png)
 
-`DEGFIELD_CODES.csv` has two variables: `DEGFIELD`, which is the numerical code, and `DegreeField`, which is the human-readable label. Let's now create a bar chart that uses `DegreeField` instead of `DEGFIELD`. Run the following script from the top:
+Let's now create a bar chart that uses `DegreeField` instead of `DEGFIELD`. To do so, modify the script from the previous section with the following changes:
+
+- Place 
+    
+	    # Merge on the value labels for DEGFIELD
+	    DEGFIELD_CODES <- read.csv("DEGFIELD_CODES.csv") 
+	    df_inc_by_degfield <- inner_join(df_inc_by_degfield, DEGFIELD_CODES, by=c("DEGFIELD"))
+	
+    in between the code block that calculates the group-based averages and the code block that creates the bar chart. This merges on the `DegreeField` human-readable label for each value of `DEGFIELD`.
+	
+- Change `geom_col(aes(x=DEGFIELD, y=AVG_INCOME))` to `geom_col(aes(x=DegreeField, y=AVG_INCOME))`. This makes it so that our bar chart uses the human-readable variable `DegreeField` instead of the numerical codes `DEGFIELD`.
+
+Now run the script from the top. Unfortunately, this still isn't useful because all the labels are smushed together! When you want to make a bar chart with a lot of categories, it's helpful to make a horizontal bar chart instead of a vertical bar chart. To do this, modify your code as follows:
+
+- Add `+ coord_flip()` to the end of your bar chart code block. 
+
+Run the script from the top. Your bar chart should now look like this:
+
+![Screenshot of improved bar chart](screenshot5.png)
+
+Success! This bar chart shows us the average wage income for employed people based on the degree they got in college.
+
+### Scatter Plots
+
+Scatter plots are used to visualize each observation in a dataset along two variables. Scatter plots are good for finding patterns in the data, but can get messy if there are too many points.
+
+To create a scatter plot, call `geom_point` from within a `ggplot` code block. Run the following script to create a scatter plot that shows for each county in our data the share of the employed working-age population with college degrees and the average income of the employed working-age population:
 
     rm(list=ls())    # Clear the workspace
 	library(dplyr)   # Load libraries
@@ -195,33 +222,35 @@ The file `DEGFIELD_CODES.csv` contains the necessary information. The first few 
 	# Let R know about missing values for INCWAGE 
 	df$INCWAGE[ df$INCWAGE>=999998] <- NA
 	
-	# Let R know about missing values for DEGFIELD 
-	df$DEGFIELD[ df$DEGFIELD==0] <- NA
-	
 	# Keep only data from 2019 
 	df <- filter(df, YEAR==2019)
 	
-	# Keep only working people with a valid college degree field 
-	df <- filter(df, EMPSTAT==1 & !is.na(DEGFIELD))
+	# Keep only employed working age adults
+	df <- filter(df, EMPSTAT==1 & AGE>=25 & AGE<=65)
 	
-	# Create a new dataframe that contains the average income for each DEGFIELD
-	df_inc_by_degfield <- df %>% 
-	  group_by(DEGFIELD) %>% 
+	# Create a variable indicating the person has a college education
+	df$COLLEGE <- df$EDUCD>=101 & df$EDUCD<=116
+	
+	# Create a new dataframe that contains the average income and college share for each county
+	df_counties <- df %>% 
+	  group_by(COUNTYFIP) %>% 
 	  summarize(
-	    AVG_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE)
+	    AVG_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE), 
+		COLLEGE_SHARE = weighted.mean(COLLEGE, PERWT, na.rm=TRUE)
 	  )
 
-    # Merge on the value labels for DEGFIELD
-	DEGFIELD_CODES <- read.csv("DEGFIELD_CODES.csv") 
-	df_inc_by_degfield <- inner_join(df_inc_by_degfield, DEGFIELD_CODES, by=c("DEGFIELD"))
-
-    # Create the bar chart 
-    ggplot(data=df_inc_by_degfield) + 
-      geom_col(aes(x=DegreeField, y=AVG_INCOME)) + 
-      ggtitle("Average Income by Degree Field, California 2019") +
-      xlab("Degree Field") + 
-      ylab("Average Wage Income") + 
+    # Create the scatter plot
+    ggplot(data=df_counties) + 
+	  geom_point(aes(x=COLLEGE_SHARE, y=AVERAGE_INCOME)) + 
+      ggtitle("Average Income vs. College Share, California Counties 2019") +
+      xlab("College Share") + 
+      ylab("Average Income") + 
 	  scale_y_continuous(labels=comma)
+
+You should see a result like this:
+
+![Scatter plot](screenshot6.png)
+
 
 
 	  
