@@ -194,7 +194,7 @@ To be dismissed and earn your grade for this lab, you have to create a script th
 
 1. The total population in the labor force (`POP_LF`)
 2. The unemployment rate (`UNEMP_RATE`)
-3. The percent of individuals in hte labor force with bachelor's degrees or higher (`BA_RATE`)
+3. The percent of individuals in the labor force with bachelor's degrees or higher (`BA_RATE`)
 
 Here is the skeleton of a script to get you started:
 
