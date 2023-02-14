@@ -109,7 +109,7 @@ Let's walk through each element of this script.
 	
 	The next element is the line plot itself: `geom_line(aes(x=AGE, y=AVG_INCOME))`. Calling `geom_line` initializes a line plot. `aes(x=AGE, y=AVG_INCOME)` is passed to `geom_line` as an argument, and it tells `geom_line` to use the values for `AGE` on the X axis and the values for `AVG_INCOME` on the Y axis. The dataframe you passed into `ggplot` must contain these variables for it to work. 
 	
-	The next elements are decorative elements. `ggtitle` lets us tell R what to use for the title of the plot. `xlab` tells R what to use for the X axis label and `ylab` tells R what to use for the Y axis label. You can play around with these commands to change the labels as you desire.
+	The next elements are decorative elements. `ggtitle` lets us tell R what to use for the title of the plot. `xlab` tells R what to use for the X axis label and `ylab` tells R what to use for the Y axis label. `scale_y_continuous` controls the look and feel of the Y axis scale. In this case, we are telling it to format the numbers with a comma. You can play around with these commands to change the labels as you desire.
 	
 There's a lot more that you can control about the look and feel of the chart. However, the example above is enough for you to make basic line plots in R. 
 
@@ -164,7 +164,8 @@ The following script creates a bar chart showing the average income by field of 
       geom_col(aes(x=DEGFIELD, y=AVG_INCOME)) + 
       ggtitle("Average Income by Degree Field, California 2019") +
       xlab("Degree Field") + 
-      ylab("Average Wage Income")
+      ylab("Average Wage Income") + 
+	  scale_y_continuous(labels=comma)
 
 
 	  
