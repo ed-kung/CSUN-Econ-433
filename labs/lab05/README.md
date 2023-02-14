@@ -57,9 +57,11 @@ The following script creates a line plot showing how average income changes with
     # Plot average income by age 
     ggplot(data=df_inc_by_age) + 
       geom_line(aes(x=AGE, y=AVG_INCOME)) + 
-      ggtitle("Average Income by Age, California 2019") 
+      ggtitle("Average Income by Age, California 2019") +
       xlab("Age") + 
       ylab("Average Wage Income")
+	  
+	
 
 	  
 	
