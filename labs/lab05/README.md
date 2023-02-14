@@ -22,7 +22,7 @@ You will also need a new file:
 
 Download this file from Canvas and upload it to the cloud.
 
-For today's lab you will also need the packages `dplyr` and `ggplot2`. `dplyr` should already be installed from previous labs. If it isn't, install it with `install.packages("dplyr")`. Also install `ggplot2` with `install.packages("ggplot2")`. `ggplot2` is the standard library for creating charts in R.
+For today's lab you will also need the packages `dplyr`, `ggplot2`, and `scales`. `dplyr` should already be installed from previous labs. If it isn't, install it with `install.packages("dplyr")`. Also install `ggplot2` and `scales` with `install.packages("ggplot2")` and `install.packages("scales")`. `ggplot2` is the standard library for creating charts in R. `scales` adds some useful functionality for making charts prettier.
 
 Finally, you should have the script `dataload.R` from Lab 04.
 
@@ -37,6 +37,7 @@ The following script creates a line plot showing how average income changes with
     rm(list=ls())    # Clear the workspace
 	library(dplyr)   # Load libraries
 	library(ggplot2) 
+	library(scales)
 	
 	# Load the data
 	source("dataload.R")  
@@ -59,7 +60,8 @@ The following script creates a line plot showing how average income changes with
       geom_line(aes(x=AGE, y=AVG_INCOME)) + 
       ggtitle("Average Income by Age, California 2019") +
       xlab("Age") + 
-      ylab("Average Wage Income")
+      ylab("Average Wage Income") + 
+	  scale_y_continuous(labels=comma)
 	  
 Run the script from the top (`CTRL+SHIFT+ENTER`) and you should see a line plot in the "Plots" window as shown in the screenshot below:
 
