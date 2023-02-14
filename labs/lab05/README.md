@@ -61,7 +61,65 @@ The following script creates a line plot showing how average income changes with
       xlab("Age") + 
       ylab("Average Wage Income")
 	  
+Run the script from the top (`CTRL+SHIFT+ENTER`) and you should see a line plot in the "Plots" window as shown in the screenshot below:
+
+[Screenshot of line plot](screenshot1.png)
+
+Let's walk through each element of this script.
+
+1. The first few lines of code are boilerplate. We clear the workspace, load the required libraries (`dplyr` and `ggplot2`), and load the data using `dataload.R` which we wrote in Lab 04.
+
+2. The next line of code is `df$INCWAGE[ df$INCWAGE>=999998] <- NA`. This line of code is rather complex to understand, so let's walk through it slowly.
+
+    Overall, the purpose of this line of code is to tell R how to deal with missing values for the variable `INCWAGE`. The [IPUMS codebook](https://usa.ipums.org/usa-action/variables/INCWAGE#codes_section) tells us that when `INCWAGE` is 999998 or 999999, that means `INCWAGE` is either not applicable or unknown. Since we are going to be computing the average income by age, we don't want to include these values of 999998 or 999999 in our averages. We need to tell R that these values shouldn't be treated as numbers, but rather missing values.
+
+    `df$INCWAGE[ df$INCWAGE>=999998] <- NA` accomplishes this. First, let's look at `df$INCWAGE[ df$INCWAGE>=999998]`. This part of the code uses the pattern `df$X[CONDITION]`, which selects only the rows of `df$X` for which `CONDITION` is true. So `df$INCWAGE[df$INCWAGE>=999998]` selects the rows of `df$INCWAGE` for which `df$INCWAGE>=999998`. If you typed `length(df$INCWAGE[df$INCWAGE>=999998])` in the console, you would get an output of `66593` showing that there are 66,593 rows with `INCWAGE>=999998`. 
 	
+	`df$INCWAGE[df$INCWAGE>=999998]` selects the rows of `df$INCWAGE` for which `df$INCWAGE>=999998`. Then, the part of the code that says `<- NA` assigns the value of `NA` to those rows. `NA` is the symbol that R uses to denote missing values. We therefore replace any values of `999998` and `999999` in `INCWAGE` with the symbol `NA`. Later, when we compute the group-based averages, we can tell R to ignore the missing values. 
+	
+	The practice of selecting certain rows of a variable is known as **indexing**. It is useful when you want to apply an operation to only a subset of the rows, but you don't want to filter the entire dataset. 
+	
+3. The next line of code, `df <- filter(df, YEAR==2019)` keeps only the data from 2019.
+
+4. The next few lines of code are:
+
+        df_inc_by_age <- df %>% 
+		  group_by(AGE) %>% 
+		  summarize(
+		    AVG_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE)
+		  ) 
+		  
+    This command creates a new dataframe called `df_inc_by_age` where `AGE` is the primary key and there's a column called `AVG_INCOME` which is equal to the weighted mean of `INCWAGE` averaged over people of a specific age. The `na.rm=TRUE` argument in `weighted.mean` tells R to ignore all values of `NA` when calculating the weighted mean of `INCWAGE`. 
+	
+5. The last few lines of code are:
+
+        ggplot(data=df_inc_by_age) + 
+		  geom_line(aes(x=AGE, y=AVG_INCOME)) + 
+          ggtitle("Average Income by Age, California 2019") +
+          xlab("Age") + 
+          ylab("Average Wage Income")
+	
+	This command makes the line plot and displays it to the "Plots" pane. Let's take a look at each element of this command:
+
+    `ggplot(data=df_inc_by_age)`: In `ggplot2`, plots are started by calling `ggplot` with the dataframe containing the data to plot as the `data` argument. This initializes an empty chart. 
+	
+	To add elements to the chart, we use the `+` symbol. We can start a new line after the `+` symbol. R knows to look for the next element on the next line.
+	
+	The next element is the line plot itself: `geom_line(aes(x=AGE, y=AVG_INCOME))`. Calling `geom_line` initializes a line plot. `aes(x=AGE, y=AVG_INCOME)` is passed to `geom_line` as an argument, and it tells `geom_line` to use the values for `AGE` on the X axis and the values for `AVG_INCOME` on the Y axis. The dataframe you passed into `ggplot` must contain these variables for it to work. 
+	
+	The next elements are decorative elements. `ggtitle` lets us tell R what to use for the title of the plot. `xlab` tells R what to use for the X axis label and `ylab` tells R what to use for the Y axis label. You can play around with these commands to change the labels as you desire.
+	
+There's a lot more that you can control about the look and feel of the chart. However, the example above is enough for you to make basic line plots in R. 
+
+### Multiple Color Coded Line Plots 
+
+
+	
+  	
 
 	  
+## Takeaways
+
+- You can perform indexing operations in R. 
+- You can create line plots, bar charts, and scatter plots in R. 
 	
