@@ -69,7 +69,7 @@ Run the script from the top (`CTRL+SHIFT+ENTER`) and you should see a line plot 
 
 Let's walk through each element of this script.
 
-1. The first few lines of code are boilerplate. We clear the workspace, load the required libraries (`dplyr` and `ggplot2`), and load the data using `dataload.R` which we wrote in Lab 04.
+1. The first few lines of code are boilerplate. We clear the workspace, load the required libraries, and load the data using `dataload.R` which we wrote in Lab 04.
 
 2. The next line of code is `df$INCWAGE[ df$INCWAGE>=999998] <- NA`. This line of code is rather complex to understand, so let's walk through it slowly.
 
@@ -99,7 +99,8 @@ Let's walk through each element of this script.
 		  geom_line(aes(x=AGE, y=AVG_INCOME)) + 
           ggtitle("Average Income by Age, California 2019") +
           xlab("Age") + 
-          ylab("Average Wage Income")
+          ylab("Average Wage Income") + 
+		  scale_y_continuous(labels=comma)
 	
 	This command makes the line plot and displays it to the "Plots" pane. Let's take a look at each element of this command:
 
