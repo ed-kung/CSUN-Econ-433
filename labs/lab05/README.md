@@ -123,6 +123,7 @@ One of the powerful features of `ggplot2` is that it allows you to quickly and a
 
 Run your modified script from the top using `CTRL+SHIFT+ENTER`. You should see the following result:
 
+![Screenshot of multiple color coded line pltos](screenshot2.png)
 
 
 	  
