@@ -137,6 +137,7 @@ The following script creates a bar chart showing the average income by field of 
     rm(list=ls())    # Clear the workspace
 	library(dplyr)   # Load libraries
 	library(ggplot2) 
+	library(scales)
 	
 	# Load the data
 	source("dataload.R")  
@@ -163,6 +164,60 @@ The following script creates a bar chart showing the average income by field of 
     # Create the bar chart 
     ggplot(data=df_inc_by_degfield) + 
       geom_col(aes(x=DEGFIELD, y=AVG_INCOME)) + 
+      ggtitle("Average Income by Degree Field, California 2019") +
+      xlab("Degree Field") + 
+      ylab("Average Wage Income") + 
+	  scale_y_continuous(labels=comma)
+
+Run the script from the top and you should see the following chart:
+
+
+### Merging on Value Labels
+
+Unfortunately, the chart is not very useful because the `DEGFIELD` values are still using their numerical codes! If we wanted to present this chart in an actual meeting, we would have to label the chart with `DEGFIELD`'s actual value labels as given in the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/DEGFIELD#codes_section). 
+
+How can we create a bar chart with the actual value labels? One idea is to create a new variable that contains the actual value labels and to use that in the bar chart instead of the numerical codes. But how can we create that new variable? One idea is to merge our current data to a dataset containing both the value code and the value label, using `DEGFIELD` as the merging key.
+
+The file `DEGFIELD_CODES.csv` contains the necessary information. The first few lines of `DEGFIELD_CODES.csv` are shown below:
+
+![First few lines of DEGFIELD_CODES.csv](screenshot4.png)
+
+`DEGFIELD_CODES.csv` has two variables: `DEGFIELD`, which is the numerical code, and `DegreeField`, which is the human-readable label. Let's now create a bar chart that uses `DegreeField` instead of `DEGFIELD`. Run the following script from the top:
+
+    rm(list=ls())    # Clear the workspace
+	library(dplyr)   # Load libraries
+	library(ggplot2) 
+	library(scales)
+	
+	# Load the data
+	source("dataload.R")  
+	
+	# Let R know about missing values for INCWAGE 
+	df$INCWAGE[ df$INCWAGE>=999998] <- NA
+	
+	# Let R know about missing values for DEGFIELD 
+	df$DEGFIELD[ df$DEGFIELD==0] <- NA
+	
+	# Keep only data from 2019 
+	df <- filter(df, YEAR==2019)
+	
+	# Keep only working people with a valid college degree field 
+	df <- filter(df, EMPSTAT==1 & !is.na(DEGFIELD))
+	
+	# Create a new dataframe that contains the average income for each DEGFIELD
+	df_inc_by_degfield <- df %>% 
+	  group_by(DEGFIELD) %>% 
+	  summarize(
+	    AVG_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE)
+	  )
+
+    # Merge on the value labels for DEGFIELD
+	DEGFIELD_CODES <- read.csv("DEGFIELD_CODES.csv") 
+	df_inc_by_degfield <- inner_join(df_inc_by_degfield, DEGFIELD_CODES, by=c("DEGFIELD"))
+
+    # Create the bar chart 
+    ggplot(data=df_inc_by_degfield) + 
+      geom_col(aes(x=DegreeField, y=AVG_INCOME)) + 
       ggtitle("Average Income by Degree Field, California 2019") +
       xlab("Degree Field") + 
       ylab("Average Wage Income") + 
