@@ -217,7 +217,7 @@ Here is the skeleton of a script to get you started:
 
 Hints:
 - Total population can be calculated by summing `PERWT`.
-- You'll need to filter on values for `EMPSTAT`. Use the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/EMPSTAT#codes_section) for reference.
+- To get people in the labor force, you'll need to filter on values for `EMPSTAT`. Use the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/EMPSTAT#codes_section) for reference.
 - To calculate the percent of people who are unemployed or who have bachelor's degrees, you can calculate the weighted mean of a boolean variable.
 
 Once you are done, show me your script and your output to receive your grade, then take the lab quiz.
