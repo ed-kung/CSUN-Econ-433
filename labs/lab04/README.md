@@ -202,22 +202,27 @@ Here is the skeleton of a script to get you started:
     library(dplyr)   # Load dplyr
     
     # Load the ACS data
+	# YOUR CODE HERE
     
     # Keep only people in the labor force
+	# YOUR CODE HERE
 
     # Create a variable for whether the person is unemployed
+	# YOUR CODE HERE
     
     # Create a variable for whether the person has a bachelors degree or higher
+	# YOUR CODE HERE
     
     # Calculate total population, unemployment rate, and college rate by 
     # county and year
+	group_df <- YOUR_CODE_HERE
     
     # View the table
     View(grouped_df)
 
 Hints:
 - Total population can be calculated by summing `PERWT`.
-- To get people in the labor force, you'll need to filter on values for `EMPSTAT`. Use the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/EMPSTAT#codes_section) for reference.
+- To get people in the labor force, you'll need to filter on values for `EMPSTAT`. Use the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/EMPSTAT#codes_section) for reference. To filter on `EMPSTAT=1` or `EMPSTAT=2` you can use: `EMPSTAT==1 | EMPSTAT==2`.
 - To calculate the percent of people who are unemployed or who have bachelor's degrees, you can calculate the weighted mean of a boolean variable.
 
 Once you are done, show me your script and your output to receive your grade, then take the lab quiz.
