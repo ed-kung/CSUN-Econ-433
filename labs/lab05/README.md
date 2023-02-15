@@ -279,7 +279,7 @@ Run the new script. You should see the following result:
 
 To be dismissed and earn your grade for this lab, you will create a script that does the following:
 
-- For the working age population (25 to 65) that is in the labor force, create a horizontal bar chart showing the unemployment rate by field of college degree. Use 2019 data only and make sure to use `DegreeField` instead of `DEGFIELD` so the chart is human-readable.
+- For the working age population (25 to 65) that is in the labor force, create a horizontal bar chart showing the unemployment rate by field of college degree. Use 2019 data only and make sure to use `DegreeField` instead of `DEGFIELD` so the chart is human-readable. Make sure the title and axes are labeled appropriately.
 
 You can use the following incomplete script to get started:
 
@@ -309,6 +309,7 @@ You can use the following incomplete script to get started:
 	# Create the bar chart
     # YOUR CODE HERE	
 
+Show me your code and output and take the lab quiz to be dismissed.
 	  
 ## Takeaways
 
