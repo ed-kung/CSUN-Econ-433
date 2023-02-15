@@ -48,12 +48,12 @@ The purpose of saving `dataload.R` as its own script is that we can now re-use t
 
 The purpose of having `dataload.R` as its own script is that we can now re-use this procedure in other scripts without having to re-write it each time. To call a script from another script, we use the command `source("<NAME OF SCRIPT>")`. 
 
-Try it out by starting a **new** script, as follows. This new script will call `dataload.R`:
+Try it out by starting a **new** script, as follows: 
 
     rm(list=ls())  # Clear the workspace
     library(dplyr) # Load dplyr
     
-    source("dataload.R")  # Load the data
+    source("dataload.R")  # Run the script called dataload.R
     
     str(df)  # Show the structure of the data
     
@@ -128,7 +128,7 @@ Now let's walk through the script to see what each line of code does.
     
     Now let's talk about `summarize`. `summarize` is a command that takes a grouped dataframe as input, then calculates user-defined summary statistics for each of the defined groups. The syntax is:
     
-        df %>% 
+        grouped_df <- df %>% 
         group_by(X1, X2, ...) %>% 
         summarize(
           STAT1 = function(...), 
@@ -138,7 +138,7 @@ Now let's walk through the script to see what each line of code does.
         
     `X1`, `X2`, etc., are the variables to define groups by. `STAT1`, `STAT2`, etc., are the names of the summary variables you want to create (you can call them anything). For example, to calculate the weighted mean of `INCWAGE` and the median of `AGE` by `SEX` and `YEAR` in our data, we would have used:
     
-        df %>%
+        grouped_df <- df %>%
         group_by(SEX, YEAR) %>% 
         summarize(
           FOO = weighted.mean(INCWAGE, PERWT), 
@@ -173,7 +173,7 @@ Now let's walk through the script to see what each line of code does.
     
     Because `PERWT` is the number of people a row represents, we can calculate total population by adding up `PERWT`. For example, to calculate total population in California by year, we would use:
     
-        df %>% 
+        grouped_df <- df %>% 
         group_by(YEAR) %>% 
         summarize(
           TOTAL_POPULATION = sum(PERWT)
@@ -215,7 +215,6 @@ Here is the skeleton of a script to get you started:
     
     # Calculate total population, unemployment rate, and college rate by 
     # county and year
-	group_df <- YOUR_CODE_HERE
     
     # View the table
     View(grouped_df)
