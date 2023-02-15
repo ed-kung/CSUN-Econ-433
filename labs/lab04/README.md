@@ -38,7 +38,7 @@ Create a new script that contains the following code:
     # Clean up no longer needed dataframes
     rm(df2014_1, df2014_2, df2014, df2019_1, df2019_2, df2019)
     
-Save this script as `dataload.R`.
+Save this script as `dataload.R`. You do **not** need to execute the script at this time.
 
 `dataload.R` is a script that loads the entire 2014 and 2019 ACS data and puts it in a dataframe called `df`. The last line of the script removes the temporary dataframes that we used to create `df`. Since we won't be needing them after creating `df`, we remove them to keep our working environment tidy. 
 
