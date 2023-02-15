@@ -48,7 +48,7 @@ The purpose of saving `dataload.R` as its own script is that we can now re-use t
 
 The purpose of having `dataload.R` as its own script is that we can now re-use this procedure in other scripts without having to re-write it each time. To call a script from another script, we use the command `source("<NAME OF SCRIPT>")`. 
 
-Try it out with the following script, which calls `dataload.R`:
+Try it out by starting a **new** script, as follows. This new script will call `dataload.R`:
 
     rm(list=ls())  # Clear the workspace
     library(dplyr) # Load dplyr
