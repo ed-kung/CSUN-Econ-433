@@ -6,6 +6,8 @@ In this directory you will find all the labs for my Econ 433 Public Economics co
 
 If you run into an error in your code, check the following before asking me for help:
 
+- Check the error log. It contains helpful information about the type of error you ran into.
+
 - Check for spelling and capitalization errors, especially in names of variables or files.
 
 - Check that your parentheses are closed. Every open parenthesis should be matched with a closed parenthesis.
