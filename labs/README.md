@@ -4,6 +4,8 @@ In this directory you will find all the labs for my Econ 433 Public Economics co
 
 ## Debug Checklist
 
+*"A computer is like a mischievous genie. It will always give you exactly what you ask for, but not always what you want."*
+
 If you run into an error in your code, check the following before asking me for help:
 
 - Check the error log. It contains helpful information about the type of error you ran into.
