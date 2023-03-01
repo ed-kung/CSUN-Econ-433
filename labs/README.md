@@ -4,7 +4,7 @@ In this directory you will find all the labs for my Econ 433 Public Economics co
 
 ## Debug Checklist
 
-*"A computer is like a mischievous genie. It will always give you exactly what you ask for, but not always what you want."*
+*"A computer is like a mischievous genie. It always gives you exactly what you ask for, but not always what you want."*
 
 If you run into an error in your code, check the following before asking me for help:
 
@@ -16,7 +16,9 @@ If you run into an error in your code, check the following before asking me for 
 
 - Check that your quotation marks are closed. Every open quotation mark should be matched with a closed quotation mark.
 
-- Check that you are referencing the correct names of objects in your code. For example, the following code contains an error because `df` was referenced before it was assigned. 
+- Check that you aren't missing commas in separating any lists or function arguments.
+
+- Check that you are referencing the correct names of objects in your code. For example, the following code contains an error because the dataframe was named `data` but then later `df` is referenced. 
 
         data <- read.csv("data.csv")
         df <- filter(df, EMPSTAT==1)
