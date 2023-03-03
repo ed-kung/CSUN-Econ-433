@@ -17,7 +17,17 @@ $$Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \epsilon$$
 
 In this model, the outcome variable is $Y$ and the covariates are $X_1$, $X_2$, and $X_3$. 
 
-The terms $\beta_1$, $\beta_2$, and $\beta_3$ are known as **coefficients**. The coefficients govern how a one-unit change in the covariate affect the outcome variable. For example, if the coefficients are: $\beta_1=0.5$, $\beta_2=0$, and $\beta_3=-1.7$, then a one-unit change in $X_1$ will increase $Y$ by 0.5, a one-unit change in $X_2$ will not change $Y$, and a one-unit change in $X_3$ will reduce $Y$ by 1.7.
+The terms $\beta_1$, $\beta_2$, and $\beta_3$ are known as **coefficients**. The coefficients govern how a one-unit change in the covariate affect the outcome variable. For example, if:
+
+- $\beta_1=0.5$
+- $\beta_2=0$
+- $\beta_3=-1.7$
+
+Then:
+
+- A one-unit change in $X_1$ increases $Y$ by $0.5$.
+- A one-unit change in $X_2$ does not change $Y$.
+- A one-unit change in $X_3$ reduces $Y$ by $1.7$.
 
 
 
