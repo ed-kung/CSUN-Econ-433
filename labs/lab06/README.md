@@ -370,13 +370,13 @@ Note the following:
 
 - By default, Stargazer does not show the coefficient estimates on the dummy. This is because the table would be too large. (`IND` has 268 possible values, which means there are 268 dummy variables and 268 coefficients to estimate). More advanced users can access the dummy variable estimates, but we will not learn how to do that today.
 
-Based on our third model, we can see that controlling for a person's industry of work does not actually reduce the estimated gender wage gap. In fact, it slightly increases it. We therefore cannot say that the reason women are paid less than men is because they work in lower paid industries! 
+Based on our third model, we can see that controlling for a person's industry of work does not actually reduce the estimated gender wage gap. In fact, it slightly increases it. We therefore cannot say that women are paid less than men because they work in lower paid industries!
 
 ## Assignment
 
 In addition to the three regressions you already ran, run two more.
 
-- `mod4`: In addition to `FEMALE`, `log(UHRSWORK)`, and `IND`, include `COLLEGE`, `AGE`, `AGE^2`, and `MARRIED` in the regression. `COLLEGE` should be a boolean variable which is true if the person has a bachelor's degree or higher. You'll have to create this variable. `MARRIED` should be a boolean variable which is true if the person is married (`MARST==1`). 
+- `mod4`: In addition to `FEMALE`, `log(UHRSWORK)`, and `IND`, include `COLLEGE`, `AGE`, and `MARRIED` in the regression. `COLLEGE` should be a boolean variable which is true if the person has a bachelor's degree or higher. You'll have to create this variable. `MARRIED` should be a boolean variable which is true if the person is married (`MARST==1`). 
 
 - `mod5`: In addition to the variables included in `mod4`, include the person's occupation `OCC` as a second factor variable in the regression.
 
