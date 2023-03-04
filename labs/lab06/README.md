@@ -298,6 +298,7 @@ Run the following script:
     rm(list=ls())      # Clear the workspace
     library(dplyr)     # Load required libraries
     library(stargazer)
+    library(lfe)
     
     # Load the data and merge them
     df1 <- read.csv("IPUMS_ACS2019_CA_1.csv")
@@ -317,13 +318,13 @@ Run the following script:
     df$FEMALE <- df$SEX==2
     
     # Regress annual wage income on female
-    mod1 <- lm(log(INCWAGE) ~ FEMALE, data=df, weights=PERWT)
+    mod1 <- felm(log(INCWAGE) ~ FEMALE, data=df, weights=df$PERWT)
     
     # Regress annual wage income on female and hours worked
-    mod2 <- lm(log(INCWAGE) ~ FEMALE + log(UHRSWORK), data=df, weights=PERWT)
+    mod2 <- felm(log(INCWAGE) ~ FEMALE + log(UHRSWORK), data=df, weights=df$PERWT)
     
     # Regress annual wage income on female, hours worked, and industry of work
-    mod3 <- lm(log(INCWAGE) ~ FEMALE + log(UHRSWORK) + IND, data=df, weights=PERWT)
+    mod3 <- felm(log(INCWAGE) ~ FEMALE + log(UHRSWORK) | IND, data=df, weights=df$PERWT)
     
     # Display the model results with Stargazer
     stargazer(mod1, mod2, mod3, type="text", keep.stat=c("n","rsq"))
