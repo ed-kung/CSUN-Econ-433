@@ -23,6 +23,8 @@ In this model, the outcome variable is $Y$ and the covariates are $X_1$, $X_2$, 
 ### Coefficients
 The terms $\beta_1$, $\beta_2$, and $\beta_3$ are known as **coefficients**. In a linear model, the coefficients govern how a one-unit change in the covariate affect the outcome variable. For example, if:
 
+|               |             |                |
+| ------------- | ----------- | -------------- |
 | $\beta_1=0.5$ | $\beta_2=0$ | $\beta_3=-1.7$ |
 
 Then:
