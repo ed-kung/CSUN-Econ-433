@@ -85,7 +85,11 @@ Before you start, you will need the following files. They should already be uplo
 - `IPUMS_ACS2019_CA_1.csv`
 - `IPUMS_ACS2019_CA_2.csv`
 
-You will also need the packages `dplyr` and `stargazer`. `dplyr` should already be installed from previous labs. If it isn't, install it with `install.packages("dplyr")`. Install Stargazer with `install.packages("stargazer")`. Stargazer is a library for displaying regression output more beautifully than with the built-in methods.
+You will also need the packages `dplyr`, `stargazer`, and `lfe`. `dplyr` should already be installed from previous labs. If it isn't, install it with `install.packages("dplyr")`. 
+
+Install Stargazer with `install.packages("stargazer")`. Stargazer is a library for displaying regression output more beautifully than with the built-in methods.
+
+Install `lfe` with `install.packages("lfe")`. `lfe` is a package for running regressions with large factor variables.
 
 ### Model
 
@@ -99,7 +103,7 @@ We model the log wage-rate as a linear model:
 
 $$\ln w_i = \beta_0 + \beta_1 X_{i1} + \beta_2 X_{i2} + \ldots + \beta_K X_{iK} + \epsilon_{i}$$
 
-In the model, $X_{i1}, \ldots, X_{iK}$ are $K$ different variables which might influence the wage rate, like education level, work experience, and industry of occupation. Since we're interested in the gender wage gap, we'll also want to include gender as one of the $X$'s.
+In the model, $X_{i1}, X_{i2}, \ldots, X_{iK}$ are $K$ different variables which might influence the wage rate, like education level, work experience, and industry of occupation. Since we're interested in the gender wage gap, we'll also want to include gender as one of the $X$'s.
 
 The residual term, $\epsilon_{i}$, represents unobserved factors that could affect the wage rate, like a person's grit or personality.
 
@@ -124,6 +128,7 @@ Let's first estimate a simple model with just one covariate: gender. Run the fol
     rm(list=ls())      # Clear the workspace
     library(dplyr)     # Load required libraries
     library(stargazer)
+    library(lfe)
     
     # Load the data and merge them
     df1 <- read.csv("IPUMS_ACS2019_CA_1.csv")
@@ -136,11 +141,11 @@ Let's first estimate a simple model with just one covariate: gender. Run the fol
     # Focus on employed individuals age 25 to 65 that make positive wage income
     df <- filter(df, AGE>=25 & AGE<=65 & EMPSTAT==1 & INCWAGE>0)
     
-    # Create a 0 or 1 variable for whether the person is female
+    # Create a boolean variable for whether the person is female
     df$FEMALE <- df$SEX==2
     
     # Create a linear model object
-    mod1 <- lm(log(INCWAGE) ~ FEMALE, data=df, weights=PERWT)
+    mod1 <- felm(log(INCWAGE) ~ FEMALE, data=df, weights=PERWT)
 
     # Display the model results with Stargazer
     stargazer(mod1, type="text", keep.stat=c("n","rsq"))
@@ -238,7 +243,7 @@ Run the following script:
     # Focus on employed individuals age 25 to 65 that make positive wage income
     df <- filter(df, AGE>=25 & AGE<=65 & EMPSTAT==1 & INCWAGE>0)
     
-    # Create a 0 or 1 variable for whether the person is female
+    # Create a boolean variable for whether the person is female
     df$FEMALE <- df$SEX==2
     
     # Regress annual wage income on female
@@ -307,7 +312,7 @@ Run the following script:
     # Focus on employed individuals age 25 to 65 that make positive wage income
     df <- filter(df, AGE>=25 & AGE<=65 & EMPSTAT==1 & INCWAGE>0)
     
-    # Create a 0 or 1 variable for whether the person is female
+    # Create a boolean variable for whether the person is female
     df$FEMALE <- df$SEX==2
     
     # Regress annual wage income on female
