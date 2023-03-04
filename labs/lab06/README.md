@@ -34,13 +34,49 @@ Then:
 - A one-unit change in $X_3$ reduces $Y$ by $1.7$.
 
 ### Error Term
-The term $\epsilon$ is called the **error term**, or the residual. The error term represents factors which affect the outcome variable but that the researcher cannot observe. A standard assumption is that the error term is *independent* and *uncorrelated* with the covariates. If this assumption fails, then we have an issue known as **endogeneity** which complicates the analysis.
+The term $\epsilon$ is called the **error term**, or the residual. The error term represents factors which affect the outcome variable but that the researcher cannot observe. A standard assumption is that the error term is *independent* and *uncorrelated* with the covariates. If this assumption fails, then we have an issue known as **endogeneity** which complicates the analysis. The error term is also always assumed to have a mean of zero.
 
 ### Intercept
 The term $\beta_0$ is called the **intercept**, or the constant term. The intercept is the value of the outcome if all the covariates and the error term are equal to zero.
 
 ### Regression Analysis
-Estimating a model with a numerical outcome variable is known as **regression analysis**. For a linear model, the goal of regression analysis is to find out what the coefficients are. We can do this using a statistical technique known as **ordinary least squares** estimation. R has a robust set of tools for estimating linear models.
+The goal of our analysis is to estimate the values for the coefficients, which are unknown. We want to find out how each of the covariates influence the outcome variable. Estimating the coefficients of a linear model is known as **regression analysis**. R has a robust set of built-in tools for conducting regression analysis.
+
+### Interpretation of the Model as Expected Value
+Because the error term has mean zero and is independent of the covariates, we can write the expected value of $Y$ conditional on $X$, as follows:
+
+$$
+\begin{align}
+E[Y | X_1, X_2, X_3] &= E[\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \epsilon | X_1, X_2, X_3] \\
+&= \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + E[\epsilon | X_1, X_2, X_3]
+&= \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3
+\end{align}
+$$
+
+In other words, knowing the coefficients allows us to predict the **expected value of the outcome variable for a given set of covariates**.
+
+For example, if:
+
+- $\beta_0 = 2.3$
+- $\beta_1 = 0.5$
+- $\beta_2 = 0$
+- $\beta_3 = -1.7$
+
+and if:
+
+- $X_1 = 1.2$
+- $X_2 = 3$
+- $X_3 = 0.8$
+
+then:
+
+$$
+\begin{align}
+E[Y | X_1, X_2, X_3] &= \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 \\
+&= 2.3 + 0.5 \times 1.2 + 0 \times 3 + (-1.7) \times 0.8 \\
+&= 1.54
+\end{align}
+$$
 
 ## Lab Work
 
@@ -141,7 +177,7 @@ You should see output that looks like:
     =================================================
     Note:                 *p<0.1; **p<0.05; ***p<0.01
 
-
+Let's step through the code. 
 
 
 ## Takeaways
