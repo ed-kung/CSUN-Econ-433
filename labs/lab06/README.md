@@ -57,16 +57,10 @@ In other words, knowing the coefficients allows us to predict the **expected val
 
 For example, if:
 
-- $\beta_0 = 2.3$
-- $\beta_1 = 0.5$
-- $\beta_2 = 0$
-- $\beta_3 = -1.7$
-
-and if:
-
-- $X_1 = 1.2$
-- $X_2 = 3$
-- $X_3 = 0.8$
+|                 |                 |               |                  |
+| --------------- | --------------- | ------------- | ---------------- |
+| $\beta_0 = 2.3$ | $\beta_1 = 0.5$ | $\beta_2 = 0$ | $\beta_3 = -1.7$ | 
+|                 | $X_1 = 1.2$     | $X_2 = 3$     | $X_3 = 0.8$      |
 
 then:
 
