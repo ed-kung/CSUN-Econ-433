@@ -114,10 +114,34 @@ The one covariate we'll use is gender. Run the following script in R:
     df$FEMALE <- df$SEX==2
     
     # Create a linear model object
-    model_1 <- lm(log(INCWAGE) ~ FEMALE, data=df, weights=PERWT)
+    mod1 <- lm(log(INCWAGE) ~ FEMALE, data=df, weights=PERWT)
 
     # Display the model results with Stargazer
-    stargazer(model_1)
+    stargazer(mod1, type="text")
+
+You should see output that looks like:
+
+    =================================================
+                             Dependent variable:     
+                        -----------------------------
+                                log(INCWAGE)         
+    -------------------------------------------------
+    FEMALE                        -0.313***          
+                                   (0.005)           
+                                                     
+    Constant                      10.860***          
+                                   (0.004)           
+                                                     
+    -------------------------------------------------
+    Observations                   140,615           
+    R2                              0.024            
+    Adjusted R2                     0.024            
+    Residual Std. Error     10.149 (df = 140613)     
+    F Statistic         3,527.394*** (df = 1; 140613)
+    =================================================
+    Note:                 *p<0.1; **p<0.05; ***p<0.01
+
+
 
 
 ## Takeaways
