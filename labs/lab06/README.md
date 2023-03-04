@@ -171,7 +171,23 @@ You should see output that looks like:
     =================================================
     Note:                 *p<0.1; **p<0.05; ***p<0.01
 
-Let's step through the code. 
+
+The following new elements of code have been introduced:
+
+- `lm` is the command to create and estimate a linear model. In our code, we stored the results in an object called `mod1`.
+
+- The first argument of `lm` is called the "formula". Our formula here was `log(INCWAGE) ~ FEMALE`. A formula has the pattern `Y ~ X1 + X2 + X3`. The variable to the left of the tilde symbol `~` is the outcome variable and the variables to the right of the tilde are the covariates. Each covariate is separated by a `+` symbol. In our example, we have only one covariate, `FEMALE`.
+
+- The second argument of `lm` is the dataframe to use for the regression. In this case, the dataframe we're using is `df`.
+
+- The `weights` argument of `lm` tells R what to use as the sample weights. Specifying sample weights is important for stratified samples, which our ACS data is. In our example, the appropriate weight variable was `PERWT`.
+
+- `stargazer` is the command to produce a regression output table. It takes as arguments the stored results you want to generate a table for. It also takes a `type` argument which we've set equal to `"text"`. You don't have to worry about the `type` argument for now.
+
+
+
+
+
 
 
 ## Takeaways
