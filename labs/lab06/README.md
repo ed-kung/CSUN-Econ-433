@@ -75,6 +75,7 @@ $$
 \begin{align} 
 Y_i &= w_i \times h_i \\ 
 \ln Y_i &= \ln w_i + \ln h_i 
+\ln Y_i &= \beta_0 + \beta_1 X_{i1} + \ldots + \beta_K X_{iK} + \ln h_i + \epsilon_{i}
 \end{align}
 $$
 
