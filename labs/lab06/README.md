@@ -119,11 +119,7 @@ This looks like a linear model that we can estimate using standard tools in R!
 
 ### Estimation with one variable
 
-Let's first estimate a simple model with just one covariate:
-
-$$\ln Y_i = \beta_0 + \beta_1 X_{i1} + \epsilon_{i}$$
-
-The one covariate we'll use is gender. Run the following script in R:
+Let's first estimate a simple model with just one covariate: gender. Run the following script in R:
 
     rm(list=ls())      # Clear the workspace
     library(dplyr)     # Load required libraries
@@ -147,7 +143,7 @@ The one covariate we'll use is gender. Run the following script in R:
     mod1 <- lm(log(INCWAGE) ~ FEMALE, data=df, weights=PERWT)
 
     # Display the model results with Stargazer
-    stargazer(mod1, type="text")
+    stargazer(mod1, type="text", keep.stat=c("n","rsq"))
 
 The following new elements of code have been introduced:
 
@@ -159,29 +155,26 @@ The following new elements of code have been introduced:
 
 - The `weights` argument of `lm` tells R what to use as the sample weights. In our data, the appropriate weight variable is `PERWT`. Sample weights are only required if your dataset is a stratified sample.
 
-- `stargazer` is the command to produce a regression output table. It takes as arguments the stored results you want to generate a table for. It also takes a `type` argument which we've set equal to `"text"`. You don't have to worry about the `type` argument for now.
+- `stargazer` is the command to produce a regression output table. It takes as arguments the stored results you want to generate a table for. For now, don't worry about the `type` and `keep.stat` arguments.
 
 You should see output that looks like:
 
-    =================================================
-                             Dependent variable:     
-                        -----------------------------
-                                log(INCWAGE)         
-    -------------------------------------------------
-    FEMALE                        -0.313***          
-                                   (0.005)           
-                                                     
-    Constant                      10.860***          
-                                   (0.004)           
-                                                     
-    -------------------------------------------------
-    Observations                   140,615           
-    R2                              0.024            
-    Adjusted R2                     0.024            
-    Residual Std. Error     10.149 (df = 140613)     
-    F Statistic         3,527.394*** (df = 1; 140613)
-    =================================================
-    Note:                 *p<0.1; **p<0.05; ***p<0.01
+    ========================================
+                     Dependent variable:    
+                 ---------------------------
+                        log(INCWAGE)        
+    ----------------------------------------
+    FEMALE                -0.313***         
+                           (0.005)          
+                                            
+    Constant              10.860***         
+                           (0.004)          
+                                            
+    ----------------------------------------
+    Observations           140,615          
+    R2                      0.024           
+    ========================================
+    Note:        *p<0.1; **p<0.05; ***p<0.01
 
 Here's how we interpret the results:
 
@@ -226,7 +219,7 @@ But what if the model is incorrectly specified? Remember, one of the assumptions
 
 When the regression model is `log(INCWAGE) ~ FEMALE`, what factors do you think might be captured by the error term? Is there any possibility that they would actually be correlated with `FEMALE`?
 
-One potential factor is hours worked. If men work more hours than women, then that could explain why they get paid more overall. Let's test this new hypothesis by adding `UHRSWORK` to the regression. 
+One potential factor is hours worked. If men work more hours than women, then that could explain why they get paid more overall. Let's test this new hypothesis by adding `log(UHRSWORK)` to the regression. Note that we use the log of hours worked because that's what our model suggested is the appropriate functional form.
 
 Run the following script:
 
@@ -252,15 +245,40 @@ Run the following script:
     mod1 <- lm(log(INCWAGE) ~ FEMALE, data=df, weights=PERWT)
     
     # Regress annual wage income on female and hours worked
-    mod2 <- lm(log(INCWAGE) ~ FEMALE + UHRSWORK, data=df, weights=PERWT)
+    mod2 <- lm(log(INCWAGE) ~ FEMALE + log(UHRSWORK), data=df, weights=PERWT)
 
     # Display the model results with Stargazer
-    stargazer(mod1, mod2, type="text")
+    stargazer(mod1, mod2, type="text", keep.stat=c("n","rsq"))
 
 You should see the following output:
 
+    =========================================
+                     Dependent variable:     
+                 ----------------------------
+                         log(INCWAGE)        
+                      (1)            (2)     
+    -----------------------------------------
+    FEMALE         -0.313***      -0.154***  
+                    (0.005)        (0.005)   
+                                             
+    UHRSWORK                      0.041***   
+                                  (0.0002)   
+                                             
+    Constant       10.860***      9.150***   
+                    (0.004)        (0.010)   
+                                             
+    -----------------------------------------
+    Observations    140,615        140,615   
+    R2               0.024          0.215    
+    =========================================
+    Note:         *p<0.1; **p<0.05; ***p<0.01
 
 
+Note the following key observations:
+
+- The coefficient on `FEMALE` fell from -0.313 to -0.154 once `log(UHRSWORK)` is controlled for. This suggests that part of the gender wage gap is explained by the number of hours worked. However, hours worked does not explain the entire gender wage gap. Women still make about 15% less than men, even after taking into account the number of hours worked.
+
+- The R-squared jumped from 2.4% to 21.5%. This suggests that although both gender and hours worked are statistically significant factors that influence wage income, hours worked has relatively more *explanatory power* in the sense that it captures more of the variation in wage income than gender does. 
 
 
 ## Takeaways
