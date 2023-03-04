@@ -189,9 +189,39 @@ Here's how we interpret the results:
 
 - The 0.005 under the -0.313 is called a standard error. Roughly speaking, it measures how much uncertainty there is in our "point estimate" of -0.313. Standard errors help us construct **confidence intervals** of the point estimate. A the 95% confidence interval is equal to the point estimate plus or minus 1.96 times the standard error:
 
-$$ \text{Confidence Interval} = \text{Point Estimate} \pm 1.95 \text{S.E.} $$
+    $$ \text{Confidence Interval} = \text{Point Estimate} \pm 1.95 \text{S.E.} $$
 
-So our 95% confidence interval for the coefficient on female is $-0.313 \pm 1.96 \times 0.005$.
+    So our 95% confidence interval for the coefficient on female is $-0.313 \pm 1.96 \times 0.005 = [-0.3228, -0.3032]$. Roughly speaking, we can be 95% confident that the "true" coefficient on female lies between -0.3228 and -0.3032 (true only if the model itself is correctly specified).
+    
+- The three stars next to -0.313 indicate that the p-value of the estimate is less than 0.01. For linear regressions, this means that we are 99% confident that the true coefficient is not zero. 
+
+    If there were two stars that would indicate the p-value is less than 0.05 but more than 0.01, which means we are 95% confident that the true coefficient is not zero, but we are not 99% confident.
+    
+    If there was one star that would indicate that the p-value is less than 0.1 but more than 0.05. This would mean that we are 90% confident that the true coefficient is not zero, but not 95% confident.
+    
+    No stars means that we are not even 90% confident that the true coefficient is not zero. 
+    
+    When the p-value is low (and thus the coefficient estimates have the stars), we say that the estimate is **statistically significant**. Statistical significance means that we can be confident that the covariate does indeed have an influence on the outcome variable (again, assuming that the model is correctly specified).
+    
+    Interpretation of the stars can be seen from the note at the bottom of the table, which Stargazer automatically prints.
+    
+    It's important to remember that a lack of statistical significance does not mean that two variables are not related. It may simply mean that we can't detect the relationship because the data is too noisy.
+    
+    By contrast, statistical significance does not necessarily mean that the two variables are causally related. Your model could be incorrectly specified, or there could be an endogeneity problem. 
+    
+    Correctly interpreting regression coefficients and persuading others of their meaning is part of the art of statistical research.
+    
+- Our estimate for the intercept is 10.86 with a standard error of 0.004. It has a p-value of less than 0.01 which means we are more than 99% confident the true intercept is not zero. 
+
+- The table also shows information about the number of observations and the **R-squared**. R-squared measures the percentage of variation in the outcome variable that the model can explain. So a R-squared of 0.024 means that the model can explain only 2.4% of the variation in the data. That means that 97.6% of the variation in log-wages is left unexplained by our model! That is, the error term captures 97.6% of the variation and our covariates captures only 2.4% of it.
+
+    A low R-squared does not mean that the model is bad. It means that the model has low predictive power. But the model can still be useful for revealing relationships between variables. Our simple model showed a strong relationship between gender and wage income---a useful result even if the model can't predict wage income accurately!
+    
+
+### Estimation with two variables and displaying regressions side by side
+
+
+
 
 
 
