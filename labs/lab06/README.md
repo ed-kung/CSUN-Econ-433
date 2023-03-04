@@ -116,8 +116,8 @@ The one covariate we'll use is gender. Run the following script in R:
     # Create a linear model object
     model_1 <- lm(log(INCWAGE) ~ FEMALE, data=df, weights=PERWT)
 
-    # Display 
-    model_1
+    # Display the model results with Stargazer
+    stargazer(model_1)
 
 
 ## Takeaways
