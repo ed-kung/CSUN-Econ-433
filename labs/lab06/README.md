@@ -250,35 +250,43 @@ Run the following script:
     # Display the model results with Stargazer
     stargazer(mod1, mod2, type="text", keep.stat=c("n","rsq"))
 
-You should see the following output:
+You should see the following output, which puts the results of the two models side by side. This format is very useful for comparing coefficient estimates between related models.
 
-    =========================================
-                     Dependent variable:     
-                 ----------------------------
-                         log(INCWAGE)        
-                      (1)            (2)     
-    -----------------------------------------
-    FEMALE         -0.313***      -0.154***  
-                    (0.005)        (0.005)   
-                                             
-    UHRSWORK                      0.041***   
-                                  (0.0002)   
-                                             
-    Constant       10.860***      9.150***   
-                    (0.004)        (0.010)   
-                                             
-    -----------------------------------------
-    Observations    140,615        140,615   
-    R2               0.024          0.215    
-    =========================================
-    Note:         *p<0.1; **p<0.05; ***p<0.01
+    ==========================================
+                      Dependent variable:     
+                  ----------------------------
+                          log(INCWAGE)        
+                       (1)            (2)     
+    ------------------------------------------
+    FEMALE          -0.313***      -0.162***  
+                     (0.005)        (0.005)   
+                                              
+    log(UHRSWORK)                  1.266***   
+                                    (0.006)   
+                                              
+    Constant        10.860***      6.179***   
+                     (0.004)        (0.024)   
+                                              
+    ------------------------------------------
+    Observations     140,615        140,615   
+    R2                0.024          0.237    
+    ==========================================
+    Note:          *p<0.1; **p<0.05; ***p<0.01
 
 
 Note the following key observations:
 
-- The coefficient on `FEMALE` fell from -0.313 to -0.154 once `log(UHRSWORK)` is controlled for. This suggests that part of the gender wage gap is explained by the number of hours worked. However, hours worked does not explain the entire gender wage gap. Women still make about 15% less than men, even after taking into account the number of hours worked.
+- The coefficient on `FEMALE` fell from -0.313 to -0.162 once `log(UHRSWORK)` is controlled for. This suggests that part of the gender wage gap is explained by the number of hours worked. However, hours worked does not explain the entire gender wage gap. Women still make about 15% less than men, even after taking into account the number of hours worked.
 
-- The R-squared jumped from 2.4% to 21.5%. This suggests that although both gender and hours worked are statistically significant factors that influence wage income, hours worked has relatively more *explanatory power* in the sense that it captures more of the variation in wage income than gender does. 
+- The R-squared jumped from 2.4% to 23.7%. This suggests that although both gender and hours worked are statistically significant factors that influence wage income, hours worked has relatively more *explanatory power* in the sense that it captures more of the variation in wage income than gender does. 
+
+- The coefficient on `log(UHRSWORK)` is 1.266 and highly statistically significant. When the log of an outcome variable is regressed on the log of a covariate, the coefficient can be interpreted as an elasticity. Thus, a coefficient of 1.266 implies that a 1% increase in hours worked leads to a 1.26% increase in annual wage income. This suggests that workers with a higher hourly wage also tend to work more hours.
+
+
+### Controlling for factor variables
+
+
+
 
 
 ## Takeaways
