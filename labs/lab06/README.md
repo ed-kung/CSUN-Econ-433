@@ -44,9 +44,11 @@ Estimating a model with a numerical outcome variable is known as **regression an
 
 ## Lab Work
 
+In today's lab you will be estimating a model of wage income to study the gender wage gap.
+
 ### Setup
 
-For today's lab, you will need the following files. They should already be uploaded to the cloud from previous labs. If they aren't, you should download the files from Canvas and upload them to R Cloud.
+Before you start, you will need the following files. They should already be uploaded to the cloud from previous labs. If they aren't, you should download the files from Canvas and upload them to R Cloud.
 
 - `IPUMS_ACS2014_CA_1.csv`
 - `IPUMS_ACS2014_CA_2.csv`
@@ -67,7 +69,9 @@ We model the log wage-rate as a linear model:
 
 $$\ln w_i = \beta_0 + \beta_1 X_{i1} + \beta_2 X_{i2} + \ldots + \beta_K X_{iK} + \epsilon_{i}$$
 
-In the model, $X_{i1}, \ldots, X_{iK}$ are $K$ different variables which might influence the wage rate, like education level, work experience, and industry of occupation. The residual term, $\epsilon_{i}$, represents unobserved factors that could affect the wage rate, like a person's grit or personality.
+In the model, $X_{i1}, \ldots, X_{iK}$ are $K$ different variables which might influence the wage rate, like education level, work experience, and industry of occupation. Since we're interested in the gender wage gap, we'll also want to include gender as one of the $X$'s.
+
+The residual term, $\epsilon_{i}$, represents unobserved factors that could affect the wage rate, like a person's grit or personality.
 
 We can now write the full model for log wage income:
 
@@ -83,11 +87,37 @@ The outcome variable is $\ln Y_i$ (the natural log of wage income) and the covar
 
 This looks like a linear model that we can estimate using standard tools in R!
 
-### Estimation
+### Estimation with one variable
 
+Let's first estimate a simple model with just one covariate:
 
+$$\ln Y_i = \beta_0 + \beta_1 X_{i1} + \epsilon_{i}$$
 
+The one covariate we'll use is gender. Run the following script in R:
 
+    rm(list=ls())      # Clear the workspace
+    library(dplyr)     # Load required libraries
+    library(stargazer)
+    
+    # Load the data and merge them
+    df1 <- read.csv("IPUMS_ACS2019_CA_1.csv")
+    df2 <- read.csv("IPUMS_ACS2019_CA_2.csv")
+    df <- inner_join(df1, df2, by=c("YEAR","SERIAL","PERNUM"))
+    
+    # Deal with missing values for INCWAGE
+    df$INCWAGE[ df$INCWAGE>=999998] <- NA
+    
+    # Focus on employed individuals age 25 to 65 that make positive wage income
+    df <- filter(df, AGE>=25 & AGE<=65 & EMPSTAT==1 & INCWAGE>0)
+    
+    # Create a 0 or 1 variable for whether the person is female
+    df$FEMALE <- df$SEX==2
+    
+    # Create a linear model object
+    model_1 <- lm(log(INCWAGE) ~ FEMALE, data=df, weights=PERWT)
+
+    # Display 
+    model_1
 
 
 ## Takeaways
