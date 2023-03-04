@@ -145,20 +145,20 @@ Let's first estimate a simple model with just one covariate: gender. Run the fol
     df$FEMALE <- df$SEX==2
     
     # Create a linear model object
-    mod1 <- felm(log(INCWAGE) ~ FEMALE, data=df, weights=PERWT)
+    mod1 <- felm(log(INCWAGE) ~ FEMALE, data=df, weights=df$PERWT)
 
     # Display the model results with Stargazer
     stargazer(mod1, type="text", keep.stat=c("n","rsq"))
 
 The following new elements of code have been introduced:
 
-- `lm` is the command to create and estimate a linear model. The results are stored in an object we called `mod1`.
+- `felm` is the command to create and estimate a linear model. The results are stored in an object we called `mod1`. 
 
-- The first argument of `lm` is called the "formula". Our formula here was `log(INCWAGE) ~ FEMALE`. A formula has the pattern `Y ~ X1 + X2 + X3`. The variable to the left of the tilde symbol `~` is the outcome variable and the variables to the right of the tilde are the covariates. Each covariate is separated by a `+` symbol. In our example, we have only one covariate, `FEMALE`.
+- The first argument of `felm` is called the "formula". Our formula here was `log(INCWAGE) ~ FEMALE`. A formula has the pattern `Y ~ X1 + X2 + X3`. The variable to the left of the tilde symbol `~` is the outcome variable and the variables to the right of the tilde are the covariates. Each covariate is separated by a `+` symbol. In our example, we have only one covariate, `FEMALE`.
 
-- The second argument of `lm` is the dataframe to use for the regression. In this case, the dataframe we're using is `df`.
+- The second argument of `felm` is the dataframe to use for the regression. In this case, the dataframe we're using is `df`.
 
-- The `weights` argument of `lm` tells R what to use as the sample weights. In our data, the appropriate weight variable is `PERWT`. Sample weights are only required if your dataset is a stratified sample.
+- The `weights` argument of `felm` tells R what to use as the sample weights. In our data, the appropriate weight variable is `PERWT`. Sample weights are only required if your dataset is a stratified sample. Note that in `felm`, we have to specify `df$PERWT` and not just `PERWT`.
 
 - `stargazer` is the command to produce a regression output table. It takes as arguments the stored results you want to generate a table for. For now, don't worry about the `type` and `keep.stat` arguments.
 
@@ -231,6 +231,7 @@ Run the following script:
     rm(list=ls())      # Clear the workspace
     library(dplyr)     # Load required libraries
     library(stargazer)
+    library(lfe)
     
     # Load the data and merge them
     df1 <- read.csv("IPUMS_ACS2019_CA_1.csv")
@@ -247,10 +248,10 @@ Run the following script:
     df$FEMALE <- df$SEX==2
     
     # Regress annual wage income on female
-    mod1 <- lm(log(INCWAGE) ~ FEMALE, data=df, weights=PERWT)
+    mod1 <- felm(log(INCWAGE) ~ FEMALE, data=df, weights=df$PERWT)
     
     # Regress annual wage income on female and hours worked
-    mod2 <- lm(log(INCWAGE) ~ FEMALE + log(UHRSWORK), data=df, weights=PERWT)
+    mod2 <- felm(log(INCWAGE) ~ FEMALE + log(UHRSWORK), data=df, weights=df$PERWT)
 
     # Display the model results with Stargazer
     stargazer(mod1, mod2, type="text", keep.stat=c("n","rsq"))
