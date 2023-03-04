@@ -149,6 +149,18 @@ The one covariate we'll use is gender. Run the following script in R:
     # Display the model results with Stargazer
     stargazer(mod1, type="text")
 
+The following new elements of code have been introduced:
+
+- `lm` is the command to create and estimate a linear model. The results are stored in an object we called `mod1`.
+
+- The first argument of `lm` is called the "formula". Our formula here was `log(INCWAGE) ~ FEMALE`. A formula has the pattern `Y ~ X1 + X2 + X3`. The variable to the left of the tilde symbol `~` is the outcome variable and the variables to the right of the tilde are the covariates. Each covariate is separated by a `+` symbol. In our example, we have only one covariate, `FEMALE`.
+
+- The second argument of `lm` is the dataframe to use for the regression. In this case, the dataframe we're using is `df`.
+
+- The `weights` argument of `lm` tells R what to use as the sample weights. In our data, the appropriate weight variable is `PERWT`. Sample weights are only required if your dataset is a stratified sample.
+
+- `stargazer` is the command to produce a regression output table. It takes as arguments the stored results you want to generate a table for. It also takes a `type` argument which we've set equal to `"text"`. You don't have to worry about the `type` argument for now.
+
 You should see output that looks like:
 
     =================================================
@@ -171,22 +183,15 @@ You should see output that looks like:
     =================================================
     Note:                 *p<0.1; **p<0.05; ***p<0.01
 
+Here's how we interpret the results:
 
-The following new elements of code have been introduced:
+- The estimated coefficient on `FEMALE` is -0.313. This means that log wage income is 0.313 lower for females than for males, when we don't control for anything else. A 0.313 difference in log wage is about a 31.3% difference in actual wage. Does this sound right to you?
 
-- `lm` is the command to create and estimate a linear model. In our code, we stored the results in an object called `mod1`.
+- The 0.005 under the -0.313 is called a standard error. Roughly speaking, it measures how much uncertainty there is in our "point estimate" of -0.313. Standard errors help us construct **confidence intervals** of the point estimate. A the 95% confidence interval is equal to the point estimate plus or minus 1.96 times the standard error:
 
-- The first argument of `lm` is called the "formula". Our formula here was `log(INCWAGE) ~ FEMALE`. A formula has the pattern `Y ~ X1 + X2 + X3`. The variable to the left of the tilde symbol `~` is the outcome variable and the variables to the right of the tilde are the covariates. Each covariate is separated by a `+` symbol. In our example, we have only one covariate, `FEMALE`.
+$$ \text{Confidence Interval} = \text{Point Estimate} \pm 1.95 \text{S.E.} $$
 
-- The second argument of `lm` is the dataframe to use for the regression. In this case, the dataframe we're using is `df`.
-
-- The `weights` argument of `lm` tells R what to use as the sample weights. Specifying sample weights is important for stratified samples, which our ACS data is. In our example, the appropriate weight variable was `PERWT`.
-
-- `stargazer` is the command to produce a regression output table. It takes as arguments the stored results you want to generate a table for. It also takes a `type` argument which we've set equal to `"text"`. You don't have to worry about the `type` argument for now.
-
-
-
-
+So our 95% confidence interval for the coefficient on female is $-0.313 \pm 1.96 \times 0.005$.
 
 
 
