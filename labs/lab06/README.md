@@ -215,7 +215,7 @@ Here's how we interpret the results:
 
 Do you really believe that women make 30% less than men for equal work? The previous regression seems to support that claim.
 
-But what if the model is incorrectly specified? Remember, one of the assumptions is that the error term is uncorrelated with the covariates. Do you think this assumption is reasonable? 
+But what if the model is incorrectly specified? Remember, the model assumes that the error term is uncorrelated with the covariates. Do you think this assumption is reasonable? 
 
 When the regression model is `log(INCWAGE) ~ FEMALE`, what factors do you think might be captured by the error term? Is there any possibility that they would actually be correlated with `FEMALE`?
 
@@ -285,6 +285,42 @@ Note the following key observations:
 
 ### Controlling for factor variables
 
+Now let's also control for the industry in which the person works. The `IND` variable contains this information. Since `IND` is a factor variable, we have to let R know this before we use it in a regression.
+
+Run the following script:
+
+    rm(list=ls())      # Clear the workspace
+    library(dplyr)     # Load required libraries
+    library(stargazer)
+    
+    # Load the data and merge them
+    df1 <- read.csv("IPUMS_ACS2019_CA_1.csv")
+    df2 <- read.csv("IPUMS_ACS2019_CA_2.csv")
+    df <- inner_join(df1, df2, by=c("YEAR","SERIAL","PERNUM"))
+    
+    # Deal with missing values for INCWAGE
+    df$INCWAGE[ df$INCWAGE>=999998] <- NA
+    
+    # Tell R that IND is a factor variable
+    df$IND <- as.factor(df$IND)
+    
+    # Focus on employed individuals age 25 to 65 that make positive wage income
+    df <- filter(df, AGE>=25 & AGE<=65 & EMPSTAT==1 & INCWAGE>0)
+    
+    # Create a 0 or 1 variable for whether the person is female
+    df$FEMALE <- df$SEX==2
+    
+    # Regress annual wage income on female
+    mod1 <- lm(log(INCWAGE) ~ FEMALE, data=df, weights=PERWT)
+    
+    # Regress annual wage income on female and hours worked
+    mod2 <- lm(log(INCWAGE) ~ FEMALE + log(UHRSWORK), data=df, weights=PERWT)
+    
+    # Regress annual wage income on female, hours worked, and industry of work
+    mod3 <- lm(log(INCWAGE) ~ FEMALE + log(UHRSWORK) + IND, data=df, weights=PERWT)
+    
+    # Display the model results with Stargazer
+    stargazer(mod1, mod2, mod3, type="text", keep.stat=c("n","rsq"))
 
 
 
