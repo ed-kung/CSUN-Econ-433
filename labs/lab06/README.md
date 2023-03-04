@@ -65,7 +65,7 @@ $$Y_i = h_i \times w_i$$
 
 We model the log wage-rate as a linear model:
 
-$$\ln w_i = \beta_0 + \beta_1 X_{i1} + \ldots + \beta_K X_{iK} + \epsilon_{i}$$
+$$\ln w_i = \beta_0 + \beta_1 X_{i1} + \beta_2 X_{i2} + \ldots + \beta_K X_{iK} + \epsilon_{i}$$
 
 In the model, $X_{i1}, \ldots, X_{iK}$ are $K$ different variables which might influence the wage rate, like education level, work experience, and industry of occupation. The residual term, $\epsilon_{i}$, represents unobserved factors that could affect the wage rate, like a person's grit or personality.
 
@@ -75,9 +75,18 @@ $$
 \begin{align} 
 Y_i &= w_i \times h_i \\ 
 \ln Y_i &= \ln w_i + \ln h_i \\
-\ln Y_i &= \beta_0 + \beta_1 X_{i1} + \ldots + \beta_K X_{iK} + \ln h_i + \epsilon_{i}
+\ln Y_i &= \beta_0 + \beta_1 X_{i1} + \beta_2 X_{i2} + \ldots + \beta_K X_{iK} + \ln h_i + \epsilon_{i}
 \end{align}
 $$
+
+The outcome variable is $\ln Y_i$ (the natural log of wage income) and the covariates are $X_{i1}$ through $X_{iK}$ and $\ln h_i$ (the natural log of hours worked).
+
+This looks like a linear model that we can estimate using standard tools in R!
+
+### Estimation
+
+
+
 
 
 
