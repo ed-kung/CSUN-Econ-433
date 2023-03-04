@@ -291,9 +291,19 @@ Note the following key observations:
 
 ### Controlling for factor variables
 
-Now let's also control for the industry in which the person works. The `IND` variable contains this information. Since `IND` is a factor variable, we have to let R know this before we use it in a regression.
+Now let's also control for the industry in which the person works. The `IND` variable contains this information. Since `IND` is a factor variable, we have to let R know this before we use it in a regression. 
 
-Run the following script:
+When a factor variable is included in a regression, it is included as a set of **dummy variables**. A dummy variable is equal to 1 if the factor variable is equal to a specific value and 0 otherwise.
+
+Example: Suppose a factor variable, $F$, takes the values A, B, or C. Including $F$ in the regression (along with numeric variables $X_1$ and $X_2$) would look like:
+
+$$ Y = \beta_1 X_1 + \beta_2 X_2 + \beta_{F=A} X_{F=A} + \beta_{F=B} X_{F=B} + \beta_{F=C} X_{F=C} $$
+
+The variable $X_{F=A}$ is a dummy variable. It is equal to 1 if $F=A$ and 0 otherwise. Similary for $X_{F=B}$ and $X_{F=C}$.
+
+Note also that the intercept term is no longer included in the equation. This is because the intercept term is multicolinear with all the dummy variables.
+
+To run a regression with `IND` as a factor variable, run the following script:
 
     rm(list=ls())      # Clear the workspace
     library(dplyr)     # Load required libraries
@@ -329,12 +339,55 @@ Run the following script:
     # Display the model results with Stargazer
     stargazer(mod1, mod2, mod3, type="text", keep.stat=c("n","rsq"))
 
+You should get the following output:
 
+    ===========================================
+                       Dependent variable:     
+                  -----------------------------
+                          log(INCWAGE)         
+                     (1)       (2)       (3)   
+    -------------------------------------------
+    FEMALE        -0.313*** -0.162*** -0.187***
+                   (0.005)   (0.005)   (0.005) 
+                                               
+    log(UHRSWORK)           1.266***  1.143*** 
+                             (0.006)   (0.006) 
+                                               
+    Constant      10.860*** 6.179***           
+                   (0.004)   (0.024)           
+                                               
+    -------------------------------------------
+    Observations   140,615   140,615   140,615 
+    R2              0.024     0.237     0.377  
+    ===========================================
+    Note:           *p<0.1; **p<0.05; ***p<0.01
 
+Note the following:
+
+- The formula for running regressions with large factor variables is `Y ~ X1 + X2 | F1 + F2`, where `X1` and `X2` are regular numeric variables and `F1` and `F2` are factor variables. 
+
+- The intercept term is dropped in the model with a factor variable. This is because the intercept term would be multicolinear with the dummy variables.
+
+- By default, Stargazer does not show the coefficient estimates on the dummy. This is because the table would be too large. (`IND` has 268 possible values, which means there are 268 dummy variables and 268 coefficients to estimate). More advanced users can access the dummy variable estimates, but we will not learn how to do that today.
+
+Based on our third model, we can see that controlling for a person's industry of work does not actually reduce the estimated gender wage gap. In fact, it slightly increases it. We therefore cannot say that the reason women are paid less than men is because they work in lower paid industries! 
+
+## Assignment
+
+In addition to the three regressions you already ran, run two more.
+
+- `mod4`: In addition to `FEMALE`, `log(UHRSWORK)`, and `IND`, include `COLLEGE`, `AGE`, `AGE^2`, and `MARRIED` in the regression. `COLLEGE` should be a boolean variable which is true if the person has a bachelor's degree or higher. You'll have to create this variable. `MARRIED` should be a boolean variable which is true if the person is married (`MARST==1`). 
+
+- `mod5`: In addition to the variables included in `mod4`, include the person's occupation `OCC` as a second factor variable in the regression.
+
+- Put all 5 regressions together in one table. What is the gender wage gap after you control for all of these factors? 
+
+- Show me your code and output and take the lab quiz to be dismissed.
 
 ## Takeaways
 
-- You can run linear regressions in R
+- You can estimate linear models in R using `felm`
+- You know how to include factor variables in linear regressions
 - You can show regression output using Stargazer
 - You can interpret regression results
 
