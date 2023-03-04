@@ -71,7 +71,7 @@ In the model, $X_{i1}, \ldots, X_{iK}$ are $K$ different variables which might i
 
 We can now write the full model for log wage income:
 
-$$\begin{eqnarray} Y_i &=& w_i \times h_i \\ \ln Y_i &=& \ln w_i + \ln h_i$$
+$$\begin{eqnarray} Y_i &=& w_i \times h_i \\ \ln Y_i &=& \ln w_i + \ln h_i \end{eqnarray}$$
 
 
 
