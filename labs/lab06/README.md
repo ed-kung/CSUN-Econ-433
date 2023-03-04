@@ -47,8 +47,8 @@ Because the error term has mean zero and is independent of the covariates, we ca
 
 $$
 \begin{align}
-E[Y | X_1, X_2, X_3] &= E[\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \epsilon | X_1, X_2, X_3] \\
-&= \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + E[\epsilon | X_1, X_2, X_3]
+E[Y | X] &= E[\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \epsilon | X] \\
+&= \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + E[\epsilon | X] \\
 &= \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3
 \end{align}
 $$
