@@ -187,9 +187,9 @@ Here's how we interpret the results:
 
 - The 0.005 under the -0.313 is called a standard error. Roughly speaking, it measures how much uncertainty there is in our "point estimate" of -0.313. Standard errors help us construct **confidence intervals** of the point estimate. A the 95% confidence interval is equal to the point estimate plus or minus 1.96 times the standard error:
 
-    $$ 
-	\text{Confidence Interval} = \text{Point Estimate} \pm 1.95 \text{S.E.} 
-	$$
+$$ 
+\text{Confidence Interval} = \text{Point Estimate} \pm 1.95 \text{S.E.} 
+$$
 
     So our 95% confidence interval for the coefficient on female is $-0.313 \pm 1.96 \times 0.005 = [-0.3228, -0.3032]$. Roughly speaking, we can be 95% confident that the "true" coefficient on female lies between -0.3228 and -0.3032 (true only if the model itself is correctly specified).
     
