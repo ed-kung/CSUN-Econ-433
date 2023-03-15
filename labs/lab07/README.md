@@ -71,19 +71,32 @@ Use the following script to get started. Some of the boilerplate work is done fo
 	# class_size=="SMALL" and False otherwise
 	# YOUR CODE HERE
 	
+	# Create a new dataframe which contains only the regular cohort
+	# Hint: Use the filter function
+	# YOUR CODE HERE
+	
+	# Create a new dataframe which contains only the experimental cohort
+	# YOUR CODE HERE
+	
 	# Show that in the non-experimental cohort, class size is related to  
 	# demographics. Do this by regressing SMALL on log(family_income) and race
 	# and show that the coefficients statistically significant.
+	# REGRESSION CODE HERE (Name the regression test_reg)
 	
-	# REGRESSION CODE HERE (Call the regression mod1)
+	# Show that in the experimental cohort, class size is NOT related to
+	# demographics. Do this by regressing SMALL on log(family_income) and race
+	# and show that the coefficients are NOT statistically significant.
+	# REGRESSION CODE HERE (Name the regression test_exp)
 	
-	stargazer(mod1, type="text", keep.stat=c("n","rsq"))
+	stargazer(test_reg, test_exp, type="text", keep.stat=c("n", "rsq"),
+	          model.names=c("Regular", "Experimental"))
+	
 
 Hints:
 
 - The dataset is not a stratified sample so you do not have to use any weights when running the regressions.
 
-- The formula for `mod1` should be `SMALL ~ log(family_income) + race`. And the output should be:
+- The formula for `mod1` and `mod2` should be `SMALL ~ log(family_income) + race`. And the output of the two regressions should be:
 
         ==============================================
                                Dependent variable:    
