@@ -133,7 +133,7 @@ Here is the skeleton of a script to get you started:
 	# Show the results
 	stargazer(reg_m1, reg_m2, reg_m3, reg_m4, reg_m5, type="text",
 	          keep.stat=c("n", "rsq"), 
-			  title="Predictors of Test Score (Regular Cohort)")
+	          title="Predictors of Test Score (Regular Cohort)")
 	#---------------------------------------------------------------------		  
 
 	
@@ -146,7 +146,7 @@ Here is the skeleton of a script to get you started:
 	# Show the results
 	stargazer(exp_m1, exp_m2, exp_m3, exp_m4, exp_m5, type="text",
 	          keep.stat=c("n", "rsq"), 
-			  title="Predictors of Test Score (Experimental Cohort)")
+	          title="Predictors of Test Score (Experimental Cohort)")
 	#---------------------------------------------------------------------		  
 	
 	
