@@ -83,6 +83,33 @@ Hints:
 
 - The dataset is not a stratified sample so you do not have to use any weights when running the regressions.
 
+- The formula for `mod1` should be `SMALL ~ log(family_income) + race`. And the output should be:
+
+		==============================================
+							   Dependent variable:    
+						   ---------------------------
+									  SMALL           
+		----------------------------------------------
+		log(family_income)          0.085***          
+									 (0.014)          
+													  
+		raceBLACK                   0.179***          
+									 (0.022)          
+													  
+		raceHISPANIC                0.232***          
+									 (0.021)          
+													  
+		raceWHITE                     0.028           
+									 (0.018)          
+													  
+		Constant                    -0.662***         
+									 (0.159)          
+													  
+		----------------------------------------------
+		Observations                  6,000           
+		R2                            0.042           
+		==============================================
+		Note:              *p<0.1; **p<0.05; ***p<0.01
 	
 	
 	
