@@ -67,16 +67,17 @@ Use the following script to get started. Some of the boilerplate work is done fo
 	# Recode race as a factor variable
 	# YOUR CODE HERE
 	
-	# Show that in the non-experimental cohort, 
-	# class size is related to race and family income.
-	# Do this by regressing class_size on race and
-	# family_income, then showing that the coefficients
-	# are non-zero and statistically significant.
-	# (Call the regression mod1)
+	# Create a boolean variable called SMALL that is True if 
+	# class_size=="SMALL" and False otherwise
+	# YOUR CODE HERE
 	
-	# REGRESSION CODE HERE
+	# Show that in the non-experimental cohort, class size is related to  
+	# demographics. Do this by regressing SMALL on log(family_income) and race
+	# and show that the coefficients statistically significant.
 	
-	stargazer(mod1, type="text", keep.stats=c("n","rsq"))
+	# REGRESSION CODE HERE (Call the regression mod1)
+	
+	stargazer(mod1, type="text", keep.stat=c("n","rsq"))
 
 Hints:
 
