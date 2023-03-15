@@ -77,7 +77,7 @@ Hints:
 - To show that family income and race predict class size in the regular cohort, you can regress `small` on `teacher_has_ma`, `log(family_income)` and `race` and show that the coefficients on `log(family_income)` and `race` are statistically significant.
 - To show that family income and race do not predict class size in the experimental cohort, you can regress `small` on `teacher_has_ma`, `log(family_income)`, and `race` and show that the coefficients on `log(family_income)` and `race` are not statistically significant (i.e. statistically indistinguishable from zero).
 - Not including the bonus, you should be running a total of 12 regressions and producing 3 tables.
-- The bonus can be accomplished with 1 regression.
+- The bonus can be accomplished with 1 regression. 
 
 Here is the skeleton of a script to get you started:
 
