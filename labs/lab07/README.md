@@ -53,7 +53,7 @@ Write a script that accomplishes the following tasks:
 
 1. Show that family income and race predict class size in the regular cohort but not in the experimental cohort. Show that `teacher_has_ma` is related to `small` in both cohorts.
 
-2. Show how test score depends on different covariates using data from the regular cohort. You should run the following five regressions and show their output in one table:
+2. Show how test score depends on different covariates using data from the regular cohort. You should run the following five regressions and show their output in one table. 
      - Regress `test_score` on `small`
 	 - Regress `test_score` on `small` and `teacher_has_ma`
 	 - Regress `test_score` on `small`, `teacher_has_ma`, and `race`
@@ -71,6 +71,7 @@ Hints:
 - You should recode `race` as a factor variable
 - You should create two new dataframes using `filter`, one which contains the regular cohort students and one which contains the experimental cohort students
 - When running regressions, you do not need to use any weights because the dataset is not a stratified sample
+- When running regressions, you do not need to take the log of any variable except family income
 - When running regressions separately for the regular and experimental cohorts, pay attention to the `data` argument in `felm` and make sure you are using the correct dataframe
 - When you run regressions with `race`, keep `race` on the left side of `|` in the regression formula, so that the dummy variables are included in the Stargazer output
 - When you run regressions with `school_id`, keep `school_id` on the right side of `|` in the regression formula, because `school_id` is a large factor variable
@@ -100,10 +101,10 @@ Here is the skeleton of a script to get you started:
 	# class_size=="SMALL" and false otherwise
 	# YOUR CODE HERE
 	
-	# Create a dataframe with only the regular cohort
+	# Create a new dataframe with only the regular cohort
 	# YOUR CODE HERE
 	
-	# Create a dataframe with only the experimental cohort
+	# Create a new dataframe with only the experimental cohort
 	# YOUR CODE HERE
 	
 	#---------------------------------------------------------------------
