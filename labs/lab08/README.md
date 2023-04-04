@@ -26,6 +26,6 @@ The table below shows a schematic of the most basic DID. The treatment happens b
 
 The DID treatment effect estimator is:
 
-$$\text{DID Estimated Treatment Effect} = \underbrace{(Y_{11} - Y_{10})}_{\text{Change in outcome for} \\ \text{control group}} - (Y_{01} - Y_{00})$$
+$$\text{DID Estimated Treatment Effect} = \underbrace{(Y_{11} - Y_{10})}_{\text{Change in outcome for} \atop \text{control group}} - (Y_{01} - Y_{00})$$
 
 
