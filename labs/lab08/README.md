@@ -5,11 +5,6 @@ In this lab you will conduct difference-in-differences analysis using panel data
 
 ## Background
 
-**Panel Data** 
-
-Panel data refers to data in which the same subject is observed repeatedly over multiple time periods. Difference-in-differences analysis can only be performed on panel data. Obervations in panel data are indexed by $i$, which indexes the subject, and $t$, which indexes the time period. 
-
-Example: You have panel data where you observe the number of Airbnb listings in a group of cities over multiple time periods. The cities are the subjects and they are indexed by $i$. The time periods are indexed by $t$. The variable $Airbnb_{it}$ would refer to the number of Airbnb listings in city $i$ at time $t$.
 
 **Difference-in-differences**
 
@@ -17,18 +12,41 @@ Difference-in-differences (DID) is a research design for estimating the effect o
 
 DID works when there is a group of subjects affected by the intervention (called the **treatment group**) and a group of subjects not affected by the intervention (called the **control group**). In DID, we compare the **change** in outcomes for the treatment group to the **change** in outcomes for the control group, over the time period in which the intervention happens.
 
-The table below shows a schematic of the most basic DID. The treatment happens between times $T_0$ and $T_1$. $Y_{00}$ is the outcome in the control group at time $T0$ and $Y_{01}$ is the outcome in the control group at time $T_1$. $Y_{10}$ is the outcome in the treatment group at time $T_0$ and $Y_{11}$ is the outcome in the treatment group at time $T_1$.
+The table below shows a schematic of the most basic DID with two subjects and two time periods. The treatment happens between times $T_0$ and $T_1$. $Y_{00}$ is the outcome in the control subject at time $T0$ and $Y_{01}$ is the outcome in the control subject at time $T_1$. $Y_{10}$ is the outcome in the treatment subject at time $T_0$ and $Y_{11}$ is the outcome in the treatment subject at time $T_1$.
 
-|                   | $T_0$    | $T_1$    |
-| ----------------- | -------- | -------- |
-| Control Group     | $Y_{00}$ | $Y_{01}$ |
-| Treatment Group   | $Y_{10}$ | $Y_{11}$ |
+|                     | $T_0$    | $T_1$    |
+| ------------------- | -------- | -------- |
+| Control Subject     | $Y_{00}$ | $Y_{01}$ |
+| Treatment Subject   | $Y_{10}$ | $Y_{11}$ |
 
 The DID treatment effect estimator is:
 
-$$\text{DID Estimated Treatment Effect} = \underbrace{(Y_{11} - Y_{10})}_{\text{Change in outcome for} \atop \text{treatment group}} - \underbrace{(Y_{01} - Y_{00})}_{\text{Change in outcome for} \atop \text{control group}}$$
+$$\text{DID Estimated Treatment Effect} = \underbrace{(Y_{11} - Y_{10})}_{\text{Change in outcome for} \atop \text{treatment subject}} - \underbrace{(Y_{01} - Y_{00})}_{\text{Change in outcome for} \atop \text{control subject}}$$
 
 Notice how the DID estimator takes the difference of two differenecs, hence the name "difference-in-differences".
+
+**Panel Data** 
+
+Panel data refers to data in which the same subjects are observed repeatedly over multiple time periods. DID analysis can only be performed on panel data. Obervations in panel data are indexed by $i$, which indexes the subject, and $t$, which indexes the time period. So, $Y_{it}$ would refer to the outcome variable for subject $i$ in time $t$.
+
+With panel data, DID analysis can be conducted using linear regressions. Suppose the intervention happens between time $T_{0}$ and $T_{1}$. Define $Post_{t}$ as a binary variable equal to 1 if $t \geq T_{1}$ and 0 otherwise.  Define $Treat_{i}$ as a binary variable equal to 1 if subject $i$ is in the treatment group and 0 otherwise. Then the DID treatment effect estimator is equal to the estimated coefficient $\beta_{1}$ in the following regression:
+
+$$Y_{it} = \beta_0 + \beta_1 Treat_{i} \times Post_{t} + \delta_{i} + \gamma_{t} + \epsilon_{it}$$
+
+Here, $\delta_{i}$ are dummy variables for each subject and $\gamma_{t}$ are dummy variables for each time period.  
+
+If you had a dataframe called `df` in R with the following structure:
+
+| Subject | Time | Outcome | Treat | Post |
+| ------- | ---- | ------- | ----- | ---- |
+| ...     | ...  | ...     | ...   | ...  |
+
+Then the DID treatment effect can be estimated with the following R code:
+
+    felm(Outcome ~ Treat*Post | Subject + Time, data=df)
+
+** Graphical Analysis of Pre-Trends **
+
 
 
 
