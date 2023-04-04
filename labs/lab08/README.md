@@ -6,7 +6,7 @@ In this lab you will conduct difference-in-differences analysis using panel data
 ## Background
 
 
-**Difference-in-differences**
+### Difference-in-differences
 
 Difference-in-differences (DID) is a research design for estimating the effect of an intervention, or treatment. In Public Economics, the intervention is often a policy of some kind. For example, we might use DID to study the effect of Airbnb regulations on the number of Airbnb listings.
 
@@ -25,27 +25,44 @@ $$\text{DID Estimated Treatment Effect} = \underbrace{(Y_{11} - Y_{10})}_{\text{
 
 Notice how the DID estimator takes the difference of two differenecs, hence the name "difference-in-differences".
 
-**Panel Data** 
+### Panel Data
 
 Panel data refers to data in which the same subjects are observed repeatedly over multiple time periods. DID analysis can only be performed on panel data. Obervations in panel data are indexed by $i$, which indexes the subject, and $t$, which indexes the time period. So, $Y_{it}$ would refer to the outcome variable for subject $i$ in time $t$.
 
-With panel data, DID analysis can be conducted using linear regressions. Suppose the intervention happens between time $T_{0}$ and $T_{1}$. Define $Post_{t}$ as a binary variable equal to 1 if $t \geq T_{1}$ and 0 otherwise.  Define $Treat_{i}$ as a binary variable equal to 1 if subject $i$ is in the treatment group and 0 otherwise. Then the DID treatment effect estimator is equal to the estimated coefficient $\beta_{1}$ in the following regression:
+With panel data, DID analysis can be conducted using linear regressions. Suppose the intervention happens between time $T_{0}$ and $T_{1}$. Define $Post_{t}$ as a binary variable equal to 1 if $t \geq T_{1}$ and 0 otherwise.  Define $Treated_{i}$ as a binary variable equal to 1 if subject $i$ is in the treatment group and 0 otherwise. Then the DID treatment effect estimator is equal to the estimated coefficient $\beta_{1}$ in the following regression:
 
-$$Y_{it} = \beta_0 + \beta_1 Treat_{i} \times Post_{t} + \delta_{i} + \gamma_{t} + \epsilon_{it}$$
+$$Y_{it} = \beta_0 + \beta_1 Treated_{i} \times Post_{t} + \delta_{i} + \gamma_{t} + \epsilon_{it}$$
 
 Here, $\delta_{i}$ are dummy variables for each subject and $\gamma_{t}$ are dummy variables for each time period.  
 
 If you had a dataframe called `df` in R with the following structure:
 
-| Subject | Time | Outcome | Treat | Post |
-| ------- | ---- | ------- | ----- | ---- |
-| ...     | ...  | ...     | ...   | ...  |
+| Subject | Time | Outcome | Treated | Post |
+| ------- | ---- | ------- | ------- | ---- |
+| ...     | ...  | ...     | ...     | ...  |
 
 Then the DID treatment effect can be estimated with the following R code:
 
-    felm(Outcome ~ Treat*Post | Subject + Time, data=df)
+    felm(Outcome ~ Treated*Post | Subject + Time, data=df)
 
-** Graphical Analysis of Pre-Trends **
+### Graphical Analysis of Pre-Trends
+
+DID is only valid if the treatment and control groups have similar time trends prior to the intervention happening. To verify this, you can plot the average outcomes in the treatment and control groups over time and show that prior to the intervention they had similar trends.
+
+If you had a dataframe called `df` in R with the same structure as above, you can accomplish this plot with the following code:
+
+    plot_df <- df %>%
+	  group_by(Treated, Time) %>%
+      summarize(MeanOutcome = mean(Outcome)) 
+    
+    ggplot(data=df) + 
+      geom_line(aes(x=Time, y=MeanOutcome, color=Treated)) 	
+
+This would give you a plot with two lines. One line shows the path of outcomes over time for the treatment group and the other line shows the path of outcomes over time for the control group. You can then verify that prior to the intervention the two lines had similar time trends.
+
+
+
+
 
 
 
