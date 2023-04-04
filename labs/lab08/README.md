@@ -92,6 +92,10 @@ Write a script that accomplishes the following tasks:
 
 1. Show that there are no differential pre-trends in the number of Airbnb listings between the cities that passed Airbnb regulations and those that didn't. [Hint: Calculate the average of `log(airbnb_listings)` for both by group and by year, then plot the averages.]
 
+    - For this plot, label the X axis "Year", the Y axis "log(Airbnb Listings)" and give it a title of "Log Airbnb Listings by Treatment/Control".
+	
+	- Bonus: Add a fancy dotted line to the plot to show where the intervention occurred. You can do so by adding `geom_vline(xintercept=2015.5, linetype="dashed")` to your ggplot code
+
 2. Report the results from the following regressions:
 	- Regress `log(airbnb_listings)` on `treatedXpost` and dummies for `city` and `year`.
 	- Regress `log(airbnb_listings)` on `treatedXpost`, `log(population)`, `log(avg_hh_income)`,  `log(tourists)`, and dummies for `city` and `year`.
@@ -126,9 +130,16 @@ Here is the skeleton of a script to get you started:
 	# Run the DID regressions
 	# YOUR CODE HERE
 
-	stargazer(r1, r2, r3, type="text")
+	stargazer(r1, r2, type="text")
 
+Show me your code and output and take the lab quiz to be dismissed.
 
+## Takeaways
+
+- You understand what panel data is
+- You can conduct DID analysis using both graphs and regressions
+
+ 
 
 
 
