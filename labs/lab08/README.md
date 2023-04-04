@@ -17,15 +17,15 @@ Difference-in-differences (DID) is a research design for estimating the effect o
 
 DID works when there is a group of subjects affected by the intervention (called the **treatment group**) and a group of subjects not affected by the intervention (called the **control group**). In DID, we compare the **change** in outcomes for the treatment group to the **change** in outcomes for the control group, over the time period in which the intervention happens.
 
-The table below shows a schematic of the most basic DID. The treatment happens between $T0$ and $T1$. $Y_{00}$ is the outcome in the control group at time $T0$ and $Y_{01}$ is the outcome in the control group at time $T1$. $Y_{10}$ is the outcome in the treatment group at time $T0$ and $Y_{11}$ is the outcome in the treatment group at time $T1$.
+The table below shows a schematic of the most basic DID. The treatment happens between times $T_0$ and $T_1$. $Y_{00}$ is the outcome in the control group at time $T0$ and $Y_{01}$ is the outcome in the control group at time $T_1$. $Y_{10}$ is the outcome in the treatment group at time $T_0$ and $Y_{11}$ is the outcome in the treatment group at time $T_1$.
 
-|                   | $T0$     | $T1$     |
+|                   | $T_0$    | $T_1$    |
 | ----------------- | -------- | -------- |
 | Control Group     | $Y_{00}$ | $Y_{01}$ |
 | Treatment Group   | $Y_{10}$ | $Y_{11}$ |
 
 The DID treatment effect estimator is:
 
-$$\text{DID Estimated Treatment Effect} = (Y_{11} - Y_{10}) - (Y_{01} - Y_{00})$$
+$$\text{DID Estimated Treatment Effect} = \underbrace{(Y_{11} - Y_{10})}{\text{Change in outcome for\\control group}} - (Y_{01} - Y_{00})$$
 
 
