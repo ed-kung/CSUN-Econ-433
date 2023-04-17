@@ -67,7 +67,7 @@ This would give you a plot with two lines. One line shows the path of outcomes o
 
 For this lab you will need the file `airbnb.csv` which can be downloaded from Canvas.
 
-You will also need the packages `dplyr`, `stargazer`, `lfe`, and `ggplot2`. These should be already installed from previous labs, but if they are not you can install them `install.packages`.
+You will also need the packages `dplyr`, `stargazer`, `lfe`, and `ggplot2`. These should be already installed from previous labs, but if they are not you can install them with `install.packages`.
 
 ### Data Description
 
