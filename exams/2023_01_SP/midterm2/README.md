@@ -50,3 +50,30 @@ Write a script that accomplishes the following tasks:
     
 Submit your code to the assignment called "Midterm 2 Grade" on Canvas.
 
+## Grading Rubric
+
+<style>
+table th:first-of-type {
+    width: 10%;
+}
+table th:nth-of-type(2) {
+    width: 45%;
+}
+table th:nth-of-type(3) {
+    width: 45%;
+}
+</style>
+
+|     | Execution                                 | Professionalism                                                                     |
+| --- | --------------------------                | ----------------------------------------------------------------------------------- |
+|  0  | No attempt to produce desired result      | No attempt at professionalism                                                       |
+|  1  | Code does not run, major errors           | Two of the below are not practiced                                                  |
+|  2  | Code does not run, minor errors           | One of the below is not practiced                                                   | 
+|  3  | Code runs with major errors               | Charts appropriately labeled, code appropriately formatted, best practices observed |    
+|  4  | Code runs with minor errors               |                                                                                     |
+|  5  | Desired result is produced without errors |                                                                                     |
+
+
+
+
+
