@@ -32,11 +32,13 @@ Your objective is to use difference-in-differences to estimate the effect of the
 
 Write a script that accomplishes the following tasks:
 
-1. Show that there are no differential pre-trends in log premium, log average cost, and log enrollment between Massachusetts plans and other states.
+1. Show how the average of log premium, log average cost, and log enrollment changes over time for plans in Massachusetts vs plans in other states. Show that there are no differential pre-trends between Massachusetts and other states and that starting in 2006 there is a divergence.
 
-    - Hint 1: You will need to make three plots, one for log premium, one for log average cost, and one for log enrollment.
+    - Hint 1: You will need to make three graphs, one for log premium, one for log average cost, and one for log enrollment.
     
-    - Hint 2: Make sure you title the plot with `ggtitle` and that you give the plot appropriate axes labels with `ylab` and `xlab`.
+    - Hint 2: Each graph should show two lines. One for the "treated" group, i.e. Massachusetts, and one for the "control" group, i.e. all other states. 
+    
+    - Hint 3: Make sure you title the plot with `ggtitle` and that you give the plot appropriate axes labels with `ylab` and `xlab`.
     
 2. Run regressions of log premium, log average cost, and log enrollment on a `TREATED_X_POST` indicator and include `STATE`, `YEAR`, `PLAN_ID`, and `COMPANY_ID` as dummies. Then show the results on one table.
 
@@ -44,7 +46,7 @@ Write a script that accomplishes the following tasks:
     
     - Hint 2: The code pattern for including multiple variables as dummies is: `felm(Y ~ X1 | F1 + F2 + F3, data=df)` 
     
-    - Hint 3: The resulting table should have one row and three columns
+    - Hint 3: The resulting table should have one row and three columns. Use `stargazer` to create this table.
     
 Submit your code to the assignment called "Midterm 2 Grade" on Canvas.
 
