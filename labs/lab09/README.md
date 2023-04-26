@@ -31,6 +31,91 @@ $$Y_i = \beta_0 + \beta_1 TREAT_i + f(r_i) + \epsilon_i$$
 
 Here, $r_i$ is the running variable for subject $i$, and $TREAT_i$ is a binary variable indicating whether or not $r_i$ is above or below the threshold for treatment.
 
+$f(r_i)$ is a continuous function of the running variable. In simple RD analysis, $f(r_i)$ is usually chosen to be a polynomial in $r_i$.
+
+## Lab Work
+
+### Setup
+
+For this lab you will need the file `rd_data.csv` which can be downloaded from Canvas.
+
+You will also need the packages `dplyr`, `stargazer`, `lfe`, and `ggplot2`. These should already be installed from previous labs, but if they are not you can install them with `install.packages`.
+
+### Data Description
+
+`rd_data.csv` is a csv file where each row represents a person. There is one row per person and the data represents a single snapshot in time. It is therefore cross-sectional data.
+
+The file has the following columns:
+
+- `person_id`: a unique identification number for the person
+- `age`: the person's age
+- `employed`: 1 if the person is employed and 0 otherwise
+
+### Objective
+
+A welfare program rewards more generous benefits to individuals with age greater than or equal to 30. 
+
+Your objective is to use RD analysis to test whether the more generous benefits at age 30 reduce the employment rate for people above age 30.
+
+### Making the RD graph
+
+You can make the RD graph with this code:
+
+    # Create a dataframe to generate scatter points
+    # (employment rate by age)
+    scatter_df <- df %>%
+      group_by(age) %>%
+      summarize(
+        employment_rate = mean(employed)
+      )
+    
+    # Create the graph
+    ggplot() + 
+      geom_smooth(aes(x=age, y=employed), data=filter(df, age<30)) + 
+      geom_smooth(aes(x=age, y=employed), data=filter(df, age>=30)) + 
+      geom_point(aes(x=age, y=employment_rate), data=scatter_df) + 
+      geom_vline(xintercept=29.5, color="red", linetype="dashed") + 
+      ggtitle("Employment Rate vs. Age") + 
+      ylab("Employment Rate") + 
+      xlab("Age")
+      
+This code introduces some new concepts, so let's walk through the code step by step.
+
+1. First, we have code to create a new dataframe called `scatter_df` where each row is an age, and for each age we calculate the employment rate for that age.
+
+        # Create a dataframe to generate scatter points
+        # (employment rate by age)
+        scatter_df <- df %>%
+          group_by(age) %>%
+          summarize(
+            employment_rate = mean(employed)
+          )
+
+2. In the `ggplot` code block, this line
+
+        geom_smooth(aes(x=age, y=employed), data=filter(df, age<30))
+
+    Creates a polynomial fit for the average of `employed` for each value of `age`, and plots a smooth line through it. It does so using only data for people under 30. By doing separate plots for people under age 30 and above age 30, we can more clearly see the jump in the regression discontinuity.
+    
+3. The line
+
+        geom_smooth(aes(x=age, y=employed), data=filter(df, age>=30))
+
+    Creates the smooth polynomial fit for individuals above the age of 30.
+    
+4. The line
+
+        geom_point(aes(x=age, y=employment_rate), data=scatter_df)
+        
+    Creates the dots showing the actual (non-smoothed) average for each age, which we computed and stored in `scatter_df`. This step is important so that we can see the raw data and not just the smoothed polynomial fit.
+    
+    
+       
+
+
+
+
+
 
 
 
