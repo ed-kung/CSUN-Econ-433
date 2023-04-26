@@ -109,6 +109,55 @@ This code introduces some new concepts, so let's walk through the code step by s
         
     Creates the dots showing the actual (non-smoothed) average for each age, which we computed and stored in `scatter_df`. This step is important so that we can see the raw data and not just the smoothed polynomial fit.
     
+### Instructions
+
+Write a script that accomplishes the following tasks:
+
+1. Create a graph showing the discontinuity. (You can use the code above with minimal changes to accomplish this.)
+
+2. Report the results from three regressions:
+
+    - Regress `employed` on a `treat`, where `treat` is a variable you create which indicates whether `age>=30`.
+    
+    - Regress `employed` on `treat` and `age`.
+    
+    - Regress `employed` on `treat`, `age`, and `agesq`, where `agesq` is a variable you create equal to the square of `age`.
+    
+    Report the results in a `stargazer` table.
+    
+Here is the skeleton of a script to get you started:
+
+    rm(list=ls())     # Clear the workspace
+    library(dplyr)    # Load the required libraries
+    library(lfe)
+    library(stargazer)
+    library(ggplot2)
+    
+    # Load the data
+    df <- read.csv("rd_data.csv") 
+    
+    # Make the RD graph
+    # YOUR CODE HERE
+    
+    # Make a variable called treated which is True if age>=30
+    # YOUR CODE HERE
+    
+    # Make a variable called agesq which is equal to age^2
+    # YOUR CODE HERE
+    
+    # Run the regressions
+    # YOUR CODE HERE
+    
+    stargazer(r1, r2, r3, type="text")
+    
+Show me your code and output and take the lab quiz to be dismissed.
+
+## Takeaways
+
+- You can conduct RD analysis using both graphs and regressions.
+
+
+    
     
        
 
