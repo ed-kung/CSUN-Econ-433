@@ -131,7 +131,7 @@ The required textbook is *Public Finance* by Harvey Rosen and Ted Gayer (ISBN: 9
 
 ### RStudio Cloud
 
-<img src="assets/images/rstudio.png" width="100">
+<img src="assets/images/Rstudio.png" width="100">
 
 RStudio is a development environment for R. We will be using a cloud-based version of it: https://posit.cloud.
 
