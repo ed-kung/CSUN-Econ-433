@@ -10,6 +10,7 @@
 - [Tentative Schedule](#tentative-schedule)
 - [Course Description](#course-description)
 - [Course Materials](#course-materials)
+- [Group Project Details](#group-project-details)
 - [Additional Course Policies and Resources](#additional-course-policies)
 
 
@@ -140,6 +141,82 @@ You'll need to sign up for a free account to use it.
 ### Assigned Readings
 
 Occassionally, I will assign readings from newspaper or academic journal articles. These will be posted to Canvas. You are responsible for reading these and you may be quizzed on them.
+
+# Group Project Details
+
+### Overview
+
+For this group project, you will choose a topic relevant to public economics and produce three deliverables:
+
+1. **A review article for an academic research paper.** Choose an academic journal article relevant to the topic you chose. Write a review of the paper. The review should summarize the research question, data, methodology, and results. It should also offer an opinion as to the validity and implications of the results.
+
+2. **A research proposal.** Write a proposal for further research on the topic you chose. The proposal should springboard off the paper that you reviewed. Explain how your proposal will extend or address the results in the paper. Outline a credible research strategy.
+
+3. **A presentation to the class.** You will present both your review article and your research proposal to the class. The goal of the presentation is to inform the class about current research in the topic that you choose.
+
+### In-Class Group Sessions
+
+The group projects will start towards the end of the semester. The lab sessions in the last four weeks of the semester will be used for group project work. Some sort of checkpoint or deliverable will be required at each session.
+
+### Graded Components
+
+- Attendance (3 pts for each in-class session)
+- Review Article First Draft (5 pts)
+- Review Article Final Draft (20 pts)
+- Research Proposal First Draft (5 pts)
+- Research Proposal Final Draft (20 pts)
+- Presentation Draft Slides (5 pts)
+- Final Presentation (15 pts)
+
+### Review Article
+
+You will choose an academic journal article and write a review article. The paper that you choose must be cleared with me first.
+
+The review article should be around 3 pages of writing, with additional pages allowed for the inclusion of tables and figures. The review article should answer the following questions:
+
+- What is the question being studied by the paper?
+- Why is this question interesting or important?
+- How does the paper attempt to answer the question? What data is used and what is the methodology?
+- What are some of the key endogeneity issues that the paper's authors seek to address with its research design?
+- What are the paper's results? 
+- Do you find the methodology convincing? What are some of the strenghts and weaknesses of the paper?
+- Discuss the paper's broader implications for public policy and economics
+
+The review article will be holistically graded on the following factors:
+
+- Clarity. Was I able to understand your article? Were parts of it confusing o rhard to understand?
+- Accuracy. Did you describe the research question, data, methodology, and results accurately? Were your critiques of the paper accurate?
+
+
+### Research Proposal
+
+You will write a research proposal which is on the same topic as the academic paper you chose to review. 
+
+The research proposal should be no longer than 2 pages of writing, and should only exceed 2 pages for the purposes of listing data requirements. The proposal should answer the following questions:
+
+- What is the research question you wish to study?
+- Why is it important or interesting?
+- How does it relate to previous research?
+- What is your hypothesis?
+- What data do you need to conduct the research? Identify the unit of observation.
+- What methodology will you use to answer the question?
+- What are the key endogeneity issues that you are concerned about? How will your research strategy address them?
+
+The proposal will be graded holistically on the following factors:
+
+- Clarity. Was I able to understand the proposal? Were parts of it confusing or hard to understand?
+- Relevance. Is your research question interesting or important? Is it relevant to the topic you're interested in studying?
+- Potential for success. If this were a real project, what is the chance that this proposal would result in a successful research project? Did you correctly identify the sources of endogeneity? Does your methodology properly address it? Is the data you requested the appropriate kind of data?
+
+### Presentation
+
+
+
+
+
+
+
+
 
 
 # Additional Course Policies and Resources
