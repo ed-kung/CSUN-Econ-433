@@ -10,6 +10,7 @@
 - [Tentative Schedule](#tentative-schedule)
 - [Course Description](#course-description)
 - [Course Materials](#course-materials)
+- [Exam Policies and Information](#exam-policies-and-information)
 - [Group Project Details](#group-project-details)
 - [Additional Course Policies and Resources](#additional-course-policies)
 
@@ -142,6 +143,22 @@ You'll need to sign up for a free account to use it.
 
 Occassionally, I will assign readings from newspaper or academic journal articles. These will be posted to Canvas. You are responsible for reading these and you may be quizzed on them.
 
+# Exam Policies and Information
+
+There will be two in-class programming midterms. In these midterms, you will be provided with data and asked to perform one or more data analysis tasks on it. You will submit your code for grading.
+
+The exam will be graded out of 8 according to this rubric:
+
+| Points | Execution                                        | Professionalism                         |
+| ------ | ------------------------------------------------ | --------------------------------------- |
+| 0      | No attempt to produce desired output             | No attempt at best practices            |
+| 1      | Code does not run; major errors                  | Two or more best practices not followed |
+| 2      | Code does not run; minor errors                  | One of the best practices not followed  |
+| 3      | A result is produced, but there are major errors | All best practices are followed         |
+| 4      | A result is produced, but with minor errors      |                                         |
+| 5      | Desired result is produced without errors        |                                         |
+
+
 # Group Project Details
 
 ### Overview
@@ -161,13 +178,13 @@ The group projects will start towards the end of the semester. The lab sessions 
 ### Graded Components
 
 - Attendance (3 pts for each in-class session)
-- Review Articel Worksheet (5 pts)
+- Review Article Worksheet (5 pts)
 - Review Article First Draft (5 pts)
 - Review Article Final Draft (20 pts)
 - Research Proposal First Draft (5 pts)
 - Research Proposal Final Draft (20 pts)
 - Presentation Draft Slides (5 pts)
-- Final Presentation (15 pts)
+- Final Presentation (20 pts)
 
 ### Review Article
 
