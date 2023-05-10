@@ -255,14 +255,6 @@ The presentation will be submitted in two stages:
 | Mon 12/11 |                 | Final draft due   | First draft due     |
 | TBD       |                 |                   | Actual presentation |
 
-### Suggested Workflow
-
-- Group Meeting #1
-  - Decide on a paper together
-- Between Meeting #1 and Meeting #2
-  - Everyone read the paper on their own
-  - Get together to 
-
 
 
 # Additional Course Policies and Resources
