@@ -161,6 +161,7 @@ The group projects will start towards the end of the semester. The lab sessions 
 ### Graded Components
 
 - Attendance (3 pts for each in-class session)
+- Review Articel Worksheet (5 pts)
 - Review Article First Draft (5 pts)
 - Review Article Final Draft (20 pts)
 - Research Proposal First Draft (5 pts)
@@ -187,6 +188,11 @@ The review article will be holistically graded on the following factors:
 - Clarity. Was I able to understand your article? Were parts of it confusing o rhard to understand?
 - Accuracy. Did you describe the research question, data, methodology, and results accurately? Were your critiques of the paper accurate?
 
+The review article will be submitted in three stages.
+
+1. A worksheet. You will answer questions on a worksheet that I give you. This helps you organize your ideas.
+2. A first draft. You will submit a complete first draft. I will provide feedback.
+3. The final draft. You will submit your final draft that addresses my feedback.
 
 ### Research Proposal
 
@@ -216,6 +222,11 @@ The proposal should contain the following sections:
 - Proposed Methodology
 - Required Dataset
 
+The proposal will be submitted in two stages:
+
+1. A first draft. You will submit a complete proposal. I will provide feedback.
+2. The final draft. You will submit your final draft that addresses my feedback.
+
 ### Presentation
 
 You will present both your review article and your research proposal. The goal of the presentation is to inform the class about current research on the topic that you chose.
@@ -229,14 +240,30 @@ The presentation will be graded on the following factors:
 - Participation. Did the entire group participate?
 - Knowledge. Did the group appear to have a firm grasp of the topic? Were they able to answer questions convincingly?
 
+The presentation will be submitted in two stages:
+
+1. A first draft. You will submit a draft of the slides. I will provide feedback.
+2. The actual presentation. You will be graded based on the quality of the presentation.
+
 ### Key Dates
 
-| Date      | Review Article  | Research Proposal | Presentation    |
-| --------- | --------------- | ----------------- | --------------- |
-| Mon 11/20 | First draft due |                   |                 |
-| Mon 11/27 | Final draft due | First draft due   |                 |
-| Mon 12/4  |                 | Final draft due   | First draft due |
-| Mon 12/11 |                 |                   | Final draft due |
+| Date      | Review Article  | Research Proposal | Presentation        |
+| --------- | --------------- | ----------------- | ------------------- |
+| Mon 11/20 | Worksheet due   |                   |                     |
+| Mon 11/27 | First draft due |                   |                     |
+| Mon 12/4  | Final draft due | First draft due   |                     |
+| Mon 12/11 |                 | Final draft due   | First draft due     |
+| TBD       |                 |                   | Actual presentation |
+
+### Suggested Workflow
+
+- Group Meeting #1
+  - Decide on a paper together
+- Between Meeting #1 and Meeting #2
+  - Everyone read the paper on their own
+  - Get together to 
+
+
 
 # Additional Course Policies and Resources
 
