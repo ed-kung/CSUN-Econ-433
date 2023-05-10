@@ -229,7 +229,14 @@ The presentation will be graded on the following factors:
 - Participation. Did the entire group participate?
 - Knowledge. Did the group appear to have a firm grasp of the topic? Were they able to answer questions convincingly?
 
+### Key Dates
 
+| Date      | Review Article  | Research Proposal | Presentation    |
+| --------- | --------------- | ----------------- | --------------- |
+| Mon 11/20 | First draft due |                   |                 |
+| Mon 11/27 | Final draft due | First draft due   |                 |
+| Mon 12/4  |                 | Final draft due   | First draft due |
+| Mon 12/11 |                 |                   | Final draft due |
 
 # Additional Course Policies and Resources
 
