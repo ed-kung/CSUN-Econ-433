@@ -125,9 +125,13 @@ By the end of the course, you will be able to:
 
 ### Required Textbook
 
+<img src="assets/images/textbook.jpg" width="90">
+
 The required textbook is *Public Finance* by Harvey Rosen and Ted Gayer (ISBN: 9780078021688). While you do not have to purchase the textbook, you should ensure that you have access to a copy because required readings will be assigned from the textbook.
 
 ### RStudio Cloud
+
+<img src="assets/images/rstudio.png" width="100">
 
 RStudio is a development environment for R. We will be using a cloud-based version of it: https://posit.cloud.
 
