@@ -208,14 +208,26 @@ The proposal will be graded holistically on the following factors:
 - Relevance. Is your research question interesting or important? Is it relevant to the topic you're interested in studying?
 - Potential for success. If this were a real project, what is the chance that this proposal would result in a successful research project? Did you correctly identify the sources of endogeneity? Does your methodology properly address it? Is the data you requested the appropriate kind of data?
 
+The proposal should contain the following sections:
+
+- Project Description
+- Background and Motivation
+- Hypothesis
+- Proposed Methodology
+- Required Dataset
+
 ### Presentation
 
+You will present both your review article and your research proposal. The goal of the presentation is to inform the class about current research on the topic that you chose.
 
+The presentation should be around 20 minutes long with 5 minutes at the end reserved for questions.
 
+The presentation will be graded on the following factors:
 
-
-
-
+- Clarity. Was I able to understand the presentation? Were any parts of it confusing or hard to understand? Did the presenters speak clearly?
+- Professionalism. Were the slides professionally made? Did the presenters use professional language and were they appropriately dressed?
+- Participation. Did the entire group participate?
+- Knowledge. Did the group appear to have a firm grasp of the topic? Were they able to answer questions convincingly?
 
 
 
