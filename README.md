@@ -159,6 +159,8 @@ The exam will be graded out of 8 according to this rubric:
 | 5      | Desired result is produced without errors        |                                                 |
 
 
+[Coding Best Practices](labs#coding-best-practices)
+
 # Group Project Details
 
 Click [here](group-project.md) for details on the group project.

@@ -27,7 +27,7 @@ Here are some best practices to follow when coding in R:
 
 - Clear your workspace at the start of every script: `rm(list=ls())`
 - Follow up by loading all your required libraries.
-- Add comments to your code where appropriate. 
+- Add comments to your code to explain what each section of code is doing. 
 - Use variable and dataframe names that make sense.
 - Ensure that all graphs have titles and axis labels.
 - Do not include extraneous lines of code (i.e. lines of code that are not needed for the execution of the task.)
