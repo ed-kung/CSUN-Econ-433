@@ -71,7 +71,7 @@ Attendance is required.
 |     1 | 8/29  | Intro to Public Economics                 | Lab 01: Intro to Public Datasets with IPUMS | 
 |     2 | 9/5   | Review of Micro Principles                | Lab 02: Introduction to R                   | 
 |     3 | 9/12  | Public Goods & Common Resources           | Lab 03: Basic Data Operations & Scripts     | 
-|     4 | 9/19  | Externalities                             | Lab 04: Grouping Data                       | 
+|     4 | 9/19  | Externalities                             | Lab 04: Grouping and Summarizing Data       | 
 |     5 | 9/26  | Education                                 | Lab 05: Data Visualization                  | 
 |     6 | 10/3  | Healthcare                                | Programming Midterm #1                      | 
 |     7 | 10/10 | Linear Models                             | Lab 06: Regression Analysis I               | 
@@ -80,9 +80,9 @@ Attendance is required.
 |    10 | 10/31 | RD Paper                                  | Lab 09: Regression Discontinuity            | 
 |    11 | 11/7  | Income Redistribution & Social Assistance | Programming Midterm #2                      | 
 |    12 | 11/14 | Current Issues Discussion                 | Group Meeting #1                            | 
-|    13 | 11/21 | IV Paper                                  | Group Meeting #2                            |
-|    14 | 11/28 | Cost Benefit Analysis                     | Group Meeting #3                            | 
-|    15 | 12/5  | Theory of Public Choice                   | Group Meeting #4                            |
+|    13 | 11/21 | Cost Benefit Analysis                     | Group Meeting #2                            |
+|    14 | 11/28 | Theory of Public Choice                   | Group Meeting #3                            | 
+|    15 | 12/5  | Sorting and Spatial Equilibrium           | Group Meeting #4                            |
 
 ### Final Exam Schedule
 
@@ -149,129 +149,19 @@ There will be two in-class programming midterms. In these midterms, you will be 
 
 The exam will be graded out of 8 according to this rubric:
 
-| Points | Execution                                        | Professionalism                         |
-| ------ | ------------------------------------------------ | --------------------------------------- |
-| 0      | No attempt to produce desired output             | No attempt at best practices            |
-| 1      | Code does not run; major errors                  | Two or more best practices not followed |
-| 2      | Code does not run; minor errors                  | One of the best practices not followed  |
-| 3      | A result is produced, but there are major errors | All best practices are followed         |
-| 4      | A result is produced, but with minor errors      |                                         |
-| 5      | Desired result is produced without errors        |                                         |
+| Points | Execution (5 points for each task)               | Professionalism (3 points for whole assignment) |
+| ------ | ------------------------------------------------ | ----------------------------------------------- |
+| 0      | No attempt to perform task                       | No attempt at best practices                    |
+| 1      | Code does not run; major errors                  | Two or more best practices not followed         |
+| 2      | Code does not run; minor errors                  | One of the best practices not followed          |
+| 3      | A result is produced, but there are major errors | All best practices are followed                 |
+| 4      | A result is produced, but with minor errors      |                                                 |
+| 5      | Desired result is produced without errors        |                                                 |
 
 
 # Group Project Details
 
-### Overview
-
-For this group project, you will choose a topic relevant to public economics and produce three deliverables:
-
-1. **A review article for an academic research paper.** Choose an academic journal article relevant to the topic you chose. Write a review of the paper. The review should summarize the research question, data, methodology, and results. It should also offer an opinion as to the validity and implications of the results.
-
-2. **A research proposal.** Write a proposal for further research on the topic you chose. The proposal should springboard off the paper that you reviewed. Explain how your proposal will extend or address the results in the paper. Outline a credible research strategy.
-
-3. **A presentation to the class.** You will present both your review article and your research proposal to the class. The goal of the presentation is to inform the class about current research in the topic that you choose.
-
-### In-Class Group Sessions
-
-The group projects will start towards the end of the semester. The lab sessions in the last four weeks of the semester will be used for group project work. Some sort of checkpoint or deliverable will be required at each session.
-
-### Graded Components
-
-- Attendance (3 pts for each in-class session)
-- Review Article Worksheet (5 pts)
-- Review Article First Draft (5 pts)
-- Review Article Final Draft (20 pts)
-- Research Proposal First Draft (5 pts)
-- Research Proposal Final Draft (20 pts)
-- Presentation Draft Slides (5 pts)
-- Final Presentation (20 pts)
-
-### Review Article
-
-You will choose an academic journal article and write a review article. The paper that you choose must be cleared with me first.
-
-The review article should be around 3 pages of writing, with additional pages allowed for the inclusion of tables and figures. The review article should answer the following questions:
-
-- What is the question being studied by the paper?
-- Why is this question interesting or important?
-- How does the paper attempt to answer the question? What data is used and what is the methodology?
-- What are some of the key endogeneity issues that the paper's authors seek to address with its research design?
-- What are the paper's results? 
-- Do you find the methodology convincing? What are some of the strenghts and weaknesses of the paper?
-- Discuss the paper's broader implications for public policy and economics
-
-The review article will be holistically graded on the following factors:
-
-- Clarity. Was I able to understand your article? Were parts of it confusing o rhard to understand?
-- Accuracy. Did you describe the research question, data, methodology, and results accurately? Were your critiques of the paper accurate?
-
-The review article will be submitted in three stages.
-
-1. A worksheet. You will answer questions on a worksheet that I give you. This helps you organize your ideas.
-2. A first draft. You will submit a complete first draft. I will provide feedback.
-3. The final draft. You will submit your final draft that addresses my feedback.
-
-### Research Proposal
-
-You will write a research proposal which is on the same topic as the academic paper you chose to review. 
-
-The research proposal should be no longer than 2 pages of writing, and should only exceed 2 pages for the purposes of listing data requirements. The proposal should answer the following questions:
-
-- What is the research question you wish to study?
-- Why is it important or interesting?
-- How does it relate to previous research?
-- What is your hypothesis?
-- What data do you need to conduct the research? Identify the unit of observation.
-- What methodology will you use to answer the question?
-- What are the key endogeneity issues that you are concerned about? How will your research strategy address them?
-
-The proposal will be graded holistically on the following factors:
-
-- Clarity. Was I able to understand the proposal? Were parts of it confusing or hard to understand?
-- Relevance. Is your research question interesting or important? Is it relevant to the topic you're interested in studying?
-- Potential for success. If this were a real project, what is the chance that this proposal would result in a successful research project? Did you correctly identify the sources of endogeneity? Does your methodology properly address it? Is the data you requested the appropriate kind of data?
-
-The proposal should contain the following sections:
-
-- Project Description
-- Background and Motivation
-- Hypothesis
-- Proposed Methodology
-- Required Dataset
-
-The proposal will be submitted in two stages:
-
-1. A first draft. You will submit a complete proposal. I will provide feedback.
-2. The final draft. You will submit your final draft that addresses my feedback.
-
-### Presentation
-
-You will present both your review article and your research proposal. The goal of the presentation is to inform the class about current research on the topic that you chose.
-
-The presentation should be around 20 minutes long with 5 minutes at the end reserved for questions.
-
-The presentation will be graded on the following factors:
-
-- Clarity. Was I able to understand the presentation? Were any parts of it confusing or hard to understand? Did the presenters speak clearly?
-- Professionalism. Were the slides professionally made? Did the presenters use professional language and were they appropriately dressed?
-- Participation. Did the entire group participate?
-- Knowledge. Did the group appear to have a firm grasp of the topic? Were they able to answer questions convincingly?
-
-The presentation will be submitted in two stages:
-
-1. A first draft. You will submit a draft of the slides. I will provide feedback.
-2. The actual presentation. You will be graded based on the quality of the presentation.
-
-### Key Dates
-
-| Date      | Review Article  | Research Proposal | Presentation        |
-| --------- | --------------- | ----------------- | ------------------- |
-| Mon 11/20 | Worksheet due   |                   |                     |
-| Mon 11/27 | First draft due |                   |                     |
-| Mon 12/4  | Final draft due | First draft due   |                     |
-| Mon 12/11 |                 | Final draft due   | First draft due     |
-| TBD       |                 |                   | Actual presentation |
-
+Click [here](group-project.md) for details on the group project.
 
 
 # Additional Course Policies and Resources
