@@ -1,1 +1,4 @@
 *.json
+*.Rhistory
+.ipynb_checkpoints
+Untitled.*
