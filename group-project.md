@@ -105,6 +105,8 @@ The presentation will be graded holistically on the following factors:
   - Begin working on the presentation
   - Discuss your progress with me
   
+- **Monday 12/11: Report final draft and project code due**
+
 - **TBD: Presentations**
 
 # Grading
@@ -114,7 +116,7 @@ The presentation will be graded holistically on the following factors:
 - Research Proposal Final Draft (20 pts)
 - Research Report First Draft (5 pts)
 - Research Report Final Draft (20 pts)
-- Analysis Code (8 pts)
+- Project Code (8 pts)
 - Presentation (20 pts)
 
 
