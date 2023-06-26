@@ -24,6 +24,8 @@
 - Dr. Edward Kung
 - edward.kung@csun.edu
 
+**About Me**: I love studying and teaching economics because it beautifully explains the world around us, from business and politics to dating and marriage. I also enjoy playing video games, and I'm learning to play guitar. I live in West LA with my wife and two kids.
+
 ### Lectures
 
 - Section 01 Tu 7:00pm - 9:45pm @ Bookstein 2125
@@ -58,7 +60,7 @@ Attendance is required.
   - There will be two programming exams. These will be administered and completed in-class.
 
 - **Group Project (25%)**
-  - There will be a group project with three deliverables: 1) a review article for a research paper; 2) a research proposal; and 3) a presentation to the class. More information below.
+  - There will be a group project. See details [here](group-project.md).
   
 |  A     |  A-   |  B+   |  B    |  B-   |  C+   |  C    |  C-   |  D    |  F   |
 | ------ | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ---- |
