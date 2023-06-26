@@ -4,7 +4,7 @@
 
 Your group will:
 
-- Propose a research question using ACS/Census data from IPUMS.
+- Propose a research question using ACS/Census data from IPUMS (or another dataset if you so choose).
 - Propose a methodology for answering the question.
 - Acquire the necessary data.
 - Conduct the analysis.
@@ -80,8 +80,8 @@ The presentation will be graded holistically on the following factors:
 
 - **Tuesday 11/14: Group Meeting #1**
   - Decide on a research question
+  - Discuss your ideas with me to get approval
   - Start working on the research proposal
-  - Discuss your ideas with me
 
 - **Monday 11/20: Proposal first draft due**
 
