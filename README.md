@@ -40,11 +40,6 @@ This is an in-person class with one 2:45 hour session a week. The first half of 
 
 Attendance is required.
 
-### Weekly Time Expectations
-
-- One 2:45 hour in-person session a week
-- 2 to 4 hours of homework and self study per week
-
 ### Grading
 
 - **Homework Assignments (25%)**
