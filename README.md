@@ -52,7 +52,7 @@ Attendance is required.
   - In-class lab sessions where you get hands-on experience working with data analysis relevant to policy. Lab assignments will be introduced, completed, and graded *in-class*. If you can't finish in class, you have the opportunity to submit your code by the following Monday, with a late penalty. There may also be in-class quizzes associated with the labs.
   
 - **In-Class Quizzes (10%)**
-  - Occassionally, I will give a short quiz in-class related to that week's lecture or discussion. 
+  - Occassionally, I will give a short quiz in-class related to that week's lecture or discussion. These in-class quizzes will also count for your attendance.
   
 - **Programming Exams (15%)**
   - There will be two programming exams. These will be administered and completed in-class.
@@ -141,7 +141,7 @@ You'll need to sign up for a free account to use it.
 
 ### Assigned Readings
 
-Occassionally, I will assign readings from newspaper or academic journal articles. These will be posted to Canvas. You are responsible for reading these and you may be quizzed on them.
+Occasionally, I will assign readings from newspaper or academic journal articles. These will be posted to Canvas. You are responsible for reading these and you may be quizzed on them.
 
 # Exam Policies and Information
 
@@ -180,9 +180,13 @@ Requests for late submissions or extensions, beyond what is allowed in the sylla
 
 By taking this course, you certify that all work is your own. Plagiarism is not allowed, and you are not allowed to have someone else do any course work in your place. If it is discovered that you have violated academic integrity on any assignment, you will receive a grade of zero for that assignment. Repeated violations of academic integrity may result in a failing grade for the entire course.
 
+Special consideration may be given to students with caregiving responsibilities at home (children, disabled family members, etc.). Please get in touch with me if you need an extension and have caregiving responsibilities.
+
 ### Minimum Attempt Policy
 
 You must at least attempt to answer every question on an assignment. If you skip a question without attempting an answer, you may receive a grade of zero for the entire assignment.
+
+Why do I have a minimum attempt policy? Because demonstrating effort is important, especially in the workplace. Not even attempting a task is worse than attempting it and getting it wrong. I want to encourage all students to at least make an attempt at all tasks. As Kobe Bryant said, "You miss 100% of the shots you don't take."
 
 ### Students with Disabilities
 
