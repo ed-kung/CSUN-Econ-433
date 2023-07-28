@@ -73,19 +73,19 @@ Attendance is required.
 |     6 | 10/3  | Healthcare                                | Programming Midterm #1                      | 
 |     7 | 10/10 | Linear Models                             | Lab 06: Regression Analysis I               | 
 |     8 | 10/17 | Research Design                           | Lab 07: Regression Analysis II              | 
-|     9 | 10/24 | Diff-in-Diff Paper                        | Lab 08: Difference-in-Differences           | 
-|    10 | 10/31 | RD Paper                                  | Lab 09: Regression Discontinuity            | 
-|    11 | 11/7  | Income Redistribution & Social Assistance | Programming Midterm #2                      | 
-|    12 | 11/14 | Current Issues Discussion                 | Group Meeting #1                            | 
-|    13 | 11/21 | Cost Benefit Analysis                     | Group Meeting #2                            |
-|    14 | 11/28 | Theory of Public Choice                   | Group Meeting #3                            | 
-|    15 | 12/5  | Sorting and Spatial Equilibrium           | Group Meeting #4                            |
+|     9 | 10/24 | Current Issues Discussion                 | Group Meeting #1                            |
+|    10 | 10/31 | Diff-in-Diff Paper                        | Lab 08: Difference-in-Differences           | 
+|    11 | 11/7  | Income Redistribution & Social Assistance | Group Meeting #2                            |
+|    12 | 11/14 | RD Paper                                  | Lab 09: Regression Discontinuity            | 
+|    13 | 11/21 | Cost Benefit Analysis                     | Group Meeting #3                            |
+|    14 | 11/28 | Theory of Public Choice                   | Programming Midterm #2                      |
+|    15 | 12/5  | TBD                                       | Group Meeting #4                            |
 
 ### Final Exam Schedule
 
-Instead of a traditional final exam, you will be presenting your group projects. (See below)
+Instead of a traditional final exam, you will be presenting your [group projects](group-project.md).
 
-- Time and location TBD
+- Tu 12/12/2023, 8:00PM - 10:00PM @ Bookstein 2125
 
 # Course Description
 

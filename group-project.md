@@ -18,7 +18,7 @@ Your group will:
 
 # Research Proposal
 
-The research proposal should not exceed 2 pages, except to include tables and figures. The research proposal should answer the following questions:
+The research proposal should not exceed 2 pages (12pt font, single spaced), except to include tables and figures. The research proposal should answer the following questions:
 
 - What is the research question you wish to study?
 - Why is the question important or interesting?
@@ -47,7 +47,7 @@ The proposal will be graded holistically on the following factors:
 
 # Research Report
 
-The research report should not exceed 2 pages, except to include tables and figures. The research report should include the same sections as the proposal, except it should also include a **Results**, **Discussion**, and **Conclusion** section.
+The research report should not exceed 4 pages, except to include tables and figures. The research report should include the same sections as the proposal, except it should also include a **Results**, **Discussion**, and **Conclusion** section.
 
 - **Results**: Report the results of your analysis. Use tables and figures as appropriate.
 - **Discussion**: Discuss the interpretation of your results. 
@@ -78,24 +78,24 @@ The presentation will be graded holistically on the following factors:
 
 # Schedule
 
-- **Tuesday 11/14: Group Meeting #1**
+- **Tuesday 10/24: Group Meeting #1**
   - Decide on a research question
   - Discuss your ideas with me to get approval
   - Start working on the research proposal
 
-- **Monday 11/20: Proposal first draft due**
+- **Monday 10/30: Proposal first draft due**
 
-- **Tuesday 11/21: Group Meeting #2**
-  - Finalize the research proposal
-  - Begin working on the data and analysis
-  - Discuss your progress with me
+- **Monday 11/6: Proposal final draft due**
+
+- **Tuesday 11/7: Group Meeting #2**
+  - Begin collecting and organizing the data
+  - Begin analysis if possible
+  - Discuss progress & schedule a progress report
   
-- **Monday 11/27: Proposal final draft due**
-
-- **Tuesday 11/28: Group Meeting #3**
-  - Continue working on the data and analysis
-  - Begin working on the research report
-  - Discuss your progress with me
+- **Tuesday 11/21: Group Meeting #3**
+  - Finalize data collection and preparation
+  - Begin or continue analysis
+  - Discuss progress & schedule a progress report
   
 - **Monday 12/4: Report first draft due**
 
@@ -103,15 +103,15 @@ The presentation will be graded holistically on the following factors:
   - Finalize the data and analysis
   - Finalize the research report
   - Begin working on the presentation
-  - Discuss your progress with me
   
 - **Monday 12/11: Report final draft and project code due**
 
-- **TBD: Presentations**
+- **Tuesday 12/12: Presentations**
 
 # Grading
 
 - Attendance (3 pts for each in-class session)
+- Progress reports (3 pts each)
 - Research Proposal First Draft (5 pts)
 - Research Proposal Final Draft (20 pts)
 - Research Report First Draft (5 pts)
