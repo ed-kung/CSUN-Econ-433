@@ -63,7 +63,9 @@ Once you have your account created, you can begin creating a data extract.
 
     **Unique Identifiers** - A dataset contains rows and columns. Each row represents a record and each column (a.k.a. variable) contains information about that record. In data analytics, it is always important to know which variables uniquely identify a record in your dataset, because if you have duplicate records with the same unique identifiers then you know you have an error in the data. 
     
-    In the IPUMS data, each record is a person and the variables `SERIAL`, `PERNUM` together uniquely identify a record. If we find records with duplicate values of `SERIAL`, `PERNUM`, we'll know we did something wrong. 
+    In data science, the column that contains the unique identifier is called the **primary key**.
+    
+    In the IPUMS data, the primary keys are `SERIAL` and `PERNUM`. `SERIAL` and `PERNUM` together uniquely identify a record. If we find records with duplicate values of `SERIAL` and `PERNUM`, we'll know we did something wrong. 
   
 11. Finally, go back and click on `PERWT`. `PERWT` indicates how many persons in the U.S. population are represented by a given person in the IPUMS sample. In other words, it is a *sampling weight*.
 
@@ -105,7 +107,9 @@ It will take a few minutes for the extract to be ready. Once it's ready, you sho
 
 24. The file type is .gz, which is a type of compression like .zip. Extract it using any Windows program compatible with .gz files, like 7-zip or WinRAR. The resulting .csv file should be about 44 MB in size.
 
-25. Open the file in Excel. How many rows are there? With your Excel knowledge, do you think you'd be able to make sense of this data and perform analytics on it using just Excel? 
+25. Open the file in Excel. How many rows are there? How many columns?
+
+26. Try using Excel to calculate the average wage and salary income for employed people between the ages of 25 and 65 in California in 2019.
 
 26. Show me your opened file in Excel and take the lab quiz to be dismissed.
 
