@@ -32,3 +32,10 @@ Here are some best practices to follow when coding in R:
 - Ensure that all graphs have titles and axis labels.
 - Do not include extraneous lines of code (i.e. lines of code that are not needed for the execution of the task.)
 - Save your scripts with the `.R` file extension.
+
+## Useful Keyboard Shortcuts
+
+- `CTRL+ENTER`: execute the current line of code
+- `CTRL+SHIFT+ENTER`: execute the entire script from the top
+- `CTRL+S`: save the current script
+
