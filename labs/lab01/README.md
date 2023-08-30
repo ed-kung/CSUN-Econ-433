@@ -109,9 +109,14 @@ It will take a few minutes for the extract to be ready. Once it's ready, you sho
 
 25. Open the file in Excel. How many rows are there? How many columns?
 
-26. Try using Excel to calculate the average wage and salary income for employed people between the ages of 25 and 65 in California in 2019.
+26. Try using Excel to calculate the average wage and salary income for employed people between the ages of 25 and 65 in California in 2019. Remember to calculate the weighted average using `PERWT` as sample weights.
 
-26. Show me your opened file in Excel and take the lab quiz to be dismissed.
+## To get credit and be dismissed
+
+1. Show me your opened file in Excel and that it has the correct number of rows and columns.
+
+2. Take the lab quiz.
+
 
 ## Takeaways
 
