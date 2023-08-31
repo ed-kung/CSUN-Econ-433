@@ -130,7 +130,7 @@ First, let's discuss the use of `df$MARST`. The `$` symbol is used to reference 
 
 Second, let's discuss the use of `<-`. The `<-` symbol is used to assign the object on the right hand side of `<-` to the object on the left hand side of `<-`. If the object on the left hand side already exists, it is replaced.
 
-So now let's look back at `df$MARST <- as.factor(df$MARST)`. This line of code replaces assigns `as.factor(df$MARST)` to `df$MARST`. Since `df$MARST` already exists (as an integer column), it is replaced by `as.factor(df$MARST)` (a categorical column). Any future references to `df$MARST` will return a categorical column.
+So now let's look back at `df$MARST <- as.factor(df$MARST)`. This line of code assigns `as.factor(df$MARST)` to `df$MARST`. Since `df$MARST` already exists (as an integer column), it is replaced by `as.factor(df$MARST)` (a categorical column). Any future references to `df$MARST` will return the categorical column.
 
 17. Let's put what we learned into practice. Type `df$INC_DIV_AGE <- df$INCWAGE / df$AGE`. This line of code creates a new variable called `INC_DIV_AGE` which is equal to `INCWAGE` divided by `AGE`. Type `summary(df$INC_DIV_AGE)` to show some summary statistics about this new variable.
 
