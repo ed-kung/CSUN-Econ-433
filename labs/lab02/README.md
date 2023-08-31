@@ -134,6 +134,28 @@ So now let's look back at `df$MARST <- as.factor(df$MARST)`. This line of code r
 
 17. Let's put what we learned into practice. Type `df$INC_DIV_AGE <- df$INCWAGE / df$AGE`. This line of code creates a new variable called `INC_DIV_AGE` which is equal to `INCWAGE` divided by `AGE`. Type `summary(df$INC_DIV_AGE)` to show some summary statistics about this new variable.
 
+**Row-by-row operations**: By default, operations on columns occur row-by-row. So `df$INCWAGE / df$AGE` goes row-by-row, taking the value of `INCWAGE` in each row and dividing by the value of `AGE` in that row.
+
+### Logical operators
+
+In analytics, we frequently have to work with logical operator. A **logical expression** is a statement that can be either `TRUE` or `FALSE`, and a **logical operator** is something that combines one or more logical expressions into a new `TRUE` or `FALSE` expression.
+
+Examples:
+
+- `AGE>=25` is a logical expression that is `TRUE` if `AGE` is greater than or equal to 25, and `FALSE` otherwise.  
+- `AGE<=65` is a logical expression that is `TRUE` if `AGE` is less than or equal to 65, and `FALSE` otherwise.
+- `(AGE>=25) & (AGE<=65)` is a logical expression that is `TRUE` if both `AGE>=25` and `AGE<=65` are true. `&` is the "and" logical operator.
+
+The logical operators you should know are:
+
+- `>` and `>=`: greater than / greater than or equal to
+- `<` and `<=`: less than / less than or equal to
+- `==`: exactly equal to
+- `&`: and
+- `|`: or
+
+18. Let's create a variable called `WORKING_ADULT` that is `TRUE` if the person is employed and is over the age of 25. Type `df$WORKING_ADULT <- (df$EMPSTAT==1) & (df$AGE>=25)` to create this variable. Then type `summary(df$WORKING_ADULT)` to take a look at a summary of this new variable.
+
 ## Assignment
 
 To be dismissed and earn your grade for this lab, do the following.
@@ -142,21 +164,24 @@ To be dismissed and earn your grade for this lab, do the following.
 
 2. Create a new variable in `df` called `INC_TIMES_AGE` which is equal to `INCWAGE` multiplied by `AGE`.
 
-3. Show me a summary of your data with `str(df)` and `summary(df)`.
+3. Create a new variable in `df` called `UNEMPLOYED_ADULT` which is `TRUE` if the person is 25 or older and is unemployed (but in the labor force), and `FALSE` otherwise.
 
-4. Take the lab quiz.
+4. Show me a summary of your data with `str(df)` and `summary(df)`.
+
+5. Take the lab quiz.
 
 
 ## Takeaways
 
 - You can use R Studio Cloud.
-- You know how to do basic tasks in R, including:
-    - Loading data from files
-    - Viewing your data
-    - Summarizing your data
-    - Changing data types
-    - Referencing variables with `$`
-    - Making assignments with `<-`
+- You can do basic tasks in R, including:
+    - Load data from files
+    - View data
+    - Summarize data
+    - Change data types
+    - Reference  variables with `$`
+    - Create new variables with `<-`
+	- Use logical operators to make `TRUE`/`FALSE` variables
 - You understand the concept of data types.
 - You can use R's help system.
 
