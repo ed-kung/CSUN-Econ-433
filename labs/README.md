@@ -14,6 +14,7 @@ If you run into an error in your code, check the following before asking me for 
 - Check that your parentheses are closed. Every open parenthesis should be matched with a closed parenthesis.
 - Check that your quotation marks are closed. Every open quotation mark should be matched with a closed quotation mark.
 - Check that you aren't missing commas in separating any lists or function arguments.
+- Check that you don't have spaces where underscores (`_`) should be.
 - Check that you are referencing the correct names of objects in your code. For example, the following code contains an error because the dataframe was named `data` but then later `df` is referenced. 
 
         data <- read.csv("data.csv")
