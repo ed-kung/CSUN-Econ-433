@@ -105,7 +105,7 @@ It will take a few minutes for the extract to be ready. Once it's ready, you sho
 
 23. Once the extract is ready, click "Download CSV". Download it to anywhere on your computer.
 
-24. The file type is .gz, which is a type of compression like .zip. Extract it using any Windows program compatible with .gz files, like 7-zip or WinRAR. The resulting .csv file should be about 44 MB in size.
+24. The file type is `.gz`, which is a type of compression like `.zip`. Extract it using any Windows program compatible with .gz files, like 7-zip or WinRAR. If you are using a Mac, you can use an app called TheUnarchiver. The resulting .csv file should be about 44 MB in size.
 
 25. Open the file in Excel. How many rows are there? How many columns?
 
