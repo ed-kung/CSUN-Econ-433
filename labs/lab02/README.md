@@ -41,19 +41,19 @@ Now you have the data inside your R Studio Cloud account and you can begin explo
 
 6. First, we have to load the data into the current session's work environment. Do so by typing `df <- read.csv("IPUMS_ACS2019_CA_1.csv")` into the console and hitting enter. 
 
-    This loads the CSV file into your session's work environment as a **data frame**. A data frame is a type of object in R that can be referenced by name and manipulated. A data frame is essentially a table with rows and columns containing data. Think of a data frame like an Excel worksheet. By typing `df <- read.csv("IPUMS_ACS2019_CA_1.csv")`, you are telling R to read the file `IPUMS_ACS2019_CA_1.csv` and store the data in a data frame that you've decided to name `df`. 
+    This loads the CSV file into your session's work environment as a **data frame**. A data frame is a type of object in R that can be referenced by name and manipulated. A data frame is essentially a table with rows and columns. A data frame is like an Excel worksheet. By typing `df <- read.csv("IPUMS_ACS2019_CA_1.csv")`, you are telling R to read the file `IPUMS_ACS2019_CA_1.csv` and store in a data frame called `df`. 
     
-    The choice of the name `df` is arbitrary. If you had typed `my_data <- read.csv("IPUMS_ACS2019_CA_1.csv")` instead, you would have loaded the data into a data frame named `my_data`. Think of the name of the data frame like the name of an Excel worksheet. It doesn't really matter what you call it, but you can use the name to reference data from it.
+    The choice of the name `df` is arbitrary. If you had typed `my_data <- read.csv("IPUMS_ACS2019_CA_1.csv")` instead, you would have loaded the data into a data frame named `my_data`. A data frame's name is like the name of an Excel worksheet. It doesn't really matter what you call it, but you can use the name to refer to it in later commands.
     
 7. You should now see your data frame called `df` listed in the "Environment" tab, as shown in the screenshot below.
 
     ![Environment screenshot](screenshot2.png)
     
-    Click on the little blue arrow next to `df` and it should expand to show you the list of columns in `df`. These columns are sometimes called **variables**. You can go to the IPUMS website to look up the definitions for each of these variables.
+    Click on the little blue arrow next to `df` and it should expand to show you the list of columns in `df`. Columns are also called **variables**, **fields**, or **features**. You can go to the IPUMS website to look up the definitions for each of these variables.
     
     You can click the little blue arrow a second time to collapse this view.
     
-8. To browse the data in table form, you can type `View(df)` in the console. A viewing window showing the tabular data in `df` should pop up. You can use the arrow keys and scroll bar to navigate and look at the data.
+8. To browse the data in table form, you can type `View(df)` in the console. A viewing window will appear showing the contents of `df`. You can use the arrow keys and scroll bar to navigate and look at the data.
 
 9. Another useful command is to ask R to show you the number of rows and number of columns of the data. Type `nrow(df)` to get the number of rows in `df`. Type `ncol(df)` to get the number of columns in `df`.
 
@@ -61,7 +61,7 @@ Now you have the data inside your R Studio Cloud account and you can begin explo
 
 ### Getting help
 
-11. You may have noticed that operations on `df` take the form `f(df)`, where `f` is the name of the operation. Operations that take one or more inputs and return one or more outputs are called **functions**. For example, the `read.csv()` function takes as input a file name and outputs a dataframe read from that file. The `nrow()` function takes as input a dataframe and outputs the number of rows. The `names()` function takes as input a dataframe and outputs the names of the columns.
+11. You may have noticed that operations on `df` take the form `f(df)`, where `f` is the name of the operation. Operations that take one or more inputs and return one or more outputs are called **functions**. `read.csv()` is a function takes as input a file name and outputs a data frame. `nrow()` is a function takes as input a dataframe and outputs the number of rows. `names()` is a function takes as input a dataframe and outputs the names of the columns.
 
     Sometimes, you may forget what a function does or forget what inputs it requires. To get help about a specific function in R, you can type `?function`. This will open up a help page for that function. Try it now by typing `?read.csv`. The help page will show you the usage syntax of the `read.csv()` function.
 
@@ -88,7 +88,7 @@ Now you have the data inside your R Studio Cloud account and you can begin explo
     The output shows a wealth of important information. First, it shows that `df` is a `data.frame` object. Second, it shows the number of rows (a.k.a. observations) and the number of columns (a.k.a. variables). Third, it lists important information for each of the variables in the data. For each variable it shows the:
     - Name
     - Data Type
-    - The value of the first rows in that column
+    - The first few rows of the column
     
     For example, `str(df)` shows us that the variable `INCWAGE` has a numeric datatype (`num`), and its first few values are `23100`, `0`, and `6000`.
     
@@ -99,26 +99,26 @@ Now I will take a brief moment to explain **data types**. **Data type** is an ex
 - Integer
 - Numeric
 - Dates
-- Strings
-- Categorical (or factors)
+- Strings (i.e. text)
+- Categorical (a.k.a. factors)
 
 Data types are important because it tells you how the data should be interpreted. It also tells you what you can and can't do with the data. For example, numbers (integers and numeric) can be added, subtracted, multiplied, and divided. Dates can only be subtracted to get the number of days between two dates, but they cannot be added, multiplied, or divided. Strings (meaning text data) cannot be added, subtracted, multiplied, or divided at all. 
 
-Categorical data (or factor data) are data in which the values can be one of a set of categories. Marital status is a good example of categorical data. People can be married, separated, divorced, widowed, or never married. State of residence is another example of categorical data. People can be located in one of 50 states.
+Categorical data (or factor data) are data in which the values can be one of a set of categories. Marital status is a good example of categorical data. People can be married, separated, divorced, widowed, or never married. State of residence is another example of categorical data. People can be located in one of 50 states. Categorical data shouldn't be added, subtracted, multiplied, or divided.
 
 ### Changing Data Types
 
 Notice that in `df`, the data type for both `STATEFIP` and `MARST` is integer when really they should be categorical. In fact, `SERIAL`, `PERNUM`, `STATEFIP`, `COUNTYFIP`, `SEX`, `MARST`, `RACE`, `HISPAN`, and `EMPSTAT` are all integers when they should be categorical. 
 
-The reason R loaded them as integers is because R does not know when a variable is meant to be categorical or not. When R looked at `IPUMS_ACS2019_CA_1.csv`, all it could see is that there were integers in the column for `MARST` (since IPUMS codes all its categorical variables in integers). Since R saw that there were integers in the `MARST` column, it loaded `MARST` with the integer data type.
+When using `read.csv`, R loaded these variables as integers because R can't tell by looking at the CSV file that these variables are meant to be categorical. When R read from `IPUMS_ACS2019_CA_1.csv`, all it could see is that there were integers in the column for `MARST` (since IPUMS codes all its categorical variables in integers). Since R saw that there were integers in the `MARST` column, it loaded `MARST` with the integer data type.
     
 13. Fortunately, it is easy for us to change the data type of a variable. To change the data type of `MARST` from integer to categorical, type `df$MARST <- as.factor(df$MARST)`. 
 
-14. Now type `str(df)` again. You will see that `MARST` now has the data type of `factor`, which is what we want.
+14. Now type `str(df)` again. `MARST` now has the data type of `factor`, which is what we want.
 
 15. Type `summary(df$MARST)` to show a summary of the variable `MARST`. You will see that 148,220 rows have a value of 1, 9,460 rows have a value of 2, and so on. You can check the [IPUMS website](https://usa.ipums.org/usa-action/variables/MARST#codes_section) for the definitions of these numerical codes.
 
-16. Type `summary(df$INCWAGE)` to show a summary of the variable `INCWAGE`. `INCWAGE` is a numeric variable so you will see that the `summary()` command gives a different kind of output. When summarizing a categorical variable, `summary()` shows a frequency table. When summarizing a numeric variable, `summary()` shows the minimum, 25th percentile, median, mean, 75th percentile, and maximum.
+16. Type `summary(df$INCWAGE)` to show a summary of the variable `INCWAGE`. `INCWAGE` is a numeric variable, so `summary()` gives a different kind of output. When summarizing a categorical variable, `summary()` shows a frequency table. When summarizing a numeric variable, `summary()` shows the minimum, 25th percentile, median, mean, 75th percentile, and maximum.
 
     Note that in this data, the 25th percentile of `INCWAGE` (i.e. salary and wage income) is zero. This is because the dataset contains both working adults and non-working adults and children. So it is not surprising that over 25 percent of the data has zero wage and salary income.
 
@@ -126,9 +126,9 @@ The reason R loaded them as integers is because R does not know when a variable 
 
 To change the data type of `MARST` from integer to categorical, we used the code `df$MARST <- as.factor(df$MARST)`. Let's dissect this code.
 
-First, let's discuss the use of `df$MARST`. The `$` symbol is used to reference a variable in a dataframe by placing it between the name of the dataframe and the name of the variable. For example, `df$MARST` was used to reference `MARST` in `df`. If we had another dataframe called `my_data` and a variable called `HEIGHT` in it, we would use `my_data$HEIGHT`.
+First, let's discuss the use of `df$MARST`. The `$` symbol is used to reference a variable in a dataframe . Usage: `<Name of dataframe>$<Name of variable>`. For example, `df$MARST` referes to the variable `MARST` inside the dataframe `df`. To reference a variable called `HEIGHT` in a dataframe called `my_data`, we would use `my_data$HEIGHT`.
 
-Second, let's discuss the use of `<-`. You already used `<-` when you loaded the data with `df <- read.csv("IPUMS_ACS2019_CA_1.csv")`. The `<-` symbol is used to assign the object on the right hand side of `<-` to the object on the left hand side of `<-`. If the object on the left hand side already exists, it is replaced.
+Second, let's discuss the use of `<-`. The `<-` symbol is used to assign the object on the right hand side of `<-` to the object on the left hand side of `<-`. If the object on the left hand side already exists, it is replaced.
 
 So now let's look back at `df$MARST <- as.factor(df$MARST)`. This line of code replaces assigns `as.factor(df$MARST)` to `df$MARST`. Since `df$MARST` already exists (as an integer column), it is replaced by `as.factor(df$MARST)` (a categorical column). Any future references to `df$MARST` will return a categorical column.
 
@@ -138,7 +138,7 @@ So now let's look back at `df$MARST <- as.factor(df$MARST)`. This line of code r
 
 To be dismissed and earn your grade for this lab, do the following.
 
-1. Change the following variables in `df` from integers to factors: `SERIAL`, `PERNUM`, `STATEFIP`, `COUNTYFIP`, `SEX`, `MARST`, `RACE`, `HISPAN`, `EMPSTAT`.
+1. Change the following variables in `df` from integers to categorical: `SERIAL`, `PERNUM`, `STATEFIP`, `COUNTYFIP`, `SEX`, `MARST`, `RACE`, `HISPAN`, `EMPSTAT`.
 
 2. Create a new variable in `df` called `INC_TIMES_AGE` which is equal to `INCWAGE` multiplied by `AGE`.
 
