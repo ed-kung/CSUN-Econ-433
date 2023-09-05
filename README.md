@@ -12,7 +12,7 @@
 - [Course Materials](#course-materials)
 - [Exam Policies and Information](#exam-policies-and-information)
 - [Group Project Details](#group-project-details)
-- [Additional Course Policies and Resources](#additional-course-policies)
+- [Additional Course Policies and Resources](#additional-course-policies-and-resources)
 
 
 # Quick Syllabus
