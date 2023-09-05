@@ -2,3 +2,7 @@
 *.Rhistory
 .ipynb_checkpoints
 Untitled.*
+*.bak
+*.dat
+*.gz
+*.xml
