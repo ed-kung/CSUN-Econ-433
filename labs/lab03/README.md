@@ -32,7 +32,9 @@ To start a new R script, click the button with the green plus on the top-left co
 
 ### My First Script
 
-To write your first script, enter the following into the script editor. Then save it by hitting `CTRL+S` or by using the icons or menus. You can name the script anything you like, but the filename should end in `.R`. Suggested filename: `my_script.R`. 
+To write your first script, enter the following into the script editor. Then save it by hitting `CTRL+S` or by using the icons or menus (shown below). 
+
+You can name the script anything you like, but the filename should end in `.R`. Suggested filename: `my_script.R`. 
 
     rm(list=ls())  # Resets the workspace so you can start fresh
     library(dplyr) # Loads the dplyr library
@@ -48,7 +50,11 @@ Once you've entered this script into the script editor and saved it, hit `CTRL+S
          0      1      2      3 
      66593 182239   9218 122041 
 
-Instead of running the whole script at once, you can also execute lines of code one at a time. This is useful when developing a new script or when debugging. To execute a single line of code, click on that line of code in the editor window so that the cursor shows up on that line. Then hit `CTRL+ENTER`. R will run that single line of code. Try it by clicking on the `rm(list=ls())` line then hitting `CTRL+ENTER`. It should reset your workspace.
+![Saving a script](screenshot2.png)
+
+### Executing Code One Line at a Time
+
+Instead of running the whole script at once, you can also execute lines of code one at a time. This is useful when developing a new script or when **debugging**. To execute a single line of code, click on that line of code in the editor window so that the cursor shows up on that line. Then hit `CTRL+ENTER`. R will run that single line of code. Try it by clicking on the `rm(list=ls())` line then hitting `CTRL+ENTER`. It should reset your workspace.
 
 You can continue to hit `CTRL+ENTER` to continue excuting your code line-by-line. This is known as "stepping through" your code and it's very helpful for debugging.
 
@@ -199,7 +205,16 @@ The script is supposed to:
 
 However, the script has errors. You have to fix the script so that it runs and accomplishes its tasks accurately. 
 
-Show me the script and its output, then take the lab quiz, to be dismissed.
+### Instructions
+
+1. Start a new script.
+2. Copy and paste the above code block into your new script.
+3. Try running the code with `CTRL+SHIFT+ENTER`. Look at the error messages you get.
+4. Fix the script.
+5. Run the script and show me the output.
+6. Take the lab quiz.
+
+If you don't have time to finish today, you can submit your quiz and take the lab quiz by next Monday to receive up to 80% credit.
 
 
 ## Takeaways
@@ -210,6 +225,10 @@ Show me the script and its output, then take the lab quiz, to be dismissed.
   - Appending
   - Merging
 - You know the different types of joins.
+
+## Help
+
+If you need help, try looking at this [list of common errors and other programming tips](https://github.com/ed-kung/CSUN-Econ-433/tree/main/labs#econ-433---labs). 
 
 
 [^1]: There are more complex merges in which one of the dataframes can have multiple rows with the same keys. These are called many-to-one or one-to-many merges. These merges should be avoided unless the researcher already has a deep understanding of the datasets.
