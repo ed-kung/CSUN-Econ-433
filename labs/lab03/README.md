@@ -214,8 +214,17 @@ However, the script has errors. You have to fix the script so that it runs and a
 5. Run the script and show me the output.
 6. Take the lab quiz.
 
+## Downloading a Script and Uploading to Canvas
+
 If you don't have time to finish today, you can submit your quiz and take the lab quiz by next Monday to receive up to 80% credit.
 
+To do so, download your script and upload it to Canvas in the "Lab 03 Grade" assignment. To download the script, make sure the "Files" pane is selected in the lower-right window. Then click the checkbox next to the file you want to download. Then click "More" and click on "Export" in the popup menu.
+
+Name the file something descriptive, like `Lab03_LastName.R`, then click Download. The file will be downloaded to your computer. Go to Canvas and upload the file to the "Lab 03 Grade" assignment.
+
+![downloading a script 1](screenshot3.png)
+
+![downloading a script 2](screenshot4.png)
 
 ## Takeaways
 
