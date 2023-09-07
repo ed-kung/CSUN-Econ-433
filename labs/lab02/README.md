@@ -151,6 +151,7 @@ The logical operators you should know are:
 - `>` and `>=`: greater than / greater than or equal to
 - `<` and `<=`: less than / less than or equal to
 - `==`: exactly equal to
+- `!=`: not equal to
 - `&`: and
 - `|`: or
 

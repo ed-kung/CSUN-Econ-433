@@ -130,9 +130,9 @@ Run your modified script from the top using `CTRL+SHIFT+ENTER`. You should see t
 
 ### Bar Charts
 
-A bar chart shows the relationship between a numerical variable and a categorical variable. Example: Average income for each type of college degree. Average income is numeric but type of college degree is categorical.
+A bar chart shows the relationship between a numerical variable and a categorical variable. For example,  the average income for each type of college degree can be represented as a bar chart. 
 
-The following script creates a bar chart showing the average income by field of college degree (`DEGFIELD`). To create a bar chart, we call `geom_col` from within a `ggplot` code block.
+The following script creates a bar chart showing the average income by type of college degree (`DEGFIELD`). To create a bar chart, we call `geom_col` from within a `ggplot` code block.
 
     rm(list=ls())    # Clear the workspace
 	library(dplyr)   # Load libraries
@@ -140,7 +140,7 @@ The following script creates a bar chart showing the average income by field of 
 	library(scales)
 	
 	# Load the data
-	source("dataload.R")  
+	df <- read.csv("IPUMS_ACS_CA_2014_2019.csv")  
 	
 	# Let R know about missing values for INCWAGE 
 	df$INCWAGE[ df$INCWAGE>=999998] <- NA
@@ -175,13 +175,15 @@ Run the script from the top and you should see the following chart:
 
 ### Improving the Bar Chart
 
-Unfortunately, the chart is not very useful because the `DEGFIELD` values are still using their numerical codes! If we wanted to present this chart in an actual meeting, we would have to label the chart with `DEGFIELD`'s actual value labels as given in the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/DEGFIELD#codes_section). 
+Unfortunately, the chart is not very useful because the `DEGFIELD` values are still using their numerical codes! If we wanted to present this chart in an actual meeting, we would have to label the chart with `DEGFIELD`'s actual value labels from the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/DEGFIELD#codes_section). 
 
-How can we create a bar chart with the actual value labels? One idea is to create a new variable that contains the actual value labels and to use that in the bar chart instead of the numerical codes. But how can we create that new variable? One idea is to merge our current data to a dataset containing both the value code and the value label, using `DEGFIELD` as the merging key.
+How can we create a bar chart with the actual value labels? One way is to create a new variable that contains the actual value labels and to use that in the bar chart instead of the numerical codes. 
 
-The file `DEGFIELD_CODES.csv` contains the necessary information. `DEGFIELD_CODES.csv` has two variables: `DEGFIELD`, which is the numerical code, and `DegreeField`, which is the human-readable label. The first few lines of `DEGFIELD_CODES.csv` are shown below:
+But how can we create that new variable? We can merge our current data to a dataset containing both the value code and the value label, using `DEGFIELD` as the merging key.
 
-| DEGFIELD | DegreeField                            |
+The file `DEGFIELD_CODES.csv` contains the necessary information. `DEGFIELD_CODES.csv` has two variables: `DEGFIELD`, which is the numerical code, and `DEGFIELD_LABEL`, which is the human-readable label. The first few lines of `DEGFIELD_CODES.csv` are shown below:
+
+| DEGFIELD | DEGFIELD_LABEL                         |
 | -------- | -------------------------------------- |
 | 00       | NA                                     |
 | 11       | Agriculture                            |
@@ -190,7 +192,7 @@ The file `DEGFIELD_CODES.csv` contains the necessary information. `DEGFIELD_CODE
 | 15       | Area, Ethnic, and Civilization Studies |
 | ...      | ...                                    |
 
-Let's now create a bar chart that uses `DegreeField` instead of `DEGFIELD`. To do so, modify the script from the previous section with the following changes:
+Let's now create a bar chart that uses `DEGFIELD_LABEL` instead of `DEGFIELD`. To do so, modify the script from the previous section with the following changes:
 
 - Place 
     
@@ -198,9 +200,9 @@ Let's now create a bar chart that uses `DegreeField` instead of `DEGFIELD`. To d
 	    DEGFIELD_CODES <- read.csv("DEGFIELD_CODES.csv") 
 	    df_inc_by_degfield <- inner_join(df_inc_by_degfield, DEGFIELD_CODES, by=c("DEGFIELD"))
 	
-    in between the code block that calculates the group-based averages and the code block that creates the bar chart. This merges on the `DegreeField` human-readable label for each value of `DEGFIELD`.
+    in between the code block that calculates the group-based averages and the code block that creates the bar chart. This merges on the human-readable label `DEGFIELD_LABEL` for each value of `DEGFIELD`.
 	
-- Change `geom_col(aes(x=DEGFIELD, y=AVG_INCOME))` to `geom_col(aes(x=DegreeField, y=AVG_INCOME))`. This makes it so that our bar chart uses the human-readable variable `DegreeField` instead of the numerical codes `DEGFIELD`.
+- Change `geom_col(aes(x=DEGFIELD, y=AVG_INCOME))` to `geom_col(aes(x=DEGFIELD_LABEL, y=AVG_INCOME))`. This makes it so that our bar chart uses the human-readable variable `DEGFIELD_LABEL` instead of the numerical codes `DEGFIELD`.
 
 Now run the script from the top. Unfortunately, this still isn't useful because all the labels are smushed together! When you want to make a bar chart with a lot of categories, it's helpful to make a horizontal bar chart instead of a vertical bar chart. To do this, modify your code as follows:
 
@@ -224,7 +226,7 @@ To create a scatter plot, call `geom_point` from within a `ggplot` code block. R
     library(scales)
     
     # Load the data
-    source("dataload.R")  
+    df <- read.csv("IPUMS_ACS_CA_2014_2019.csv")  
     
     # Let R know about missing values for INCWAGE 
     df$INCWAGE[ df$INCWAGE>=999998] <- NA
@@ -278,7 +280,7 @@ Run the new script. You should see the following result:
 
 To be dismissed and earn your grade for this lab, you will create a script that does the following:
 
-- For the working age population (25 to 65) that is in the labor force (`EMPSTAT==1`), create a horizontal bar chart showing the percent of people who are female by college degree field. Use 2019 data only and make sure to use `DegreeField` instead of `DEGFIELD` so the chart is human-readable. Make sure the title and axes are labeled appropriately.
+- For the working age population (25 to 65) that is in the labor force (`EMPSTAT!=3`), create a horizontal bar chart showing the percent of people who are female by college degree field. Use 2019 data only and make sure to use `DEGFIELD_LABEL` instead of `DEGFIELD` so the chart is human-readable. Make sure the title and axes are labeled appropriately.
 
 You can use the following incomplete script to get started:
 
@@ -288,7 +290,7 @@ You can use the following incomplete script to get started:
 	library(scales)
 	
 	# Load the data
-	source("dataload.R")
+	df <- read.csv("IPUMS_ACS_CA_2014_2019.csv") 
 	
 	# Keep only 2019 data
 	# YOUR CODE HERE
