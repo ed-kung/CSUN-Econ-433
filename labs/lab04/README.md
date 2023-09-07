@@ -172,10 +172,10 @@ Now let's walk through the script to see what each line of code does.
     Because `PERWT` is the number of people a row represents, we can calculate total population by adding up `PERWT`. For example, to calculate total population in California by year, we would use:
     
         grouped_df <- df %>% 
-        group_by(YEAR) %>% 
-        summarize(
-          TOTAL_POPULATION = sum(PERWT)
-        )
+          group_by(YEAR) %>% 
+          summarize(
+            TOTAL_POPULATION = sum(PERWT)
+          )
 
     **Other Statistics**
     
@@ -218,26 +218,17 @@ Here is the skeleton of a script to get you started:
     View(grouped_df)
 
 Hints:
+- You'll first need to filter the data to contain only people in the labor force. Use a filter for `EMPSTAT`. You can read more about `EMPSTAT` on the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/EMPSTAT#codes_section).
 - Total population can be calculated by summing `PERWT`.
-- To get people in the labor force, you'll need to filter on values for `EMPSTAT`. Use the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/EMPSTAT#codes_section) for reference. To filter on `EMPSTAT=1` or `EMPSTAT=2` you can use: `EMPSTAT==1 | EMPSTAT==2`.
-- To calculate the percent of people who are unemployed or who have bachelor's degrees, you can calculate the weighted mean of a boolean variable.
+- To calculate the percent of individuals with a BA or higher, create a variable that is `TRUE` if the person has a BA or higher and `FALSE` otherwise. Then, calculate the weighted mean of this variable. (The mean of a boolean variable is equal to the percent of people with `TRUE`.)
 
 Once you are done, show me your script and your output to receive your grade, then take the lab quiz.
 
+If you aren't able to finish in time, you can submit your script late for 80% credit. See [Lab 03](https://github.com/ed-kung/CSUN-Econ-433/tree/main/labs/lab03) for instructions on how to download your script and upload it to Canvas.
+
 ## Takeaways
 
-- You know how to call a script from another script in R.
+- You know how to save data in R to a file.
 - You can calculate group-based summary statitics in R.
 - You know how to calculate weighted means and percentages.
 - You know how to use the pipe operator in R.
-
-
-    
-    
-    
-    
-
-
-
-
-
