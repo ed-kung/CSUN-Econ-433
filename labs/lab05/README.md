@@ -9,12 +9,9 @@ In the process, you will also learn about missing values and factor labels.
 
 ### Setup
 
-For today's lab you will need the following files. They should already be uploaded to the cloud from previous labs. If they aren't, you should download these files from Canvas and upload them. 
+For today's lab you will need the following file. It should already be in your cloud directory from the previous lab. If it isn't, follow the first steps of [Lab 04](https://github.com/ed-kung/CSUN-Econ-433/tree/main/labs/lab04) to create it.
 
-- `IPUMS_ACS2014_CA_1.csv`
-- `IPUMS_ACS2014_CA_2.csv`
-- `IPUMS_ACS2019_CA_1.csv`
-- `IPUMS_ACS2019_CA_2.csv`
+- `IPUMS_ACS_CA_2014_2019.csv`
 
 You will also need two new files:
 
@@ -23,11 +20,9 @@ You will also need two new files:
 
 Download these files from Canvas and upload it to the cloud.
 
-For today's lab you will also need the packages `dplyr`, `ggplot2`, and `scales`. `dplyr` should already be installed from previous labs. If it isn't, install it with `install.packages("dplyr")`. Also install `ggplot2` and `scales` with `install.packages("ggplot2")` and `install.packages("scales")`. `ggplot2` is the standard library for creating charts in R. `scales` adds some useful functionality for making charts prettier.
+For today's lab you will also need the packages `dplyr`, `ggplot2`, and `scales`. `dplyr` should already be installed from previous labs. If it isn't, install it with `install.packages("dplyr")`. Also install `ggplot2` and `scales` with `install.packages("ggplot2")` and `install.packages("scales")`. 
 
-Finally, you should have the script `dataload.R` from Lab 04.
-
-Make sure all these files are in your working directory before beginning.
+`ggplot2` is the standard library for creating charts in R. `scales` adds some useful functionality for making charts prettier.
 
 ### Line Plots
 
@@ -41,7 +36,7 @@ The following script creates a line plot showing how average income changes with
 	library(scales)
 	
 	# Load the data
-	source("dataload.R")  
+    df <- read.csv("IPUMS_ACS_CA_2014_2019.csv")
 	
 	# Let R know about missing values for INCWAGE 
 	df$INCWAGE[ df$INCWAGE>=999998] <- NA
@@ -70,7 +65,7 @@ Run the script from the top (`CTRL+SHIFT+ENTER`) and you should see a line plot 
 
 Let's walk through each element of this script.
 
-1. The first few lines of code are boilerplate. We clear the workspace, load the required libraries, and load the data using `dataload.R` which we wrote in Lab 04.
+1. The first few lines of code are boilerplate. We clear the workspace, load the required libraries, and load the data.
 
 2. The next line of code is `df$INCWAGE[ df$INCWAGE>=999998] <- NA`. This line of code is rather complex to understand, so let's walk through it slowly.
 
@@ -117,13 +112,17 @@ There's a lot more that you can control about the look and feel of the chart. Ho
 
 ### Multiple Color Coded Line Plots 
 
-One of the powerful features of `ggplot2` is that it allows you to quickly and automatically create completed plots. In the example below, we create *two* line plots on the same axis. The first plot shows average income by age for males and the second shows it for females. We don't have to change much of the code to make this happen. Simply take the previous script and make the following changes:
+One of the powerful features of `ggplot2` is that it allows you to quickly and automatically create complex plots. 
 
-- Add `df$SEX <- as.factor(df$SEX)` after `source("dataload.R")`. This tells R to treat `SEX` as a factor variable.
+In the example below, we will create *two* line plots on the same axis. The first plot shows average income by age for males and the second shows it for females. 
+
+We don't have to change much of the code to make this happen. Simply take the previous script and make the following changes:
+
+- Add `df$SEX <- as.factor(df$SEX)` after `df <- read.csv("IPUMS_ACS_CA_2014_2019.csv")`. This tells R to treat `SEX` as a factor variable.
 
 - Change `group_by(AGE)` to `group_by(SEX, AGE)` so that we are creating a dataframe that calculates average income by sex and age.
 
-- Change `geom_line(aes(x=AGE, y=AVG_INCOME))` to `geom_line(aes(x=AGE, y=AVG_INCOME, color=SEX))`. When you specify a variable name for `color` in `aes`, R automatically knows to create separate color coded plots, one for each value of the variable you told it to color by.
+- Change `geom_line(aes(x=AGE, y=AVG_INCOME))` to `geom_line(aes(x=AGE, y=AVG_INCOME, color=SEX))`. When you specify a variable name for `color` in `aes`, R automatically creates separate color coded plots, one for each value of the variable you told it to color by.
 
 Run your modified script from the top using `CTRL+SHIFT+ENTER`. You should see the following result:
 
