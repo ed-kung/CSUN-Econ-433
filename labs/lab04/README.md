@@ -104,7 +104,9 @@ Now let's walk through the script to see what each line of code does.
     
     **The Pipe Operator**
     
-    First, let's talk about `%>%`. This is called the **pipe operator**. The pipe operator "pipes" the output of one command into the input of another command. For example, `f(x) %>% g(y)` is equivalent to writing `g(f(x), y)`. Essentially, the pipe operator evalues the expression on the left, then feeds that result into the first argument of the function on the right.
+    First, let's talk about `%>%`. This is called the **pipe operator**. The pipe operator "pipes" the output of one command into the input of another command. For example, `x %>% g(y)` is equivalent to writing `g(x, y)`. Essentially, the pipe operator feeds the expression on the left into the first input on the right.
+	
+	Pipe operators are useful for chaining together operations. For example, `f(x) %>% g(y)` is equivalent to `g(f(x), y)`. But the former is a bit easier to read and understand!
     
     So when we write `df %>% group_by(...) %>% summarize(...)`, we are asking R to first take `df`, then feed it into `group_by(...)`, then take the result of `group_by(df, ...)` and feed it into `summarize(...)`.
     
@@ -112,28 +114,32 @@ Now let's walk through the script to see what each line of code does.
     
     **Grouping**
     
-    Now let's talk about `group_by`. `group_by` is a command that takes a dataframe as input, and then creates groups based on the specified variables. So `df %>% group_by(COLLEGE, YEAR, SEX)` tells R to take `df` and define groups based on the combinations of values for `COLLEGE`, `YEAR`, and `SEX`. By itself, this doesn't do much. All it does is tell R to define these groups, but it doesn't yet actually do anything with these groups. We have to combine the `group_by` command with other commands like `summarize` in order to do anything meaningful.
+    Now let's talk about `group_by`. `group_by` is a command that takes a dataframe as input, and then creates groups based on the specified variables. So `df %>% group_by(COLLEGE, YEAR, SEX)` tells R to take `df` and define groups based on the combinations of values for `COLLEGE`, `YEAR`, and `SEX`. 
+	
+	By itself, grouping doesn't do much. All it does is tell R to define these groups. We have to combine the `group_by` command with other commands like `summarize` in order to do anything meaningful.
     
     **Summarizing**
     
     Now let's talk about `summarize`. `summarize` is a command that takes a grouped dataframe as input, then calculates user-defined summary statistics for each of the defined groups. The syntax is:
     
         grouped_df <- df %>% 
-        group_by(X1, X2, ...) %>% 
-        summarize(
-          STAT1 = function(...), 
-          STAT2 = function(...),
-          ...
-        )
+          group_by(X1, X2, ...) %>% 
+          summarize(
+            STAT1 = function(...), 
+            STAT2 = function(...),
+            ...
+          )
         
-    `X1`, `X2`, etc., are the variables to define groups by. `STAT1`, `STAT2`, etc., are the names of the summary variables you want to create (you can call them anything). For example, to calculate the weighted mean of `INCWAGE` and the median of `AGE` by `SEX` and `YEAR` in our data, we would have used:
+    `X1`, `X2`, ..., are the variables to group by. `STAT1`, `STAT2`, ..., are the names of the summary variables you want to create (you can call them anything). 
+	
+	For example, to calculate the weighted mean of `INCWAGE` and the median of `AGE` by `SEX` and `YEAR` in our data, we could have used:
     
         grouped_df <- df %>%
-        group_by(SEX, YEAR) %>% 
-        summarize(
-          FOO = weighted.mean(INCWAGE, PERWT), 
-          BAR = median(AGE)          
-        )
+          group_by(SEX, YEAR) %>% 
+          summarize(
+            FOO = weighted.mean(INCWAGE, PERWT), 
+            BAR = median(AGE)          
+          )
     
     Notice that we can call our summary variables anything we want. In this case, we called `FOO` the weighted mean of `INCWAGE` and we called `BAR` the median of `AGE`.
     
@@ -145,7 +151,9 @@ Now let's walk through the script to see what each line of code does.
             AVERAGE_INCOME = weighted.mean(INCWAGE, PERWT)
           )
           
-    So this section of code takes `df`, groups it by `COLLEGE`, `YEAR`, and `SEX`, then calculates the weighted mean of `INCWAGE` (using `PERWT` as weights), and stores it in a variable called `AVERAGE_INCOME`. The result of this entire operation is itself a new dataframe with `COLLEGE`, `YEAR`, and `SEX` as the key variables, and this new dataframe is stored in `grouped_df`. 
+    So this section of code takes `df`, groups it by `COLLEGE`, `YEAR`, and `SEX`, then calculates the weighted mean of `INCWAGE` (using `PERWT` as weights), and stores it in a variable called `AVERAGE_INCOME`. 
+	
+	The result of this entire operation is itself a new dataframe with one row for each combination of `COLLEGE`, `YEAR`, and `SEX`, and we named this new dataframe `grouped_df`.
     
     **Weighted Statistics**
     
