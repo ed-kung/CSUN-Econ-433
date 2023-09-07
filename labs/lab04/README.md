@@ -16,11 +16,16 @@ For today's lab you will need the following files. They should already be upload
 
 For today's lab you will also need the package `dplyr`. This should already be installed from the last lab so you shouldn't need to install it again. If you do need to install it again, you can install it with the command `install.packages("dplyr")` from the console.
 
-### Creating a Data Load Script
+### Saving a Dataframe
 
-In Lab 03, you created a script that (1) Loads and merges the two 2014 files, (2) Loads and merges the two 2019 files, and (3) appends them together. Today, we will see how we can re-use scripts that you wrote previously.
+In Lab 03, you created a script that (1) Loads and merges the two 2014 ACS files, (2) Loads and merges the two 2019 ACS files, and (3) appends them together. 
+
+Suppose you want to re-use the merged and appended data. You could call the script every time you need to use it. Or you could save the merged and appended data as a new csv file.
 
 Create a new script that contains the following code:
+
+	rm(list=ls())   # Clear the workspace
+	library(dplyr)  # Load the dplyr library
 
     # Load and merge the two data files for 2014
     df2014_1 <- read.csv("IPUMS_ACS2014_CA_1.csv")
@@ -35,42 +40,25 @@ Create a new script that contains the following code:
     # Append the dataframes from 2014 and 2019
     df <- rbind(df2014, df2019)
     
-    # Clean up no longer needed dataframes
-    rm(df2014_1, df2014_2, df2014, df2019_1, df2019_2, df2019)
+    # Save the file to csv
+	write.csv("IPUMS_ACS_CA_2014_2019.csv", 
     
-Save this script as `dataload.R`. You do **not** need to execute the script at this time.
+Save this script as `create_ACS_2014_2019.R` and execute it. A file named `IPUMS_ACS_CA_2014_2019.csv` should now appear in the file browser.  You can now re-use this file without having to write all the above code to merge and append the smaller datasets.
 
-`dataload.R` is a script that loads the entire 2014 and 2019 ACS data and puts it in a dataframe called `df`. The last line of the script removes the temporary dataframes that we used to create `df`. Since we won't be needing them after creating `df`, we remove them to keep our working environment tidy. 
-
-The purpose of saving `dataload.R` as its own script is that we can now re-use this data loading procedure in other scripts without having to re-write the entire 
-
-### Calling a Script from Another Script
-
-The purpose of having `dataload.R` as its own script is that we can now re-use this procedure in other scripts without having to re-write it each time. To call a script from another script, we use the command `source("<NAME OF SCRIPT>")`. 
-
-Try it out by starting a **new** script, as follows: 
-
-    rm(list=ls())  # Clear the workspace
-    library(dplyr) # Load dplyr
-    
-    source("dataload.R")  # Run the script called dataload.R
-    
-    str(df)  # Show the structure of the data
-    
-Run this script from the top with `CTRL+SHIFT+ENTER`. You should get output showing that `df` has 752644 rows and 19 columns.
-
-Now that we've written `dataload.R`, any time we need to work with the entire 2014 and 2019 ACS data, we can simply call `dataload.R` and get the data with one command.
+Try it out!  Type `rm(list=ls())` to clear the workspace, then type `df <- read.csv("IPUMS_ACS_CA_2014_2019.csv")` and see if you can read your data file.
 
 ### Calculating Group-Based Summary Statistics
 
-A common task in data analysis is to compute summary statistics for different groups within your data. For example, we may be interested in calculating the average income for college and non-college educated workers. We may further want to break that down by male and female, or by year, or by geographic location. There are many different ways to cut the data, each of which can yield different insights. 
+A common task in data analysis is to compute summary statistics for different groups within your data. 
+
+For example, we may be interested in calculating the average income for college and non-college educated workers. We may further want to break that down by male and female, or by year, or by geographic location. There are many different ways to cut the data, each of which can yield different insights. 
 
 The following script shows an example for how we calculate average income of employed workers by college education, year, and sex, using our ACS data from California in 2014 and 2019.
 
     rm(list=ls())    # Clear the workspace
     library(dplyr)   # Load dplyr
     
-    source("dataload.R")   # Load the data
+    df <- read.csv("IPUMS_ACS_CA_2014_2019.csv")   # Load the data
     
     # Keep only employed, working-age adults
     df <- filter(df, EMPSTAT==1 & AGE>=25 & AGE<=65)
@@ -96,11 +84,13 @@ Now let's walk through the script to see what each line of code does.
 
 1. The first few lines of code are boilerplate. `rm(list=ls())` clears the workspace, which we should do at the start of every new task. `library(dplyr)` loads the required `dplyr` library.
 
-2. `source("dataload.R")` is the script we created to cobble together the four data files into one dataframe.
+2. `df <- read.csv("IPUMS_ACS_CA_2014_2019.csv")` loads the data we created into a dataframe named `df`.
 
 3. `df <- filter(df, EMPSTAT==1 & AGE>=25 & AGE<=65)` filters the data on employed individuals (`EMPSTAT==1`) and working-age individuals (`AGE>=25` and `AGE<=65`).
 
-4. `df$COLLEGE <- (df$EDUCD>=101 & df$EDUCD<999)` creates a new variable called `COLLEGE`. This variable is a **boolean** variable, meaning it can be either `TRUE` or `FALSE`. The truth value of `COLLEGE` is defined as being equal to the truth value of `(df$EDUCD>=101 & df$EDUCD<999)`. That is, `COLLEGE` is equal to `TRUE` if `EDUCD` is greater than or equal to 101 and strictly less than 999. The IPUMS codes for the `EDUCD` variable is shown [here](https://usa.ipums.org/usa-action/variables/EDUC#codes_section) (under "detailed codes"). From these codes, we see that a value of 101 indicates that the individual has achieved a bachelor's degree, and that higher values indicate higher levels of education, until the value of 999 which indicates that the data is missing. So to interpret `COLLEGE` in words: it is an indicator for whether the individual has attained a bachelor's degree or higher.
+4. `df$COLLEGE <- (df$EDUCD>=101 & df$EDUCD<999)` creates a new variable called `COLLEGE` which is `TRUE` if the value of `EDUCD` is between 101 and 999, and `FALSE` otherwise. The IPUMS codes for the `EDUCD` variable is shown [here](https://usa.ipums.org/usa-action/variables/EDUC#codes_section) (under "detailed codes"). 
+
+    From these codes, we see that a value of 101 indicates that the individual has achieved a bachelor's degree, and that higher values indicate higher levels of education, until the value of 999 which indicates that the data is missing. So `COLLEGE` is simply an indicator for whether the individual has attained a bachelor's degree or higher.
 
 5. The next command is a single command spread out over multiple lines:
 
