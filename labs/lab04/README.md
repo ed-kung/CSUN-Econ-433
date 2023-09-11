@@ -20,9 +20,11 @@ For today's lab you will also need the package `dplyr`. This should already be i
 
 In Lab 03, you created a script that (1) Loads and merges the two 2014 ACS files, (2) Loads and merges the two 2019 ACS files, and (3) appends them together. 
 
-Suppose you want to re-use the merged and appended data. You could call the script every time you need to use it. Or you could save the merged and appended data as a new csv file.
+Suppose you want to re-use the merged and appended data. You could rewrite the merging and appending code everytime you wanted to re-use that data. **OR** you could save the merged and appended data as a new csv file.
 
-Create a new script that contains the following code:
+The latter is the better option if you plan to re-use the data many times. 
+
+To save the merged and appended data as a new file, create a new script that contains the following code:
 
 	rm(list=ls())   # Clear the workspace
 	library(dplyr)  # Load the dplyr library
@@ -41,11 +43,13 @@ Create a new script that contains the following code:
     df <- rbind(df2014, df2019)
     
     # Save the file to csv
-	write.csv("IPUMS_ACS_CA_2014_2019.csv", 
+	write.csv(df, "IPUMS_ACS_CA_2014_2019.csv", row.names=False)
     
-Save this script as `create_ACS_2014_2019.R` and execute it. A file named `IPUMS_ACS_CA_2014_2019.csv` should now appear in the file browser.  You can now re-use this file without having to write all the above code to merge and append the smaller datasets.
+Save this script as `create_ACS_2014_2019.R` and execute it. `write.csv` is the command that writes the dataframe to a CSV file.
 
-Try it out!  Type `rm(list=ls())` to clear the workspace, then type `df <- read.csv("IPUMS_ACS_CA_2014_2019.csv")` and see if you can read your data file.
+A file named `IPUMS_ACS_CA_2014_2019.csv` should now appear in the file browser.  You can now re-use this file without having to write all the above code to merge and append the smaller datasets.
+
+Now try loading your newly created data file!  Type `rm(list=ls())` to clear the workspace, then type `df <- read.csv("IPUMS_ACS_CA_2014_2019.csv")` and see if you can read your data file.
 
 ### Calculating Group-Based Summary Statistics
 
