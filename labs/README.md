@@ -36,7 +36,9 @@ Here are some best practices to follow when coding in R:
 
 ## Useful Keyboard Shortcuts
 
-- `CTRL+ENTER`: execute the current line of code
-- `CTRL+SHIFT+ENTER`: execute the entire script from the top
-- `CTRL+S`: save the current script
+- `CTRL+ENTER`: execute the current line of code. Useful for debugging.
+- `CTRL+SHIFT+ENTER`: execute the entire script from the top. Your code should be able to execute the task when run from the top.
+- `CTRL+S`: save the current script. Remember to save it with the `.R` file extension.
+- `CTRL+L`: clear the console, i.e. your output history. Useful if your output is getting cluttered and hard to read.
+
 
