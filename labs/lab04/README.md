@@ -43,7 +43,7 @@ To save the merged and appended data as a new file, create a new script that con
     df <- rbind(df2014, df2019)
     
     # Save the file to csv
-	write.csv(df, "IPUMS_ACS_CA_2014_2019.csv", row.names=False)
+	write.csv(df, "IPUMS_ACS_CA_2014_2019.csv", row.names=FALSE)
     
 Save this script as `create_ACS_2014_2019.R` and execute it. `write.csv` is the command that writes the dataframe to a CSV file.
 
