@@ -144,17 +144,15 @@ Occasionally, I will assign readings from newspaper or academic journal articles
 
 There will be two in-class programming midterms. In these midterms, you will be provided with data and asked to perform one or more data analysis tasks on it. You will submit your code for grading.
 
-The exam will be graded out of 8 according to this rubric:
+Each task will be graded on execution, and the overall code will be graded on professionalism. Grading rubric:
 
-| Points | Execution (5 points for each task)               | Professionalism (3 points for whole assignment) |
+| Points | Execution (4 points for each task)               | Professionalism (3 points for whole assignment) |
 | ------ | ------------------------------------------------ | ----------------------------------------------- |
 | 0      | No attempt to perform task                       | No attempt at best practices                    |
-| 1      | Code does not run; major errors                  | Two or more best practices not followed         |
-| 2      | Code does not run; minor errors                  | One of the best practices not followed          |
-| 3      | A result is produced, but there are major errors | All best practices are followed                 |
-| 4      | A result is produced, but with minor errors      |                                                 |
-| 5      | Desired result is produced without errors        |                                                 |
-
+| 1      | Major errors, including code that does not run                  | Two or more best practices not followed         |
+| 2      | Code runs, but major logical error leading to task not being done correctly                  | One of the best practices not followed          |
+| 3      | Code runs, but minor logical error leading to task not being done correctly | All best practices are followed                 |
+| 4      | The task is done correctly      |                                                 |
 
 [Coding Best Practices](labs#coding-best-practices)
 
