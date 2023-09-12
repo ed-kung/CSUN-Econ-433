@@ -38,8 +38,8 @@ The following script creates a line plot showing how average income changes with
 	# Load the data
     df <- read.csv("IPUMS_ACS_CA_2014_2019.csv")
 	
-	# Let R know about missing values for INCWAGE 
-	df$INCWAGE[ df$INCWAGE>=999998] <- NA
+	# Keep only records with valid values for INCWAGE 
+    df <- filter(df, INCWAGE<999998)
 	
 	# Keep only data from 2019
 	df <- filter(df, YEAR==2019)
@@ -67,15 +67,7 @@ Let's walk through each element of this script.
 
 1. The first few lines of code are boilerplate. We clear the workspace, load the required libraries, and load the data.
 
-2. The next line of code is `df$INCWAGE[ df$INCWAGE>=999998] <- NA`. This line of code is rather complex to understand, so let's walk through it slowly.
-
-    Overall, the purpose of this line of code is to tell R how to deal with missing values for the variable `INCWAGE`. The [IPUMS codebook](https://usa.ipums.org/usa-action/variables/INCWAGE#codes_section) tells us that when `INCWAGE` is 999998 or 999999, that means `INCWAGE` is either not applicable or unknown. Since we are going to be computing the average income by age, we don't want to include these values of 999998 or 999999 in our averages. We need to tell R that these values shouldn't be treated as numbers, but rather missing values.
-
-    `df$INCWAGE[ df$INCWAGE>=999998] <- NA` accomplishes this. First, let's look at `df$INCWAGE[ df$INCWAGE>=999998]`. This part of the code uses the pattern `df$X[CONDITION]`, which selects only the rows of `df$X` for which `CONDITION` is true. So `df$INCWAGE[df$INCWAGE>=999998]` selects the rows of `df$INCWAGE` for which `df$INCWAGE>=999998`. If you typed `length(df$INCWAGE[df$INCWAGE>=999998])` in the console, you would get an output of `66593` showing that there are 66,593 rows with `INCWAGE>=999998`. 
-	
-	`df$INCWAGE[df$INCWAGE>=999998]` selects the rows of `df$INCWAGE` for which `df$INCWAGE>=999998`. Then, the part of the code that says `<- NA` assigns the value of `NA` to those rows. `NA` is the symbol that R uses to denote missing values. We therefore replace any values of `999998` and `999999` in `INCWAGE` with the symbol `NA`. Later, when we compute the group-based averages, we can tell R to ignore the missing values. 
-	
-	The practice of selecting certain rows of a variable is known as **indexing**. It is useful when you want to apply an operation to only a subset of the rows, but you don't want to filter the entire dataset. 
+2. The next line of code, `df <- filter(df, INCWAGE<999998)` removes all the records with N/A or missing values for `INCWAGE`. The [IPUMS codebook](https://usa.ipums.org/usa-action/variables/INCWAGE#codes_section) tells us that when `INCWAGE` is 999998 or 999999, that means `INCWAGE` is either not applicable or unknown. Since our goal is to compute average income by age, we should drop any records that don't have a valid value for income.
 	
 3. The next line of code, `df <- filter(df, YEAR==2019)` keeps only the data from 2019.
 
@@ -142,17 +134,17 @@ The following script creates a bar chart showing the average income by type of c
 	# Load the data
 	df <- read.csv("IPUMS_ACS_CA_2014_2019.csv")  
 	
-	# Let R know about missing values for INCWAGE 
-	df$INCWAGE[ df$INCWAGE>=999998] <- NA
+	# Keep only records with valid values for INCWAGE
+    df <- filter(df, INCWAGE<999998)
 	
-	# Let R know about missing values for DEGFIELD 
-	df$DEGFIELD[ df$DEGFIELD==0] <- NA
+    # Keep only records with valid values for DEGFIELD
+    df <- filter(df, DEGFIELD>0)
 	
 	# Keep only data from 2019 
 	df <- filter(df, YEAR==2019)
 	
-	# Keep only working people with a valid college degree field 
-	df <- filter(df, EMPSTAT==1 & !is.na(DEGFIELD))
+	# Keep only working people
+	df <- filter(df, EMPSTAT==1)
 	
 	# Create a new dataframe that contains the average income for each DEGFIELD
 	df_inc_by_degfield <- df %>% 
@@ -228,8 +220,8 @@ To create a scatter plot, call `geom_point` from within a `ggplot` code block. R
     # Load the data
     df <- read.csv("IPUMS_ACS_CA_2014_2019.csv")  
     
-    # Let R know about missing values for INCWAGE 
-    df$INCWAGE[ df$INCWAGE>=999998] <- NA
+    # Keep only records with valid value for INCWAGE 
+    df <- filter(df, INCWAGE<999998)
     
     # Keep only data from 2019 
     df <- filter(df, YEAR==2019)
@@ -292,6 +284,9 @@ You can use the following incomplete script to get started:
 	# Load the data
 	df <- read.csv("IPUMS_ACS_CA_2014_2019.csv") 
 	
+    # Keep only records with a valid value for DEGFIELD
+    # YOUR CODE HERE
+    
 	# Keep only 2019 data
 	# YOUR CODE HERE
 	
