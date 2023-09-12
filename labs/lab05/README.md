@@ -305,6 +305,8 @@ You can use the following incomplete script to get started:
 	# Create the bar chart
     # YOUR CODE HERE	
 
+[Hint: Calculate percent female using the weighted mean, and don't forget to weight by `PERWT`!]
+
 Show me your code and output and take the lab quiz to be dismissed.
 	  
 ## Takeaways
