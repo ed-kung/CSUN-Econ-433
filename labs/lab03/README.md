@@ -214,6 +214,8 @@ However, the script has errors. You have to fix the script so that it runs and a
 5. Run the script and show me the output.
 6. Take the lab quiz.
 
+If you're having trouble, try *stepping through the code* by putting the cursor on the top-line, and hitting `CTRL+ENTER` to execute the code line by line. That will help you figure out which lines of code are producing errors, so you can fix things one line at a time.
+
 ## Downloading a Script and Uploading to Canvas
 
 If you don't have time to finish today, you can submit your quiz and take the lab quiz by next Monday to receive up to 80% credit.
