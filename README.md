@@ -73,13 +73,13 @@ Attendance is required.
 |     6 | 10/3  | Healthcare                                | Programming Midterm #1                      | 
 |     7 | 10/10 | Linear Models                             | Lab 06: Regression Analysis I               | 
 |     8 | 10/17 | Research Design                           | Lab 07: Regression Analysis II              | 
-|     9 | 10/24 | Current Issues Discussion                 | Group Meeting #1                            |
-|    10 | 10/31 | Diff-in-Diff Paper                        | Lab 08: Difference-in-Differences           | 
-|    11 | 11/7  | Income Redistribution & Social Assistance | Group Meeting #2                            |
-|    12 | 11/14 | RD Paper                                  | Lab 09: Regression Discontinuity            | 
-|    13 | 11/21 | Cost Benefit Analysis                     | Group Meeting #3                            |
-|    14 | 11/28 | Theory of Public Choice                   | Programming Midterm #2                      |
-|    15 | 12/5  | TBD                                       | Group Meeting #4                            |
+|     9 | 10/24 | Diff-in-Diff Paper                        | Lab 08: Difference-in-Differences           |
+|    10 | 10/31 | RD Paper                                  | Lab 09: Regression Discontinuity            | 
+|    11 | 11/7  | Airbnb Paper                              | Programming Midterm #2                      |
+|    12 | 11/14 | Current Issues Discussion                 | Group Meeting #1                            |
+|    13 | 11/21 | Theory of Public Choice                   | Group Meeting #2                            |
+|    14 | 11/28 | TBD (Tutorial or Paper)                   | Group Meeting #3                            |
+|    15 | 12/5  | TBD (Tutorial or Paper)                   | Group Meeting #4                            |
 
 ### Final Exam Schedule
 
