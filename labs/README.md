@@ -41,7 +41,7 @@ Here are some best practices to follow when coding in R:
 - `CTRL+S`: save the current script. Remember to save it with the `.R` file extension.
 - `CTRL+L`: clear the console, i.e. your output history. Useful if your output is getting cluttered and hard to read.
 
-### R Cheat Sheet
+## R Cheat Sheet
 
 This [cheat sheet](https://www.rstudio.com/wp-content%2Fuploads%2F2015%2F02%2Fdata-wrangling-cheatsheet.pdf%2F) is useful for remembering how to perform common tasks.
 
