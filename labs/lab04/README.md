@@ -222,9 +222,11 @@ Here is the skeleton of a script to get you started:
     View(grouped_df)
 
 Hints:
+- You should load the data file `IPUMS_ACS_CA_2014_2019.csv` that you created earlier in the lab.
 - You'll first need to filter the data to contain only people in the labor force. Use a filter for `EMPSTAT`. You can read more about `EMPSTAT` on the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/EMPSTAT#codes_section).
 - Total population can be calculated by summing `PERWT`.
 - To calculate the percent of individuals with a BA or higher, create a variable that is `TRUE` if the person has a BA or higher and `FALSE` otherwise. Then, calculate the weighted mean of this variable. (The mean of a boolean variable is equal to the percent of people with `TRUE`.)
+- To calculate the percent of individuals who are unemployed, you can do the same as above.
 
 Once you are done, show me your script and your output to receive your grade, then take the lab quiz.
 
