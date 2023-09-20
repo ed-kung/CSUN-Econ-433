@@ -55,32 +55,33 @@ Now try loading your newly created data file!  Type `rm(list=ls())` to clear the
 
 A common task in data analysis is to compute summary statistics for different groups within your data. 
 
-For example, we may be interested in calculating the average income for college and non-college educated workers. We may further want to break that down by male and female, or by year, or by geographic location. There are many different ways to cut the data, each of which can yield different insights. 
+For example, we may be interested in calculating the average income and rate of college education by gender. We may further want to break that down by year or by geographic location. There are many different ways to cut the data, each of which can yield different insights. 
 
-The following script shows an example for how we calculate average income of employed workers by college education, year, and sex, using our ACS data from California in 2014 and 2019.
+The following script shows an example for how we calculate average income and college education rate by sex and year, for employed workers, using our ACS data from California in 2014 and 2019.
 
     rm(list=ls())    # Clear the workspace
     library(dplyr)   # Load dplyr
     
     df <- read.csv("IPUMS_ACS_CA_2014_2019.csv")   # Load the data
     
-    # Keep only employed, working-age adults
-    df <- filter(df, EMPSTAT==1 & AGE>=25 & AGE<=65)
+    # Keep only employed people
+    df <- filter(df, EMPSTAT==1)
     
     # Create a variable for whether the person has bachelors degree or higher
     df$COLLEGE <- (df$EDUCD>=101 & df$EDUCD<999)
     
     # Calculate average income by college education, year, and sex
     grouped_df <- df %>% 
-      group_by(COLLEGE, YEAR, SEX) %>%
+      group_by(SEX, YEAR) %>%
       summarize(
-        AVERAGE_INCOME = weighted.mean(INCWAGE, PERWT)
+        AVERAGE_INCOME = weighted.mean(INCWAGE, PERWT),
+		COLLEGE_RATE = weighted.mean(COLLEGE, PERWT)
       )
     
     # View the table
     View(grouped_df)
 
-You should get output that looks like the following image. What do you notice about the relative income of the college vs. non-college educated? What do you notice about the differences between men and women? How about between the years 2014 and 2019?
+You should get output that looks like the following image. What do you notice about the relative income of men vs. women? How about between the years 2014 and 2019?
 
 ![screenshot](screenshot1.png)
 
@@ -90,19 +91,18 @@ Now let's walk through the script to see what each line of code does.
 
 2. `df <- read.csv("IPUMS_ACS_CA_2014_2019.csv")` loads the data we created into a dataframe named `df`.
 
-3. `df <- filter(df, EMPSTAT==1 & AGE>=25 & AGE<=65)` filters the data on employed individuals (`EMPSTAT==1`) and working-age individuals (`AGE>=25` and `AGE<=65`).
+3. `df <- filter(df, EMPSTAT==1)` filters the data to keep only employed individuals (`EMPSTAT==1`).
 
-4. `df$COLLEGE <- (df$EDUCD>=101 & df$EDUCD<999)` creates a new variable called `COLLEGE` which is `TRUE` if the value of `EDUCD` is between 101 and 999, and `FALSE` otherwise. The IPUMS codes for the `EDUCD` variable is shown [here](https://usa.ipums.org/usa-action/variables/EDUC#codes_section) (under "detailed codes"). 
-
-    From these codes, we see that a value of 101 indicates that the individual has achieved a bachelor's degree, and that higher values indicate higher levels of education, until the value of 999 which indicates that the data is missing. So `COLLEGE` is simply an indicator for whether the individual has attained a bachelor's degree or higher.
+4. `df$COLLEGE <- (df$EDUCD>=101 & df$EDUCD<999)` creates a new variable called `COLLEGE` which is `TRUE` if the value of `EDUCD` is between 101 and 999, and `FALSE` otherwise. The IPUMS codes for the `EDUCD` variable is shown [here](https://usa.ipums.org/usa-action/variables/EDUC#codes_section) (under "detailed codes"). Essentially, this creates a variable which is `TRUE` if the person has a bachelor's degree or higher.
 
 5. The next command is a single command spread out over multiple lines:
 
-        grouped_df <- df %>%
-          group_by(COLLEGE, YEAR, SEX) %>% 
-          summarize(
-            AVERAGE_INCOME = weighted.mean(INCWAGE, PERWT)
-          )
+		grouped_df <- df %>% 
+		  group_by(SEX, YEAR) %>%
+		  summarize(
+			AVERAGE_INCOME = weighted.mean(INCWAGE, PERWT),
+			COLLEGE_RATE = weighted.mean(COLLEGE, PERWT)
+		  )
           
     There is a lot to talk about in this command, so we will go over it slowly.
     
@@ -118,7 +118,7 @@ Now let's walk through the script to see what each line of code does.
     
     **Grouping**
     
-    Now let's talk about `group_by`. `group_by` is a command that takes a dataframe as input, and then creates groups based on the specified variables. So `df %>% group_by(COLLEGE, YEAR, SEX)` tells R to take `df` and define groups based on the combinations of values for `COLLEGE`, `YEAR`, and `SEX`. 
+    Now let's talk about `group_by`. `group_by` is a command that takes a dataframe as input, and then creates groups based on the specified variables. So `df %>% group_by(SEX, YEAR)` tells R to take `df` and define groups based on the combinations of values for `SEX` and `YEAR`. 
 	
 	By itself, grouping doesn't do much. All it does is tell R to define these groups. We have to combine the `group_by` command with other commands like `summarize` in order to do anything meaningful.
     
@@ -134,7 +134,7 @@ Now let's walk through the script to see what each line of code does.
             ...
           )
         
-    `X1`, `X2`, ..., are the variables to group by. `STAT1`, `STAT2`, ..., are the names of the summary variables you want to create (you can call them anything). 
+    `X1`, `X2`, ..., are the variables to group by. `STAT1`, `STAT2`, ..., are the names of the statistics you want to calculate for each group (you can call them anything). 
 	
 	For example, to calculate the weighted mean of `INCWAGE` and the median of `AGE` by `SEX` and `YEAR` in our data, we could have used:
     
@@ -149,25 +149,22 @@ Now let's walk through the script to see what each line of code does.
     
     Going back to our script, our script has:
     
-        grouped_df <- df %>%
-          group_by(COLLEGE, YEAR, SEX) %>% 
-          summarize(
-            AVERAGE_INCOME = weighted.mean(INCWAGE, PERWT)
-          )
+		grouped_df <- df %>% 
+		  group_by(SEX, YEAR) %>%
+		  summarize(
+			AVERAGE_INCOME = weighted.mean(INCWAGE, PERWT),
+			COLLEGE_RATE = weighted.mean(COLLEGE, PERWT)
+		  )
           
-    So this section of code takes `df`, groups it by `COLLEGE`, `YEAR`, and `SEX`, then calculates the weighted mean of `INCWAGE` (using `PERWT` as weights), and stores it in a variable called `AVERAGE_INCOME`. 
+    So this section of code takes `df`, groups it by `SEX` and `YEAR`, then calculates the weighted mean of `INCWAGE` and `COLLEGE` (using `PERWT` as weights).  The weighted mean of `INCWAGE` is stored in a variable called `AVERAGE_INCOME` and the weighted mean of `COLLEGE` is stored in a variable called `COLLEGE_RATE`. 
 	
-	The result of this entire operation is itself a new dataframe with one row for each combination of `COLLEGE`, `YEAR`, and `SEX`, and we named this new dataframe `grouped_df`.
+	The result of this entire operation is itself a new dataframe with one row for each combination of `SEX` and `YEAR`, and we named this new dataframe `grouped_df`.
     
     **Weighted Statistics**
     
     The last thing to comment on is `weighted.mean`. The ACS data is a **stratified sample**, meaning not every individual in the data was surveyed with equal probability. The ACS **oversamples** some groups and **undersamples** others. The variable `PERWT` defines how many actual people an observation is meant to represent. So `PERWT=260` on row 2 implies that the person in row 2 is representative of 260 people in real life. You can read more about `PERWT` [here](https://usa.ipums.org/usa-action/variables/PERWT#description_section).
     
-    Because the ACS is a stratified sample, summary statistics need to be properly weighted. The standard formula for calculating an average is:
-    
-    $$\text{Mean} = \frac{1}{N}\sum_{i=1}^{N} X_i $$
-    
-    The formula for calculating a weighted average is:
+    Because the ACS is a stratified sample, summary statistics need to be properly weighted. The formula for calculating a weighted average is:
     
     $$\text{Weighted Mean} = \frac{\sum W_i X_i}{\sum W_i}$$
     
@@ -180,10 +177,15 @@ Now let's walk through the script to see what each line of code does.
           summarize(
             TOTAL_POPULATION = sum(PERWT)
           )
-
+		  
+	**Rates as Weighted Means of Boolean Variables**
+	
+	Finally, let me comment on the line `COLLEGE_RATE = weighted.mean(COLLEGE, PERWT)`. `COLLEGE` was a boolean variable that was `TRUE` if the person had a bachelor's or higher, and `FALSE` otherwise. If we take the mean of a boolean variable, we get a rate. That is, the percentage of people who have a value of `TRUE` for that variable. So to calculate the rate of people with a college education, we took the mean of `COLLEGE` (and weighted, of course, by `PERWT` because we have a stratified sample).
+	
     **Other Statistics**
     
     Besides the weighted mean, you can also calculate other statistics like the minimum, maximum, median, standard deviation, etc. The cheat sheet linked to below shows some of the statistics that can be calculated.    
+
     
 ### dplyr Cheat Sheet 
 
@@ -207,26 +209,22 @@ Here is the skeleton of a script to get you started:
 	# YOUR CODE HERE
     
     # Keep only people in the labor force
+	# HINT: Filter on the EMPSTAT variable
 	# YOUR CODE HERE
 
     # Create a variable for whether the person is unemployed
+	# HINT: Create a boolean variable that is TRUE if the person is unemployed and FALSE otherwise
 	# YOUR CODE HERE
     
     # Create a variable for whether the person has a bachelors degree or higher
+	# HINT: You already saw how to do this above 
 	# YOUR CODE HERE
     
-    # Calculate total population, unemployment rate, and college rate by 
-    # county and year
+    # Calculate total population, unemployment rate, and college rate by county and year 
+	# YOUR CODE HERE 
     
     # View the table
     View(grouped_df)
-
-Hints:
-- You should load the data file `IPUMS_ACS_CA_2014_2019.csv` that you created earlier in the lab.
-- You'll first need to filter the data to contain only people in the labor force. Use a filter for `EMPSTAT`. You can read more about `EMPSTAT` on the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/EMPSTAT#codes_section).
-- Total population can be calculated by summing `PERWT`.
-- To calculate the percent of individuals with a BA or higher, create a variable that is `TRUE` if the person has a BA or higher and `FALSE` otherwise. Then, calculate the weighted mean of this variable. (The mean of a boolean variable is equal to the percent of people with `TRUE`.)
-- To calculate the percent of individuals who are unemployed, you can do the same as above.
 
 Once you are done, show me your script and your output to receive your grade, then take the lab quiz.
 
