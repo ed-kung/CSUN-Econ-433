@@ -75,7 +75,7 @@ The following script shows an example for how we calculate average income and co
       group_by(SEX, YEAR) %>%
       summarize(
         AVERAGE_INCOME = weighted.mean(INCWAGE, PERWT),
-		COLLEGE_RATE = weighted.mean(COLLEGE, PERWT)
+        COLLEGE_RATE = weighted.mean(COLLEGE, PERWT)
       )
     
     # View the table
