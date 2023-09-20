@@ -61,6 +61,16 @@ Attendance is required.
 | ------ | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ---- |
 | 100-93 | 92-90 | 89-87 | 86-83 | 82-80 | 79-77 | 76-73 | 72-70 | 69-60 | 59-0 |
 
+### Attendance Policy
+
+The class is held quite late at night. Everyone, including myself and your classmates, is making a sacrifice out of their day to be here. Out of respect for your classmates, you should make every effort to attend each class.
+
+Classwork, including in-class quizzes and labs, will only be given credit if you are in attendance. 
+
+If you need to miss a class for any reason, let me know in advance. If the reason is sufficiently valid, I will let you complete the work from home without penalty.  I will try to flexible about letting you miss class as long as it doesn't become a repeated issue. 
+
+
+
 # Tentative Schedule
 
 | Week  | Date  | Lecture                                   | Lab                                         | 
