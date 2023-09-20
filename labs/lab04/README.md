@@ -97,12 +97,12 @@ Now let's walk through the script to see what each line of code does.
 
 5. The next command is a single command spread out over multiple lines:
 
-		grouped_df <- df %>% 
-		  group_by(SEX, YEAR) %>%
-		  summarize(
-			AVERAGE_INCOME = weighted.mean(INCWAGE, PERWT),
-			COLLEGE_RATE = weighted.mean(COLLEGE, PERWT)
-		  )
+        grouped_df <- df %>% 
+          group_by(SEX, YEAR) %>%
+          summarize(
+            AVERAGE_INCOME = weighted.mean(INCWAGE, PERWT),
+            COLLEGE_RATE = weighted.mean(COLLEGE, PERWT)
+          )
           
     There is a lot to talk about in this command, so we will go over it slowly.
     
@@ -149,12 +149,12 @@ Now let's walk through the script to see what each line of code does.
     
     Going back to our script, our script has:
     
-		grouped_df <- df %>% 
-		  group_by(SEX, YEAR) %>%
-		  summarize(
-			AVERAGE_INCOME = weighted.mean(INCWAGE, PERWT),
-			COLLEGE_RATE = weighted.mean(COLLEGE, PERWT)
-		  )
+        grouped_df <- df %>% 
+          group_by(SEX, YEAR) %>%
+          summarize(
+            AVERAGE_INCOME = weighted.mean(INCWAGE, PERWT),
+            COLLEGE_RATE = weighted.mean(COLLEGE, PERWT)
+          )
           
     So this section of code takes `df`, groups it by `SEX` and `YEAR`, then calculates the weighted mean of `INCWAGE` and `COLLEGE` (using `PERWT` as weights).  The weighted mean of `INCWAGE` is stored in a variable called `AVERAGE_INCOME` and the weighted mean of `COLLEGE` is stored in a variable called `COLLEGE_RATE`. 
 	
