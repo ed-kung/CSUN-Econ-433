@@ -272,7 +272,7 @@ Run the new script. You should see the following result:
 
 To be dismissed and earn your grade for this lab, you will create a script that does the following:
 
-- For the working age population (25 to 65) that is in the labor force (`EMPSTAT!=3`), create a horizontal bar chart showing the percent of people who are female by college degree field. Use 2019 data only and make sure to use `DEGFIELD_LABEL` instead of `DEGFIELD` so the chart is human-readable. Make sure the title and axes are labeled appropriately.
+- For the working age population (25 to 65) that is in the labor force (`EMPSTAT==1` or `EMPSTAT==2`), create a horizontal bar chart showing the percent of people who are female by college degree field. Use 2019 data only and make sure to use `DEGFIELD_LABEL` instead of `DEGFIELD` so the chart is human-readable. Make sure the title and axes are labeled appropriately.
 
 You can use the following incomplete script to get started:
 
