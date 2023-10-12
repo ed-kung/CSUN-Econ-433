@@ -78,50 +78,54 @@ The presentation will be graded holistically on the following factors:
 
 # Schedule
 
-- **Tuesday 10/24: Group Meeting #1**
-  - Decide on a research question
-  - Discuss your ideas with me to get approval
-  - Start working on the research proposal
+- **Monday 11/6: Group Formation Due**
+  - Form your groups and send me your groups
+  - If you do not have a group, I will assign you to one
 
-- **Monday 10/30: Proposal first draft due**
+- **Monday 11/13: Research Proposal 1st Draft Due**
+  - Decide on a research topic
+  - Submit research proposal rough draft
 
-- **Monday 11/6: Proposal final draft due**
+- **Tuesday 11/14: Group Meeting #1**
+  - Discuss your research proposal with me
+  - Refine your research proposal
+  - Look for data and refine your methodology
+  - Begin exploring the data 
 
-- **Tuesday 11/7: Group Meeting #2**
-  - Begin collecting and organizing the data
-  - Begin analysis if possible
-  - Discuss progress & schedule a progress report
+- **Monday 11/20: Research Proposal 2nd Draft Due**
+
+- **Tuesday 11/21: Group Meeting #2**
+  - You should have settled on the basic outline for your topic and methodology by now
+  - Continue refining your proposal
+  - Continue refining your data and methodology
+  - Continue working on the data
+  - You should have some actual results by next week
+  - Discuss your progress with me
+
+- **Monday 11/27: Research Proposal Final Draft Due**
+
+- **Tuesday 11/28: Group Meeting #3**
+  - You should have some preliminary results from your data and methodology by now
+  - Discuss your results with me for feedback
+  - Continue working on the data
   
-- **Tuesday 11/21: Group Meeting #3**
-  - Finalize data collection and preparation
-  - Begin or continue analysis
-  - Discuss progress & schedule a progress report
-  
-- **Monday 12/4: Report first draft due**
+- **Monday 12/4: Report 1st Draft Due**
 
 - **Tuesday 12/5: Group Meeting #4**
-  - Finalize the data and analysis
-  - Finalize the research report
-  - Begin working on the presentation
+  - You should have settled on a main set of results by now
+  - Continue refining your results
+  - Discuss your results with me for feedback
   
-- **Monday 12/11: Report final draft and project code due**
+- **Monday 12/11: Report Final Draft Due**
 
-- **Tuesday 12/12: Presentations**
+- **Tuesday 12/12: Group Presentations**
 
 # Grading
 
-- Attendance (3 pts for each in-class session)
-- Progress reports (3 pts each)
-- Research Proposal First Draft (5 pts)
-- Research Proposal Final Draft (20 pts)
-- Research Report First Draft (5 pts)
-- Research Report Final Draft (20 pts)
-- Project Code (8 pts)
-- Presentation (20 pts)
-
-
-
-
-
-  
-
+- Attendance (3 pts for each of the four group meeting and for the presentations)
+- Proposal 1st Draft (5 pts)
+- Proposal 2nd Draft (5 pts)
+- Proposal Final Draft (20 pts)
+- Report 1st Draft (5 pts)
+- Report Final Draft (20 pts)
+- Presentation (15 pts)
