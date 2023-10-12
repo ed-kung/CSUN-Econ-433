@@ -117,6 +117,7 @@ The presentation will be graded holistically on the following factors:
   - Discuss your results with me for feedback
   
 - **Monday 12/11: Report Final Draft Due**
+  - Also submit your data and code
 
 - **Tuesday 12/12: Group Presentations**
 
@@ -128,4 +129,5 @@ The presentation will be graded holistically on the following factors:
 - Proposal Final Draft (20 pts)
 - Report 1st Draft (5 pts)
 - Report Final Draft (20 pts)
+- Data and Code (20 pts)
 - Presentation (15 pts)

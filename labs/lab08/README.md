@@ -8,7 +8,7 @@ In this lab you will conduct difference-in-differences analysis using panel data
 
 ### Difference-in-differences
 
-Difference-in-differences (DID) is a research design for estimating the effect of an intervention, or treatment. In Public Economics, the intervention is often a policy of some kind. For example, we might use DID to study the effect of Airbnb regulations on the number of Airbnb listings.
+Difference-in-differences (DID) is a research design for estimating the effect of an intervention, or treatment. In Public Economics, the intervention is often a policy of some kind. For example, we might use DID to study the effect of Airbnb regulations on the number of Airbnb listings or the number of housing permits.[^1]
 
 DID works when there is a group of subjects affected by the intervention (called the **treatment group**) and a group of subjects not affected by the intervention (called the **control group**). In DID, we compare the **change** in outcomes for the treatment group to the **change** in outcomes for the control group, over the time period in which the intervention happens.
 
@@ -19,9 +19,19 @@ The table below shows a schematic of the most basic DID with two subjects and tw
 | Control Subject     | $Y_{00}$ | $Y_{01}$ |
 | Treatment Subject   | $Y_{10}$ | $Y_{11}$ |
 
-The DID treatment effect estimator is:
+We can thus write:
 
-$$\text{DID Estimated Treatment Effect} = \underbrace{(Y_{11} - Y_{10})}_{\text{Change in outcome for} \atop \text{treatment subject}} - \underbrace{(Y_{01} - Y_{00})}_{\text{Change in outcome for} \atop \text{control subject}}$$
+$$\text{Change in the outcome for the control subject} = Y_{01} - Y_{00}$$
+
+$$\text{Change in the outcome for the treated subject} = Y_{11} - Y_{10}$$
+
+The **difference-in-differences** treatment effect estimator is:
+
+$$
+\begin{align}
+\text{DID Estimated Treatment Effect} &= \text{Change in outcome for treated} - \text{Change in outcome for control} \\
+&= (Y_{11} - Y_{10}) - (Y_{01} - Y_{00})
+$$
 
 Notice how the DID estimator takes the difference of two differenecs, hence the name "difference-in-differences".
 
@@ -140,7 +150,7 @@ Show me your code and output and take the lab quiz to be dismissed.
 - You can conduct DID analysis using both graphs and regressions
 
  
-
+[^1] Ron Bekkerman, Maxime Cohen, Edward Kung, John Maiden, and Davide Proserpio (2023). "The Effect of Short-Term Rentals on Residential Investment." *Marketing Science* 42(4):819-834. [Link](https://pubsonline.informs.org/doi/abs/10.1287/mksc.2022.1409)
 
 
 
