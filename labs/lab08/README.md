@@ -34,13 +34,17 @@ $$
 \end{align}
 $$
 
-Notice how the DID estimator takes the difference of two differenecs, hence the name "difference-in-differences".
+Notice how the DID estimator takes the difference of two differences, hence the name "difference-in-differences".
 
 ### Panel Data
 
 Panel data refers to data in which the same subjects are observed repeatedly over multiple time periods. DID analysis can only be performed on panel data. Obervations in panel data are indexed by $i$, which indexes the subject, and $t$, which indexes the time period. So, $Y_{it}$ would refer to the outcome variable for subject $i$ in time $t$.
 
-With panel data, DID analysis can be conducted using linear regressions. Suppose the intervention happens between time $T_{0}$ and $T_{1}$. Define $Post_{t}$ as a binary variable equal to 1 if $t \geq T_{1}$ and 0 otherwise.  Define $Treated_{i}$ as a binary variable equal to 1 if subject $i$ is in the treatment group and 0 otherwise. Then the DID treatment effect estimator is equal to the estimated coefficient $\beta_{1}$ in the following regression:
+With panel data, DID analysis can be conducted using linear regressions. Suppose the intervention happens between time $T_{0}$ and $T_{1}$. 
+- Define $Post_{t}$ as a binary variable equal to 1 if $t \geq T_{1}$ and 0 otherwise.  
+- Define $Treated_{i}$ as a binary variable equal to 1 if subject $i$ is in the treatment group and 0 otherwise. 
+
+Then the DID treatment effect estimator is equal to $\beta_{1}$ in the following regression:
 
 $$Y_{it} = \beta_0 + \beta_1 Treated_{i} \times Post_{t} + \delta_{i} + \gamma_{t} + \epsilon_{it}$$
 
@@ -87,6 +91,7 @@ You will also need the packages `dplyr`, `stargazer`, `lfe`, and `ggplot2`. Thes
 - `city`: the name of the city
 - `year`: the year of the data
 - `airbnb_listings`: the number of Airbnb listings in that city-year
+- `housing_permits`: the number of housing permits approved in that city-year
 - `population`: the total population in that city-year
 - `avg_hh_income`: the average household income in that city-year
 - `tourists`: the number of tourists who visited the city in that year
@@ -107,9 +112,18 @@ Write a script that accomplishes the following tasks:
 	
 	- Bonus: Add a fancy dotted line to the plot to show where the intervention occurred. You can do so by adding `geom_vline(xintercept=2015.5, linetype="dashed")` to your ggplot code
 
+2. Show that there are no differential pre-trends in the number of housing permits between cities that passed Airbnb regulations and those that didn't.
+
+    - For this plot, label the X axis "Year" and the Y axis "log(Housing Permits)". The title should be "Log Housing Permits by Treatment/Control".
+	
+	- Bonus: Add a fancy dotted line as above.
+
+
 2. Report the results from the following regressions:
 	- Regress `log(airbnb_listings)` on `treatedXpost` and dummies for `city` and `year`.
 	- Regress `log(airbnb_listings)` on `treatedXpost`, `log(population)`, `log(avg_hh_income)`,  `log(tourists)`, and dummies for `city` and `year`.
+	- Regress `log(housing_permits)` on `treatedXpost` and dummies for `city` and `year`.
+	- Regress `log(housing_permits)` on `treatedXpost`, `log(population)`, `log(avg_hh_income)`, `log(tourists)`, and dummies for `city` and `year`.
 
 Here is the skeleton of a script to get you started:
 
@@ -138,10 +152,14 @@ Here is the skeleton of a script to get you started:
 	# for the treatment and the control groups
 	# YOUR CODE HERE
 
+	# Create a DID analysis plot showing the trends in log(housing_permits) 
+	# for the treatment and the control groups
+	# YOUR CODE HERE
+
 	# Run the DID regressions
 	# YOUR CODE HERE
 
-	stargazer(r1, r2, type="text")
+	stargazer(r1, r2, r3, r4, type="text")
 
 Show me your code and output and take the lab quiz to be dismissed.
 
