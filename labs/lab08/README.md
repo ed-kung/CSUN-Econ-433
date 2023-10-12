@@ -169,7 +169,7 @@ Show me your code and output and take the lab quiz to be dismissed.
 - You can conduct DID analysis using both graphs and regressions
 
  
-[^1] Ron Bekkerman, Maxime Cohen, Edward Kung, John Maiden, and Davide Proserpio (2023). "The Effect of Short-Term Rentals on Residential Investment." *Marketing Science* 42(4):819-834. [Link](https://pubsonline.informs.org/doi/abs/10.1287/mksc.2022.1409)
+[^1]: Ron Bekkerman, Maxime Cohen, Edward Kung, John Maiden, and Davide Proserpio (2023). "The Effect of Short-Term Rentals on Residential Investment." *Marketing Science* 42(4):819-834. [Link](https://pubsonline.informs.org/doi/abs/10.1287/mksc.2022.1409)
 
 
 
