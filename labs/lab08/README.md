@@ -31,6 +31,7 @@ $$
 \begin{align}
 \text{DID Estimated Treatment Effect} &= \text{Change in outcome for treated} - \text{Change in outcome for control} \\
 &= (Y_{11} - Y_{10}) - (Y_{01} - Y_{00})
+\end{align}
 $$
 
 Notice how the DID estimator takes the difference of two differenecs, hence the name "difference-in-differences".
