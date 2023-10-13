@@ -35,7 +35,8 @@ The proposal should contain the following sections:
 - Project Description
 - Background and Motivation
 - Hypothesis
-- Proposed Methodology
+- Proposed Data and Methodology
+- References
 
 The proposal will be graded holistically on the following factors:
 
@@ -47,26 +48,32 @@ The proposal will be graded holistically on the following factors:
 
 # Research Report
 
-The research report should not exceed 4 pages, except to include tables and figures. The research report should include the same sections as the proposal, except it should also include a **Results**, **Discussion**, and **Conclusion** section.
+The research report should not exceed 4 pages, except to include tables and figures. The research report should include the following sections:
 
-- **Results**: Report the results of your analysis. Use tables and figures as appropriate.
-- **Discussion**: Discuss the interpretation of your results. 
-  - What do the results imply and what do they not imply?
-  - What sources of endogeneity are accounted for by your methodology?
-  - What sources of endogeneity are not accounted for by your methodology?
-  - What are the policy implications of your analysis?
-- **Conclusion**: Wrap up with a summary of your findings and the main takeaways of your analysis.
+- Project Description
+  - You can copy your project description from the proposal
+- Background and Motivation
+  - You can copy your background and motivation from the proposal
+- Hypothesis
+  - You can copy your hypothesis from the proposal
+- Data and Methodology
+  - In the report, your data and methodology should be more explicitly reported than in the proposal
+- Results
+  - Report your results here. Include tables and figures.
+- Discussion
+  - Discuss your results. Do the results support your hypothesis? What are the implications? What are some limitations of your results? 
+- References
 
 The research report will be graded holistically on the following factors:
 
 - **Clarity**. Was I able to understand the report? Were parts of it confusing or hard to understand?
 - **Accuracy**. Did the report accurately describe the results? Were the interpretations of the results accurate?
 - **Professionalism**. Was the report formatted attractively? Was the language professional? Were the appropriate tables and figures included?
-- **Contribution**. Did the results meaningfully contribute to answering the research question? 
+- **Contribution**. Did the results meaningfully contribute to answering the research question? (Even if the hypothesis is rejected, that is still a meaningful contribution.)
 
 # Presentation
 
-The presentation should be about 15 minutes long, with 5 minutes for questions. The presentation should cover the same information as the report. It should be presented as if to an audience who has not read your report, but has some expertise in economics/econometrics.
+The presentation should be about 10 minutes long, with 3 minutes for questions. The presentation should cover the same information as the report. It should be presented as if to an audience who has not read your report, but has some expertise in economics/econometrics.
 
 The presentation will be graded holistically on the following factors:
 
