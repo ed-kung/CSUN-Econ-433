@@ -32,11 +32,11 @@ The research proposal should not exceed 2 pages (12pt font, single spaced), exce
 
 The proposal should contain the following sections:
 
-- Project Description
-- Background and Motivation
-- Hypothesis
-- Proposed Data and Methodology
-- References
+- **Project Description**
+- **Background and Motivation**
+- **Hypothesis**
+- **Proposed Data and Methodology**
+- **References**
 
 The proposal will be graded holistically on the following factors:
 
@@ -50,19 +50,19 @@ The proposal will be graded holistically on the following factors:
 
 The research report should not exceed 4 pages, except to include tables and figures. The research report should include the following sections:
 
-- Project Description
+- **Project Description**
   - You can copy your project description from the proposal
-- Background and Motivation
+- **Background and Motivation**
   - You can copy your background and motivation from the proposal
-- Hypothesis
+- **Hypothesis**
   - You can copy your hypothesis from the proposal
-- Data and Methodology
-  - In the report, your data and methodology should be more explicitly reported than in the proposal
-- Results
+- **Data and Methodology**
+  - You should rewrite this section to describe what you actually did (instead of what you plan to do)
+- **Results**
   - Report your results here. Include tables and figures.
-- Discussion
+- **Discussion**
   - Discuss your results. Do the results support your hypothesis? What are the implications? What are some limitations of your results? 
-- References
+- **References**
 
 The research report will be graded holistically on the following factors:
 
