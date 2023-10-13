@@ -8,7 +8,7 @@ In this lab you will conduct difference-in-differences analysis using panel data
 
 ### Difference-in-differences
 
-Difference-in-differences (DID) is a research design for estimating the effect of an intervention, or treatment. In Public Economics, the intervention is often a policy of some kind. For example, we might use DID to study the effect of Airbnb regulations on the number of Airbnb listings or the number of housing permits.[^1]
+Difference-in-differences (DID) is a research design for estimating the effect of an intervention, or treatment. In Public Economics, the intervention is often a policy of some kind. For example, we might use DID to study the effect of Airbnb regulations on the number of Airbnb listings or the number of building permits.[^1]
 
 DID works when there is a group of subjects affected by the intervention (called the **treatment group**) and a group of subjects not affected by the intervention (called the **control group**). In DID, we compare the **change** in outcomes for the treatment group to the **change** in outcomes for the control group, over the time period in which the intervention happens.
 
@@ -91,7 +91,7 @@ You will also need the packages `dplyr`, `stargazer`, `lfe`, and `ggplot2`. Thes
 - `city`: the name of the city
 - `year`: the year of the data
 - `airbnb_listings`: the number of Airbnb listings in that city-year
-- `housing_permits`: the number of housing permits approved in that city-year
+- `building_permits`: the number of housing permits approved in that city-year
 - `population`: the total population in that city-year
 - `avg_hh_income`: the average household income in that city-year
 - `tourists`: the number of tourists who visited the city in that year
@@ -112,9 +112,9 @@ Write a script that accomplishes the following tasks:
 	
 	- Bonus: Add a fancy dotted line to the plot to show where the intervention occurred. You can do so by adding `geom_vline(xintercept=2015.5, linetype="dashed")` to your ggplot code
 
-2. Show that there are no differential pre-trends in the number of housing permits between cities that passed Airbnb regulations and those that didn't.
+2. Show that there are no differential pre-trends in the number of building permits between cities that passed Airbnb regulations and those that didn't.
 
-    - For this plot, label the X axis "Year" and the Y axis "log(Housing Permits)". The title should be "Log Housing Permits by Treatment/Control".
+    - For this plot, label the X axis "Year" and the Y axis "log(Building Permits)". The title should be "Log Building Permits by Treatment/Control".
 	
 	- Bonus: Add a fancy dotted line as above.
 
@@ -122,8 +122,8 @@ Write a script that accomplishes the following tasks:
 2. Report the results from the following regressions:
 	- Regress `log(airbnb_listings)` on `treatedXpost` and dummies for `city` and `year`.
 	- Regress `log(airbnb_listings)` on `treatedXpost`, `log(population)`, `log(avg_hh_income)`,  `log(tourists)`, and dummies for `city` and `year`.
-	- Regress `log(housing_permits)` on `treatedXpost` and dummies for `city` and `year`.
-	- Regress `log(housing_permits)` on `treatedXpost`, `log(population)`, `log(avg_hh_income)`, `log(tourists)`, and dummies for `city` and `year`.
+	- Regress `log(building_permits)` on `treatedXpost` and dummies for `city` and `year`.
+	- Regress `log(building_permits)` on `treatedXpost`, `log(population)`, `log(avg_hh_income)`, `log(tourists)`, and dummies for `city` and `year`.
 
 Here is the skeleton of a script to get you started:
 
@@ -152,7 +152,7 @@ Here is the skeleton of a script to get you started:
 	# for the treatment and the control groups
 	# YOUR CODE HERE
 
-	# Create a DID analysis plot showing the trends in log(housing_permits) 
+	# Create a DID analysis plot showing the trends in log(building_permits) 
 	# for the treatment and the control groups
 	# YOUR CODE HERE
 
@@ -169,6 +169,8 @@ Show me your code and output and take the lab quiz to be dismissed.
 - You can conduct DID analysis using both graphs and regressions
 
  
+## References
+
 [^1]: Ron Bekkerman, Maxime Cohen, Edward Kung, John Maiden, and Davide Proserpio (2023). "The Effect of Short-Term Rentals on Residential Investment." *Marketing Science* 42(4):819-834. [Link](https://pubsonline.informs.org/doi/abs/10.1287/mksc.2022.1409)
 
 
