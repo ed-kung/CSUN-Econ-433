@@ -85,7 +85,7 @@ The presentation will be graded holistically on the following factors:
 
 # Schedule
 
-- **Monday 11/6: Group Formation Due**
+- **Monday 10/30: Group Formation Due**
   - Form your groups and send me your groups
   - If you do not have a group, I will assign you to one
 
