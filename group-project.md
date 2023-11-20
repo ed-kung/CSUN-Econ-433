@@ -109,21 +109,21 @@ The presentation will be graded holistically on the following factors:
   - You should have some actual results by next week
   - Discuss your progress with me
 
-- **Monday 11/27: Research Proposal Final Draft Due**
+- **Monday 11/27: Research Proposal 3rd Draft (Optional)**
 
 - **Tuesday 11/28: Group Meeting #3**
   - You should have some preliminary results from your data and methodology by now
   - Discuss your results with me for feedback
   - Continue working on the data
   
-- **Monday 12/4: Report 1st Draft Due**
+- **Monday 12/4: Proposal Final Draft and Report 1st Draft Due (with code)**
 
 - **Tuesday 12/5: Group Meeting #4**
   - You should have settled on a main set of results by now
   - Continue refining your results
   - Discuss your results with me for feedback
   
-- **Monday 12/11: Report Final Draft Due**
+- **Monday 12/11: Report Final Draft Due (with code)**
   - Also submit your data and code
 
 - **Tuesday 12/12: Group Presentations**
