@@ -43,7 +43,7 @@ Attendance is required.
 ### Grading
 
 - **Homework Assignments (20%)**
-  - These will usually be reading assignments (textbook chapter or article) and an associated Canvas quiz. These quizzes are due on Mondays, with a penalty for late submissions. You'll usually have three attempts on each quiz.
+  - These will usually be reading assignments (textbook chapter or article) and an associated Canvas quiz. These quizzes are due on Wednesdays, with a penalty for late submissions. You'll usually have three attempts on each quiz.
   
 - **Weekly Labs (20%)**
   - In-class lab sessions where you get hands-on experience working with data analysis relevant to policy. Lab assignments will be introduced, completed, and graded *in-class*. If you can't finish in class, you have the opportunity to submit your code by the following Monday, with a late penalty. There may also be in-class quizzes associated with the labs.
