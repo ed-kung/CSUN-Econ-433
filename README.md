@@ -2,7 +2,7 @@
 
 ![Logo](assets/images/logo.jpg)
 
-# Fall 2023 Syllabus
+# Spring 2024 Syllabus
 
 # Table of Contents
 
@@ -28,11 +28,11 @@
 
 ### Lectures
 
-- Section 01 Tu 7:00pm - 9:45pm @ Bookstein 2125
+- Th 7:00pm - 9:45pm @ Bookstein 2212
 
 ### Office Hours
 
-- Tu 5:55pm - 6:55pm @ Bookstein 4252
+- Th 6:00pm - 7:00pm @ Bookstein 4252
 
 ### Course Organization
 
@@ -42,20 +42,23 @@ Attendance is required.
 
 ### Grading
 
-- **Homework Assignments (25%)**
+- **Homework Assignments (20%)**
   - These will usually be reading assignments (textbook chapter or article) and an associated Canvas quiz. These quizzes are due on Mondays, with a penalty for late submissions. You'll usually have three attempts on each quiz.
   
-- **Weekly Labs (25%)**
+- **Weekly Labs (20%)**
   - In-class lab sessions where you get hands-on experience working with data analysis relevant to policy. Lab assignments will be introduced, completed, and graded *in-class*. If you can't finish in class, you have the opportunity to submit your code by the following Monday, with a late penalty. There may also be in-class quizzes associated with the labs.
   
 - **In-Class Quizzes (10%)**
-  - Occassionally, I will give a short quiz in-class related to that week's lecture or discussion. These in-class quizzes will also count for your attendance.
+  - Occassionally, I will give a short quiz in-class related to the lecture material.
   
 - **Programming Exams (15%)**
   - There will be two programming exams. These will be administered and completed in-class.
 
-- **Group Project (25%)**
-  - There will be a group project. See details [here](group-project.md).
+- **Group Project (20%)**
+  - There will be a group data project. See details [here](group-project.md).
+
+- **Final Exam (15%)**
+  - There will be a final exam that consists of both a written and a programming component.
   
 |  A     |  A-   |  B+   |  B    |  B-   |  C+   |  C    |  C-   |  D    |  F   |
 | ------ | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ---- |
@@ -75,27 +78,26 @@ If you need to miss a class for any reason, let me know in advance. If the reaso
 
 | Week  | Date  | Lecture                                   | Lab                                         | 
 | ----- | ----- | ----------------------------------------- | ------------------------------------------- | 
-|     1 | 8/29  | Intro to Public Economics                 | Lab 01: Intro to Public Datasets with IPUMS | 
-|     2 | 9/5   | Review of Micro Principles                | Lab 02: Introduction to R                   | 
-|     3 | 9/12  | Public Goods & Common Resources           | Lab 03: Basic Data Operations & Scripts     | 
-|     4 | 9/19  | Externalities                             | Lab 04: Grouping and Summarizing Data       | 
-|     5 | 9/26  | Education                                 | Lab 05: Data Visualization                  | 
-|     6 | 10/3  | Healthcare                                | Programming Midterm #1                      | 
-|     7 | 10/10 | Linear Models                             | Lab 06: Regression Analysis I               | 
-|     8 | 10/17 | Research Design                           | Lab 07: Regression Analysis II              | 
-|     9 | 10/24 | Diff-in-Diff Paper                        | Lab 08: Difference-in-Differences           |
-|    10 | 10/31 | RD Paper                                  | Lab 09: Regression Discontinuity            | 
-|    11 | 11/7  | Airbnb Paper                              | Programming Midterm #2                      |
-|    12 | 11/14 | Current Issues Discussion                 | Group Meeting #1                            |
-|    13 | 11/21 | Theory of Public Choice                   | Group Meeting #2                            |
-|    14 | 11/28 | TBD (Tutorial or Paper)                   | Group Meeting #3                            |
-|    15 | 12/5  | TBD (Tutorial or Paper)                   | Group Meeting #4                            |
+|     1 | 1/25  | Intro to Public Economics                 | Lab 01: Intro to Public Datasets with IPUMS | 
+|     2 | 2/1   | Review of Micro Principles                | Lab 02: Introduction to R                   | 
+|     3 | 2/8   | Public Goods & Common Resources           | Lab 03: Basic Data Operations & Scripts     | 
+|     4 | 2/15  | Theory of Externalities                   | Lab 04: Grouping and Summarizing Data       | 
+|     5 | 2/22  | Theory of Taxation                        | Lab 05: Data Visualization                  | 
+|     6 | 2/29  | Education                                 | Programming Midterm #1                      |
+|     7 | 3/7   | Healthcare                                | Group Project Meeting #1                    |
+|     8 | 3/14  | Linear Regression Models                  | Lab 06: Regression Analysis I               |
+|     9 | 3/21  | *Spring Break*                            | *Spring Break*                              |
+|    10 | 3/28  | Research Design                           | Group Project Meeting #2                    |
+|    11 | 4/4   | Experimental Paper                        | Lab 07: Regression Analysis II              |
+|    12 | 4/11  | Diff-in-Diff Paper                        | Lab 08: Difference-in-Differences           |
+|    13 | 4/18  | RD Paper                                  | Lab 09: Regression Discontinuity            |
+|    14 | 4/25  | Theory of Public Choice                   | Programming Midterm #2                      |
+|    15 | 5/2   | Instrumental Variables Paper              | Group Project Meeting #3                    |
+|    16 | 5/9   | Topic TBD                                 | Group Project Meeting #4                    | 
 
 ### Final Exam Schedule
 
-Instead of a traditional final exam, you will be presenting your [group projects](group-project.md).
-
-- Tu 12/12/2023, 8:00PM - 10:00PM @ Bookstein 2125
+- Th 5/16/2024, 8:00PM - 10:00PM @ Bookstein 2212
 
 # Course Description
 
@@ -152,7 +154,7 @@ Occasionally, I will assign readings from newspaper or academic journal articles
 
 # Exam Policies and Information
 
-There will be two in-class programming midterms. In these midterms, you will be provided with data and asked to perform one or more data analysis tasks on it. You will submit your code for grading.
+There will be two in-class programming midterms and a programming component on the final exam. In these assignments, you will be provided with data and asked to perform one or more data analysis tasks on it. You will submit your code for grading.
 
 Each task will be graded on execution, and the overall code will be graded on professionalism. Grading rubric:
 
