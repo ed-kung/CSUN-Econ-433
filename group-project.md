@@ -14,28 +14,26 @@ Your group will:
 
 1. A research proposal
 2. A research report
-3. A class presentation
 
 # Research Proposal
 
 The research proposal should not exceed 2 pages (12pt font, single spaced), except to include tables and figures. The research proposal should answer the following questions:
 
-- What is the research question you wish to study?
-- Why is the question important or interesting?
-- What methodology will you use to conduct the research?
-- Which variables will be used to conduct the analysis?
-  - What are the outcome variables?
-  - What are the explanatory variables of primary interest?
-  - What are the nuissance variables?
-  - What is the unit of analysis?
-- What do you expect to find? (What is your hypothesis?)
-
 The proposal should contain the following sections:
 
 - **Project Description**
+    - What is the research question you wish to study?
 - **Background and Motivation**
+    - Why is the question important or interesting?
 - **Hypothesis**
+    - What do you expect to find?
 - **Proposed Data and Methodology**
+    - What data do you need to conduct the analysis?
+        - What is the outcome variable?
+        - What are the main covariates of interest?
+        - What are the nuissance variables?
+        - What is the unit of analysis?
+    - How will you use the data to answer your question?
 - **References**
 
 The proposal will be graded holistically on the following factors:
@@ -51,17 +49,25 @@ The proposal will be graded holistically on the following factors:
 The research report should not exceed 4 pages, except to include tables and figures. The research report should include the following sections:
 
 - **Project Description**
-  - You can copy your project description from the proposal
+  - What was the research question that you studied?
 - **Background and Motivation**
-  - You can copy your background and motivation from the proposal
+  - Why is the question important or interesting?
 - **Hypothesis**
-  - You can copy your hypothesis from the proposal
+  - What did you expect to find?
 - **Data and Methodology**
-  - You should rewrite this section to describe what you actually did (instead of what you plan to do)
-- **Results**
-  - Report your results here. Include tables and figures.
-- **Discussion**
-  - Discuss your results. Do the results support your hypothesis? What are the implications? What are some limitations of your results? 
+    - What data did you use to conduct the analysis?
+        - What was the outcome variable?
+        - What were the main covariates of interest?
+        - What were the nuissance variables?
+        - What was the unit of analysis?
+    - How did you use the data to answer your question? What charts did you make and what regressions did you run?
+- **Results and Discussion**
+  - Report your results here. Include tables and figures. Discuss your results as you present them.
+  - Do the results support your hypothesis?
+  - What are the implications of your results?
+  - Are there alternative explanations for your results? What are the limitations of your methodology? How would you address those limitations in future work?
+- **Conclusion**
+  - A brief, one paragraph concluding remarks.
 - **References**
 
 The research report will be graded holistically on the following factors:
@@ -70,17 +76,6 @@ The research report will be graded holistically on the following factors:
 - **Accuracy**. Did the report accurately describe the results? Were the interpretations of the results accurate?
 - **Professionalism**. Was the report formatted attractively? Was the language professional? Were the appropriate tables and figures included?
 - **Contribution**. Did the results meaningfully contribute to answering the research question? (Even if the hypothesis is rejected, that is still a meaningful contribution.)
-
-# Presentation
-
-The presentation should be about 10 minutes long, with 3 minutes for questions. The presentation should cover the same information as the report. It should be presented as if to an audience who has not read your report, but has some expertise in economics/econometrics.
-
-The presentation will be graded holistically on the following factors:
-
-- **Clarity**. Was the audience able to understand the presentation? Were parts of it confusing or hard to understand?
-- **Comprehensiveness**. Did the presentation contain all of the information that was in the report?
-- **Professionalism**. Were the slides formatted attractively? Was the language professional? Did the speakers dress and speak professionally?
-- **Mastery**. Did the speakers demonstrate a mastery of the topic? Were they able to answer questions intelligently and accurately? 
 
 
 # Schedule
