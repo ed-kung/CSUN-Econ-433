@@ -42,10 +42,10 @@ Attendance is required.
 
 ### Grading
 
-- **Homework Assignments (20%)**
+- **Homework Assignments (25%)**
   - These will usually be reading assignments (textbook chapter or article) and an associated Canvas quiz. These quizzes are due on Wednesdays, with a penalty for late submissions. You'll usually have three attempts on each quiz.
   
-- **Weekly Labs (20%)**
+- **Weekly Labs (25%)**
   - In-class lab sessions where you get hands-on experience working with data analysis relevant to policy. Lab assignments will be introduced, completed, and graded *in-class*. If you can't finish in class, you have the opportunity to submit your code by the following Monday, with a late penalty. There may also be in-class quizzes associated with the labs.
   
 - **In-Class Quizzes (10%)**
@@ -54,11 +54,8 @@ Attendance is required.
 - **Programming Exams (15%)**
   - There will be two programming exams. These will be administered and completed in-class.
 
-- **Group Project (20%)**
+- **Group Project (25%)**
   - There will be a group data project. See details [here](group-project.md).
-
-- **Final Exam (15%)**
-  - There will be a final exam that consists of both a written and a programming component.
   
 |  A     |  A-   |  B+   |  B    |  B-   |  C+   |  C    |  C-   |  D    |  F   |
 | ------ | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ---- |
