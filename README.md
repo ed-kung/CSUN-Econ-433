@@ -76,26 +76,28 @@ If you need to miss a class for any reason, let me know in advance. If the reaso
 
 # Tentative Schedule
 
-| Week  | Date  | Lecture                                   | Lab                                         | 
-| ----- | ----- | ----------------------------------------- | ------------------------------------------- | 
-|     1 | 1/25  | Intro to Public Economics                 | Lab 01: Intro to Public Datasets with IPUMS | 
-|     2 | 2/1   | Review of Micro Principles                | Lab 02: Introduction to R                   | 
-|     3 | 2/8   | Public Goods & Common Resources           | Lab 03: Basic Data Operations & Scripts     | 
-|     4 | 2/15  | Theory of Externalities                   | Lab 04: Grouping and Summarizing Data       | 
-|     5 | 2/22  | Theory of Taxation                        | Lab 05: Data Visualization                  | 
-|     6 | 2/29  | Education                                 | Programming Midterm #1                      |
-|     7 | 3/7   | Healthcare                                | Group Project Meeting #1                    |
-|     8 | 3/14  | Linear Regression Models                  | Lab 06: Regression Analysis I               |
-|     9 | 3/21  | *Spring Break*                            | *Spring Break*                              |
-|    10 | 3/28  | Research Design                           | Group Project Meeting #2                    |
-|    11 | 4/4   | Experimental Paper                        | Lab 07: Regression Analysis II              |
-|    12 | 4/11  | Diff-in-Diff Paper                        | Lab 08: Difference-in-Differences           |
-|    13 | 4/18  | RD Paper                                  | Lab 09: Regression Discontinuity            |
-|    14 | 4/25  | Theory of Public Choice                   | Programming Midterm #2                      |
-|    15 | 5/2   | Instrumental Variables Paper              | Group Project Meeting #3                    |
-|    16 | 5/9   | Topic TBD                                 | Group Project Meeting #4                    | 
+| Week  | Date  | Lecture                                       | Lab                                         | 
+| ----- | ----- | --------------------------------------------- | ------------------------------------------- | 
+|     1 | 1/25  | Intro to Public Economics                     | Lab 01: Intro to Public Datasets with IPUMS | 
+|     2 | 2/1   | Review of Micro Principles                    | Lab 02: Introduction to R                   | 
+|     3 | 2/8   | Public Goods, Common Resources, Externalities | Lab 03: Basic Data Operations & Scripts     | 
+|     4 | 2/15  | Cost Benefit Analysis                         | Lab 04: Grouping and Summarizing Data       | 
+|     5 | 2/22  | Economics of Education                        | Lab 05: Data Visualization                  | 
+|     6 | 2/29  | Health Economics                              | Programming Midterm #1                      |
+|     7 | 3/7   | Linear Regression Models                      | Lab 06: Regression Analysis I               |
+|     8 | 3/14  | Research Design                               | Lab 07: Regression Analysis II              |
+|     9 | 3/21  | *Spring Break*                                | *Spring Break*                              |
+|    10 | 3/28  | Difference-in-Differences                     | Lab 08: Difference-in-Differences           |
+|    11 | 4/4   | Regression Discontinuity                      | Lab 09: Regression Discontinuity            |
+|    12 | 4/11  | Economics of Home-Sharing                     | Programming Midterm #2                      |
+|    13 | 4/18  | Group Project Demo Report                     | Group Project Meeting #1                    |
+|    14 | 4/25  | Theory of Public Choice                       | Group Project Meeting #2                    |
+|    15 | 5/2   | Social Assistance for the Needy               | Group Project Meeting #3                    |
+|    16 | 5/9   | Topic TBD                                     | Group Project Meeting #4                    | 
 
 ### Final Exam Schedule
+
+In lieu of a final exam, you will be presenting your group projects, either as a powerpoint presentation or in a poster session, depending on the number of groups. The presentations will be held on:
 
 - Th 5/16/2024, 8:00PM - 10:00PM @ Bookstein 2212
 

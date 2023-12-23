@@ -12,41 +12,14 @@ Your group will:
 
 # Deliverables
 
-1. A research proposal
-2. A research report
-
-# Research Proposal
-
-The research proposal should not exceed 2 pages (12pt font, single spaced), except to include tables and figures. The research proposal should answer the following questions:
-
-The proposal should contain the following sections:
-
-- **Project Description**
-    - What is the research question you wish to study?
-- **Background and Motivation**
-    - Why is the question important or interesting?
-- **Hypothesis**
-    - What do you expect to find?
-- **Proposed Data and Methodology**
-    - What data do you need to conduct the analysis?
-        - What is the outcome variable?
-        - What are the main covariates of interest?
-        - What are the nuissance variables?
-        - What is the unit of analysis?
-    - How will you use the data to answer your question?
-- **References**
-
-The proposal will be graded holistically on the following factors:
-
-- **Clarity**. Was I able to understand your proposal? Were parts of it confusing or hard to understand?
-- **Relevance**. Was I persuaded that your research question interesting and important?
-- **Professionalism**. Was the proposal formatted attractively? Was the language professional? 
-- **Potential for success**. Is the proposed methodology likely to succeed in answering the research question?
-
+1. Research report
+2. Replication instructions
+3. Replication code
+4. Presentation
 
 # Research Report
 
-The research report should not exceed 4 pages, except to include tables and figures. The research report should include the following sections:
+The research report must be submitted as a Google Doc. Be sure to give edit access to `edward.kung@gmail.com`.  The report should not exceed 5 pages, except to include tables and figures. The research report should include the following sections:
 
 - **Project Description**
   - What was the research question that you studied?
@@ -60,7 +33,8 @@ The research report should not exceed 4 pages, except to include tables and figu
         - What were the main covariates of interest?
         - What were the nuissance variables?
         - What was the unit of analysis?
-    - How did you use the data to answer your question? What charts did you make and what regressions did you run?
+    - Why did you choose to use this data?
+    - How will you use the data to answer the research question?
 - **Results and Discussion**
   - Report your results here. Include tables and figures. Discuss your results as you present them.
   - Do the results support your hypothesis?
@@ -77,16 +51,48 @@ The research report will be graded holistically on the following factors:
 - **Professionalism**. Was the report formatted attractively? Was the language professional? Were the appropriate tables and figures included?
 - **Contribution**. Did the results meaningfully contribute to answering the research question? (Even if the hypothesis is rejected, that is still a meaningful contribution.)
 
+# Replication Instructions
+
+The replication instructions must be submitted as a Google Doc. Be sure to give edit access to `edward.kung@gmail.com`. The replication instructions should:
+
+1. Explain the steps necessary to acquire the data you used for your project, exactly as described in the report.
+2. Say how many rows and columns the resulting data should have.
+3. If you have more than one script, explain how you used the different scripts to obtain your results. If you only used one script, simply say that the results can be obtained by running that script.
+
+The replication instructions will be graded on whether or not I can successfully replicate your data and results.
+
+# Replication Code
+
+The replication code must be submitted as a Google Doc. Be sure to give edit access to `edward.kung@gmail.com`. You can simply copy and paste your R code into a Google Doc. The reason I require it in a Google Doc is so I can make comments and suggestions more easily.
+
+The replication code will be graded on the same general rubric as explained here [here](https://github.com/ed-kung/CSUN-Econ-433/tree/main?tab=readme-ov-file#exam-policies-and-information).
+
+# Presentation
+
+The presentations will be held during the normally scheduled final exam period. You will be required to either present your work as a powerpoint presentation or in a poster session, depending on the number of groups.
+
+The presentations will be graded according to the following rubric:
+
+- **Clarity**. Was the audience able to understand the presentation? Were parts of it hard or confusing to understand?
+- **Comprehensiveness**. Did the presentation contain all the key pieces of information from the report? 
+- **Professionalism**. Were the slides or poster formatted attractively? Was the language professional? Did the speaker make eye contact and speak engagingly? 
+- **Mastery**. Did the presenters demonstrate a mastery of the topic? Were they able to answer questions thoughtfully and accurately?
 
 # Important Dates
 
-- **Wednesday 3/6: Group Formation Due**
-- **Wednesday 4/3: Research Proposal Due**
-- **Wednesday 5/15: Research Report Due**
+- **Wednesday 4/10**: Group Formation Due
+- **Monday 4/15**: Progress Packet 1 Due
+- **Monday 4/22**: Progress Packet 2 Due
+- **Monday 4/29**: Progress Packet 3 Due
+- **Monday 5/6**: Progress Packet 4 Due
+- **Wednesday 5/15**: Final Project Packet Due
+- **Thursday 5/16**: Presentations
 
 # Grading
 
-- You will be required to submit frequent drafts of your proposal, report, and project code. Each draft is worth 5 pts.
-- Proposal Final Draft (20 pts)
-- Report Final Draft (20 pts)
-- Data and Code (20 pts)
+- Research Report (25 pts)
+- Replication Instructions (5 pts)
+- Replication Code (10 pts)
+- Presentation (15 pts)
+
+You will also be required to submit frequent drafts of your report, replication instructions, and replication code. Each draft is worth 5 points and will simply be graded on whether or not you followed instructions, not on whether they are accurate or polished.
