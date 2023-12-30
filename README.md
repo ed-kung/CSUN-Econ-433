@@ -143,12 +143,12 @@ The required textbook is *Public Finance* by Harvey Rosen and Ted Gayer (ISBN: 9
 
 - This course is part of the *myCSUN Digital Access* (MCDA) program. This program provides digital materials to students at deeply discounted prices. MCDA will *automatically* provide this book to all students of this course for around $45.
 
-    **You will be automatically charged by CSUN for this material unless you opt out by Friday 2/16.** Thus, if you do not want to pay $45 for Digital Access, or you want to obtain the book by another means, you must opt out by 2/16. To opt out:
+- **You will be automatically charged by CSUN for this material unless you opt out by Friday 2/16.** Thus, if you do not want to pay $45 for Digital Access, or you want to obtain the book by another means, you must opt out by 2/16. To opt out:
     
-        1. Go to https://accessportal.follet.com/1050
-        2. Click on *Create an Account* on the lower right
-        3. Create an account using your CSUN email address
-        4. Select the courses you wish to opt out from
+    1. Go to https://accessportal.follet.com/1050
+    2. Click on *Create an Account* on the lower right
+    3. Create an account using your CSUN email address
+    4. Select the courses you wish to opt out from
         
     For more information, see the [MCDA FAQ page](https://www.bkstr.com/csunorthridgestore/help-faq/textbook-faqs1).
 
