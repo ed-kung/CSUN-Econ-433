@@ -149,6 +149,8 @@ The required textbook is *Public Finance* by Harvey Rosen and Ted Gayer (ISBN: 9
         2. Click on *Create an Account* on the lower right
         3. Create an account using your CSUN email address
         4. Select the courses you wish to opt out from
+        
+    For more information, see the [MCDA FAQ page](https://www.bkstr.com/csunorthridgestore/help-faq/textbook-faqs1).
 
 ### RStudio Cloud
 
