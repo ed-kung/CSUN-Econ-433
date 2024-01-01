@@ -114,9 +114,9 @@ It will take a few minutes for the extract to be ready. Once it's ready, you sho
 
 26. Los Angeles county is represented in the data by `COUNTYFIP` code 37. Try using Excel to calculate the average wage and salary income (`INCWAGE`) for employed people between the ages of 25 and 65 in California in 2019. Remember that because the ACS is a stratified sample, we need to calculate the average using the sampling weights. 
 
-    To calculate a weighted average, where $x_i$ is the value to be averaged and $w_i$ is the weight ($i=1,\ldots,N$ indexes the row):
+    To calculate a weighted average, where $X_i$ is the value to be averaged and $W_i$ is the weight ($i$ indicates the row number):
     
-    $$\text{Weighted Average} = \frac{\sum^{N}_{i=1} w_i x_i}{\sum^{N}_{i=1} w_i}$$
+    $$\text{Weighted Average} = \frac{\sum W_i X_i}{\sum W_i}$$
 
 
 
