@@ -116,7 +116,7 @@ It will take a few minutes for the extract to be ready. Once it's ready, you sho
 
     To calculate a weighted average, where $x_i$ is the value to be averaged and $w_i$ is the weight ($i=1,\ldots,N$ indexes the row):
     
-    $$\text{Weighted Average} = \frac{\sum_{i=1}^{N} w_i x_i}{\sum_{i=1}^{N} w_i}
+    $$\text{Weighted Average} = \frac{\sum_{i=1}^{N} w_i x_i}{\sum_{i=1}^{N} w_i}$$
 
 
 
