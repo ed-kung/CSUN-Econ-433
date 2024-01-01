@@ -1,7 +1,7 @@
 # ECON 433 - Lab Session 1
 ## Introduction to Public Datasets with IPUMS
 
-In this lab, you will be introduced to a public data repository maintained by the University of Minnesota known as IPUMS. IPUMS allows users to download microdata from the U.S. Decennial Census and the American Community Survey (ACS). The Census and the ACS are the two main surveys researchers use to track U.S. socioeconomic data over time. The data is useful for both marketing and policy research.
+In this lab, you will be introduced to a public data repository maintained by the University of Minnesota known as IPUMS. IPUMS allows users to download microdata from the U.S. Decennial Census and the American Community Survey (ACS). The Census and the ACS are two of the main surveys researchers use to track U.S. demographic data over time. The data is useful for both marketing and policy research.
 
 **Microdata** - *Microdata* refers to data about individual survey units, in this case people and households. The opposite of microdata is *aggregated data*. An example of microdata is a table showing the income level and state of residence for each individual who took the survey. An example of aggregated data is a table showing the average income for each state. Researchers generally consider microdata to be more valuable than aggregated data because aggregated data can be calculated from microdata, but not the other way around.
 
@@ -31,7 +31,6 @@ An example of aggregated data:
 ## Instructions
 
 I will walk you through the process of signing up for IPUMS and downloading ACS microdata for the state of California in 2019.
-
 
 ### Account Creation
 
@@ -69,7 +68,9 @@ Once you have your account created, you can begin creating a data extract.
   
 11. Finally, go back and click on `PERWT`. `PERWT` indicates how many persons in the U.S. population are represented by a given person in the IPUMS sample. In other words, it is a *sampling weight*.
 
-    **Sampling Weight** - The ACS methodology does not survey every person in the U.S. with equal probability. It oversamples underrepresented groups to ensure that there is a sufficient quantity of data about that group. Because of the weighted sampling, researchers need to know how many people each survey respondent represents in the population in order to calculate accurate statistics. Oversampled groups will have smaller sampling weights whereas undersampled groups will have larger sampling weights.
+    **Sampling Weight** - The ACS methodology does not survey every person in the U.S. with equal probability. It oversamples underrepresented groups to ensure that there is sufficient data quality for that group. Oversampled groups will have smaller weights and undersample groups will have larger weights.
+    
+    Example: The sampling weight tells us how many people that row of data represents. For example, if 1 in 500 whites are sampled and 1 in 200 blacks are sampled, then white individuals will have a sampling weight of 500 and black individuals will have a sampling weight of 200.
 
 Now that we've taken a tour of the technical variables, we're ready to select the variables we're interested in! For today, we will extract data on a person's sex, age, marital status, race, employment status, income, and education for the state of California in 2019. 
 
@@ -109,7 +110,15 @@ It will take a few minutes for the extract to be ready. Once it's ready, you sho
 
 25. Open the file in Excel. How many rows are there? How many columns?
 
-26. Try using Excel to calculate the average wage and salary income for employed people between the ages of 25 and 65 in California in 2019. Remember to calculate the weighted average using `PERWT` as sample weights.
+### Exercise
+
+26. Los Angeles county is represented in the data by `COUNTYFIP` code 37. Try using Excel to calculate the average wage and salary income (`INCWAGE`) for employed people between the ages of 25 and 65 in California in 2019. Remember that because the ACS is a stratified sample, we need to calculate the average using the sampling weights. 
+
+    To calculate a weighted average, where $x_i$ is the value to be averaged and $w_i$ is the weight ($i=1,\ldots,N$ indexes the row):
+    
+    $$\text{Weighted Average} = \frac{\sum_{i=1}^{N} w_i x_i}{\sum_{i=1}^{N} w_i}
+
+
 
 ## To get credit and be dismissed
 
