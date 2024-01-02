@@ -41,15 +41,37 @@ In this lab, you will download a data file that I have downloaded in advance fro
 
     ![Environment screenshot](screenshot2.png)
 
-### View the data
+### Check the column names and data types
 
-7. Click the blue arrow next to `df` on the "Environment" tab. This opens up a list of all the columns in the dataframe.
+7. Click the blue arrow next to `df` on the "Environment" tab. This opens up a list of all the columns in the dataframe. It shows you the name of each column, the data type, and the first few rows of that column. (More on data types later).
+
+    *Note: We sometimes also refer to columnns as variables.*
 
     ![Blue arrow screenshot](screenshot3.png)
 
-8. Click on the words `df` in the "Environment" tab. This opens up a table viewer. You can scroll around and look at the data like you would in Excel.
+### View the data
+
+8. Click on the words `df` in the "Environment" tab. This opens up a table viewer. You can scroll around and look at the data like you would in Excel. You can exit the Viewer by clicking the little "x" on the Viewer tab.
 
     ![View screenshot](screenshot4.png)
+
+### A brief discussion on data types
+
+**Data type** is a very important concept in data science. Each column (or variable) has its own data type. The data type tells R what kind of data the variable is meant to represent.
+
+Common data types include:
+
+| Data Type                | Meaning                                                             | Examples                             |
+| ------------------------ | ------------------------------------------------------------------- | ------------------------------------ |
+| Integer                  | Positive or negative number, but no decimals                        | -5, 0, 4, 100                        |
+| Numeric                  | Numbers that may include decimals                                   | 3.1415, 2.27, 65000, -130            |
+| Boolean (aka Logical)    | `TRUE` or `FALSE` (`TRUE` can be represented by 1 and `FALSE` by 0) | `TRUE`, `FALSE`, 1, 0                |
+| String                   | Text                                                                | "Edward", "Economics", "Los Angeles" |
+| Date                     | A date or time                                                      | `1/1/2024`, `4/15/1984 13:45:00`     |
+| Categorical (aka Factor) | A variable that can be one of a fixed number of possibilities       | `WHITE`, `BLACK`, `HISPANIC`, `ASIAN`, or `OTHER` |
+
+   
+
     
     
 
