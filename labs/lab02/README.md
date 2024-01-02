@@ -88,7 +88,7 @@ The variable `AGE` shows a person's age. The number itself is the age, so there 
 
 16. Type `df$ADULT <- (df$AGE>18) & (df$AGE<=65)`. This creates a new variable called `ADULT` that is `TRUE` when the person is over 18 but 65 or younger, `FALSE` otherwise.
 
-    *Note: The `&` here means "and". It's a logical operator. (More on logical operators below.)
+    *Note: The `&` here means "and". It's a logical operator. (More on logical operators below.)*
 
 17. Type `df$SENIOR <- df$AGE>65`. This creates a new variable called `SENIOR` that is `TRUE` when the person is over 65 and `FALSE` otherwise.
 
@@ -150,7 +150,7 @@ Let's create indicator variables for five major race categories: `WHITE`, `BLACK
 
 26. Type `df$RACE_OTHER <- (df$RACE==3) | (df$RACE>6)`. This creates the other category, which contains the non-white, non-black, and non-Asian races.
 
-    *Note: The `|` means "or". It's another logical operator. (More on logical operators below.)
+    *Note: The `|` means "or". It's another logical operator. (More on logical operators below.)*
     
 ## Assignment
 
