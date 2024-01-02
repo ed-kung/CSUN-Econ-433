@@ -55,7 +55,138 @@ In this lab, you will download a data file that I have downloaded in advance fro
 
     ![View screenshot](screenshot4.png)
 
-### A brief discussion on data types
+### Working with the employment variable
+
+The variable `EMPSTAT` shows the person's employment status. According to [IPUMS codebook](https://usa.ipums.org/usa-action/variables/EMPSTAT#codes_section), `EMPSTAT` has the following codes:
+
+| `EMPSTAT` | Meaning            |
+| --------- | ------------------ |
+| 0         | N/A                |
+| 1         | Employed           |
+| 2         | Unemployed         |
+| 3         | Not in labor force |
+
+9. Type `table(df$EMPSTAT)`. This shows you a table with the number of rows with each possible value of `EMPSTAT`. How many rows have `EMPSTAT==1`? How many have `EMPSTAT==2`?
+
+Sometimes, it's more convenient to work with binary indicators for a person's employment status. So let's create some True/False variables that indicate whether the person is employed, unemployed, or not in the labor force.
+
+10. Type `df$EMPLOYED <- df$EMPSTAT==1`. This creates a new variable called `EMPLOYED` that is `TRUE` when the person is employed and `FALSE` otherwise.
+
+11. Type `df$UNEMPLOYED <- df$EMPSTAT==2`. This creates a new variable called `UNEMPLOYED` that is `TRUE` when the person is unemployed and `FALSE` otherwise.
+
+12. Type `df$NLF <- df$EMPSTAT==3`. This creates a new variable called `NLF` that is `TRUE` when the person is not in the labor force and `FALSE` otherwise.
+
+13. Look at the column data types by clicking the blue arrow. `df` now contains three additional columns with a data type of "logical". (More on this later.)
+
+14. Type `table(df$EMPLOYED)`. How many rows are employed?
+
+### Working with the age variable
+
+The variable `AGE` shows a person's age. The number itself is the age, so there aren't any codes. Sometimes, we might want to create indicators for different stages of life.
+
+15. Type `df$CHILD <- df$AGE<=18`. This creates a new variable called `CHILD` that is `TRUE` when the person is 18 or younger and `FALSE` otherwise.
+
+16. Type `df$ADULT <- (df$AGE>18) & (df$AGE<=65)`. This creates a new variable called `ADULT` that is `TRUE` when the person is over 18 but 65 or younger, `FALSE` otherwise.
+
+    *Note: The `&` here means "and". It's a logical operator. (More on logical operators below.)
+
+17. Type `df$SENIOR <- df$AGE>65`. This creates a new variable called `SENIOR` that is `TRUE` when the person is over 65 and `FALSE` otherwise.
+
+### Working with the income variable
+
+The variable `INCWAGE` shows a person's annual wage and salary income. The number itself is the income, with one caveat. According to the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/INCWAGE#codes_section), a value of `999999` (six 9s) indicates N/A and a value of `999998` (five 9s and a 8) indicates missing data.  For now, we'll ignore this. (We'll learn how to filter out bad data in the next lab).
+
+With numerical variables like income, we're sometimes interested in statistics like the mean and standard deviation.
+
+18. Type `mean(df$INCWAGE)`. This will show you the average of `INCWAGE` across all the rows.
+
+    *Note: This is not the true average across people because the data is weighted. We'll learn how to calculate weighted averages later.*
+   
+19. Type `median(df$INCWAGE)`. This will show you the median of `INCWAGE` across all the rows.
+    
+20. Type `sd(df$INCWAGE)`. This will show you the standard deviation of `INCWAGE` across all the rows.
+
+21. Type `summary(df$INCWAGE)`. This will report a table of summary statistics, including the minimum, 25th percentile, median, mean, 75th percentile, and maximum.
+
+Don't make too much of these statistics for now, since they are not being calculated using sample weights. You'll learn how to calculate statistics with sample weights in a future lab.
+
+
+### Working with the race variable
+
+The variable `RACE` shows a person's race. According to the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/RACE#codes_section), it has the following codes:
+
+| `RACE`  | Meaning                                     |
+| ------- | ------------------------------------------- |
+| 1       | White                                       |
+| 2       | Black / African American                    |
+| 3       | American Indian or Alaska Native            |
+| 4       | Chinese                                     |
+| 5       | Japanese                                    |
+| 6       | Other Asian or Pacific Islander             |
+| 7       | Other race, nec                             |
+| 8       | Two major races                             |
+| 9       | Three or more major races                   |
+
+Note that for historical reasons, the classification as Hispanic is separate as the classification for race. Hispanic status is contained in the `HISPAN` variable, which according to the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/HISPAN#codes_section) has the following codes:
+
+| `HISPAN` | Meaning                |
+| -------- | ---------------------- |
+| 0        | Not Hispanic           |
+| 1        | Mexican                |
+| 2        | Puerto Rican           |
+| 3        | Cuban                  |
+| 4        | Other                  |
+| 9        | Not reported           |
+
+Let's create indicator variables for five major race categories: `WHITE`, `BLACK`, `HISPANIC`, `ASIAN`, and `OTHER`.
+
+22. Type `df$WHITE <- df$RACE==1`. This creates the variable for whether the person is white.
+
+23. Type `df$BLACK <- df$RACE==2`. This creates the variable for whether the person is black.
+
+24. Type `df$HISPANIC <- (df$HISPAN>0) & (df$HISPAN<9)`. This creates the variable for whether the person has Hispanic origin.
+
+25. Type `df$ASIAN <- (df$RACE>=4) & (df$RACE<=6)`. This creates the variable for whether the person is Asian.
+
+26. Type `df$RACE_OTHER <- (df$RACE==3) | (df$RACE>6)`. This creates the other category, which contains the non-white, non-black, and non-Asian races.
+
+    *Note: The `|` means "or". It's another logical operator. (More on logical operators below.)
+    
+## Assignment
+
+Complete the following tasks:
+
+1. Create a variable called `WORKING_ADULT` which is `TRUE` if the person is employed and between the ages of 25 and 65.
+
+2. Create a variable called `MARRIED` which is `TRUE` if the person is married (whether spouse is present or not). Hint: You'll need to look at the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/MARST#codes_section) for `MARST`.
+
+3. Create a variable called `WORKING_MARRIED_MAN` if the person is male, married, and employed. (There is no age restriction for this variable).
+
+4. Create a variable called `UNDER_REPRESENTED` if the person's race is black, hispanic, or other (using the definitions listed above).
+
+To be dismissed, show me the output of the following commands and take the lab quiz:
+
+- `table(WORKING_ADULT)`
+- `table(MARRIED)`
+- `table(WORKING_MARRIED_MAN)`
+- `table(UNDER_REPRESENTED)`
+
+
+## Takeaways
+
+- You can use R Studio Cloud.
+- You can do basic tasks in R, including:
+    - Load data from files
+    - View data
+    - Summarize data
+    - Reference  variables with `$`
+    - Create new variables with `<-`
+	- Use logical operators to make `TRUE`/`FALSE` variables
+- You understand the concept of data types.
+
+## Reference Guide
+
+### Data Types
 
 **Data type** is a very important concept in data science. Each column (or variable) has its own data type. The data type tells R what kind of data the variable is meant to represent.
 
@@ -70,9 +201,25 @@ Common data types include:
 | Date                     | A date or time                                                      | `1/1/2024`, `4/15/1984 13:45:00`     |
 | Categorical (aka Factor) | A variable that can be one of a fixed number of possibilities       | `WHITE`, `BLACK`, `HISPANIC`, `ASIAN`, or `OTHER` |
 
-   
+Data types are important because they tell R how the data should be handled in different situations.
 
-    
+For example, integer and numeric data can be added, subtracted, multiplied, divided, and compared. Dates, however, can only be subtracted to get the number of days between two dates. Strings and categoricals cannot be added, subtracted, multipled, or divided at all.
+
+### Boolean Variables and Logical Operators
+
+Boolean variables represent statements that can be `TRUE` or `FALSE`, `1` or `0`. They are also sometimes called "logical variables", "binary variables", "binary indicators", "dichotomous variables".
+
+Boolean variables cannot be added, subtracted, multiplied, or divided. However, they can be combined using **logical operator**. A logical operator is something that combines two pieces of data and outputs `TRUE` or a `FALSE`.
+
+The logical operators you should know are:
+
+- `>` and `>=`: greater than / greater than or equal to
+- `<` and `<=`: less than / less than or equal to
+- `==`: exactly equal to
+- `!=`: not equal to
+- `&`: and
+- `|`: or
+
     
 
 
