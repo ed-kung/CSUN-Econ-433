@@ -41,8 +41,6 @@ You can name the script anything you like, but the filename should end in `.R`. 
     
     df <- read.csv("IPUMS_ACS2019_CA_1.csv")  # Load the data
     
-    df$EMPSTAT <- as.factor(df$EMPSTAT)  # Change EMPSTAT to a factor
-    
     table(df$EMPSTAT)  # Show a frequency table for EMPSTAT
 
 Once you've entered this script into the script editor and saved it, hit `CTRL+SHIFT+ENTER` to run the entire script. You should see the following output in your console window:
@@ -93,8 +91,6 @@ The final script should look like this:
     
     df <- filter(df, AGE>=25 & AGE<=65)  # Keep only working age adults
     
-    df$EMPSTAT <- as.factor(df$EMPSTAT)  # Change EMPSTAT to a factor
-    
     table(df$EMPSTAT)  # Show a frequency table for EMPSTAT
     
 Run the whole script from the top by hitting `CTRL+SHIFT+ENTER`. Your output should look like:
@@ -102,7 +98,7 @@ Run the whole script from the top by hitting `CTRL+SHIFT+ENTER`. Your output sho
          1      2      3 
     150966   6281  48005 
 
-Notice that the number of observations that are not in the labor force dropped significantly. And the number of observations with `EMPSTAT=0` dropped entirely, now that we are filtering on working-age adults.
+Notice that the number of observations that are not in the labor force dropped significantly. And the number of observations with `EMPSTAT==0` dropped entirely, now that we are filtering on working-age adults.
 
 ### Appending
 
@@ -130,6 +126,11 @@ Also try tabulting the years with `table(df$YEAR)`. You should get:
       2014   2019 
     201249 205252 
 
+You can even try making a crosstab that shows the number of rows of each employment status by year. Type `table(df$YEAR, df$EMPSTAT)`. You should get:
+
+                1      2      3
+      2014 139223  10376  51650
+      2019 150966   6281  48005
 
 ### Merging
 
@@ -167,12 +168,12 @@ Now let's merge the two IPUMS datasets for California in 2019. We will use `inne
     df2019_2 <- read.csv("IPUMS_ACS2019_CA_2.csv")
     df <- inner_join(df2019_1, df2019_2, by=c("YEAR","SERIAL","PERNUM"))
     
-    # Show the structure of the data
-    str(df) 
+    # Tabulate the education variable 
+    table(df$EDUCD)
     
 Note that the key variables are supplied to `inner_join` via the argument `by`, and the key variables are inputted as a list of variable names. (In R, `c(...)` creates a list of terms.) 
 
-If you run the script, you should see that `df` has 38,0091 rows and 19 columns.
+If you run the script, you should see that `df` has 38,0091 rows and 19 columns. The merge added 5 variables to the table.
 
 ## Assignment
 
@@ -191,17 +192,20 @@ To be dismissed and earn your grade for this lab, you have to debug the followin
     
     df <- rbind(df2014 df2019)
     
-    df <- filter(df, AGE>=25 & AGE<=65 & MARST=1)
+    df <- filter(df, AGE>=25 & AGE<=65 & SEX=2)
     
-    str(df)
+    df$COLLEGE <- df$EDUCD>=0
+    
+    table(df$YEAR, df$COLLEGE)
 
 The script is supposed to:
 
 1. Merge the two 2014 files
 2. Merge the two 2019 files
 3. Append the resulting 2014 and 2019 dataframes together
-4. Filter on working-age, married (with spouse present), men (Hint: To write a condition that checks whether a variable is equal to a value, use the double equals sign `==`, e.g. `MARST==1`)
-5. Show the structure of the data
+4. Filter on working-age women.
+5. Create a boolean variable called COLLEGE indicating whether the person had a bachelors degree or higher
+6. Tabulate the COLLEGE varible by YEAR
 
 However, the script has errors. You have to fix the script so that it runs and accomplishes its tasks accurately. 
 
@@ -209,24 +213,19 @@ However, the script has errors. You have to fix the script so that it runs and a
 
 1. Start a new script.
 2. Copy and paste the above code block into your new script.
-3. Try running the code with `CTRL+SHIFT+ENTER`. Look at the error messages you get.
+
+    *Note: When you copy and paste, the formatting will look off. That should be a hint of an error.*
+
+3. Try stepping through the code with `CTRL+ENTER`. Which line contains the first error? Look at the error message.
 4. Fix the script.
-5. Run the script and show me the output.
+5. Run the corrected script and show me the output.
 6. Take the lab quiz.
 
-If you're having trouble, try *stepping through the code* by putting the cursor on the top-line, and hitting `CTRL+ENTER` to execute the code line by line. That will help you figure out which lines of code are producing errors, so you can fix things one line at a time.
+Hints:
+- There are a *lot* of errors. Often, there are multiple errors per line. There are typos, forgotten quotation marks, unclosed parenthesis, incorrect use of variable codes, and errors in how dataframes are named.
+- The `EDUCD` variable uses the "detailed codes" as shown in the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/EDUC#codes_section).
+- If you need more help, try looking at this [list of common errors and other programming tips](https://github.com/ed-kung/CSUN-Econ-433/tree/main/labs#econ-433---labs). 
 
-## Downloading a Script and Uploading to Canvas
-
-If you don't have time to finish today, you can submit your quiz and take the lab quiz by next Monday to receive up to 80% credit.
-
-To do so, download your script and upload it to Canvas in the "Lab 03 Grade" assignment. To download the script, make sure the "Files" pane is selected in the lower-right window. Then click the checkbox next to the file you want to download. Then click "More" and click on "Export" in the popup menu.
-
-Name the file something descriptive, like `Lab03_LastName.R`, then click Download. The file will be downloaded to your computer. Go to Canvas and upload the file to the "Lab 03 Grade" assignment.
-
-![downloading a script 1](screenshot3.png)
-
-![downloading a script 2](screenshot4.png)
 
 ## Takeaways
 
@@ -237,9 +236,21 @@ Name the file something descriptive, like `Lab03_LastName.R`, then click Downloa
   - Merging
 - You know the different types of joins.
 
-## Help
 
-If you need help, try looking at this [list of common errors and other programming tips](https://github.com/ed-kung/CSUN-Econ-433/tree/main/labs#econ-433---labs). 
+
+## Downloading a Script and Uploading to Canvas
+
+If you don't have time to finish today, you can submit your R script and take the lab quiz by next Monday to receive up to 80% credit.
+
+To do so, download your script and upload it to Canvas in the "Lab 03 Grade" assignment. To download the script, make sure the "Files" pane is selected in the lower-right window. Then click the checkbox next to the file you want to download. Then click "More" and click on "Export" in the popup menu.
+
+Name the file something descriptive, like `Lab03_LastName.R`, then click Download. The file will be downloaded to your computer. Go to Canvas and upload the file to the "Lab 03 Grade" assignment.
+
+![downloading a script 1](screenshot3.png)
+
+![downloading a script 2](screenshot4.png)
+
+
 
 
 [^1]: There are more complex merges in which one of the dataframes can have multiple rows with the same keys. These are called many-to-one or one-to-many merges. These merges should be avoided unless the researcher already has a deep understanding of the datasets.
