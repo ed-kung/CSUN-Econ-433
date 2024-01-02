@@ -77,8 +77,8 @@ If you need to miss a class for any reason, let me know in advance. If the reaso
 | ----- | ----- | --------------------------------------------- | ------------------------------------------- | 
 |     1 | 1/25  | Intro to Public Economics                     | Lab 01: Intro to Public Datasets with IPUMS | 
 |     2 | 2/1   | Review of Micro Principles                    | Lab 02: Introduction to R                   | 
-|     3 | 2/8   | Public Goods, Common Resources, Externalities | Lab 03: Basic Data Operations & Scripts     | 
-|     4 | 2/15  | Cost Benefit Analysis                         | Lab 04: Grouping and Summarizing Data       | 
+|     3 | 2/8   | Public Goods and Common Resources             | Lab 03: Basic Data Operations & Scripts     | 
+|     4 | 2/15  | Externalities                                 | Lab 04: Grouping and Summarizing Data       | 
 |     5 | 2/22  | Economics of Education                        | Lab 05: Data Visualization                  | 
 |     6 | 2/29  | Health Economics                              | Programming Midterm #1                      |
 |     7 | 3/7   | Linear Regression Models                      | Lab 06: Regression Analysis I               |
@@ -89,8 +89,8 @@ If you need to miss a class for any reason, let me know in advance. If the reaso
 |    12 | 4/11  | Economics of Home-Sharing                     | Programming Midterm #2                      |
 |    13 | 4/18  | Group Project Demo Report                     | Group Project Meeting #1                    |
 |    14 | 4/25  | Theory of Public Choice                       | Group Project Meeting #2                    |
-|    15 | 5/2   | Social Assistance for the Needy               | Group Project Meeting #3                    |
-|    16 | 5/9   | Topic TBD                                     | Group Project Meeting #4                    | 
+|    15 | 5/2   | Theory of Taxation                            | Group Project Meeting #3                    |
+|    16 | 5/9   | Cost Benefit Analysis                         | Group Project Meeting #4                    | 
 
 ### Final Exam Schedule
 
