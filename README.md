@@ -75,22 +75,23 @@ If you need to miss a class for any reason, let me know in advance. If the reaso
 
 | Week  | Date  | Lecture                                       | Lab                                         | 
 | ----- | ----- | --------------------------------------------- | ------------------------------------------- | 
-|     1 | 1/25  | Intro to Public Economics                     | Lab 01: Intro to Public Datasets with IPUMS | 
-|     2 | 2/1   | Review of Micro Principles                    | Lab 02: Introduction to R                   | 
-|     3 | 2/8   | Public Goods and Common Resources             | Lab 03: Basic Data Operations & Scripts     | 
-|     4 | 2/15  | Externalities                                 | Lab 04: Grouping and Summarizing Data       | 
-|     5 | 2/22  | Economics of Education                        | Lab 05: Data Visualization                  | 
-|     6 | 2/29  | Health Economics                              | Programming Midterm #1                      |
-|     7 | 3/7   | Linear Regression Models                      | Lab 06: Regression Analysis I               |
-|     8 | 3/14  | Research Design                               | Lab 07: Regression Analysis II              |
-|     9 | 3/21  | *Spring Break*                                | *Spring Break*                              |
-|    10 | 3/28  | Difference-in-Differences                     | Lab 08: Difference-in-Differences           |
-|    11 | 4/4   | Regression Discontinuity                      | Lab 09: Regression Discontinuity            |
-|    12 | 4/11  | Economics of Home-Sharing                     | Programming Midterm #2                      |
-|    13 | 4/18  | Group Project Demo Report                     | Group Project Meeting #1                    |
-|    14 | 4/25  | Theory of Public Choice                       | Group Project Meeting #2                    |
-|    15 | 5/2   | Theory of Taxation                            | Group Project Meeting #3                    |
-|    16 | 5/9   | Cost Benefit Analysis                         | Group Project Meeting #4                    | 
+|     1 | 1/25  | *No class due to strike disruptions*          | *No class due to strike disruptions*        |
+|     2 | 2/1   | Intro to Public Economics                     | Lab 01: Intro to Public Datasets with IPUMS | 
+|     3 | 2/8   | Review of Micro Principles                    | Lab 02: Introduction to R                   | 
+|     4 | 2/15  | Public Goods and Common Resources             | Lab 03: Basic Data Operations & Scripts     | 
+|     5 | 2/22  | Externalities                                 | Lab 04: Grouping and Summarizing Data       | 
+|     6 | 2/29  | Economics of Education                        | Lab 05: Data Visualization                  | 
+|     7 | 3/7   | Health Economics                              | Programming Midterm #1                      |
+|     8 | 3/14  | Linear Regression Models                      | Lab 06: Regression Analysis I               |
+|     9 | 3/21  | Research Design                               | Lab 07: Regression Analysis II              |
+|    10 | 3/28  | *Spring Break*                                | *Spring Break*                              |
+|    11 | 4/4   | Difference-in-Differences                     | Lab 08: Difference-in-Differences           |
+|    12 | 4/11  | Regression Discontinuity                      | Lab 09: Regression Discontinuity            |
+|    13 | 4/18  | Economics of Home-Sharing                     | Programming Midterm #2                      |
+|    14 | 4/25  | Group Project Demo Report                     | Group Project Meeting #1                    |
+|    15 | 5/2   | Theory of Public Choice                       | Group Project Meeting #2                    |
+|    16 | 5/9   | Theory of Taxation                            | Group Project Meeting #3                    |
+<!--|    16 | 5/9   | Cost Benefit Analysis                         | Group Project Meeting #4                    |-->
 
 ### Final Exam Schedule
 

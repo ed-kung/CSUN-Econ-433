@@ -80,11 +80,10 @@ The presentations will be graded according to the following rubric:
 
 # Important Dates
 
-- **Wednesday 4/10**: Group Formation Due
-- **Monday 4/15**: Progress Packet 1 Due
-- **Monday 4/22**: Progress Packet 2 Due
-- **Monday 4/29**: Progress Packet 3 Due
-- **Monday 5/6**: Progress Packet 4 Due
+- **Wednesday 4/17**: Group Formation Due
+- **Monday 4/22**: Progress Packet 1 Due
+- **Monday 4/29**: Progress Packet 2 Due
+- **Monday 5/6**: Progress Packet 3 Due
 - **Monday 5/13**: Final Project Packet Due
 - **Thursday 5/16**: Presentations
 
