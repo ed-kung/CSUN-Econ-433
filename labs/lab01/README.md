@@ -40,7 +40,7 @@ I will walk you through the process of signing up for IPUMS and downloading ACS 
 4. Click "Apply for Access" and fill out the form. For occupation category, select "undergraduate student". For specific occupation title, select "student". For field of research, select "economics". Under general research statement, type "I will use this data to study the gender wage gap" because that will be one of our exercises. For "How did you learn about this database?", select "Teacher or professor". Click all the required boxes and click "SUBMIT".
 5. Wait until you receive account access, then log in once you do. 
 
-### Browing Variables
+### Browsing Variables
 
 Before creating a data extract, let's take a look around IPUMS first.
 
@@ -50,16 +50,11 @@ Before creating a data extract, let's take a look around IPUMS first.
 
 8. Go back to the variable selection screen. In the `PERSON` dropdown menu, click `TECHNICAL`, then click on `PERNUM` and read the description. `PERNUM` is a unique number for each person within a single household.  
 
-	<div class="warning" style='padding:0.1em; background-color:#E9D8FD; color:#69337A'>
-	<span>
+		**Unique Identifiers** - A dataset contains rows and columns. Each row represents a record and each column (a.k.a. variable) contains information about that record. In data analytics, it is always important to know which variables uniquely identify a record in your dataset, because if you have duplicate records with the same unique identifiers then you know you have an error in the data. 
 
-	**Unique Identifiers** - A dataset contains rows and columns. Each row represents a record and each column (a.k.a. variable) contains information about that record. In data analytics, it is always important to know which variables uniquely identify a record in your dataset, because if you have duplicate records with the same unique identifiers then you know you have an error in the data. 
+		In data science, the columns that contain the unique identifiers are called the **primary keys**.
 
-	In data science, the columns that contain the unique identifiers are called the **primary keys**.
-
-	In the IPUMS data, the primary keys are `SERIAL` and `PERNUM`. `SERIAL` and `PERNUM` together uniquely identify a record. If we find records with duplicate values of `SERIAL` and `PERNUM`, we'll know we did something wrong. 
-	</span>
-	</div>
+		In the IPUMS data, the primary keys are `SERIAL` and `PERNUM`. `SERIAL` and `PERNUM` together uniquely identify a record. If we find records with duplicate values of `SERIAL` and `PERNUM`, we'll know we did something wrong. 
 
 9. Go back and read the description for `PERWT`, which is in `PERSON` -> `TECHNICAL`. `PERWT` is the sampling weight. 
 
