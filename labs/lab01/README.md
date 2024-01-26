@@ -61,15 +61,13 @@ Before creating a data extract, let's take a look around IPUMS first.
 
 9. Go back and read the description for `PERWT`, which is in `PERSON` -> `TECHNICAL`. `PERWT` is the sampling weight. 
 
-	<div class="warning" style='padding:0.1em; background-color:#E9D8FD; color:#69337A'>
-	<span>
-
-	**Sampling Weight** - The ACS methodology does not survey every person in the U.S. with equal probability. It oversamples underrepresented groups to ensure that there is sufficient data quality for that group. Oversampled groups will have smaller weights and undersample groups will have larger weights.
-
-	Example: The sampling weight tells us how many people that row of data represents. For example, if 1 in 500 whites are sampled and 1 in 200 blacks are sampled, then white individuals will have a sampling weight of 500 and black individuals will have a sampling weight of 200.
-	</span>
-	</div>
-
+	---
+	>**Sampling Weight** - The ACS methodology does not survey every person in the U.S. with equal probability. It oversamples underrepresented groups to ensure that there is sufficient data quality for that group. Oversampled groups will have smaller weights and undersample groups will have larger weights.
+	>
+	>Example: The sampling weight tells us how many people that row of data represents. For example, if 1 in 500 whites are sampled and 1 in 200 blacks are sampled, then white individuals will have a sampling weight of 500 and black individuals will have a sampling weight of 200.
+	
+	---
+	
 10. Go back and read the description for `EDUC` in `PERSON` -> `EDUCATION`. `EDUC` shows the education level of an individual. While still in the information screen for `EDUC`, click `CODES` to look at the meaning of the codes for the variable `EDUC`. Click on `Detailed Codes` radio button to look at the codes for the detailed version of the variable.
 
 ### Selecting Variables
@@ -88,12 +86,10 @@ Now that we've taken a tour of the technical variables, we're ready to select th
 
 12. Go to `PERSON`->`DEMOGRAPHIC` and click on the `+` symbol under "Add to cart" for the variables: `SEX`, `AGE`, and `MARST`. You can click on any of these variables to find out more information about them. Try clicking on `MARST` and then clicking on `CODES` to see the list of values that `MARST` can take and their meanings.
 
-	<div class="warning" style='padding:0.1em; background-color:#E9D8FD; color:#69337A'>
-	<span>
-
-	**Codebook** - The list of codes that a variable can take on and their meanings is called a codebook. Before you use a variable with codes, always make sure you have the codebook handy! On IPUMS you can access the codebook for a variable simply by clicking on the variable from the variable selection screen, then clicking on `CODES`.
-	</span>
-	</div>
+	---
+	>**Codebook** - The list of codes that a variable can take on and their meanings is called a codebook. Before you use a variable with codes, always make sure you have the codebook handy! On IPUMS you can access the codebook for a variable simply by clicking on the variable from the variable selection screen, then clicking on `CODES`.
+	
+	---
 
 
 13. Go to `PERSON`->`RACE`, `ETHNICITY`, and `NATIVITY` and add the `RACE` and `HISPAN` variables to your cart. You can click on either variable to see a list of codes and their meanings, as well as some historical detail about how race and Hispanic origin were recorded by the Census Bureau.
