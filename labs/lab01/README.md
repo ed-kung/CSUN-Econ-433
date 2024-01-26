@@ -50,11 +50,14 @@ Before creating a data extract, let's take a look around IPUMS first.
 
 8. Go back to the variable selection screen. In the `PERSON` dropdown menu, click `TECHNICAL`, then click on `PERNUM` and read the description. `PERNUM` is a unique number for each person within a single household.  
 
-		**Unique Identifiers** - A dataset contains rows and columns. Each row represents a record and each column (a.k.a. variable) contains information about that record. In data analytics, it is always important to know which variables uniquely identify a record in your dataset, because if you have duplicate records with the same unique identifiers then you know you have an error in the data. 
-
-		In data science, the columns that contain the unique identifiers are called the **primary keys**.
-
-		In the IPUMS data, the primary keys are `SERIAL` and `PERNUM`. `SERIAL` and `PERNUM` together uniquely identify a record. If we find records with duplicate values of `SERIAL` and `PERNUM`, we'll know we did something wrong. 
+    ---
+	>**Unique Identifiers** - A dataset contains rows and columns. Each row represents a record and each column (a.k.a. variable) contains information about that record. In data analytics, it is always important to know which variables uniquely identify a record in your dataset, because if you have duplicate records with the same unique identifiers then you know you have an error in the data. 
+	>
+	>In data science, the columns that contain the unique identifiers are called the **primary keys**.
+	>
+	>In the IPUMS data, the primary keys are `SERIAL` and `PERNUM`. `SERIAL` and `PERNUM` together uniquely identify a record. If we find records with duplicate values of `SERIAL` and `PERNUM`, we'll know we did something wrong. 
+	
+	---
 
 9. Go back and read the description for `PERWT`, which is in `PERSON` -> `TECHNICAL`. `PERWT` is the sampling weight. 
 
