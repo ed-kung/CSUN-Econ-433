@@ -9,7 +9,7 @@ In this lab you will be introduced to R, a programming language designed specifi
 
 - R is open source software, meaning it is free for anyone to use. It also has a large and active community of developers.
 
-- Data science is an in-demand skill. R is one of the most commonly used tools among data scientists (along with Python). A tech company manager once told me that they're only looking for interns who can work in R or Python. Excel was not sufficient. 
+- Data science is an in-demand skill. R is one of the most commonly used tools among data scientists (along with Python). An ad-tech company manager looking to hire econ masters students once told me that they're only looking for interns who can work in R or Python. Excel was not sufficient. 
 
 **Data science? I thought this was an economics class.**
 
