@@ -150,26 +150,26 @@ Let's create indicator variables for five major race categories: `WHITE`, `BLACK
 
 26. Type `df$RACE_OTHER <- (df$RACE==3) | (df$RACE>6)`. This creates the other category, which contains the non-white, non-black, and non-Asian races.
 
-    *Note: The `|` means "or". It's another logical operator. (More on logical operators below.)*
+    *Note: The* `|` *means "or". It's another logical operator. (More on logical operators below.)*
     
 ## Assignment
 
 Complete the following tasks:
 
-1. Create a variable called `WORKING_ADULT` which is `TRUE` if the person is employed and between the ages of 25 and 65.
+1. Create a variable called `WORKING_ADULT` which is `TRUE` if the person is employed and between the ages of 25 and 65. (`>=25` and `<=65`)
 
 2. Create a variable called `MARRIED` which is `TRUE` if the person is married (whether spouse is present or not). Hint: You'll need to look at the [IPUMS codebook](https://usa.ipums.org/usa-action/variables/MARST#codes_section) for `MARST`.
 
 3. Create a variable called `WORKING_MARRIED_MAN` if the person is male, married, and employed. (There is no age restriction for this variable).
 
-4. Create a variable called `UNDER_REPRESENTED` if the person's race is black, hispanic, or other (using the definitions listed above).
+4. Create a variable called `UNDER_REPRESENTED` if the person's race is black, hispanic, or other (using the definitions listed above). Hint: You can create `UNDER_REPRESENTED` by directling using the `BLACK`, `HISPANIC`, and `RACE_OTHER` variables that you already created.
 
 To be dismissed, show me the output of the following commands and take the lab quiz:
 
-- `table(WORKING_ADULT)`
-- `table(MARRIED)`
-- `table(WORKING_MARRIED_MAN)`
-- `table(UNDER_REPRESENTED)`
+- `table(df$WORKING_ADULT)`
+- `table(df$MARRIED)`
+- `table(df$WORKING_MARRIED_MAN)`
+- `table(df$UNDER_REPRESENTED)`
 
 
 ## Takeaways
