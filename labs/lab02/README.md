@@ -66,7 +66,12 @@ The variable `EMPSTAT` shows the person's employment status. According to [IPUMS
 | 2         | Unemployed         |
 | 3         | Not in labor force |
 
-9. Type `table(df$EMPSTAT)`. This shows you a table with the number of rows with each possible value of `EMPSTAT`. How many rows have `EMPSTAT==1`? How many have `EMPSTAT==2`?
+9. Type `table(df$EMPSTAT)`. You should get the following output:
+
+             0      1      2      3 
+         66593 182239   9218 122041 
+
+    This table shows you the number of rows for each possible value of `EMPSTAT`. So the table is saying that there are 66,593 rows with `EMPSTAT==0`, 182,239 rows with `EMPSTAT==1`, and so on.
 
 Sometimes, it's more convenient to work with binary indicators for a person's employment status. So let's create some True/False variables that indicate whether the person is employed, unemployed, or not in the labor force.
 
