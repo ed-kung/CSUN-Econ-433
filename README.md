@@ -88,8 +88,8 @@ If you need to miss a class for any reason, let me know in advance. If the reaso
 |    11 | 4/4   | ~~Regression Discontinuity~~ Difference-in-Differences | ~~Lab 09: Regression Discontinuity~~ Lab 08: Difference-in-Differences |
 |    12 | 4/11  | Economics of Home-Sharing                     | Programming Midterm #2                      |
 |    13 | 4/18  | Group Project Demo Report                     | Group Project Meeting #1                    |
-|    14 | 4/25  | Theory of Public Choice                       | Group Project Meeting #2                    |
-|    15 | 5/2   | ~~Theory of Taxation~~ Regression Discontinuity | Group Project Meeting #3                    |
+|    14 | 4/25  | ~~Theory of Public Choice~~ Regression Discontinuity | Group Project Meeting #2                    |
+|    15 | 5/2   | Theory of Taxation                            | Group Project Meeting #3                    |
 |    16 | 5/9   | Cost Benefit Analysis                         | Group Project Meeting #4                    | 
 
 ### Final Exam Schedule
