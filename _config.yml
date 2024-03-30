@@ -93,6 +93,9 @@ callouts:
   warning:
     title: Warning
     color: red
+  question:
+    title: Question
+    color: green
 
 # Enable mathjax
 math: mathjax
