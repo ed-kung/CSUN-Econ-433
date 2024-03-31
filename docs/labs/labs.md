@@ -8,4 +8,4 @@ permalink: /docs/labs
 
 # Labs
 
-In this course there will be lab sessions on programming in R.
+These labs are designed to take a complete novice with no prior experience in programming and bring them up to a beginner/intermediate level of proficiency in working with R.
