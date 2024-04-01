@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Microdata
+title: microdata
 parent: Glossary
 ---
 
-# Microdata
+# microdata
 
 ## Definition
 

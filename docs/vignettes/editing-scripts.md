@@ -22,19 +22,21 @@ nav_order: 3
 
 ---
 
-## Executing a script
+## Running a script
 
-- To execute the entire script from top to bottom, click anywhere in the script. Then hit `CTRL+SHIFT+ENTER` (or `CMD+SHIFT+ENTER` on Mac).
+- To run the entire script from top to bottom, click anywhere in script in the script editor. 
 
-- This will cause R to execute each line of your script until it hits an error.
+- Then hit `CTRL+SHIFT+ENTER` (or `CMD+SHIFT+ENTER` on Mac).
 
-- Just because the script executes doesn't mean it's free from errors. You might have done something that is valid R syntax but gives the wrong result.
+- This will cause R to execute each line of your script, starting from the top, until it either finishes or it hits a syntax error.
+
+- If the script runs, then that means it has no syntax errors. However, it still might contain errors in the logic that leads to wrong results, so make sure you double check that your results make sense! 
 
 ---
 
 ## Executing a single command
 
-- To execute a single command in the script without running the whole script from the top, click on the line in that you want to execute, so that the typing cursor is on the line.
+- To execute a single command in the script without running the whole script, click on the line in that you want to execute, so that the typing cursor is on the line.
 
 - Then hit `CTRL+ENTER` (or `CMD+ENTER` on Mac).
 
@@ -53,6 +55,7 @@ nav_order: 3
 - Name the script something meaningful. It should have a `.R` file extension.
 
 - The saved script will now show up in the Files pane. You can download it to your computer and upload it to Canvas for grading. (See [here](/docs/vignettes/rstudio-basics).)
+
 
 
 

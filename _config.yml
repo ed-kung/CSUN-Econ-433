@@ -100,4 +100,15 @@ callouts:
 # Enable mathjax
 math: mathjax
 
+# HTML compression is incomptable with line numbers from hilighted code,
+# so turn off HTML compression
+#compress_html:
+#  ignore:
+#    envs: all
+
+# Use line numbers
+#kramdown:
+#  syntax_highlighter_opts:
+#    block:
+#      line_numbers: true
 

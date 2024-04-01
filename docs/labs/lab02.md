@@ -24,31 +24,106 @@ In this lab, you will:
 
 Follow along as I show the class how to conduct today's lab. 
 
-You may find the following vignettes helpful, especially if you missed something during the lecture:
+If you followed along correctly, you should end up with the following script
+
+```r
+rm(list=ls())   # Clear the workspace
+
+# Read IPUMS_ACS2019_CA_1.csv and store it in df
+df <- read.csv("IPUMS_ACS2019_CA_1.csv")
+
+# Show the "structure" of the data
+str(df)
+
+# Tabulate SEX, MARST, and RACHSING
+table(df$SEX)
+table(df$MARST)
+table(df$RACHSING)
+
+# Show summary statistics for INCWAGE
+summary(df$INCWAGE)
+
+# Create a boolean variable called EMPLOYED 
+# that is TRUE when the person is employed
+# and FALSE otherwise
+df$EMPLOYED <- (df$EMPSTAT==1)
+
+# Create a boolean variable called WORKING_AGE
+# that is TRUE when the person's AGE is 
+# between 25 and 65 and FALSE otherwise
+df$WORKING_AGE <- (df$AGE>=25) & (df$AGE<=65)
+
+# Create a boolean variable called WORKING_ADULT
+# that is TRUE when the person's AGE is
+# between 25 and 65, and the person is employed,
+# and FALSE otherwise
+df$WORKING_ADULT <- (df$EMPLOYED==TRUE) & (df$WORKING_AGE==TRUE)
+
+# Create a variable called LOG_INCWAGE that is
+# equal to the log of INCWAGE
+df$LOG_INCWAGE <- log(df$INCWAGE)
+
+# Show structure of data again
+str(df)
+
+# Tabulate EMPLOYED, WORKING_AGE, and WORKING_ADULT
+table(df$EMPLOYED)
+table(df$WORKING_AGE)
+table(df$WORKING_ADULT)
+
+# Show summary statistics of LOG_INCWAGE
+summary(df$LOG_INCWAGE)
+```
+
+If you missed something during lecture, or if you need a refresher, you may find the following vignettes helpful:
 
 - [RStudio basics](/docs/vignettes/rstudio-basics){:target="_blank"}
 - [Editing scripts](/docs/vignettes/editing-scripts){:target="_blank"}
 - [Reading CSV files](/docs/vignettes/reading-csv){:target="_blank"}
 - [Check your data!](/docs/vignettes/checking-data){:target="_blank"}
 - [Creating variables](/docs/vignettes/creating-variables){:target="_blank"}
-- [Data types](/docs/vignettes/data-types){:target="_blank"}
-
-If you followed along correctly, you should end up with the following script:
-
-
-
+- [Data types](/docs/glossary/data-type){:target="_blank"}
+- [Logical operators](/docs/glossary/logical-operator){:target="_blank"}
 
 ## Assignment
 
+- Create a **new** script that accomplishes the following tasks:
+    - Read `IPUMS_ACS2019_CA_1.csv` and store it in a dataframe called `df`.
+    - Create a boolean variable called `UNEMPLOYED_WORKING_AGE_MALE` that is `TRUE` if the person is:
+        - Unemployed
+        - Between the ages of 25 and 65
+        - Male
+    - Create a boolean variable called `NLF_WORKING_AGE_MALE` that is `TRUE` if the person is:
+        - Not in the labor force
+        - Between the ages of 25 and 65
+        - Male
+    - Show the structure of the data after having created the above two variables
+    - Tabulate `UNEMPLOYED_WORKING_AGE_MALE` and `NLF_WORKING_AGE_MALE`
+    
+    *Hint*: You'll need to look up the codes for `EMPSTAT` and `SEX` in IPUMS.
+    
+- Upload the script to the Lab 02 Assignment.
+
+- Take the Lab 02 Quiz.
+
+## Takeaways
+
+- You can use RStudio Cloud.
+- You can do the following basic tasks in R:
+    - Read a CSV file into a dataframe
+    - View and browse a dataframe
+    - Show the structure of a dataframe
+    - Identify the datatypes of variables inside a dataframe
+    - Tabulate and summarize variables inside a dataframe
+    - Create new variables in a dataframe
+    - Use logical operators to create new boolean variables
+- You understand the concept of data types
 
 
 
 
-### Upload your data
 
-- Download `IPUMS_ACS2019_CA_1.csv` from Canvas. This is an IPUMS extract very similar to what you extracted in Lab 1.
 
-- Follow the instructions in this vignette for uploading data from your computer to your RStudio Cloud project.
 
 
 

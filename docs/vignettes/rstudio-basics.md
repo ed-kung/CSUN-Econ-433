@@ -30,8 +30,7 @@ nav_order: 2
 
 By default, your RStudio Cloud is organized into four panes:
 
-image
-
+![rstudio panes](/assets/images/rstudio-panes.png)
 
 
 - The upper left pane is the **script editor**. This is where you will write and execute your scripts.
@@ -48,14 +47,22 @@ image
 
 ---
 
+## Turn off autocomplete
+
+If you are a beginner at R, I *strongly* suggest that you turn off auto-complete. Most of the time, it will only confuse you and get in your way. 
+
+- Click on `Tools`->`Global Options`.
+- A settings menu will open. Click `Code` on the left sidebar. Then click the `Completion` tab.
+- Set `Show code completions` to "Never", as shown in the image below.
+- Click OK to accept these changes.
+
+![no autocomplete](/assets/images/rstudio-no-autocomplete.png) 
+
+---
+
 ## Uploading files to RStudio
 
-To upload a file from your computer to RStudio, click the `Upload` button on the files pane.
-
-Generally, this is how you will get data files from your computer onto your RStudio Cloud project.
-
-image
-
+To upload a file from your computer to RStudio, click the `Upload` button on the files pane. This is how you'll get data files from your computer onto your RStudio Cloud project.
 
 
 ---
@@ -70,8 +77,7 @@ To download a file from RStudio to your computer:
 - Click `More`->`Export`.
 - In the pop-up window, name the file something descriptive. Then click `Download`.
 
-See the images below for more guidance.
+See the image below for more guidance.
 
-images
-
+![download files](/assets/images/rstudio-download.png)
 

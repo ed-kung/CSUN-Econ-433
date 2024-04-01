@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Dataframe
+title: dataframe
 parent: Glossary
 ---
 
-# Dataframe
+# dataframe
 
 A dataframe is basically a table with data in it. It has rows and columns.
 
