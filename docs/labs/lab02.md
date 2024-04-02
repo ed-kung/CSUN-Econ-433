@@ -57,11 +57,11 @@ df$EMPLOYED <- (df$EMPSTAT==1)
 # between 25 and 65 and FALSE otherwise
 df$WORKING_AGE <- (df$AGE>=25) & (df$AGE<=65)
 
-# Create a boolean variable called WORKING_ADULT
+# Create a boolean variable called WORKING_AGE_EMPLOYED
 # that is TRUE when the person's AGE is
-# between 25 and 65, and the person is employed,
+# between 25 and 65 and the person is employed,
 # and FALSE otherwise
-df$WORKING_ADULT <- (df$EMPLOYED==TRUE) & (df$WORKING_AGE==TRUE)
+df$WORKING_AGE_EMPLOYED <- (df$EMPLOYED==TRUE) & (df$WORKING_AGE==TRUE)
 
 # Create a variable called LOG_INCWAGE that is
 # equal to the log of INCWAGE

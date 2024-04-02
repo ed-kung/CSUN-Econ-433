@@ -33,7 +33,7 @@ function(input_1, input_2, ...)
 
 A function takes one or more inputs (sometimes it can even take zero inputs), and returns an output.
 
-The output can be almost anything. It could be a [dataframe](/docs/glossary/dataframe), a [variable](/docs/glossary/variable), a number, a [dataframe](/docs/glossary/regression), or almost anything else.
+The output can be almost anything. It could be a [dataframe](/docs/glossary/dataframe), a [variable](/docs/glossary/variable), a number, a [regression](/docs/glossary/regression), or almost anything else.
 
 
 ---

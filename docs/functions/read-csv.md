@@ -5,6 +5,10 @@ parent: Functions
 ---
 
 # read.csv
+{: .no_toc }
+
+- TOC
+{:toc}
 
 ---
 
@@ -29,4 +33,25 @@ rm(list=ls())
 df <- read.csv("IPUMS_ACS2019_CA_1.csv")
 ```
 
- 
+---
+
+## Note about reading multiple files
+
+If you need to read more than one CSV file, make sure you store them in objects with different names!  If you don't, you'll end up overwriting your data.
+
+**Bad example:**
+
+```r
+# (This is example of bad code. You end up overwriting the data in df)
+df <- read.csv("IPUMS_ACS2019_CA_1.csv")
+df <- read.csv("IPUMS_ACS2019_CA_2.csv")
+```
+
+**Good example:**
+
+```r
+# (Instead, do this)
+df_1 <- read.csv("IPUMS_ACS2019_CA_1.csv")
+df_2 <- read.csv("IPUMS_ACS2019_CA_2.csv")
+```
+
