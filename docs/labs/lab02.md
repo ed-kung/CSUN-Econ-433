@@ -67,6 +67,10 @@ df$WORKING_ADULT <- (df$EMPLOYED==TRUE) & (df$WORKING_AGE==TRUE)
 # equal to the log of INCWAGE
 df$LOG_INCWAGE <- log(df$INCWAGE)
 
+# Create a variable called BIRTH_YEAR that is 
+# equal to YEAR minus AGE
+df$BIRTH_YEAR <- df$YEAR - df$AGE
+
 # Show structure of data again
 str(df)
 
@@ -84,6 +88,7 @@ If you missed something during lecture, or if you need a refresher, you may find
 - **Vignettes**: 
 [RStudio basics](/docs/vignettes/rstudio-basics){:target="_blank"}, 
 [Editing scripts](/docs/vignettes/editing-scripts){:target="_blank"}, 
+[Anatomy of an R command](/docs/vignettes/anatomy){:target="_blank"},
 [Check your data!](/docs/vignettes/checking-data){:target="_blank"}, 
 [Creating variables](/docs/vignettes/creating-variables){:target="_blank"}
 - **Functions**: 
@@ -93,10 +98,10 @@ If you missed something during lecture, or if you need a refresher, you may find
 [table](/docs/functions/table){:target="_blank"},
 [summary](/docs/functions/summary){:target="_blank"}
 - **Glossary**: 
-[Dataframe](/docs/glossary/dataframe){:target="_blank"}, 
-[Variable](/docs/glossary/variable){:target="_blank"}, 
-[Data type](/docs/glossary/data-type){:target="_blank"}, 
-[Logical operator](/docs/glossary/logical-operator){:target="_blank"}
+[dataframe](/docs/glossary/dataframe){:target="_blank"}, 
+[variable](/docs/glossary/variable){:target="_blank"}, 
+[data type](/docs/glossary/data-type){:target="_blank"}, 
+[logical operator](/docs/glossary/logical-operator){:target="_blank"}
 
 ## Assignment
 

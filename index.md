@@ -44,23 +44,33 @@ Placeholder text.
 
 ### Grading
 
-- **Homework Assignments (30%)** 
+- **Homework Assignments (25%)** 
 
     Weekly homework assignments will consist of the following items:
 	
 	- A reading assignment (textbook chapter or article).
 	- A discussion assignment related to the assigned reading. The discussion will be held on Packback, an online discussion platform.
 	- A Canvas quiz. You'll usually have two attempts on each quiz.
-	- A programming assignment.
 
 - **Weekly Labs (25%)**
 
-    In-class lab sessions where you get hands-on experience working with data analysis relevant to public economics. Lab assignments will be introduced, completed, and graded **in-class**.
+    In-class lab sessions where you get hands-on experience working with data analysis relevant to public economics. Each lab session consists of two graded components:
+    
+    - A lab assignment where you are asked to accomplish some data analysis task. You can try to finish these in class during the lab session, or you can turn them in the following week.
+    - An associated lab quiz.
+    
+- **Theory Midterms (15%)**
+
+    These in-class midterms will assess your understanding of the theoretical aspects of the course material. 
 	
-	If you can't finish the lab in-class, you have the opportunity to submit your work by the following Monday without penalty--but only if you were present in class.
-	
-	There will also be quizzes associated with each lab, which are to be completed in class.
-	
+- **Programming Midterms (15%)**
+
+    These in-class programming assignments will assess your ability to accomplish data analysis tasks in R.
+    
+- **Group Project (20%)**
+
+    There will be a group data project. More details to follow.
+
 
 - **Grading Scale**
 
@@ -74,10 +84,24 @@ Placeholder text.
 
 ## Tentative Schedule
 
-| Week | Dates       | Session 1          | Session 2        | Homework       |
-| ---: | :---------- | :----------------- | :--------------- | :------------- |
-|    1 | 8/25 - 8/29 | Here's a really long thing to test line wrapping I hope it wraps yes I do          | And this one too? Does it wrap yes I hope it does who whoa hodsajfhkl asjfd skf     | HW 1           | 
-|    2 | 9/1 - 9/5   | Consumer Choice    | Isoquants        | HW 2           |
+| Week | Dates         | Session 1                          | Session 2                                | 
+| ---: | :------------ | :--------------------------------- | :--------------------------------------- | 
+|    1 | 8/26 - 8/30   | Intro to Public Economics          | Lab 1: Introduction to IPUMS             |   
+|    2 | 9/2 - 9/6     | Review of Microeconomic Principles | Lab 2: Introduction to R                 |
+|    3 | 9/9 - 9/13    | Public Goods and Common Resources  | **Programming Midterm 1**                |
+|    4 | 9/16 - 9/20   | Externalities                      | Lab 3: Filtering, Appending, and Merging |
+|    5 | 9/23 - 9/27   | Economics of Education             | Lab 4: Grouping and Summarizing          |  
+|    6 | 9/30 - 10/4   | Economics of Healthcare            | Lab 5: Data Visualization                |
+|    7 | 10/7 - 10/11  | **Theory Midterm 1**               | **Programming Midterm 2**                |
+|    8 | 10/14 - 10/18 | Linear Regressions                 | Lab 6: Linear Regressions I              |
+|    9 | 10/21 - 10/25 | Research Design                    | Lab 7: Linear Regressions II             |
+|   10 | 10/28 - 11/1  | Difference-in-Differences          | Lab 8: Difference-in-Differences         |
+|   11 | 11/4 - 11/8   | Regression Discontinuity           | **Programming Midterm 3**                    |
+|   12 | 11/11 - 11/15 | **Theory Midterm 2**               | Group Project Demo                       |
+|   13 | 11/18 - 11/22 | Group Project Meeting #1           | *NO CLASS - CONFERENCE*                  |
+|   14 | 11/25 - 11/29 | Group Project Meeting #2           | *NO CLASS - THANKSGIVING*                |
+|   15 | 12/2 - 12/6   | Theory of Public Choice            | Group Project Meeting #3                 |
+|   16 | 12/9 - 12/13  | Group Project Meeting #4           | *NO CLASS - SEMESTER ENDS*               |
 
 Final exam information TBD.
 
