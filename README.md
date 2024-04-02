@@ -81,16 +81,16 @@ If you need to miss a class for any reason, let me know in advance. If the reaso
 |     4 | 2/15  | Externalities                                 | Lab 04: Grouping and Summarizing Data       | 
 |     5 | 2/22  | Economics of Education                        | Lab 05: Data Visualization                  | 
 |     6 | 2/29  | Health Economics                              | Programming Midterm #1                      |
-|     7 | 3/7   | ~~Linear Regression Models~~ Theory of Public Choice | ~~Lab 06: Regression Analysis I~~  Midterm Review |
+|     7 | 3/7   | ~~Linear Regression Models~~ Midterm Review | ~~Lab 06: Regression Analysis I~~  Midterm Review |
 |     8 | 3/14  | ~~Research Design~~ Linear Regression Models | ~~Lab 07: Regression Analysis II~~ Lab 06: Regression Analysis I |
 |     9 | 3/21  | *Spring Break*                                | *Spring Break*                              |
 |    10 | 3/28  | ~~Difference-in-Differences~~ Research Design | ~~Lab 08: Difference-in-Differences~~ Lab 07: Regression Analysis II |
 |    11 | 4/4   | ~~Regression Discontinuity~~ Difference-in-Differences | ~~Lab 09: Regression Discontinuity~~ Lab 08: Difference-in-Differences |
-|    12 | 4/11  | Economics of Home-Sharing                     | Programming Midterm #2                      |
+|    12 | 4/11  | ~~Economics of Home-Sharing~~ Regression Discontinuity | Programming Midterm #2                      |
 |    13 | 4/18  | Group Project Demo Report                     | Group Project Meeting #1                    |
-|    14 | 4/25  | ~~Theory of Public Choice~~ Regression Discontinuity | Group Project Meeting #2                    |
-|    15 | 5/2   | Theory of Taxation                            | Group Project Meeting #3                    |
-|    16 | 5/9   | Cost Benefit Analysis                         | Group Project Meeting #4                    | 
+|    14 | 4/25  | ~~Theory of Public Choice~~ Economics of Home-Sharing | Group Project Meeting #2                    |
+|    15 | 5/2   | ~~Theory of Taxation~~ Social Choice Theory | Group Project Meeting #3                    |
+|    16 | 5/9   | ~~Cost Benefit Analysis~~ Group Project Meeting #4 | Group Project Meeting #4                    | 
 
 ### Final Exam Schedule
 
