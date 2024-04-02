@@ -24,7 +24,11 @@ In this lab, you will:
 
 Follow along as I show the class how to conduct today's lab. 
 
-If you followed along correctly, you should end up with the following script
+If you followed along correctly, you should end up with the following script. The script shows you how to:
+- Read data from a CSV file into R and store it in a dataframe.
+- Display the variables inside a dataframe and their data types.
+- Tabulate and show summary statistics for variables in a dataframe.
+- Create new variables based on existing variables.
 
 ```r
 rm(list=ls())   # Clear the workspace
@@ -75,22 +79,31 @@ table(df$WORKING_ADULT)
 summary(df$LOG_INCWAGE)
 ```
 
-If you missed something during lecture, or if you need a refresher, you may find the following vignettes helpful:
+If you missed something during lecture, or if you need a refresher, you may find the following docs helpful:
 
-- [RStudio basics](/docs/vignettes/rstudio-basics){:target="_blank"}
-- [Editing scripts](/docs/vignettes/editing-scripts){:target="_blank"}
-- [Reading CSV files](/docs/vignettes/reading-csv){:target="_blank"}
-- [Check your data!](/docs/vignettes/checking-data){:target="_blank"}
-- [Creating variables](/docs/vignettes/creating-variables){:target="_blank"}
-- [Data types](/docs/glossary/data-type){:target="_blank"}
-- [Logical operators](/docs/glossary/logical-operator){:target="_blank"}
+- **Vignettes**: 
+[RStudio basics](/docs/vignettes/rstudio-basics){:target="_blank"}, 
+[Editing scripts](/docs/vignettes/editing-scripts){:target="_blank"}, 
+[Check your data!](/docs/vignettes/checking-data){:target="_blank"}, 
+[Creating variables](/docs/vignettes/creating-variables){:target="_blank"}
+- **Functions**: 
+[rm(list=ls())](/docs/functions/rm-list-ls){:target="_blank"}, 
+[read.csv](/docs/functions/read-csv){:target="_blank"}, 
+[str](/docs/functions/str){:target="_blank"},
+[table](/docs/functions/table){:target="_blank"},
+[summary](/docs/functions/summary){:target="_blank"}
+- **Glossary**: 
+[Dataframe](/docs/glossary/dataframe){:target="_blank"}, 
+[Variable](/docs/glossary/variable){:target="_blank"}, 
+[Data type](/docs/glossary/data-type){:target="_blank"}, 
+[Logical operator](/docs/glossary/logical-operator){:target="_blank"}
 
 ## Assignment
 
 - Create a **new** script that accomplishes the following tasks:
     - Read `IPUMS_ACS2019_CA_1.csv` and store it in a dataframe called `df`.
     - Create a boolean variable called `UNEMPLOYED_WORKING_AGE_MALE` that is `TRUE` if the person is:
-        - Unemployed
+        - Unemployed (but in the labor force)
         - Between the ages of 25 and 65
         - Male
     - Create a boolean variable called `NLF_WORKING_AGE_MALE` that is `TRUE` if the person is:

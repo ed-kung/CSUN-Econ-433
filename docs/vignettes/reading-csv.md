@@ -20,7 +20,8 @@ df <- read.csv("filename.csv")
 ```
 
 Notes:
-- `read.csv` is the name of the command
+- `read.csv` is the name of the function to read a CSV file. It takes the name of a file as input and it returns a dataframe as output.
+    - See [Anatomy of a R command](/docs/vignettes/anatomy) for more info.
 - The filename needs to be surrounded by quotation marks
 - `df` here is just the name you want to give to the dataframe. You could have called it anything. For example, `foo <- read.csv("filename.csv")` also could have worked. It would store the data in a dataframe called `foo` instead of `df`.
 
