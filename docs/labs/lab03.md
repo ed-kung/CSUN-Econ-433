@@ -15,138 +15,131 @@ In this lab you will learn how to perform some common data operations in R.
 
 Specifically, you will learn to do the following:
 - Install and load packages in R
-- Merge two dataframes together (combine data horizontally based on matching variables)
+- Merge two dataframes together (combine data horizontally by finding rows that match on key variables)
 - Append two dataframes together (combine data vertically)
 - Write a dataframe to a CSV file
 - Filter a dataframe (select only the rows that meet a condition)
 
 ## Preparation
 
+Before starting the lab, you should download these files from Canvas and upload them to your R Studio Cloud environment.
+- `IPUMS_ACS2019_CA_1.csv`
+- `IPUMS_ACS2019_CA_2.csv`
+- `IPUMS_ACS2014_CA_1.csv`
+- `IPUMS_ACS2014_CA_2.csv`
 
+You'll also need to [install some packages](/docs/vignettes/installing-packages){:target="_blank"}. A package is a collection of functions and tools that expands R's baseline functionality. Packages are written by authors and developers from around the world, and are made available for free on [CRAN](https://cran.r-project.org/){:target="_blank"} (the Comprehensive R Archive Network).
 
+Today you'll need to install the package called `dplyr`. To do so, type the following into your console and hit `ENTER`:
+
+```r
+install.packages("dplyr")
+```
 
 ## Instructions
 
 Follow along as I show the class how to conduct today's lab. 
 
 If you followed along correctly, you should end up with the following script. The script does the following:
-- Read data from a CSV file into R and store it in a dataframe.
-- Display the variables inside a dataframe and their data types.
-- Tabulate and show summary statistics for variables in a dataframe.
-- Create new variables based on existing variables.
+- Clear the workspace and load the required libraries.
+- Read the two 2019 CSV files into dataframes, then merge them into a single 2019 dataframe.
+- Read the two 2014 CSV files into dataframes, then merge them into a single 2014 dataframe.
+- Append the 2014 and 2019 dataframes together.
+- Save the resulting dataframe into a CSV file called `IPUMS_ACS_CA_2014_2019.csv`.
+- Create a filtered dataframe that contains people in the labor force, between the ages of 25 and 65.
+- Tabulate `RACHSING` for people in the labor force between the ages of 25 and 65.
 
 ```r
 rm(list=ls())   # Clear the workspace
+library(dplyr)  # Load the packages
+#(If dplyr is not installed, run install.packages("dplyr") from the console first)
 
-# Read IPUMS_ACS2019_CA_1.csv and store it in df
-df <- read.csv("IPUMS_ACS2019_CA_1.csv")
+# Read the 2019 CSV files and merge them
+df_2019_1 <- read.csv("IPUMS_ACS2019_CA_1.csv")
+df_2019_2 <- read.csv("IPUMS_ACS2019_CA_2.csv")
+df2019 <- inner_join(df_2019_1, df_2019_2, by=c("YEAR","SERIAL","PERNUM"))
 
-# Show the "structure" of the data
+# Read the 2014 CSV files and merge them
+df_2014_1 <- read.csv("IPUMS_ACS2014_CA_1.csv")
+df_2014_2 <- read.csv("IPUMS_ACS2014_CA_2.csv")
+df2014 <- inner_join(df_2014_1, df_2014_2, by=c("YEAR","SERIAL","PERNUM"))
+
+# Append the 2014 and 2019 dataframes
+df <- rbind(df2014, df2019)
+
+# Show the structure of the resulting dataframe
 str(df)
 
-# Tabulate SEX, MARST, and RACHSING
-table(df$SEX)
-table(df$MARST)
-table(df$RACHSING)
+# Save the resulting dataframe
+write.csv(df, "IPUMS_ACS_CA_2014_2019.csv", row.names=FALSE)
 
-# Show summary statistics for INCWAGE
-summary(df$INCWAGE)
+# Create a variable in df to indicate whether a person is in the labor force
+df$in_labor_force <- df$EMPSTAT==1 | df$EMPSTAT==2
 
-# Create a boolean variable called EMPLOYED 
-# that is TRUE when the person is employed
-# and FALSE otherwise
-df$EMPLOYED <- (df$EMPSTAT==1)
+# Create a variable ind f to indicate whether a person is between age 25 and 65
+df$working_age <- df$AGE>=25 & df$AGE<=65
 
-# Create a boolean variable called WORKING_AGE
-# that is TRUE when the person's AGE is 
-# between 25 and 65 and FALSE otherwise
-df$WORKING_AGE <- (df$AGE>=25) & (df$AGE<=65)
+# Create a filtered dataframe that contains only people 
+# in the labor force between the ages of 25 and 65
+df_working_age_labor_force <- filter(df, (in_labor_force==TRUE) & (working_age==TRUE))
 
-# Create a boolean variable called WORKING_AGE_EMPLOYED
-# that is TRUE when the person's AGE is
-# between 25 and 65 and the person is employed,
-# and FALSE otherwise
-df$WORKING_AGE_EMPLOYED <- (df$EMPLOYED==TRUE) & (df$WORKING_AGE==TRUE)
-
-# Create a variable called LOG_INCWAGE that is
-# equal to the log of INCWAGE
-df$LOG_INCWAGE <- log(df$INCWAGE)
-
-# Create a variable called BIRTH_YEAR that is 
-# equal to YEAR minus AGE
-df$BIRTH_YEAR <- df$YEAR - df$AGE
-
-# Show structure of data again
-str(df)
-
-# Tabulate EMPLOYED, WORKING_AGE, and WORKING_ADULT
-table(df$EMPLOYED)
-table(df$WORKING_AGE)
-table(df$WORKING_ADULT)
-
-# Show summary statistics of LOG_INCWAGE
-summary(df$LOG_INCWAGE)
+# Tabulate RACHSING for the working age labor force
+table(df_working_age_labor_force$RACHSING)
 ```
 
 If you missed something during lecture, or if you need a refresher, you may find the following docs helpful:
 
 - **Vignettes**: 
-[RStudio basics](/docs/vignettes/rstudio-basics){:target="_blank"}, 
-[Editing scripts](/docs/vignettes/editing-scripts){:target="_blank"}, 
-[Anatomy of an R command](/docs/vignettes/anatomy){:target="_blank"},
-[Check your data!](/docs/vignettes/checking-data){:target="_blank"}, 
-[Creating variables](/docs/vignettes/creating-variables){:target="_blank"}
+	- [Installing packages](/docs/vignettes/installing-packages){:target="_blank"}
 - **Functions**: 
-[rm(list=ls())](/docs/functions/rm-list-ls){:target="_blank"}, 
-[read.csv](/docs/functions/read-csv){:target="_blank"}, 
-[str](/docs/functions/str){:target="_blank"},
-[table](/docs/functions/table){:target="_blank"},
-[summary](/docs/functions/summary){:target="_blank"}
-- **Glossary**: 
-[dataframe](/docs/glossary/dataframe){:target="_blank"}, 
-[variable](/docs/glossary/variable){:target="_blank"}, 
-[data type](/docs/glossary/data-type){:target="_blank"}, 
-[logical operator](/docs/glossary/logical-operator){:target="_blank"}
+	- [inner_join](/docs/functions/inner_join){:target="_blank"}
+	- [rbind](/docs/functions/rbind){:target="_blank"}
+	- [write.csv](/docs/functions/write-csv){:target="_blank"}
+	- [filter](/docs/functions/filter){:target="_blank"}
+
+---
 
 ## Assignment
 
-- Create a **new** script that accomplishes the following tasks:
-    - Read `IPUMS_ACS2019_CA_1.csv` and store it in a dataframe called `df`.
-    - Create a boolean variable called `UNEMPLOYED_WORKING_AGE_MALE` that is `TRUE` if the person is:
-        - Unemployed (but in the labor force)
-        - Between the ages of 25 and 65
-        - Male
-    - Create a boolean variable called `NLF_WORKING_AGE_MALE` that is `TRUE` if the person is:
-        - Not in the labor force
-        - Between the ages of 25 and 65
-        - Male
-    - Show the structure of the data after having created the above two variables
-    - Tabulate `UNEMPLOYED_WORKING_AGE_MALE` and `NLF_WORKING_AGE_MALE`
-    
-    *Hint*: You'll need to look up the codes for `EMPSTAT` and `SEX` in IPUMS.
-    
-- Upload the script to the Lab 02 Assignment.
+For this assignment, you will need to download `students.csv` and `classes.csv` and upload them to your R Studio Cloud environment.
 
-- Take the Lab 02 Quiz.
+`students.csv` is a csv file where each row represents a student. The file has the following columns:
+
+- `student_id`: the unique id number of the student
+- `class_id`: the id number of the classroom the student is in
+- `school_id`: the id number of the school the student is in
+- `test_score`: the student's standardized test score
+- `family_income`: the student's annual family income
+- `race`: the student's race; possible values are "BLACK", "WHITE", "HISPANIC", and "ASIAN".
+- `cohort`: whether the student was assigned to the experimental or regular cohort (more information below.)
+
+`classes.csv` is a csv file where each row represents a classroom. The file has the following columns:
+
+- `class_id`: the unique id number of the classroom
+- `school_id`: the unique id number of the school
+- `class_size`: an indicator for whether the class is small or large
+- `teacher_has_ma`: an indicator for whether the classroom's teacher has a Master's degree.
+
+**Assignment instructions**
+
+- Create a new script that accomplishes the following tasks:
+	- Read `students.csv` and `classes.csv` into two dataframes in R.
+	- Merge those dataframes on the variables `class_id`, `school_id`. Call the merged dataframe `df`.
+	- Save `df` as a CSV file called `students_classes_merged.csv`.
+	- Create a new dataframe called `df_experimental` which filters `df` on `cohort=="EXPERIMENTAL"`.
+	- Tabulate the `race` variable in `df_experimental`.
+
+- Upload the script to the Lab 03 Assignment.
+
+- Take the Lab 03 Quiz.
+
+---
 
 ## Takeaways
 
-- You can use RStudio Cloud.
-- You can do the following basic tasks in R:
-    - Read a CSV file into a dataframe
-    - View and browse a dataframe
-    - Show the structure of a dataframe
-    - Identify the datatypes of variables inside a dataframe
-    - Tabulate and summarize variables inside a dataframe
-    - Create new variables in a dataframe
-    - Use logical operators to create new boolean variables
-- You understand the concept of data types
-
-
-
-
-
-
-
-
+- You can perform the following data operations in R:
+	- Filtering (`filter`)
+	- Appending (`rbind`)
+	- Merging (`inner_join`)
+	- Saving data to CSV (`write.csv`)
 

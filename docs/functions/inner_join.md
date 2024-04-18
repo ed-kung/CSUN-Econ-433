@@ -18,18 +18,18 @@ Requires `dplyr` package.
 
 Used to combine two dataframes horizontally into a new dataframe. The dataframes are combined by matching the rows that have the same values on one or more identifier, or "key" variables.
 
-This procedure is also sometimes known as *merging* two dataframes.
+This procedure is called *merging* two dataframes. It can also be called *joining*.
 
-
+Usage:
 
 ```r
-named_object <- inner_join(dataframe1, dataframe2, by=c(...))
+merged_dataframe <- inner_join(dataframe1, dataframe2, by=c(...))
 ```
 
 - The first and second inputs must both be dataframes.
 - The third input must be `by=c(...)`, with `...` being the names of the variables you want to match on. 
     - The variables names should be contained in double quotation marks, and separated by commas. (See examples below.)
-- The output is a dataframe that combines the two input dataframes "horizontally". It will all the variables from both dataframes.
+- The output is a dataframe that combines the two input dataframes "horizontally". It will include all the variables from both dataframes.
 
 {: .warning}
 > If you store the output in an object with the same name as one of the input dataframes, you will overwrite it. This causes data loss, so you should avoid doing this!
@@ -42,7 +42,7 @@ The purpose of an inner join is to combine two datasets that contain different p
 
 ---
 
-## Example
+## Example 1
 
 ```r
 rm(list=ls())
@@ -55,7 +55,7 @@ df <- inner_join(df_1, df_2, by=c("YEAR", "SERIAL", "PERNUM"))
 
 ---
 
-## Detailed example
+## Example 2
 
 Suppose `df_students` contains the following data:
 

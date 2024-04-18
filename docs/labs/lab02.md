@@ -77,7 +77,7 @@ str(df)
 # Tabulate EMPLOYED, WORKING_AGE, and WORKING_ADULT
 table(df$EMPLOYED)
 table(df$WORKING_AGE)
-table(df$WORKING_ADULT)
+table(df$WORKING_AGE_EMPLOYED)
 
 # Show summary statistics of LOG_INCWAGE
 summary(df$LOG_INCWAGE)
@@ -86,22 +86,22 @@ summary(df$LOG_INCWAGE)
 If you missed something during lecture, or if you need a refresher, you may find the following docs helpful:
 
 - **Vignettes**: 
-[RStudio basics](/docs/vignettes/rstudio-basics){:target="_blank"}, 
-[Editing scripts](/docs/vignettes/editing-scripts){:target="_blank"}, 
-[Anatomy of an R command](/docs/vignettes/anatomy){:target="_blank"},
-[Check your data!](/docs/vignettes/checking-data){:target="_blank"}, 
-[Creating variables](/docs/vignettes/creating-variables){:target="_blank"}
+	- [RStudio basics](/docs/vignettes/rstudio-basics){:target="_blank"}
+	- [Editing scripts](/docs/vignettes/editing-scripts){:target="_blank"} 
+	- [Anatomy of an R command](/docs/vignettes/anatomy){:target="_blank"}
+	- [Check your data!](/docs/vignettes/checking-data){:target="_blank"}
+	- [Creating variables](/docs/vignettes/creating-variables){:target="_blank"}
 - **Functions**: 
-[rm(list=ls())](/docs/functions/rm-list-ls){:target="_blank"}, 
-[read.csv](/docs/functions/read-csv){:target="_blank"}, 
-[str](/docs/functions/str){:target="_blank"},
-[table](/docs/functions/table){:target="_blank"},
-[summary](/docs/functions/summary){:target="_blank"}
+	- [rm(list=ls())](/docs/functions/rm-list-ls){:target="_blank"}
+	- [read.csv](/docs/functions/read-csv){:target="_blank"}
+	- [str](/docs/functions/str){:target="_blank"}
+	- [table](/docs/functions/table){:target="_blank"}
+	- [summary](/docs/functions/summary){:target="_blank"}
 - **Glossary**: 
-[dataframe](/docs/glossary/dataframe){:target="_blank"}, 
-[variable](/docs/glossary/variable){:target="_blank"}, 
-[data type](/docs/glossary/data-type){:target="_blank"}, 
-[logical operator](/docs/glossary/logical-operator){:target="_blank"}
+	- [dataframe](/docs/glossary/dataframe){:target="_blank"}
+	- [variable](/docs/glossary/variable){:target="_blank"}
+	- [data type](/docs/glossary/data-type){:target="_blank"}
+	- [logical operator](/docs/glossary/logical-operator){:target="_blank"}
 
 ## Assignment
 

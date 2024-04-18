@@ -19,7 +19,7 @@ Requires `dplyr` package.
 Used to select only the rows of a dataframe that match a condition.
 
 ```r
-named_object <- filter(dataframe, condition)
+filtered_dataframe <- filter(dataframe, condition)
 ```
 
 - The first input must be a dataframe.
@@ -31,7 +31,7 @@ named_object <- filter(dataframe, condition)
 
 ---
 
-## Example
+## Example 1
 
 ```r
 rm(list=ls())
@@ -45,7 +45,7 @@ In this examples, only the rows with `EMPSTAT==1` (employed individuals) are kep
 
 ---
 
-## Detailed example
+## Example 2
 
 Suppose dataframe `df` contains the following data:
 
