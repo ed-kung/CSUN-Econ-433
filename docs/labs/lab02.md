@@ -79,7 +79,7 @@ table(df$EMPLOYED)
 table(df$WORKING_AGE)
 table(df$WORKING_AGE_EMPLOYED)
 
-# Show summary statistics of LOG_INCWAGE
+# Show summary of LOG_INCWAGE
 summary(df$LOG_INCWAGE)
 ```
 
