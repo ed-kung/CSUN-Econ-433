@@ -31,18 +31,21 @@ nav_order: 1
 
 ### Lectures
 
-- Section 02: TuTh 12:30pm - 1:45pm @ Bookstein (TBD)
-- Section 04: Tu 7:00pm - 9:45pm @ Bookstein (TBD)
+- Section 01: TuTh 11:30am - 12:45pm @ Bookstein 2212
 
 ### Office Hours
 
-- TuTh 2:00pm - 3:00pm @ Bookstein 4252 (TBD)
+- Tu 12:45pm - 1:45pm @ Bookstein 4252 
 
 ### Course Organization
 
-Placeholder text.
+This course meets twice a week, in-person. The general cadence is that our sessions will alternate between lecture and lab. Attendance is checked and required.
 
 ### Grading
+
+- **Attendance (10%)**
+
+    Attendance in this class will be checked. You can miss up to two sessions for any reason and without providing an excuse. Further absences will require a [documented reason](/#late-and-missing-assignment-policy).
 
 - **Homework Assignments (25%)** 
 
@@ -59,49 +62,59 @@ Placeholder text.
     - A lab assignment where you are asked to accomplish some data analysis task. You can try to finish these in class during the lab session, or you can turn them in the following week.
     - An associated lab quiz.
     
-- **Theory Midterms (15%)**
+- **Midterm Exams (15%)**
 
-    These in-class midterms will assess your understanding of the theoretical aspects of the course material. 
+	There will be two midterm exams that test your understanding of the course material. These will be in-person, on-paper exams that test both theoretical understanding and empirical skills.
 	
-- **Programming Midterms (15%)**
-
-    These in-class programming assignments will assess your ability to accomplish data analysis tasks in R.
-    
-- **Group Project (20%)**
+- **Group Project (25%)**
 
     There will be a group data project. More details to follow.
 
 
 - **Grading Scale**
 
-|  A     |  A-   |  B+   |  B    |  B-   |  C+   |  C    |  C-   |  D    |  F   |
-| :----- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :--- |
-| 100-93 | 92-90 | 89-87 | 86-83 | 82-80 | 79-77 | 76-73 | 72-70 | 69-60 | 59-0 |
+	|  A     |  A-   |  B+   |  B    |  B-   |  C+   |  C    |  C-   |  D    |  F   |
+	| :----- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :--- |
+	| 100-93 | 92-90 | 89-87 | 86-83 | 82-80 | 79-77 | 76-73 | 72-70 | 69-60 | 59-0 |
 
+	Depending on the performance of the class, a curve may or may not be applied before assigning letter grades.
+
+- **Grading Rubric**
+
+	Most free-response assignments will be graded out of 5 on the following scale:
+	
+	| Score   | Rubric                                                                                                                             |
+	| ------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+	|       5 | You followed all instructions. Your work is accurate and demonstrates a mastery of the material.                                   | 
+	|       4 | You failed to follow all instructions or your work has minor inaccuracies but still demonstrates an understanding of the material. |
+	|       3 | Your work has major inaccuracies or your work demonstrates only a partial understanding of the material.                           |
+    |       2 | You made an attempt, but your work has major inaccuracies and does not demonstrate an understanding of the material.               |
+    |       1 | You made only a partial attempt at completing the assignment.                                                                      |
+    |       0 | You did not make any attempt at the assignment. Note that if you do not attempt some parts of an assignment, you may receive a zero for the whole assignment. |	
 
 
 ---
 
 ## Tentative Schedule
 
-| Week | Dates         | Session 1                          | Session 2                                | 
+| Week | Dates         | Tuesday                            | Thursday                                 | 
 | ---: | :------------ | :--------------------------------- | :--------------------------------------- | 
-|    1 | 8/26 - 8/30   | Intro to Public Economics          | Lab 1: Introduction to IPUMS             |   
-|    2 | 9/2 - 9/6     | Review of Microeconomic Principles | Lab 2: Introduction to R                 |
-|    3 | 9/9 - 9/13    | Public Goods and Common Resources  | **Programming Midterm 1**                |
-|    4 | 9/16 - 9/20   | Externalities                      | Lab 3: Filtering, Appending, and Merging |
-|    5 | 9/23 - 9/27   | Economics of Education             | Lab 4: Grouping and Summarizing          |  
-|    6 | 9/30 - 10/4   | Economics of Healthcare            | Lab 5: Data Visualization                |
-|    7 | 10/7 - 10/11  | **Theory Midterm 1**               | **Programming Midterm 2**                |
-|    8 | 10/14 - 10/18 | Linear Regressions                 | Lab 6: Linear Regressions I              |
-|    9 | 10/21 - 10/25 | Research Design                    | Lab 7: Linear Regressions II             |
-|   10 | 10/28 - 11/1  | Difference-in-Differences          | Lab 8: Difference-in-Differences         |
-|   11 | 11/4 - 11/8   | Regression Discontinuity           | **Programming Midterm 3**                    |
-|   12 | 11/11 - 11/15 | **Theory Midterm 2**               | Group Project Demo                       |
-|   13 | 11/18 - 11/22 | Group Project Meeting #1           | *NO CLASS - CONFERENCE*                  |
-|   14 | 11/25 - 11/29 | Group Project Meeting #2           | *NO CLASS - THANKSGIVING*                |
-|   15 | 12/2 - 12/6   | Theory of Public Choice            | Group Project Meeting #3                 |
-|   16 | 12/9 - 12/13  | Group Project Meeting #4           | *NO CLASS - SEMESTER ENDS*               |
+|    1 | 8/26 - 8/30   | Intro & Review of Micro Principles | Lab 1: Introduction to IPUMS             |   
+|    2 | 9/2 - 9/6     | Economics of Public Goods          | Lab 2: Introduction to R                 |
+|    3 | 9/9 - 9/13    | Economics of Common Resources      | Lab 3: Data Wrangling                    |
+|    4 | 9/16 - 9/20   | Economics of Externalities         | Lab 4: Grouped Summary Statistics        |
+|    5 | 9/23 - 9/27   | Economics of Education             | Lab 5: Data Visualization                |  
+|    6 | 9/30 - 10/4   | Economics of Healthcare            | **Midterm 1**                            |
+|    7 | 10/7 - 10/11  | Linear Regressions I               | Lab 6: Linear Regressions I              |
+|    8 | 10/14 - 10/18 | Linear Regressions II              | Lab 7: Linear Regressions II             |
+|    9 | 10/21 - 10/25 | Research Design                    | Lab 8: Linear Regressions III            |
+|   10 | 10/28 - 11/1  | Difference-in-Differences          | Lab 9: Difference-in-Differences         |
+|   11 | 11/4 - 11/8   | Regression Discontinuity           | **Midterm 2**                            |
+|   12 | 11/11 - 11/15 | Group Project Demo                 | Group Project Meeting #1                 |
+|   13 | 11/18 - 11/22 | Cost Benefit Analysis              | **NO CLASS** / Group Project Meeting #2  |
+|   14 | 11/25 - 11/29 | Theory of Public Choice            | **NO CLASS - THANKSGIVING**              |
+|   15 | 12/2 - 12/6   | Group Project Meeting #3           | Lecture - Topic TBD                      |
+|   16 | 12/9 - 12/13  | Group Project Meeting #4           | **NO CLASS - SEMESTER ENDS**             |
 
 Final exam information TBD.
 
@@ -169,14 +182,6 @@ You'll need to sign up for a free account to use it.
 ### Assigned Readings
 
 Occasionally, I will assign readings from newspaper or academic journal articles. These will be posted to Canvas. You are responsible for reading these and you may be quizzed on them.
-
-
-
----
-
-## Exam Policies and Information
-
-Placeholder text
 
 ---
 
