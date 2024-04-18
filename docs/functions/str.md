@@ -18,6 +18,7 @@ Used to show the structure of a dataframe. The following information is reported
     - The data type of the variable
     - The first few rows of the variable
 
+Usage:
 ```r
 str(dataframe)
 ```

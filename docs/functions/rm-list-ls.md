@@ -12,6 +12,7 @@ parent: Functions
 
 This function clears the workspace so that you can start fresh. It should go at the top of every new script, and only at the top.
 
+Usage:
 ```r
 rm(list=ls())
 ```

@@ -12,6 +12,7 @@ parent: Functions
 
 Used to show summary statistics of a variable in a dataframe.
 
+Usage:
 ```r
 summary(dataframe$variable)
 ```

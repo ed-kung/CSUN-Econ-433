@@ -18,8 +18,9 @@ Requires `dplyr` package.
 
 Used to select only the rows of a dataframe that match a condition.
 
+Usage:
 ```r
-filtered_dataframe <- filter(dataframe, condition)
+some_dataframe_name <- filter(dataframe, condition)
 ```
 
 - The first input must be a dataframe.

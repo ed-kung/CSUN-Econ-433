@@ -23,7 +23,7 @@ This procedure is called *merging* two dataframes. It can also be called *joinin
 Usage:
 
 ```r
-merged_dataframe <- inner_join(dataframe1, dataframe2, by=c(...))
+some_dataframe_name <- inner_join(dataframe1, dataframe2, by=c(...))
 ```
 
 - The first and second inputs must both be dataframes.

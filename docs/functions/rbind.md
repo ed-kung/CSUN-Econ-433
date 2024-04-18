@@ -16,10 +16,9 @@ parent: Functions
 
 Used to combine two dataframes vertically into a new dataframe. This procedure is also sometimes known as *appending* two dataframes.
 
-
-
+Usage:
 ```r
-named_object <- rbind(dataframe1, dataframe2)
+some_dataframe_name <- rbind(dataframe1, dataframe2)
 ```
 
 - The first and second inputs must both be dataframes.

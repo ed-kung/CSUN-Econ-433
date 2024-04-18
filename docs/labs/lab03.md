@@ -127,7 +127,7 @@ For this assignment, you will need to download `students.csv` and `classes.csv` 
 	- Merge those dataframes on the variables `class_id`, `school_id`. Call the merged dataframe `df`.
 	- Save `df` as a CSV file called `students_classes_merged.csv`.
 	- Create a new dataframe called `df_experimental` which filters `df` on `cohort=="EXPERIMENTAL"`.
-	- Tabulate the `race` variable in `df_experimental`.
+	- Tabulate the `class_size` variable in `df_experimental`.
 
 - Upload the script to the Lab 03 Assignment.
 

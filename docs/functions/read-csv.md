@@ -16,8 +16,9 @@ parent: Functions
 
 Used to read data from a CSV file and store that data in a dataframe. 
 
+Usage:
 ```r
-named_object <- read.csv("filename.csv")
+some_dataframe_name <- read.csv("filename.csv")
 ```
 
 - The input must be the name of a CSV file in double quotation marks.

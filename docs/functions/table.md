@@ -12,6 +12,7 @@ parent: Functions
 
 Used to tabulate a variable in a dataframe.  (It shows how many rows contain each possible value of the variable.)
 
+Usage:
 ```r
 table(dataframe$variable)
 ```
