@@ -8,7 +8,7 @@ nav_order: 7
 # Summary statistics
 {: .no_toc }
 
-One of the most common tasks in data analysis is to produce summary statistics, often broken down by various groups in the data.
+One of the most common tasks in data analysis is to compute summary statistics, often for different groups in the data.
 
 For example, we might be interested in calculating the average income of the employed population, broken down by race.
 
@@ -22,6 +22,9 @@ some_dataframe_name <- dataframe %>%
     ...
   )
 ```
+
+This code pattern takes a dataframe, creates groups based on the variables you tell it to create groups by, then calculates a statistic for each of the groups.
+
 You don't need to fully understand the code pattern. You only need to know how to use it. The examples below will show you how.
 
 The `dplyr` package is required for most of these examples.
@@ -115,7 +118,7 @@ rm(list=ls())
 
 df <- read.csv("IPUMS_ACS2019_CA_1.csv")
 
-sum(PERWT)
+sum(PERWT, na.rm=TRUE)
 ```
 
 This calcualtes the total population in the dataframe, `df`, assuming that `PERWT` is the population weight of each survey unit. The result is displayed to the console.
@@ -133,7 +136,7 @@ df <- read.csv("IPUMS_ACS2019_CA_1.csv")
 pop_by_empstat <- df %>%
   group_by(EMPSTAT) %>% 
   summarize(
-    POPULATION = sum(PERWT)
+    POPULATION = sum(PERWT, na.rm=TRUE)
   )
 ```
 
@@ -150,7 +153,7 @@ rm(list=ls())
 
 df <- read.csv("students.csv")
 
-mean(df$test_score)
+mean(df$test_score, na.rm=TRUE)
 ```
 
 This calculates the overall average of `test_score`. The result is displayed to console.
@@ -168,7 +171,7 @@ df <- read.csv("students.csv")
 scores_by_race <- df %>%
   group_by(race) %>%
   summarize(
-    avg_score = mean(test_score)
+    avg_score = mean(test_score, na.rm=TRUE)
   )
 ```
 
@@ -185,10 +188,66 @@ df <- read.csv("students.csv")
 
 df$IS_EXPERIMENTAL_COHORT <- df$cohort=="EXPERIMENTAL"
 
-mean(df$IS_EXPERIMENTAL_COHORT)
+mean(df$IS_EXPERIMENTAL_COHORT, na.rm=TRUE)
 ```
 
 This calculates the percent of students in the experimental cohort (`cohort=="EXPERIMENTAL"`). The result is displayed to console.
 
 ---
+
+### Percent of a group that has a certain characteristic
+
+```r
+rm(list=ls())
+library(dplyr)
+
+df <- read.csv("students.csv")
+
+df$IS_EXPERIMENTAL_COHORT <- df$cohort=="EXPERIMENTAL"
+
+experimental_by_race <- df %>%
+  group_by(race) %>%
+  summarize(
+    PCT_EXPERIMENTAL = mean(IS_EXPERIMENTAL_COHORT, na.rm=TRUE)
+  )
+```
+
+This calculates the percent of students in the experimental cohort separately by the race of the student. The result is stored in a dataframe called `experimental_by_race`.
+
+---
+
+### Total number of observations
+
+```r
+rm(list=ls())
+
+df <- read.csv("students.csv")
+
+nrow(df)
+```
+
+This simply counts the number of rows, e.g. the number of observations, contained in `students.csv`. Since `students.csv` is not a stratified survey, there is no need to calculate how many population units are represented by the data.
+
+The result is displayed to the console.
+
+---
+
+### Total number of observations by group
+
+```r
+rm(list=ls())
+library(dplyr)
+
+df <- read.csv("students.csv")
+
+nobs_by_race <- df %>%
+  group_by(race) %>% 
+  summarize(
+    num_obs = n()
+  )
+```
+
+This counts the number of rows, e.g. the number of observations, for each race contained in the `race` variable. The result is stored in a dataframe called `nobs_by_race`.
+
+
 

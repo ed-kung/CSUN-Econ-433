@@ -20,6 +20,8 @@ In this lab, you will:
 - Load data contained in a `.csv` file into R.
 - Conduct basic data exploration tasks in R.
 
+---
+
 ## Instructions
 
 Follow along as I show the class how to conduct today's lab. 

@@ -23,6 +23,8 @@ In the IPUMS ACS, the population weight is given by the variable `PERWT`. `PERWT
 
 This lab shows you how to calculate population statistics accurately in a stratified sample using population weights.
 
+---
+
 ## Preparation
 
 Before starting the lab, you should make sure the following CSV file has been uploaded to your R Studio Cloud files directory.
@@ -36,6 +38,8 @@ Today you'll need to install the package called `dplyr`. To do so, type the foll
 ```r
 install.packages("dplyr")
 ```
+
+---
 
 ## Instructions
 
@@ -81,20 +85,20 @@ df$EMPSTAT <- na_if(df$EMPSTAT, 9)
 df$EMPLOYED <- df$EMPSTAT==1
 
 # Calculate total population
-sum(df$PERWT)
+sum(df$PERWT, na.rm=TRUE)
 
 # Calculate population by race
 pop_by_race <- df %>%
   group_by(RACHSING) %>%
   summarize(
-    TOTAL_POP = sum(PERWT)
+    TOTAL_POP = sum(PERWT, na.rm=TRUE)
   )
 
 # Calculate population by employment status
 pop_by_empstat <- df %>%
   group_by(EMPSTAT) %>% 
   summarize(
-    TOTAL_POP = sum(PERWT)
+    TOTAL_POP = sum(PERWT, na.rm=TRUE)
   )
 
 # Calculate overall employment rate
