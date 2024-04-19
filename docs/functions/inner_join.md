@@ -46,6 +46,7 @@ The purpose of an inner join is to combine two datasets that contain different p
 
 ```r
 rm(list=ls())
+library(dplyr)
 
 df_1 <- read.csv("IPUMS_ACS2019_CA_1.csv")
 df_2 <- read.csv("IPUMS_ACS2019_CA_2.csv")

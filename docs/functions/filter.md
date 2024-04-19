@@ -36,6 +36,7 @@ some_dataframe_name <- filter(dataframe, condition)
 
 ```r
 rm(list=ls())
+library(dplyr)
 
 df <- read.csv("IPUMS_ACS2019_CA_1.csv")
 

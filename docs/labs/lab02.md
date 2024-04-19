@@ -44,7 +44,8 @@ table(df$SEX)
 table(df$MARST)
 table(df$RACHSING)
 
-# Show summary statistics for INCWAGE
+# Show summary statistics for AGE and INCWAGE
+summary(df$AGE)
 summary(df$INCWAGE)
 
 # Create a boolean variable called EMPLOYED 
@@ -79,7 +80,7 @@ table(df$EMPLOYED)
 table(df$WORKING_AGE)
 table(df$WORKING_AGE_EMPLOYED)
 
-# Show summary of LOG_INCWAGE
+# Show summary statistics of LOG_INCWAGE
 summary(df$LOG_INCWAGE)
 ```
 
@@ -103,6 +104,8 @@ If you missed something during lecture, or if you need a refresher, you may find
 	- [data type](/docs/glossary/data-type){:target="_blank"}
 	- [logical operator](/docs/glossary/logical-operator){:target="_blank"}
 
+---
+
 ## Assignment
 
 - Create a **new** script that accomplishes the following tasks:
@@ -123,6 +126,8 @@ If you missed something during lecture, or if you need a refresher, you may find
 - Upload the script to the Lab 02 Assignment.
 
 - Take the Lab 02 Quiz.
+
+---
 
 ## Takeaways
 

@@ -12,5 +12,5 @@ Here I've attempted to provide simple documentation for every function you'll us
 
 No guarantee that every function you need will be documented here. It is a work in progress!
 
-There's also a lot more to learn about how each of these functions can be used in R. My purpose here is only to document the ways these functions will be used *in this class*.
+There's also a lot more detail about each of these functions that I won't get into. My purpose here is only to document the ways these functions will be used *in this class*.
 

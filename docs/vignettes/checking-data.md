@@ -91,11 +91,9 @@ Tabulating is also useful for debugging. Students sometimes make a mistake which
 
 ---
 
-## Showing summary statistics for a variable
+## Summarizing a numerical variable
 
-Summary statistics refer to statistical measurements about a variable, such as its mean, median, percentiles, or variance.
-
-To get summary statistics for a variable `var` in dataframe `df`, use this command:
+To summarize variable `var` in dataframe `df`, use this command:
 
 ```r
 summary(df$var)
@@ -105,7 +103,7 @@ summary(df$var)
 
 The behavior of `summary` depends on the [type](/docs/glossary/data-type) of the variable.
 - For `int` (integer) and `num` (numeric) data types, `summary` will output information about the mean, median, and percentiles.
-- For `factor` (categorical) and `logi` (boolean) data types, `summary` will work similary to `table`: it will simply tabulate the values.
+- For `factor` (categorical) and `logi` (boolean) data types, `summary` will behave like `table` by tabulating the values.
 
 **Example output for numeric data type:**
 ```
@@ -115,6 +113,12 @@ The behavior of `summary` depends on the [type](/docs/glossary/data-type) of the
 ```
 
 Summarizing a variable is useful for getting a sense of the typical range of values that it has. You can also use that information to check whether the range makes sense.
+
+{: .warning }
+> `table` and `summary` are best used to check if you have mistakes in your data, but they will not produce accurate statistics if the data is a [stratified sample](/docs/glossary/stratified-sample). See the vignette on computing [summary statistics](/docs/vignettes/summary-statistics) for instructions on how to compute accurate summary statistics in stratified samples.
+
+
+
 
 
 
