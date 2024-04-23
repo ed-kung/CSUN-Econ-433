@@ -14,9 +14,9 @@ nav_order: 5
 Data visualization is the practice of presenting data in a visually appealing way, so that interesting patterns can be easily spotted.
 
 In this lab you will learn how to create three basic types of data visualization in R:
-- [Line plots](/docs/vignettes/line-plots){:target="_blank"}
-- [Scatter plots](/docs/vignettes/scatter-plots){:target="_blank"}
-- [Bar charts](/docs/vignettes/bar-charts){:target="_blank"}
+- [Line Plots](#line-plots)
+- [Scatter Plots](#scatter-plots)
+- [Bar Charts](#bar-charts)
 
 ---
 
@@ -36,7 +36,11 @@ install.packages("ggplot2")
 
 ## Instructions
 
-Follow along as I show the class how to conduct today's lab.  If you followed along correctly, you should end up with the following script.
+Follow along as I show the class how to conduct today's lab.  If you followed along correctly, you should end up with the following three scripts.
+
+### Line Plots
+
+This script makes a line plot showing average income by age for employed individuals, using data from California 2019.  The lines are plotted separately for males and for females.
 
 ```r
 rm(list=ls())   # Clear workspace
@@ -52,85 +56,113 @@ df$INCWAGE <- na_if(df$INCWAGE, 999998)
 df$EMPSTAT <- na_if(df$EMPSTAT, 0)
 df$EMPSTAT <- na_if(df$EMPSTAT, 9)
 
-# Create a variable indicating 4+ years of college
-df$COLLEGE <- df$EDUC>=10
-
-#-------------------------------------------------------------------
-# Create a line plot: 
-# Average income for employed individuals by age and sex
-# using data from California 2019
-#-------------------------------------------------------------------
-
-# First create a dataframe containing the required summary statistics
-inc_by_age_sex <- filter(df, YEAR==2019 & EMPSTAT==1) %>%
+# First, calculate average income of employed individuals by
+# age and sex, using data from 2019
+df_employed_2019 <- filter(df, YEAR==2019 & EMPSTAT==1) 
+inc_by_age_sex <- df_employed_2019 %>%
   group_by(AGE, SEX) %>%
   summarize(
     AVG_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE)
   )
-
+  
 # Now create the line plot using the dataframe containing the stats
 ggplot(data=inc_by_age_sex) +
   geom_line(aes(x=AGE, y=AVG_INCOME, color=as.factor(SEX))) + 
   xlab("Age") + 
   ylab("Average Income") + 
   ggtitle("Average Income of Employed Individuals by Age and Sex, California 2019")
+```
 
-#-------------------------------------------------------------------
+---
+
+### Scatter Plots
+
+This script makes a scatter plot where each dot is a county. The x axis shows the percent of age 25+ people in the county with 4+ years of college education. The y axis shows the average income of employed individuals in the county. The size of the dot shows the total population of the county.
 
 
-#-------------------------------------------------------------------
-# Create a scatter plot: 
-# X: Percent of individuals in a county that have 4+ years of college
-# Y: Average income of employed individuals in the county
-# Each dot is a county in California in 2019
-# The size of the dot is equal to the population of the county
-#-------------------------------------------------------------------
+```r
+rm(list=ls())   # Clear workspace
+library(dplyr)  # Load required packages
+library(ggplot2)
 
-# First, calculate the percent of individuals in each county that
-# have 4+ years of college, as well as the total population of the county
-# using data from 2019
-county_df1 <- filter(df, YEAR==2019) %>%
+# Load the main data
+df <- read.csv("IPUMS_ACS_CA_2014_2019.csv")
+
+# Deal with invalid values for INCWAGE and EMPSTAT
+df$INCWAGE <- na_if(df$INCWAGE, 999999)
+df$INCWAGE <- na_if(df$INCWAGE, 999998)
+df$EMPSTAT <- na_if(df$EMPSTAT, 0)
+df$EMPSTAT <- na_if(df$EMPSTAT, 9)
+
+# Create a boolean variable for 4+ years college
+df$COLLEGE <- df$EDUC>=10
+
+# Total population by county, using 2019 data
+df2019 <- filter(df, YEAR==2019)
+county_pop <- df2019 %>%
   group_by(COUNTYFIP) %>%
   summarize(
-    POPULATION = sum(PERWT, na.rm=TRUE),
+    POPULATION = sum(PERWT, na.rm=TRUE)
+  )
+  
+# Percent of age 25+ people with 4+ years of college,
+# using 2019 data
+df2019_adult <- filter(df, YEAR==2019 & AGE>=25)
+county_educ <- df2019_adult %>%
+  group_by(COUNTYFIP) %>%
+  summarize(
     PCT_COLLEGE = weighted.mean(COLLEGE, PERWT, na.rm=TRUE)
   )
-
-# Second, calculate the average income of employed individuals for
-# each county in 2019
-county_df2 <- filter(df, YEAR==2019 & EMPSTAT==1) %>%
+  
+# Average income of employed individuals, using data from 2019
+df2019_employed <- filter(df, YEAR==2019 & EMPSTAT==1)
+county_inc <- df2019_employed %>%
   group_by(COUNTYFIP) %>%
   summarize(
     AVG_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE)
   )
 
-# Third, merge the two county-level dataframes you just created
-county_df <- inner_join(county_df1, county_df2, by=c("COUNTYFIP"))
+# Merge together to get one county level dataframe
+county_df <- inner_join(county_pop, county_educ, by=c("COUNTYFIP"))
+county_df <- inner_join(county_df, county_inc, by=c("COUNTYFIP"))
 
 # Finally, create the scatter plot
 ggplot(data=county_df) +
   geom_point(aes(x=PCT_COLLEGE, y=AVG_INCOME, size=POPULATION)) +
-  xlab("Percent of Population with 4+ Yrs of College") + 
-  ylab("Average Income of Employed Individuals") + 
+  xlab("% of age 25+ population with 4+ yrs of college") + 
+  ylab("Avg income of employed individuals") + 
   ggtitle("Income and College Education of California Counties, 2019")
+```
 
-#-------------------------------------------------------------------
+---
 
+### Bar Charts
 
-#-------------------------------------------------------------------
-# Create a horizontal bar chart: 
-# Showing the average income of employed individuals, by race
-# using data from California 2019
-#-------------------------------------------------------------------
+This script makes a horizontal bar chart, showing the average income of employed individuals, by race, using data from 2019.
 
-# First, calculate average income of employed individuals by race
-# with 2019 data
-inc_by_race <- filter(df, YEAR==2019 & EMPSTAT==1) %>%
+```r
+rm(list=ls())   # Clear workspace
+library(dplyr)  # Load required packages
+library(ggplot2)
+
+# Load the main data
+df <- read.csv("IPUMS_ACS_CA_2014_2019.csv")
+
+# Deal with invalid values for INCWAGE and EMPSTAT
+df$INCWAGE <- na_if(df$INCWAGE, 999999)
+df$INCWAGE <- na_if(df$INCWAGE, 999998)
+df$EMPSTAT <- na_if(df$EMPSTAT, 0)
+df$EMPSTAT <- na_if(df$EMPSTAT, 9)
+
+# First, calculate average income of employed individuals by race,  
+# using data from 2019
+df_employed_2019 <- filter(df, YEAR==2019 & EMPSTAT==1)
+inc_by_race <- df_employed_2019 %>%
   group_by(RACHSING) %>%
   summarize(
     AVG_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE)
   )
-
+  
 # Second, use RACHSING_LABELS.csv to merge on the human-readable
 # labels for RACHSING
 labels_data <- read.csv("RACHSING_LABELS.csv")
@@ -143,8 +175,6 @@ ggplot(data=inc_by_race) +
   ylab("Average Income") + 
   ggtitle("Average Income by Race, California 2019") +
   coord_flip()
-
-#-------------------------------------------------------------------
 ```
 
 ---

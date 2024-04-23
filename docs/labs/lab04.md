@@ -113,9 +113,13 @@ If you missed something during lecture, or if you need a refresher, you may find
 ## Assignment
 
 - Create a new script that uses `IPUMS_ACS_CA_2014_2019.csv`, which you already created, to calculate the following summary statistics:
-	- The average income of employed individuals aged 25+, by county and year
-	- The employment rate of individuals aged 25+, by year, race, sex, and college education (4+ years of college).
-	- The average income of employed individuals aged 25+, by year, race, sex, and college education (4+ years of college).
+	- The total population by county and year. Call this dataframe `county_pop`.
+	- The employment rate by county and year. Call this dataframe `county_emp`.
+	- The percent of people aged 25+ with 4+ years college education, by county and year. Call this dataframe `county_educ`.
+	- The average income of employed individuals, by county and year. Call this dataframe `county_inc`.
+	- Merge the four above dataframes together to get a single county-by-year level dataframe. Call this new dataframe `county_df`.
+	
+	    *Hint: You can only use `inner_join` on two dataframes at a time, so you'll have to first merge `county_pop` with `county_emp`, then merge the resulting dataframe with `county_educ`, and that result with `county_inc`.*
 
 - Upload the script to the Lab 04 Assignment.
 
