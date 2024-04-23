@@ -46,9 +46,14 @@ The first script does the following:
 
 The second script does the following:
 - Loads `IPUMS_ACS_CA_2014_2019.csv`, which you created in the first script.
+- Calculates the total population, by county and year.
 - Calculates the percent of people aged 25+ with 4+ years of college education, by county and year.
+- Create a single county-by-year dataframe that contains information about the total population and the percent of people aged 25+ with 4+ years of college education in each county/year.
 
-**Script 1:**
+---
+
+### Script 1: Create and save a combined dataset
+
 ```r
 rm(list=ls())   # Clear the workspace
 library(dplyr)  # Load the packages
@@ -74,8 +79,11 @@ str(df)
 write.csv(df, "IPUMS_ACS_CA_2014_2019.csv", row.names=FALSE)
 ```
 
-**Script 2:**
-```
+---
+
+### Script 2: 
+
+```r
 rm(list=ls())  # Clear the workspace
 library(dplyr) # Load the required packages
 
@@ -87,16 +95,25 @@ df <- read.csv("IPUMS_ACS_CA_2014_2019.csv")
 # See: https://usa.ipums.org/usa-action/variables/EDUC#codes_section
 df$COLLEGE <- df$EDUC>=10
 
-# Create a filtered dataframe containing only people aged 25+
-df_adult <- filter(df, AGE>=25)
+# Calculate total population by county/year
+pop_by_county_year <- df %>%
+  group_by(COUNTYFIP, YEAR) %>% 
+  summarize(
+    POPULATION = sum(PERWT)
+  )
 
 # Calculate percent of people aged 25+ with 4+ years of college
 # education, by county and year
+df_adult <- filter(df, AGE>=25)
 coll_by_county_year <- df_adult %>% 
   group_by(COUNTYFIP, YEAR) %>% 
   summarize(
     PCT_COLLEGE = weighted.mean(COLLEGE, PERWT, na.rm=TRUE)
   )
+
+# Create a single county/year dataframe with population 
+# and pct of adults with 4+ years college education
+county_df <- inner_join(pop_by_county_year, coll_by_county_year, by=c("COUNTYFIP","YEAR"))  
 ```
 
 If you missed something during lecture, or if you need a refresher, you may find the following docs helpful:

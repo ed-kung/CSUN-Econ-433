@@ -105,11 +105,11 @@ This course meets twice a week, in-person. The general cadence is that our sessi
 |    4 | 9/16 - 9/20   | Externalities                      | Lab 4: Combining Datasets                |
 |    5 | 9/23 - 9/27   | Economics of Education             | Lab 5: Data Visualization                |  
 |    6 | 9/30 - 10/4   | Economics of Healthcare            | **Midterm 1**                            |
-|    7 | 10/7 - 10/11  | Linear Regressions I               | Lab 6: Linear Regressions I              |
-|    8 | 10/14 - 10/18 | Linear Regressions II              | Lab 7: Linear Regressions II             |
-|    9 | 10/21 - 10/25 | Research Design                    | Lab 8: Linear Regressions III            |
-|   10 | 10/28 - 11/1  | Difference-in-Differences          | Lab 9: Difference-in-Differences         |
-|   11 | 11/4 - 11/8   | Regression Discontinuity           | **Midterm 2**                            |
+|    7 | 10/7 - 10/11  | Linear Regressions                 | Lab 6: Linear Regressions I              |
+|    8 | 10/14 - 10/18 | Research Design                    | Lab 7: Linear Regressions II             |
+|    9 | 10/21 - 10/25 | Difference-in-Differences          | Lab 8: Difference-in-Differences         |
+|   10 | 10/28 - 11/1  | Regression Discontinuity           | Lab 9: Regression Discontinuity          |
+|   11 | 11/4 - 11/8   | Economics of Home-Sharing          | **Midterm 2**                            |
 |   12 | 11/11 - 11/15 | Group Project Demo                 | Theory of Public Choice                  |
 |   13 | 11/18 - 11/22 | Group Project Meeting #1           | *(Online)* Lecture - Topic TBD           |
 |   14 | 11/25 - 11/29 | Group Project Meeting #2           | **NO CLASS - THANKSGIVING**              |
