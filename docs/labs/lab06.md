@@ -37,7 +37,7 @@ Follow along as I show the class how to conduct today's lab. If you followed alo
 
 This script uses regressions to estimate the gender wage gap, using data from California in 2019. In the script, we show how the addition of more and more variables to the regression changes the estimated gender wage gap.
 
-```
+```r
 rm(list=ls())   # Clear workspace
 library(dplyr)  # Load required libraries
 library(ggplot2)
@@ -118,6 +118,12 @@ stargazer(r1, r2, r3, r4, r5, type="text")
 ---
 
 ## Assignment
+
+- Create a new script that does the same 5 regressions as above, except that it uses data from California, 2014.
+
+- Upload the script to the Lab 06 Assignment.
+
+- Take the Lab 06 Quiz.
 
 ---
 
