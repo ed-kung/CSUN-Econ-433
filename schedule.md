@@ -16,7 +16,7 @@ nav_order: 2
   - Reading Assignment: New York Times - Economists Dissect the Yuck Factor
   - Packback Discussion
   - Opinion Survey
-  - Lab 1 Quiz
+  - Week 1 Problem Set
   
 ## Week 2
 - Tues 9/3, Thurs 9/5

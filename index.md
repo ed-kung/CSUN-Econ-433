@@ -54,11 +54,11 @@ This course meets twice a week, in-person. The general cadence is that our sessi
     - Fifth missed class: 6 pts deducted
     - And so on... the number of points deducted increases by 2 for each additional absence.
     
-    It is possible to have negative points for attendance, which will impact your final grade beyond the 10% allotted to attendance.
+    It is possible to have negative points for attendance, which can impact your final grade beyond the 10% allotted to attendance.
     
     In order to be excused from class, you must receive permission beforehand. You will need to provide documentation as to the reason you need to miss class. See the [late and missing assignment policy](/#late-and-missing-assignment-policy) for what excuses will be considered valid.
     
-- **Homework Assignments (25%)** 
+- **Homework Assignments (30%)** 
 
     Weekly homework assignments will consist of one or more of the following items:
 	
@@ -66,7 +66,7 @@ This course meets twice a week, in-person. The general cadence is that our sessi
 	- A discussion assignment related to the assigned reading. The discussion will be held on Packback, an online discussion platform.
 	- A problem set, to be submitted on paper.
 
-- **Lab Scripts (25%)**
+- **Lab Assignments (20%)**
 
     In-class lab sessions where you get hands-on experience working with data analysis relevant to public economics. Each lab session will require you to submit a script on Canvas.
     
