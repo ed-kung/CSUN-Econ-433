@@ -45,28 +45,36 @@ This course meets twice a week, in-person. The general cadence is that our sessi
 
 - **Attendance (10%)**
 
-    Attendance in this class will be checked. You can miss up to two sessions for any reason and without providing an excuse. Further absences will require a [documented reason](/#late-and-missing-assignment-policy).
-
+    Attendance in this class will be checked. Everyone starts with full credit (10 pts). For each missed session, points will be deduced according to the following schedule:
+    
+    - First missed class: 0 pts deducted
+    - Second missed class: 0 pts deducted
+    - Third missed class: 2 pts deducted
+    - Fourth missed class: 4 pts deducted
+    - Fifth missed class: 6 pts deducted
+    - And so on... the number of points deducted increases by 2 for each additional absence.
+    
+    It is possible to have negative points for attendance, which will impact your final grade beyond the 10% allotted to attendance.
+    
+    In order to be excused from class, you must receive permission beforehand. You will need to provide documentation as to the reason you need to miss class. See the [late and missing assignment policy](/#late-and-missing-assignment-policy) for what excuses will be considered valid.
+    
 - **Homework Assignments (25%)** 
 
-    Weekly homework assignments will consist of the following items:
+    Weekly homework assignments will consist of one or more of the following items:
 	
 	- A reading assignment (textbook chapter or article).
 	- A discussion assignment related to the assigned reading. The discussion will be held on Packback, an online discussion platform.
-	- A Canvas quiz. You'll usually have two attempts on each quiz.
+	- A problem set, to be submitted on paper.
 
-- **Weekly Labs (25%)**
+- **Lab Scripts (25%)**
 
-    In-class lab sessions where you get hands-on experience working with data analysis relevant to public economics. Each lab session consists of two graded components:
+    In-class lab sessions where you get hands-on experience working with data analysis relevant to public economics. Each lab session will require you to submit a script on Canvas.
     
-    - A lab assignment where you are asked to accomplish some data analysis task. You can try to finish these in class during the lab session, or you can turn them in the following week.
-    - An associated lab quiz.
-    
-- **Midterm Exams (15%)**
+- **Midterm Exams (20%)**
 
 	There will be two midterm exams that test your understanding of the course material. These will be in-person, on-paper exams that test both theoretical understanding and empirical skills.
 	
-- **Group Project (25%)**
+- **Group Project (20%)**
 
     There will be a group data project. More details to follow.
 
@@ -81,7 +89,7 @@ This course meets twice a week, in-person. The general cadence is that our sessi
 
 - **Grading Rubric**
 
-	Most free-response assignments will be graded out of 5 on the following scale:
+	Most free-response assignments, including coding assignments, will be graded out of 5 on the following scale:
 	
 	| Score   | Rubric                                                                                                                             |
 	| ------- | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -107,16 +115,16 @@ This course meets twice a week, in-person. The general cadence is that our sessi
 |    6 | 9/30 - 10/4   | Economics of Healthcare            | **Midterm 1**                            |
 |    7 | 10/7 - 10/11  | Linear Regressions I               | Lab 6: Linear Regressions I              |
 |    8 | 10/14 - 10/18 | Linear Regressions II              | Lab 7: Linear Regressions II             |
-|    9 | 10/21 - 10/25 | Research Designs                   | Lab 8: Linear Regressions III            |
+|    9 | 10/21 - 10/25 | Research Design                    | Lab 8: Linear Regressions III            |
 |   10 | 10/28 - 11/1  | Difference-in-Differences          | Lab 9: Difference-in-Differences         |
 |   11 | 11/4 - 11/8   | Regression Discontinuity           | **Midterm 2**                            |
-|   12 | 11/11 - 11/15 | Group Project Demo                 | Theory of Public Choice                  |
-|   13 | 11/18 - 11/22 | Group Project Meeting #1           | *(Online)* Lecture - Topic TBD           |
-|   14 | 11/25 - 11/29 | Group Project Meeting #2           | **NO CLASS - THANKSGIVING**              |
-|   15 | 12/2 - 12/6   | Group Project Meeting #3           | Lecture - Topic TBD                      |
-|   16 | 12/9 - 12/13  | Group Project Meeting #4           | **NO CLASS - SEMESTER ENDS**             |
+|   12 | 11/11 - 11/15 | Group Project Demo                 | Group Project Meeting #1                 |
+|   13 | 11/18 - 11/22 | Economics of Home-Sharing          | *(Online)* Group Project Meeting #2      |
+|   14 | 11/25 - 11/29 | Group Project Meeting #3           | **NO CLASS - THANKSGIVING**              |
+|   15 | 12/2 - 12/6   | Theory of Public Choice            | Group Project Meeting #4                 |
+|   16 | 12/9 - 12/13  | Group Project Meeting #5           | **NO CLASS - SEMESTER ENDS**             |
 
-Final exam information TBD.
+In lieu of a final exam, we will be having group project presentations.  Date TBD.
 
 ---
 
@@ -193,7 +201,7 @@ My preferred form of communication is in-person after class or at office hours, 
 
 ### Late and Missing Assignment Policy
 
-Requests for late submissions or extensions, beyond what is allowed in the syllabus, must be submitted by email with accompanying documentation. Only unanticipated family or medical emergencies, or other extraordinary events, will be considered valid reasons. Events that could reasonably have been anticipated, such as heavy academic workload or busy work schedule, will not be accepted as valid reasons.
+Requests for absences, late submissions, or extensions, beyond what is allowed in the syllabus, must be submitted by email with accompanying documentation. Only unanticipated family or medical emergencies, or other extraordinary events, will be considered valid reasons. Events that could reasonably have been anticipated, such as heavy academic workload or busy work schedule, will not be accepted as valid reasons.
 
 ### Academic Integrity
 
