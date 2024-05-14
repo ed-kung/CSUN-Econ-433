@@ -166,9 +166,7 @@ If you missed something during lecture, or if you need a refresher, you may find
 	
 	*Hint*: `COUNTYFIP` is the variable that contains the county codes.
 
-- Upload the script to the Lab 03 Assignment.
-
-- Take the Lab 03 Quiz.
+- Upload the script to the Lab 03 Script assignment.
 
 ---
 

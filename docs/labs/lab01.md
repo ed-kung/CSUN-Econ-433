@@ -104,21 +104,16 @@ It will take a few minutes for the extract to be ready. Once it's ready, you sho
 
 - Open the file in Excel. How many rows are there? How many columns?
 
-## Assignment
+## Extra Credit
 
-- Los Angeles county is represented in the data by the `COUNTYFIP` code 37. Try using Excel to calculate the average wage and salary income (`INCWAGE`) for employed people (`EMPSTAT==1`) between the ages of 25 and 65 in Los Angeles county in 2019.
+Los Angeles county is represented in the data by the `COUNTYFIP` code 37. Try caculating the average wage and salary income (`INCWAGE`) for employed people (`EMPSTAT==1`) between the ages of 25 and 65 in Los Angeles county in 2019. You'll have to ignore people with invalid codes for `INCWAGE` (see the codebook to learn what these invalid codes are.)
 
-- Take the lab quiz.
+You may use Excel or R or any other program to make this calculation. Submit the answer on your Week 1 Problem Set.
 
 ## Takeaways
 
 - You know what the Decennial Census and the ACS are. You know what IPUMS is.
 - You know how to create custom ACS microdata extracts using IPUMS.
-
-
-
-
-
 
 
 

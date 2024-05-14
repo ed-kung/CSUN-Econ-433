@@ -124,7 +124,7 @@ stargazer(r1, r2, r3, r4, r5, type="text")
   - Include a new variable, `AGESQ`, which is equal to the square of `AGE`, in regressions `r2` thru `r5`.
   - Include dummy variables for `COUNTYFIP` in `r4` and `r5`.
 
-- Upload the script to the Lab 06 Assignment.
+- Upload the script to the Lab 06 Script assignment.
 
 ---
 

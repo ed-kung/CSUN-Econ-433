@@ -186,9 +186,7 @@ ggplot(data=inc_by_race) +
 	- Create a horizontal bar chart showing the above data. Make sure you use `DEGFIELD_LABELS.csv` to make the degree fields human-readable in the chart.
 	- Give the chart the following title: "Percent Female by Degree Field, California 2019"
 
-- Upload the script to the Lab 05 Assignment.
-
-- Take the Lab 05 Quiz.
+- Upload the script to the Lab 05 Script assignment.
 
 ---
 
