@@ -38,7 +38,7 @@ The following variables are available in this data:
 - `OCC`: Occupation of the household head
 - `IND`: Industry of the household head
 
-To understand the coding of each variable, make sure to look up the IPUMS codebook.
+Don't be lazy: make sure you look up the IPUMS codebook for any variables you don't know the coding for.
 
 ---
 
@@ -78,7 +78,7 @@ Create a new script that accomplishes the following tasks:
     - Regression 3: In addition to all the variables in regression 2, include `COUNTYFIP`, `IND`, and `OCC` as dummy variables.
     - Don't forget to use `HHWT` as the survey weights in the regression.
     
-Upload the script to the Lab 07 Assignment, then take the Lab 07 Quiz.
+Upload the script to the Lab 07 Assignment.
 
 ---
 
