@@ -44,7 +44,7 @@ nav_order: 2
 - Homework (due Mon 9/23)
   - Reading Assignment: Wall Street Journal - How to Cut Emissions Without Wrecking the Economy
   - Packback Discussion
-  - Lab 4 Script & Quiz
+  - Lab 4 Script 
   - Week 4 Problem Set
 
 ## Week 5
