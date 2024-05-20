@@ -9,7 +9,8 @@
 title: "ECON 433: Public Economics"
 description: Course website for ECON 433 with Prof. Edward Kung at CSUN
 theme: just-the-docs
-url: https://ed-kung.github.io/CSUN-Econ-433
+url: https://ed-kung.github.io
+baseurl: /CSUN-Econ-433
 repository: ed-kung/CSUN-Econ-433
 
 permalink: pretty
@@ -87,15 +88,21 @@ color_scheme: nil
 
 callouts_level: quiet # or loud
 callouts:
-  note:
-    title: Note
+  blue-callout:
+    title: blue
     color: blue
-  warning:
-    title: Warning
+  red-callout:
+    title: red
     color: red
-  question:
-    title: Question
+  green-callout:
+    title: green
     color: green
+  yellow-callout:
+    title: yellow
+    color: yellow
+  purple-callout:
+    title: purple
+    color: purple
 
 # Enable mathjax
 math: mathjax
