@@ -1,0 +1,14 @@
+// custom SCSS (or CSS) goes here
+.site-header {
+    height: 140px;
+    max-height: revert;
+}
+
+.table-wrapper {
+  display: block;
+  max-width: 100%;
+  width: max-content;
+  border-collapse: collapse;
+  overflow: auto;
+}
+
