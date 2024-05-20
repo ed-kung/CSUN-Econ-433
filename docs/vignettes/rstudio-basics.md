@@ -30,7 +30,7 @@ nav_order: 2
 
 By default, your RStudio Cloud is organized into four panes:
 
-![rstudio panes](/assets/images/rstudio-panes.png)
+![rstudio panes](/CSUN-Econ-433/assets/images/rstudio-panes.png)
 
 
 - The upper left pane is the **script editor**. This is where you will write and execute your scripts.
@@ -56,7 +56,7 @@ If you are a beginner at R, I *strongly* suggest that you turn off auto-complete
 - Set `Show code completions` to "Never", as shown in the image below.
 - Click OK to accept these changes.
 
-![no autocomplete](/assets/images/rstudio-no-autocomplete.png) 
+![no autocomplete](/CSUN-Econ-433/assets/images/rstudio-no-autocomplete.png) 
 
 ---
 
@@ -79,5 +79,5 @@ To download a file from RStudio to your computer:
 
 See the image below for more guidance.
 
-![download files](/assets/images/rstudio-download.png)
+![download files](/CSUN-Econ-433/assets/images/rstudio-download.png)
 

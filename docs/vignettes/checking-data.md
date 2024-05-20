@@ -19,7 +19,7 @@ It's vitally important that you're constantly checking your data. Especially aft
 
 You can easily check the number of rows (observations) and columns (variables) for each dataframe in your environment by looking at the **Environment** pane.
 
-![checking rows and columns](/assets/images/checking-data-rows-columns.png)
+![checking rows and columns](/CSUN-Econ-433/assets/images/checking-data-rows-columns.png)
 
 ---
 

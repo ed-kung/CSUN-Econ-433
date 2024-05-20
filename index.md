@@ -7,7 +7,7 @@ nav_order: 1
 # ECON 433: Public Economics
 {: .no_toc }
 
-![course logo](assets/images/logo.jpg)
+![course logo](/CSUN-Econ-433/assets/images/logo.jpg)
 
 ## Fall 2024 Syllabus
 {: .no_toc }
@@ -162,7 +162,7 @@ By the end of the course, you will be able to:
 
 ### Required Textbook
 
-![textbook](/assets/images/textbook.jpg){:width="90"}
+![textbook](/CSUN-Econ-433/assets/images/textbook.jpg){:width="90"}
 
 The required textbook is *Public Finance* by Harvey Rosen and Ted Gayer (ISBN: 9780078021688). It is around $80 on Amazon for a new copy. While you do not have to purchase the textbook, you should ensure that you have access to a copy because required readings will be assigned from the textbook.
 
@@ -181,7 +181,7 @@ The required textbook is *Public Finance* by Harvey Rosen and Ted Gayer (ISBN: 9
 
 ### RStudio Cloud
 
-<img src="assets/images/Rstudio.png" width="100">
+<img src="/CSUN-Econ-433/assets/images/Rstudio.png" width="100">
 
 RStudio is a development environment for R. We will be using a cloud-based version of it: https://posit.cloud.
 
