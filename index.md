@@ -45,26 +45,15 @@ This course meets twice a week, in-person. The general cadence is that our sessi
 
 - **Attendance (10%)**
 
-    Attendance in this class will be checked. Everyone starts with full credit (10 pts). For each missed session, points will be deduced according to the following schedule:
+    Attendance in this class will be checked. Everyone starts with full credit (10 pts). For each missed session, an increasing number of points will be deducted. 0 pts are deducted for the first missed class. Afterwards, 1 pt is deducted for the second missed class, 2 pts for the third, and so on. You can earn negative attendance points which will affect the rest of your grade.
     
-    - First missed class: 0 pts deducted
-    - Second missed class: 0 pts deducted
-    - Third missed class: 2 pts deducted
-    - Fourth missed class: 4 pts deducted
-    - Fifth missed class: 6 pts deducted
-    - And so on... the number of points deducted increases by 2 for each additional absence.
-    
-    It is possible to have negative points for attendance, which can impact your final grade beyond the 10% allotted to attendance.
-    
-    In order to be excused from class, you must receive permission beforehand. You will need to provide documentation as to the reason you need to miss class. See the [late and missing assignment policy](/#late-and-missing-assignment-policy) for what excuses will be considered valid.
-    
-- **Homework Assignments (30%)** 
+- **Homework Assignments (20%)** 
 
     Weekly homework assignments will consist of one or more of the following items:
 	
 	- A reading assignment (textbook chapter or article).
 	- A discussion assignment related to the assigned reading. The discussion will be held on Packback, an online discussion platform.
-	- A problem set, to be submitted on paper.
+	- A problem set, to be submitted on paper. Students can elect to work in groups of up to 3 on problem sets. If you work in a group, your group only has to make one submission for the whole group. For each problem set, only a randomly selected set of questions will be graded.
 
 - **Lab Assignments (20%)**
 
@@ -74,7 +63,7 @@ This course meets twice a week, in-person. The general cadence is that our sessi
 
 	There will be two midterm exams that test your understanding of the course material. These will be in-person, on-paper exams that test both theoretical understanding and empirical skills.
 	
-- **Group Project (20%)**
+- **Group Project (30%)**
 
     There will be a group data project. More details to follow.
 
@@ -89,15 +78,13 @@ This course meets twice a week, in-person. The general cadence is that our sessi
 
 - **Grading Rubric**
 
-	Most free-response assignments, including coding assignments, will be graded out of 5 on the following scale:
-	
 	| Score   | Rubric                                                                                                                             |
 	| ------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 	|       5 | You followed all instructions. Your work is accurate and demonstrates a mastery of the material.                                   | 
-	|       4 | You failed to follow all instructions or your work has minor inaccuracies but still demonstrates an understanding of the material. |
-	|       3 | Your work has major inaccuracies or your work demonstrates only a partial understanding of the material.                           |
-    |       2 | You made an attempt, but your work has major inaccuracies and does not demonstrate an understanding of the material.               |
-    |       1 | You made only a partial attempt at completing the assignment.                                                                      |
+	|       4 | You failed to follow all instructions OR your work has minor inaccuracies but still demonstrates an understanding of the material. |
+	|       3 | Your work has major inaccuracies OR your work demonstrates only a partial understanding of the material.                           |
+    |       2 | You made an attempt, but your work has major inaccuracies or does not demonstrate an understanding of the material (this includes correct answers without shown work).               |
+    |       1 | You made only a partial attempt at completing the assignment; or you made an attempt but I had trouble reading or understanding it. |
     |       0 | You did not make any attempt at the assignment. Note that if you do not attempt some parts of an assignment, you may receive a zero for the whole assignment. |	
 
 
@@ -124,7 +111,11 @@ This course meets twice a week, in-person. The general cadence is that our sessi
 |   15 | 12/2 - 12/6   | Theory of Public Choice            | Group Project Meeting #4                 |
 |   16 | 12/9 - 12/13  | Group Project Meeting #5           | **NO CLASS - SEMESTER ENDS**             |
 
-In lieu of a final exam, we will be having group project presentations.  Date TBD.
+Final Exam:
+
+- Section 01 (TuTh 11:30am): Tuesday 12/17 10:15am - 12:15pm
+
+In lieu of a final exam, we will be having group project presentations.
 
 ---
 
@@ -160,13 +151,13 @@ By the end of the course, you will be able to:
 
 ## Course Materials
 
-### Required Textbook
+**Required Textbook**
 
 ![textbook](/CSUN-Econ-433/assets/images/textbook.jpg){:width="90"}
 
 The required textbook is *Public Finance* by Harvey Rosen and Ted Gayer (ISBN: 9780078021688). It is around $80 on Amazon for a new copy. While you do not have to purchase the textbook, you should ensure that you have access to a copy because required readings will be assigned from the textbook.
 
-**Important information about myCSUN Digital Access**
+*Important information about myCSUN Digital Access*
 
 - This course is part of the *myCSUN Digital Access* (MCDA) program. This program provides digital materials to students at deeply discounted prices. MCDA will *automatically* provide this book to all students of this course for around $45.
 
@@ -179,7 +170,7 @@ The required textbook is *Public Finance* by Harvey Rosen and Ted Gayer (ISBN: 9
         
     For more information, see the [MCDA FAQ page](https://www.bkstr.com/csunorthridgestore/help-faq/textbook-faqs1).
 
-### RStudio Cloud
+**RStudio Cloud**
 
 <img src="/CSUN-Econ-433/assets/images/Rstudio.png" width="100">
 
@@ -187,55 +178,58 @@ RStudio is a development environment for R. We will be using a cloud-based versi
 
 You'll need to sign up for a free account to use it.
 
-### Assigned Readings
+**Assigned Readings**
 
 Occasionally, I will assign readings from newspaper or academic journal articles. These will be posted to Canvas. You are responsible for reading these and you may be quizzed on them.
+
+**Green Books (Required)**
+
+<img src="assets/images/greenbook.webp" width="100">
+
+You will need these for exams.
+
 
 ---
 
 ## Additional Course Policies and Resources
 
-### Communications Policy
+**Communications Policy**
 
 My preferred form of communication is in-person after class or at office hours, or by email. If you email me and I do not respond within 24 hours, do not hesitate to re-send the email. Sometimes emails get lost in the shuffle.
 
-### Late and Missing Assignment Policy
+**Late and Missing Assignment Policy**
 
-Requests for absences, late submissions, or extensions, beyond what is allowed in the syllabus, must be submitted by email with accompanying documentation. Only unanticipated family or medical emergencies, or other extraordinary events, will be considered valid reasons. Events that could reasonably have been anticipated, such as heavy academic workload or busy work schedule, will not be accepted as valid reasons.
+Requests for absences, extensions, or late submissions must be submitted by email with accompanying documentation. Only unanticipated family and medical emergencies, or other extraordinary events, will be considered valid reasons. Events that could have reasonably been anticipated, such as heavy academic workload, busy work schedule, or friends' birthday parties, will not be accepted as valid reasons.
 
-### Academic Integrity
+**Academic Integrity**
 
-By taking this course, you certify that all work is your own. Plagiarism is not allowed, and you are not allowed to have someone else do any course work in your place. If it is discovered that you have violated academic integrity on any assignment, you will receive a grade of zero for that assignment. Repeated violations of academic integrity may result in a failing grade for the entire course.
+By taking this course, you certify that all work is your own. Plagiarism is not allowed, and you are not allowed to have someone else do any course work in your place unless explicitly allowed by the syllabus. If it is discovered that you have violated academic integrity on any assignment, you will receive a grade of zero for that assignment. Repeated violations of academic integrity may result in a failing grade for the entire course.
 
-Special consideration may be given to students with caregiving responsibilities at home (children, disabled family members, etc.). Please get in touch with me if you need an extension and have caregiving responsibilities.
-
-### Minimum Attempt Policy
+**Minimum Attempt Policy**
 
 You must at least attempt to answer every question on an assignment. If you skip a question without attempting an answer, you may receive a grade of zero for the entire assignment.
 
-Why do I have a minimum attempt policy? Because demonstrating effort is important, especially in the workplace. Not even attempting a task is worse than attempting it and getting it wrong. I want to encourage all students to at least make an attempt at all tasks. As Kobe Bryant said, "You miss 100% of the shots you don't take."
+Why do I have a minimum attempt policy? Because demonstrating effort is important, especially in the workplace. Not even attempting a task is worse than attempting it and getting it wrong. I want to encourage all students to at least make an attempt at all tasks. As Wayne Gretzky said, "You miss 100% of the shots you don't take."
 
-### Students with Disabilities
+**Special Needs**
 
 If you have a disability or need special accommodations, please register with the Disability Resources and Educational Services ([DRES](https://www.csun.edu/dres)) office or the National Center of Deafness ([NCOD](https://www.csun.edu/ncod)). If you would like to discuss your need for accommodations with me, please contact me to set up an appointment.
 
-### Emergency Food and Shelter
+Special consideration may be given to students with caregiving responsibilities at home (children, disabled family members, etc.). Please get in touch with me if you need an extension and have caregiving responsibilities.
+
+**Emergency Food and Shelter**
 
 If you are experiencing an emergency need for food or shelter, do not hesitate to utilize the resources available to you on campus. More information: https://www.csun.edu/heart.
 
-### University Counseling Services
+**University Counseling Services**
 
 If you have need for counseling regarding any personal or academic issues, do not hesitate to reach out to the University's counseling services. More information: https://www.csun.edu/counseling/students.
 
-### Tutoring Services
-
-Tutoring services may be available for this course. Please contact the Economics Department for information: https://www.csun.edu/economics.
-
-### Diversity Statement
+**Diversity Statement**
 
 It is my intent that students from diverse backgrounds and perspectives will be well served by this course, that students' learning needs will be addressed both in and out of the classroom, and that the diversity students bring to the class will be viewed as a resource, strength, and benefit. It is my intent to present materials and activities in a way that is respectful to students from all backgrounds, and that students from all backgrounds have an equal opportunity to succeed in the course. If you have any concerns, feel free to reach out to me.
 
-### All Other Policies
+**All Other Policies**
 
 In general, the course follows all relevant CSUN policies and procedures as documented here: https://catalog.csun.edu/policies/alphabetical. Please pay special attention to the rules on **attendance** and **academic dishonesty**.
 
