@@ -53,7 +53,7 @@ This course meets twice a week, in-person. The general cadence is that our sessi
 	
 	- A reading assignment (textbook chapter or article).
 	- A discussion assignment related to the assigned reading. The discussion will be held on Packback, an online discussion platform.
-	- A problem set, to be submitted on paper. Students can elect to work in groups of up to 3 on problem sets. If you work in a group, your group only has to make one submission for the whole group. For each problem set, only a randomly selected set of questions will be graded.
+	- A problem set, to be submitted in a greenbook or stapled sheets of paper. Students can elect to work in groups of up to 3 on problem sets. If you work in a group, your group only has to make one submission for the whole group. For each problem set, only a randomly selected set of questions will be graded. 
 
 - **Lab Assignments (20%)**
 
