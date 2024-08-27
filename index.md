@@ -31,7 +31,7 @@ nav_order: 1
 
 ### Lectures
 
-- Section 01: TuTh 11:30am - 12:45pm @ Bookstein 2212
+- Section 01: TuTh 11:30am - 12:45pm @ Bookstein 2228
 
 ### Office Hours
 
