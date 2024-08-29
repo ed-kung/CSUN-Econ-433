@@ -45,13 +45,17 @@ Before creating a data extract, let's take a look around IPUMS first.
 
 - Go back to the variable selection screen. In the `PERSON` dropdown menu, click `TECHNICAL`, then click on `PERNUM` and read the description. `PERNUM` is a unique number for each person within a single household.  
 
-{: .note }
+{: .blue-callout-title }
+> Note
+> 
 > In each IPUMS sample, the combination of the two variables `SERIAL` and `PERNUM` uniquely identify each person in the survey. `SERIAL` uniquely identifies the household a person belongs to, and each person in the household receives a separate `PERNUM`.
 
 - Go back and read the description for `EDUC` in `PERSON` -> `EDUCATION`. `EDUC` shows the education level of an individual. While still in the information screen for `EDUC`, click `CODES` to look at the meaning of the codes for the variable `EDUC`.
 
-{: .question }
-> What code for `EDUC` indicates that the person has 5 or more years of college?
+{: .green-callout-title }
+> Question
+> 
+> How would we use `EDUC` to find people who have 4 or more years of college?
 
 ### Selecting Variables
 
@@ -101,7 +105,9 @@ It will take a few minutes for the extract to be ready. Once it's ready, you sho
 
 - The file type is `.gz`, which is a type of compression like `.zip`. You can extract with programs like 7-zip or WinRAR, or TheUnarchiver on Mac. The resulting `.csv` file should be about 35 MB in size.
 
-{: .warning }
+{: .red-callout-title }
+> Warning
+> 
 > Students often run into issues unzipping this file. If you're having trouble on your computer, you can also try an online extraction utility like [Ezyzip](https://www.ezyzip.com/unzip-tar-gz-file-online.html){:target="_blank"}. 
 
 - Open the file in Excel. How many rows are there? How many columns?
