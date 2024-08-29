@@ -1,248 +1,174 @@
-# CSUN Econ 433: Public Economics
+# just-the-docs-template
 
-![Logo](assets/images/logo.jpg)
+This is a *bare-minimum* template to create a [Jekyll] site that:
 
-# Spring 2024 Syllabus
+- uses the [Just the Docs] theme;
+- can be built and published on [GitHub Pages];
+- can be built and previewed locally, and published on other platforms.
 
-# Table of Contents
+More specifically, the created site:
 
-- [Quick Syllabus](#quick-syllabus)
-- [Tentative Schedule](#tentative-schedule)
-- [Course Description](#course-description)
-- [Course Materials](#course-materials)
-- [Exam Policies and Information](#exam-policies-and-information)
-- [Group Project Details](#group-project-details)
-- [Additional Course Policies and Resources](#additional-course-policies-and-resources)
+- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem;
+- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages.
 
+To get started with creating a site, simply:
 
-# Quick Syllabus
+1. click "[use this template]" to create a GitHub repository
+2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
 
-### Professor
+If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](#hosting-your-docs-from-an-existing-project-repo).
 
-<img src="assets/images/photo2.jpg" width="100">
+After completing the creation of your new site on GitHub, update it as needed:
 
-- Dr. Edward Kung
-- edward.kung@csun.edu
+## Replace the content of the template pages
 
-**About Me**: I love studying and teaching economics because it beautifully explains the world around us, from business and politics to dating and marriage. I also enjoy playing video games, and I'm learning to play guitar. I live in West LA with my wife and two kids.
+Update the following files to your own content:
 
-### Lectures
+- `index.md` (your new home page)
+- `README.md` (information for those who access your site repo on GitHub)
 
-- Th 7:00pm - 9:45pm @ Bookstein 2212
+## Changing the version of the theme and/or Jekyll
 
-### Office Hours
+Simply edit the relevant line(s) in the `Gemfile`.
 
-- Th 6:00pm - 7:00pm @ Bookstein 4252
+## Adding a plugin
 
-### Course Organization
+The Just the Docs theme automatically includes the [`jekyll-seo-tag`] plugin.
 
-This is an in-person class with one 2:45 hour session a week. The first half of each meeting will be a lecture or discussion about the previous week's reading assignment. The second half of each meeting will be an interactive lab session or a group project work meeting.
+To add an extra plugin, you need to add it in the `Gemfile` *and* in `_config.yml`. For example, to add [`jekyll-default-layout`]:
 
-Attendance is required.
+- Add the following to your site's `Gemfile`:
 
-### Grading
+  ```ruby
+  gem "jekyll-default-layout"
+  ```
 
-- **Homework Assignments (25%)**
-  - These will usually be reading assignments (textbook chapter or article) and an associated Canvas quiz. These quizzes are due on Wednesdays, with a penalty for late submissions. You'll usually have three attempts on each quiz.
-  
-- **Weekly Labs (25%)**
-  - In-class lab sessions where you get hands-on experience working with data analysis relevant to policy. Lab assignments will be introduced, completed, and graded *in-class*. If you can't finish in class, you have the opportunity to submit your code by the following Monday, with a late penalty. There may also be in-class quizzes associated with the labs.
-  
-- **In-Class Quizzes (10%)**
-  - Occassionally, I will give a short quiz in-class related to the lecture material.
-  
-- **Programming Exams (15%)**
-  - There will be two programming exams. These will be administered and completed in-class.
+- And add the following to your site's `_config.yml`:
 
-- **Group Project (25%)**
-  - There will be a group data project. See details [here](group-project.md).
-  
-|  A     |  A-   |  B+   |  B    |  B-   |  C+   |  C    |  C-   |  D    |  F   |
-| ------ | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ---- |
-| 100-93 | 92-90 | 89-87 | 86-83 | 82-80 | 79-77 | 76-73 | 72-70 | 69-60 | 59-0 |
+  ```yaml
+  plugins:
+    - jekyll-default-layout
+  ```
 
-### Attendance Policy
+Note: If you are using a Jekyll version less than 3.5.0, use the `gems` key instead of `plugins`.
 
-The class is held quite late at night. Everyone, including myself and your classmates, is making a sacrifice out of their day to be here. Out of respect for your classmates, you should make every effort to attend each class.
+## Publishing your site on GitHub Pages
 
-Classwork, including in-class quizzes and labs, will only be given credit if you are in attendance. 
+1.  If your created site is `YOUR-USERNAME/YOUR-SITE-NAME`, update `_config.yml` to:
 
-If you need to miss a class for any reason, let me know in advance. If the reason is sufficiently valid, I will let you complete the work from home without penalty.  I will try to flexible about letting you miss class as long as it doesn't become a repeated issue. 
+    ```yaml
+    title: YOUR TITLE
+    description: YOUR DESCRIPTION
+    theme: just-the-docs
 
+    url: https://YOUR-USERNAME.github.io/YOUR-SITE-NAME
 
+    aux_links: # remove if you don't want this link to appear on your pages
+      Template Repository: https://github.com/YOUR-USERNAME/YOUR-SITE-NAME
+    ```
 
-# Tentative Schedule
+2.  Push your updated `_config.yml` to your site on GitHub.
 
-| Week  | Date  | Lecture                                       | Lab                                         | 
-| ----- | ----- | --------------------------------------------- | ------------------------------------------- | 
-|     1 | 1/25  | Intro to Public Economics                     | Lab 01: Intro to Public Datasets with IPUMS | 
-|     2 | 2/1   | Review of Micro Principles                    | Lab 02: Introduction to R                   | 
-|     3 | 2/8   | Public Goods and Common Resources             | Lab 03: Basic Data Operations & Scripts     | 
-|     4 | 2/15  | Externalities                                 | Lab 04: Grouping and Summarizing Data       | 
-|     5 | 2/22  | Economics of Education                        | Lab 05: Data Visualization                  | 
-|     6 | 2/29  | Health Economics                              | Programming Midterm #1                      |
-|     7 | 3/7   | ~~Linear Regression Models~~ Midterm Review | ~~Lab 06: Regression Analysis I~~  Midterm Review |
-|     8 | 3/14  | ~~Research Design~~ Linear Regression Models | ~~Lab 07: Regression Analysis II~~ Lab 06: Regression Analysis I |
-|     9 | 3/21  | *Spring Break*                                | *Spring Break*                              |
-|    10 | 3/28  | ~~Difference-in-Differences~~ Research Design | ~~Lab 08: Difference-in-Differences~~ Lab 07: Regression Analysis II |
-|    11 | 4/4   | ~~Regression Discontinuity~~ Difference-in-Differences | ~~Lab 09: Regression Discontinuity~~ Lab 08: Difference-in-Differences |
-|    12 | 4/11  | ~~Economics of Home-Sharing~~ Regression Discontinuity | Programming Midterm #2                      |
-|    13 | 4/18  | Group Project Demo Report                     | Group Project Meeting #1                    |
-|    14 | 4/25  | ~~Theory of Public Choice~~ Economics of Home-Sharing | Group Project Meeting #2                    |
-|    15 | 5/2   | ~~Theory of Taxation~~ Social Choice Theory | Group Project Meeting #3                    |
-|    16 | 5/9   | ~~Cost Benefit Analysis~~ Group Project Meeting #4 | Group Project Meeting #4                    | 
+3.  In your newly created repo on GitHub:
+    - go to the `Settings` tab -> `Pages` -> `Build and deployment`, then select `Source`: `GitHub Actions`.
+    - if there were any failed Actions, go to the `Actions` tab and click on `Re-run jobs`.
 
-### Final Exam Schedule
+## Building and previewing your site locally
 
-In lieu of a final exam, you will be presenting your group projects, either as a powerpoint presentation or in a poster session, depending on the number of groups. The presentations will be held on:
+Assuming [Jekyll] and [Bundler] are installed on your computer:
 
-- Th 5/16/2024, 8:00PM - 10:00PM @ Bookstein 2212
+1.  Change your working directory to the root directory of your site.
 
-# Course Description
+2.  Run `bundle install`.
 
-### Prerequisites
+3.  Run `bundle exec jekyll serve` to build your site and preview it at `localhost:4000`.
 
-ECON 309 and ECON 310 with a C or better. UDWPE score of 8 or higher.
+    The built site is stored in the directory `_site`.
 
-### Course Overview
+## Publishing your built site on a different platform
 
-In the first book of Samuel in the Hebrew scriptures, the ancient Israelites demanded of the prophet Samuel, "Appoint a king to lead us, such as all the other nations have." But Samuel warned them, "He will take a tenth of your flocks, and you shall be his slaves. And in that day you will cry out because of your king, whom you have chosen for yourselves." But the people refused to listen to Samuel. "No," they said, "There shall be a king over us, that we may be like the other nations, and that our king may go out and fight our battles." (1 Sam 8:4-20) This ancient record reflects the tension that has existed between governments and their people since the beginning of human civilization. People demand a government to lead and protect them, yet we chafe under the taxes and other impositions that government places over our lives.
+Just upload all the files in the directory `_site`.
 
-In this class, you will study the economics of the public sector. The public sector is the sector of the economy where goods and services are provided by the government. You will learn why some goods and services are provided by the government instead of by private suppliers. You will then study the markets with the most public sector involvement in the U.S. and investigate specific policy issues therein. By the end of the course, you will be equipped to understand and analyze a wide range of policy issues.
+## Customization
 
-In today's world, policy decisions are increasingly driven by data and evidence. You will therefore also learn basic and intermediate techniques for data analysis in R, a commonly used software for statistical analysis.
+You're free to customize sites that you create with this template, however you like!
 
-### Course Learning Outcomes
+[Browse our documentation][Just the Docs] to learn more about how to use this theme.
 
-By the end of the course, you will be able to:
+## Hosting your docs from an existing project repo
 
-- **Explain** what markets the U.S. government is involved in, and how and why they are involved them.
+You might want to maintain your docs in an existing project repo. Instead of creating a new repo using the [just-the-docs template](https://github.com/just-the-docs/just-the-docs-template), you can copy the template files into your existing repo and configure the template's Github Actions workflow to build from a `docs` directory. You can clone the template to your local machine or download the `.zip` file to access the files.
 
-- **Construct** theoretical frameworks for analyzing the positive and normative implications of various public policy interventions.
+### Copy the template files
 
-- **Research** the relevant empirical evidence supporting or opposing different public policy positions.
+1.  Create a `.github/workflows` directory at your project root if your repo doesn't already have one. Copy the `pages.yml` file into this directory. GitHub Actions searches this directory for workflow files.
 
-- **Argue** convincingly for or against different public policy positions using evidence drawn from social scientific research.
+2.  Create a `docs` directory at your project root and copy all remaining template files into this directory.
 
-- **Understand** the issue of endogeneity in empirical work, and **explain** the strategies researchers use to address endogeneity.
+### Modify the GitHub Actions workflow
 
-- **Evaluate** the quality of empirical research.
+The GitHub Actions workflow that builds and deploys your site to Github Pages is defined by the `pages.yml` file. You'll need to edit this file to that so that your build and deploy steps look to your `docs` directory, rather than the project root.
 
-- **Conduct** basic data exploration and analysis operations in R.
+1.  Set the default `working-directory` param for the build job.
 
+    ```yaml
+    build:
+      runs-on: ubuntu-latest
+      defaults:
+        run:
+          working-directory: docs
+    ```
 
-# Course Materials
+2.  Set the `working-directory` param for the Setup Ruby step.
 
-### Required Textbook
+    ```yaml
+    - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+          cache-version: 0
+          working-directory: '${{ github.workspace }}/docs'
+    ```
 
-<img src="assets/images/textbook.jpg" width="90">
+3.  Set the path param for the Upload artifact step:
 
-The required textbook is *Public Finance* by Harvey Rosen and Ted Gayer (ISBN: 9780078021688). It is around $80 on Amazon for a new copy. While you do not have to purchase the textbook, you should ensure that you have access to a copy because required readings will be assigned from the textbook.
+    ```yaml
+    - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: "docs/_site/"
+    ```
 
-**Important information about myCSUN Digital Access**
+4.  Modify the trigger so that only changes within the `docs` directory start the workflow. Otherwise, every change to your project (even those that don't affect the docs) would trigger a new site build and deploy.
 
-- This course is part of the *myCSUN Digital Access* (MCDA) program. This program provides digital materials to students at deeply discounted prices. MCDA will *automatically* provide this book to all students of this course for around $45.
+    ```yaml
+    on:
+      push:
+        branches:
+          - "main"
+        paths:
+          - "docs/**"
+    ```
 
-- **You will be automatically charged by CSUN for this material unless you opt out by Friday 2/16.** Thus, if you do not want to pay $45 for Digital Access, or you want to obtain the book by another means, you must opt out by 2/16. To opt out:
-    
-    1. Go to https://accessportal.follet.com/1050
-    2. Click on *Create an Account* on the lower right
-    3. Create an account using your CSUN email address
-    4. Select the courses you wish to opt out from
-        
-    For more information, see the [MCDA FAQ page](https://www.bkstr.com/csunorthridgestore/help-faq/textbook-faqs1).
+## Licensing and Attribution
 
-### RStudio Cloud
+This repository is licensed under the [MIT License]. You are generally free to reuse or extend upon this code as you see fit; just include the original copy of the license (which is preserved when you "make a template"). While it's not necessary, we'd love to hear from you if you do use this template, and how we can improve it for future use!
 
-<img src="assets/images/Rstudio.png" width="100">
+The deployment GitHub Actions workflow is heavily based on GitHub's mixed-party [starter workflows]. A copy of their MIT License is available in [actions/starter-workflows].
 
-RStudio is a development environment for R. We will be using a cloud-based version of it: https://posit.cloud.
+----
 
-You'll need to sign up for a free account to use it.
+[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
 
-### Assigned Readings
-
-Occasionally, I will assign readings from newspaper or academic journal articles. These will be posted to Canvas. You are responsible for reading these and you may be quizzed on them.
-
-# Exam Policies and Information
-
-There will be two in-class programming midterms and a programming component on the final exam. In these assignments, you will be provided with data and asked to perform one or more data analysis tasks on it. You will submit your code for grading.
-
-Each task will be graded on execution, and the overall code will be graded on professionalism. Grading rubric:
-
-| Points | Execution (4 points for each task)               | Professionalism (3 points for whole assignment) |
-| ------ | ------------------------------------------------ | ----------------------------------------------- |
-| 0      | No attempt to perform task                       | No attempt at best practices                    |
-| 1      | Major errors, including code that does not run                  | Two or more best practices not followed         |
-| 2      | Code runs, but major logical error leading to task not being done correctly                  | One of the best practices not followed          |
-| 3      | Code runs, but minor logical error leading to task not being done correctly | All best practices are followed                 |
-| 4      | The task is done correctly      |                                                 |
-
-[Coding Best Practices](labs#coding-best-practices)
-
-# Group Project Details
-
-Click [here](group-project.md) for details on the group project.
-
-
-# Additional Course Policies and Resources
-
-### Communications Policy
-
-My preferred form of communication is in-person after class or at office hours, or by email. If you email me and I do not respond within 24 hours, do not hesitate to re-send the email. Sometimes emails get lost in the shuffle.
-
-### Late and Missing Assignment Policy
-
-Requests for late submissions or extensions, beyond what is allowed in the syllabus, must be submitted by email with accompanying documentation. Only unanticipated family or medical emergencies, or other extraordinary events, will be considered valid reasons. Events that could reasonably have been anticipated, such as heavy academic workload or busy work schedule, will not be accepted as valid reasons.
-
-### Academic Integrity
-
-By taking this course, you certify that all work is your own. Plagiarism is not allowed, and you are not allowed to have someone else do any course work in your place. If it is discovered that you have violated academic integrity on any assignment, you will receive a grade of zero for that assignment. Repeated violations of academic integrity may result in a failing grade for the entire course.
-
-Special consideration may be given to students with caregiving responsibilities at home (children, disabled family members, etc.). Please get in touch with me if you need an extension and have caregiving responsibilities.
-
-### Minimum Attempt Policy
-
-You must at least attempt to answer every question on an assignment. If you skip a question without attempting an answer, you may receive a grade of zero for the entire assignment.
-
-Why do I have a minimum attempt policy? Because demonstrating effort is important, especially in the workplace. Not even attempting a task is worse than attempting it and getting it wrong. I want to encourage all students to at least make an attempt at all tasks. As Kobe Bryant said, "You miss 100% of the shots you don't take."
-
-### Students with Disabilities
-
-If you have a disability or need special accommodations, please register with the Disability Resources and Educational Services ([DRES](https://www.csun.edu/dres)) office or the National Center of Deafness ([NCOD](https://www.csun.edu/ncod)). If you would like to discuss your need for accommodations with me, please contact me to set up an appointment.
-
-### Emergency Food and Shelter
-
-If you are experiencing an emergency need for food or shelter, do not hesitate to utilize the resources available to you on campus. More information: https://www.csun.edu/heart.
-
-### University Counseling Services
-
-If you have need for counseling regarding any personal or academic issues, do not hesitate to reach out to the University's counseling services. More information: https://www.csun.edu/counseling/students.
-
-### Tutoring Services
-
-Tutoring services may be available for this course. Please contact the Economics Department for information: https://www.csun.edu/economics.
-
-### Diversity Statement
-
-It is my intent that students from diverse backgrounds and perspectives will be well served by this course, that students' learning needs will be addressed both in and out of the classroom, and that the diversity students bring to the class will be viewed as a resource, strength, and benefit. It is my intent to present materials and activities in a way that is respectful to students from all backgrounds, and that students from all backgrounds have an equal opportunity to succeed in the course. If you have any concerns, feel free to reach out to me.
-
-### All Other Policies
-
-In general, the course follows all relevant CSUN policies and procedures as documented here: https://catalog.csun.edu/policies/alphabetical. Please pay special attention to the rules on **attendance** and **academic dishonesty**.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Jekyll]: https://jekyllrb.com
+[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
+[GitHub Pages]: https://docs.github.com/en/pages
+[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
+[Bundler]: https://bundler.io
+[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+[`jekyll-default-layout`]: https://github.com/benbalter/jekyll-default-layout
+[`jekyll-seo-tag`]: https://jekyll.github.io/jekyll-seo-tag
+[MIT License]: https://en.wikipedia.org/wiki/MIT_License
+[starter workflows]: https://github.com/actions/starter-workflows/blob/main/pages/jekyll.yml
+[actions/starter-workflows]: https://github.com/actions/starter-workflows/blob/main/LICENSE
