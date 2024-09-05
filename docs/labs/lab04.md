@@ -31,7 +31,7 @@ Before starting the lab, you should download these files from Canvas and upload 
 - `IPUMS_ACS2014_CA_2.csv`
 	- Contains additional education and occupational information for people in California in 2014
 
-You'll also need to have `dplyr` installed. If you did the previous lab successfully, `dplyr` should already be installed in your R Studio Cloud workspace. If it is not, follow the instructions [here](/docs/vignettes/installing-packages){:target="_blank""}
+You'll also need to have `dplyr` installed. If you did the previous lab successfully, `dplyr` should already be installed in your R Studio Cloud workspace. If it is not, follow the instructions [here](/CSUN-Econ-433/docs/vignettes/installing-packages){:target="_blank""}
 
 ## Instructions
 
@@ -119,11 +119,11 @@ county_df <- inner_join(pop_by_county_year, coll_by_county_year, by=c("COUNTYFIP
 If you missed something during lecture, or if you need a refresher, you may find the following docs helpful:
 
 - **Vignettes**:
-    - [Summary statistics](/docs/vignettes/summary-statistics){:target="_blank"}
+    - [Summary statistics](/CSUN-Econ-433/docs/vignettes/summary-statistics){:target="_blank"}
 - **Functions**: 
-	- [inner_join](/docs/functions/inner_join){:target="_blank"}
-	- [rbind](/docs/functions/rbind){:target="_blank"}
-	- [write.csv](/docs/functions/write-csv){:target="_blank"}
+	- [inner_join](/CSUN-Econ-433/docs/functions/inner_join){:target="_blank"}
+	- [rbind](/CSUN-Econ-433/docs/functions/rbind){:target="_blank"}
+	- [write.csv](/CSUN-Econ-433/docs/functions/write-csv){:target="_blank"}
 
 ---
 

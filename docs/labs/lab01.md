@@ -13,7 +13,7 @@ nav_order: 1
 
 In this lab you'll be introduced to a public dataset repository known as [IPUMS](https://usa.ipums.org/usa/){:target="_blank"} (Integrated Public Use Microdatasets). 
 
-From this repository, you can download [microdata](/docs/glossary/microdata){:target="_blank"} from the U.S. Decennial Census and the American Community Survey (ACS).
+From this repository, you can download [microdata](/CSUN-Econ-433/docs/glossary/microdata){:target="_blank"} from the U.S. Decennial Census and the American Community Survey (ACS).
 
 The Census and the ACS are two of the main surveys researchers use to track U.S. demographic data over time. The data is useful for both marketing and policy research.
 

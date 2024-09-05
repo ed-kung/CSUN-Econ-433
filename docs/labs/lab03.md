@@ -15,7 +15,7 @@ In the previous lab, you learned how to tabulate and summarize variables with `t
 
 Unfortunately, the statistics provided by `table` and `summary` in the previous lab were not accurate, because they ignored **population weights**.
 
-The American Community Survey is a [stratified sample](/docs/glossary/stratified-sample){:target="_blank"}, meaning that not all individuals are surveyed with equal probability.
+The American Community Survey is a [stratified sample](/CSUN-Econ-433/docs/glossary/stratified-sample){:target="_blank"}, meaning that not all individuals are surveyed with equal probability.
 
 In a stratified sample, each surveyed individual represents a different number of people in the population. For example, if 1 in 1,000 white people are surveyed, then each white person in the data represents 1,000 people in the population; but if 1 in 500 black people are surveyed, then each black person in the data represents 500 people in the population. The number of people that a survey unit represents is called the **population weight**.
 
@@ -31,7 +31,7 @@ Before starting the lab, you should make sure the following CSV file has been up
 
 - `IPUMS_ACS2019_CA_1.csv`
 
-You'll also need to [install some packages](/docs/vignettes/installing-packages){:target="_blank"}. A package is a collection of functions and tools that expands R's baseline functionality. Packages are written by authors and developers from around the world, and are made available for free on [CRAN](https://cran.r-project.org/){:target="_blank"} (the Comprehensive R Archive Network).
+You'll also need to [install some packages](/CSUN-Econ-433/docs/vignettes/installing-packages){:target="_blank"}. A package is a collection of functions and tools that expands R's baseline functionality. Packages are written by authors and developers from around the world, and are made available for free on [CRAN](https://cran.r-project.org/){:target="_blank"} (the Comprehensive R Archive Network).
 
 Today you'll need to install the package called `dplyr`. To do so, type the following into your console and hit `ENTER`:
 
@@ -142,11 +142,11 @@ inc_by_race_sex <- df_employed %>%
 If you missed something during lecture, or if you need a refresher, you may find the following docs helpful:
 
 - **Vignettes**
-	- [Summary statistics](/docs/vignettes/summary-statistics){:target="_blank"}
+	- [Summary statistics](/CSUN-Econ-433/docs/vignettes/summary-statistics){:target="_blank"}
 - **Functions**
-	- [na_if](/docs/functions/na_if){:target="_blank"}
-	- [weighted.mean](/docs/functions/weighted-mean){:target="_blank"}
-	- [filter](/docs/functions/filter){:target="_blank"}
+	- [na_if](/CSUN-Econ-433/docs/functions/na_if){:target="_blank"}
+	- [weighted.mean](/CSUN-Econ-433/docs/functions/weighted-mean){:target="_blank"}
+	- [filter](/CSUN-Econ-433/docs/functions/filter){:target="_blank"}
 - **Glossary**
 	- [Stratified sample](/docs/glossary/stratified-sample){:target="_blank"}
 

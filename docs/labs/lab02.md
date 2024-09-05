@@ -13,7 +13,7 @@ nav_order: 2
 
 In this lab you will be introduced to R, a programming language designed for statistical analysis.
 
-[Why learn R?](/docs/vignettes/whyR/){:target="_blank"}
+[Why learn R?](/CSUN-Econ-433/docs/vignettes/whyR/){:target="_blank"}
 
 In this lab, you will:
 - Sign up for an account on posit.cloud and learn how to use RStudio Cloud.
@@ -89,22 +89,22 @@ summary(df$LOG_INCWAGE)
 If you missed something during lecture, or if you need a refresher, you may find the following docs helpful:
 
 - **Vignettes**: 
-	- [RStudio basics](/docs/vignettes/rstudio-basics){:target="_blank"}
-	- [Editing scripts](/docs/vignettes/editing-scripts){:target="_blank"} 
-	- [Anatomy of an R command](/docs/vignettes/anatomy){:target="_blank"}
-	- [Check your data!](/docs/vignettes/checking-data){:target="_blank"}
-	- [Creating variables](/docs/vignettes/creating-variables){:target="_blank"}
+	- [RStudio basics](/CSUN-Econ-433/docs/vignettes/rstudio-basics){:target="_blank"}
+	- [Editing scripts](/CSUN-Econ-433/docs/vignettes/editing-scripts){:target="_blank"} 
+	- [Anatomy of an R command](/CSUN-Econ-433/docs/vignettes/anatomy){:target="_blank"}
+	- [Check your data!](/CSUN-Econ-433/docs/vignettes/checking-data){:target="_blank"}
+	- [Creating variables](/CSUN-Econ-433/docs/vignettes/creating-variables){:target="_blank"}
 - **Functions**: 
-	- [rm(list=ls())](/docs/functions/rm-list-ls){:target="_blank"}
-	- [read.csv](/docs/functions/read-csv){:target="_blank"}
-	- [str](/docs/functions/str){:target="_blank"}
-	- [table](/docs/functions/table){:target="_blank"}
-	- [summary](/docs/functions/summary){:target="_blank"}
+	- [rm(list=ls())](/CSUN-Econ-433/docs/functions/rm-list-ls){:target="_blank"}
+	- [read.csv](/CSUN-Econ-433/docs/functions/read-csv){:target="_blank"}
+	- [str](/CSUN-Econ-433/docs/functions/str){:target="_blank"}
+	- [table](/CSUN-Econ-433/docs/functions/table){:target="_blank"}
+	- [summary](/CSUN-Econ-433/docs/functions/summary){:target="_blank"}
 - **Glossary**: 
-	- [dataframe](/docs/glossary/dataframe){:target="_blank"}
-	- [variable](/docs/glossary/variable){:target="_blank"}
-	- [data type](/docs/glossary/data-type){:target="_blank"}
-	- [logical operator](/docs/glossary/logical-operator){:target="_blank"}
+	- [dataframe](/CSUN-Econ-433/docs/glossary/dataframe){:target="_blank"}
+	- [variable](/CSUN-Econ-433/docs/glossary/variable){:target="_blank"}
+	- [data type](/CSUN-Econ-433/docs/glossary/data-type){:target="_blank"}
+	- [logical operator](/CSUN-Econ-433/docs/glossary/logical-operator){:target="_blank"}
 
 ---
 

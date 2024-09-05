@@ -19,7 +19,7 @@ In this lab, you will continue practicing your data skills. You will create a ch
 
 Today, you will try to understand patterns in homeownership rate using IPUMS ACS data from California 2019.  The data is contained in the CSV file, `lab07_assignment_data.csv`.
 
-In this data, each row is a [household](/docs/glossary/household){:target="_blank"}. (Previously, you worked with data in which each row is a person. For today's lab, we'll work with household level data because homeownership rate is only measured at the household level.)
+In this data, each row is a [household](/CSUN-Econ-433/docs/glossary/household){:target="_blank"}. (Previously, you worked with data in which each row is a person. For today's lab, we'll work with household level data because homeownership rate is only measured at the household level.)
 
 The following variables are available in this data:
 - `YEAR`: The year the household was surveyed

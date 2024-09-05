@@ -17,7 +17,7 @@ In this lab, you will learn how to estimate linear models in R and to present an
 
 ## Preparation
 
-You should already have `IPUMS_ACS_CA_2014_2019.csv` in your R Studio Cloud files directory. If you don't have this file, check the instructions for [Lab 4](/docs/labs/lab04).
+You should already have `IPUMS_ACS_CA_2014_2019.csv` in your R Studio Cloud files directory. If you don't have this file, check the instructions for [Lab 4](/CSUN-Econ-433/docs/labs/lab04).
 
 You'll also need the packages:
 - `dplyr`
