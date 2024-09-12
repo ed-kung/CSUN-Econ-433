@@ -102,10 +102,10 @@ pop_by_county_year <- df %>%
     POPULATION = sum(PERWT)
   )
 
-# Calculate percent of people aged 25+ with 4+ years of college
-# education, by county and year
-df_adult <- filter(df, AGE>=25)
-coll_by_county_year <- df_adult %>% 
+# Out of the population aged 25+, calculate the percent
+# with 4+ years of college education, by county and year
+coll_by_county_year <- df %>%
+  filter(AGE>=25) %>%
   group_by(COUNTYFIP, YEAR) %>% 
   summarize(
     PCT_COLLEGE = weighted.mean(COLLEGE, PERWT, na.rm=TRUE)
