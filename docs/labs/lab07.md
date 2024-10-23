@@ -63,7 +63,8 @@ Create a new script that accomplishes the following tasks:
     - `COLLEGE`: A boolean variable indicating whether the household head has 4+ years of college education
     - `MARRIED`: A boolean variable indicating whether the household head is married
     - `MALE`: A boolean variable indicating whether the household head is male
-    - `AGESQ`: The square of the age of household head
+    - `AGESQ`: The square of the age of household head. 
+	    - *Note:* To calculate the square of a variable in R, you can't use the exponent sign `^`. Instead you need to do this: `df$XSQ <- df$X * df$X`.
 
 4. Create a line plot showing homeownership rate by age of household head.
     - Title the plot "Homeownership Rate by Age of Household Head: California 2019"
