@@ -77,6 +77,8 @@ Create a new script that accomplishes the following tasks:
 
 5. Use the experimental cohort to run a regression of `small` on `log(family_income)` and `as.factor(race)`. Call this regression `r0exp`. 
 
+    - *Note*: Since the data do not come from a stratified survey, you do not need to use any weights in the regression.
+
 6. Use the regular cohort to run a regression of `small` on `log(family_income)` and `as.factor(race)`. Call this regression `r0reg`. 
 
 7. Combine the results of `r0exp` and `r0reg` using `stargazer`. Comment on the results. What is this table trying to show?
