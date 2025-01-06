@@ -9,7 +9,7 @@ nav_order: 1
 
 ![course logo](/CSUN-Econ-433/assets/images/logo.jpg)
 
-## Fall 2024 Syllabus
+## Spring 2025 Syllabus
 {: .no_toc }
 
 ## Table of Contents
@@ -31,21 +31,25 @@ nav_order: 1
 
 ### Lectures
 
-- Section 01: TuTh 11:30am - 12:45pm @ Bookstein 2228
+- Section 01: Tu 7:00pm - 9:45pm @ Bookstein 1232
 
 ### Office Hours
 
-- Tu 12:45pm - 1:45pm @ Bookstein 4252 
+- Tu 2:30pm - 3:30pm @ Bookstein 4252 
 
 ### Course Organization
 
-This course meets twice a week, in-person. The general cadence is that our sessions will alternate between lecture and lab. Attendance is checked and required.
+This course meets once a week, in-person. The first half of each class session will usually be a lecture, while the second half will be a lab. Attendance is checked and required.
 
 ### Grading
 
 - **Attendance (10%)**
 
-    Attendance in this class will be checked. Everyone starts with full credit (10 pts). For each missed session, an increasing number of points will be deducted. 0 pts are deducted for the first missed class. Afterwards, 1 pt is deducted for the second missed class, 2 pts for the third, and so on. You can earn negative attendance points which will affect the rest of your grade.
+    Attendance in this class will be checked. Everyone starts with full credit (10 pts). You can miss one class for any reason, without penalty. Every subsequent absence will deduct 2 pts from your attendance score, to a minimum of zero.
+
+- **Professionalism (10%)**
+
+	I am generally very lenient and flexible with students who are showing effort. However, if you act unprofessionally, I will not hesitate to call you out on it. Examples of unprofessional behavior include: repeated tardiness, lazy effort on assignments, not paying attention in class, and leaving the class early without notifying me beforehand. Everyone starts with full credit for professionalism (10 pts), but points may be deducted for unprofessional behavior. 
     
 - **Homework Assignments (20%)** 
 
@@ -53,17 +57,17 @@ This course meets twice a week, in-person. The general cadence is that our sessi
 	
 	- A reading assignment (textbook chapter or article).
 	- A discussion assignment related to the assigned reading. The discussion will be held on Packback, an online discussion platform.
-	- A problem set, to be submitted in a greenbook or stapled sheets of paper. Students can elect to work in groups of up to 3 on problem sets. If you work in a group, your group only has to make one submission for the whole group. For each problem set, only a randomly selected set of questions will be graded. 
+	- An online Canvas quiz.  
 
 - **Lab Assignments (20%)**
 
-    In-class lab sessions where you get hands-on experience working with data analysis relevant to public economics. Each lab session will require you to submit a script on Canvas.
+    In-class lab sessions where you get hands-on experience working with data analysis relevant to public economics. Each lab session will require you to complete a short statistical programming assignment in-class. If you can't finish the assignment in-class, you can submit it online in Canvas as a script.
     
 - **Midterm Exams (20%)**
 
 	There will be two midterm exams that test your understanding of the course material. These will be in-person, on-paper exams that test both theoretical understanding and empirical skills.
 	
-- **Group Project (30%)**
+- **Group Project (20%)**
 
     There will be a group data project. More details to follow.
 
@@ -92,28 +96,29 @@ This course meets twice a week, in-person. The general cadence is that our sessi
 
 ## Tentative Schedule
 
-| Week | Dates         | Tuesday                            | Thursday                                 | 
-| ---: | :------------ | :--------------------------------- | :--------------------------------------- | 
-|    1 | 8/26 - 8/30   | Intro & Review of Micro Principles | Lab 1: Introduction to IPUMS             |   
-|    2 | 9/2 - 9/6     | Public Goods                       | Lab 2: Introduction to R                 |
-|    3 | 9/9 - 9/13    | Common Resources                   | Lab 3: Summary Statistics                |
-|    4 | 9/16 - 9/20   | Externalities                      | Lab 4: Combining Datasets                |
-|    5 | 9/23 - 9/27   | Economics of Education             | Lab 5: Data Visualization                |  
-|    6 | 9/30 - 10/4   | Economics of Healthcare            | **Midterm 1**                            |
-|    7 | 10/7 - 10/11  | Linear Regressions I               | Lab 6: Linear Regressions I              |
-|    8 | 10/14 - 10/18 | Linear Regressions II              | Lab 7: Linear Regressions II             |
-|    9 | 10/21 - 10/25 | Research Design                    | Lab 8: Linear Regressions III            |
-|   10 | 10/28 - 11/1  | Difference-in-Differences          | Lab 9: Difference-in-Differences         |
-|   11 | 11/4 - 11/8   | Regression Discontinuity           | **Midterm 2**                            |
-|   12 | 11/11 - 11/15 | Group Project Demo                 | Group Project Meeting #1                 |
-|   13 | 11/18 - 11/22 | Economics of Home-Sharing          | *(Online)* Group Project Meeting #2      |
-|   14 | 11/25 - 11/29 | Group Project Meeting #3           | **NO CLASS - THANKSGIVING**              |
-|   15 | 12/2 - 12/6   | Theory of Public Choice            | Group Project Meeting #4                 |
-|   16 | 12/9 - 12/13  | Group Project Meeting #5           | **NO CLASS - SEMESTER ENDS**             |
+| Week | Dates         | Lecture                              | Lab                                         |  
+| ---: | :------------ | :----------------------------------- | :------------------------------------------ | 
+|    1 | 1/21          | Intro & Review of Micro Principles   | Lab 1: Introduction to IPUMS                |   
+|    2 | 1/28, 1/30    | Public Goods                         | Lab 2: Introduction to R                    |
+|    3 | 2/4, 2/6      | Common Resources                     | Lab 3: Summary Statistics                   |
+|    4 | 2/11, 2/13    | Economics of Education               | Lab 4: Combining Datasets                   |
+|    5 | 2/18, 2/20    | Economics of Healthcare              | Lab 5: Data Visualization                   |  
+|    6 | 2/25, 2/278   | **Midterm 1**                        | *Break*                                     |
+|    7 | 3/4, 3/67     | Linear Regressions I                 | Lab 6: Linear Regressions I                 |
+|    8 | 3/11, 3/13    | Linear Regressions II                | Lab 7: Linear Regressions II                | 
+|    9 | 3/18, 3/20    | **NO CLASS - SPRING BREAK**          | **NO CLASS - SPRING BREAK**                 |
+|   10 | 3/25, 3/27    | Research Design                      | Lab 8: Linear Regressions III               |
+|   11 | 4/1, 4/3      | Difference-in-Differences            | Lab 9: Difference-in-Differences            |
+|   12 | 4/8, 4/10     | **Midterm 2**                        | *Break*                                     |
+|   13 | 4/15, 4/17    | Group Project Demo                   | Group Project Meeting #1                    |
+|   14 | 4/22, 4/24    | Economics of Home Sharing            | Group Project Meeting #2                    |
+|   15 | 4/29, 5/1     | Theory of Public Choice              | Group Project Meeting #3                    |
+|   16 | 5/6, 5/8      | Group Project Meeting #4             | Group Project Meeting #4                    |
+
 
 Final Exam:
 
-- Section 01 (TuTh 11:30am): Tuesday 12/17 10:15am - 12:15pm
+- TBD
 
 In lieu of a final exam, we will be having group project presentations.
 
@@ -151,24 +156,21 @@ By the end of the course, you will be able to:
 
 ## Course Materials
 
-**Required Textbook**
+**Course Website**
+
+All of the required lab materials are available for free and contained on this website.
+
+**Packback (Required)**
+
+<img src="assets/images/packback.jpg" width="100">
+
+The discussion assignments in this course must be completed via [Packback](https://www.packback.co), using the link provided in Canvas. You should automatically be subscribed through **MyCSUNDigitalAccess**. If for some reason you opted out or are unsubscribed, you will need to pay for a subscription.
+
+**Textbook (Optional)**
 
 ![textbook](/CSUN-Econ-433/assets/images/textbook.jpg){:width="90"}
 
-The required textbook is *Public Finance* by Harvey Rosen and Ted Gayer (ISBN: 9780078021688). It is around $80 on Amazon for a new copy. While you do not have to purchase the textbook, you should ensure that you have access to a copy because required readings will be assigned from the textbook.
-
-*Important information about myCSUN Digital Access*
-
-- This course is part of the *myCSUN Digital Access* (MCDA) program. This program provides digital materials to students at deeply discounted prices. MCDA will *automatically* provide this book to all students of this course for around $45.
-
-- **You will be automatically charged by CSUN for this material unless you opt out by Friday 2/16.** Thus, if you do not want to pay $45 for Digital Access, or you want to obtain the book by another means, you must opt out by 2/16. To opt out:
-    
-    1. Go to https://accessportal.follet.com/1050
-    2. Click on *Create an Account* on the lower right
-    3. Create an account using your CSUN email address
-    4. Select the courses you wish to opt out from
-        
-    For more information, see the [MCDA FAQ page](https://www.bkstr.com/csunorthridgestore/help-faq/textbook-faqs1).
+The course is self contained based on my own materials. If you are interested in delving deeper into the subject matter, *Public Finance* by Harvey Rosen and Ted Gayer can serve as a helpful reference. However, I won't be assigning any readings or problems from the textbook.
 
 **RStudio Cloud**
 
@@ -188,6 +190,11 @@ Occasionally, I will assign readings from newspaper or academic journal articles
 
 You will need these for exams.
 
+**Calculator (Required)**
+
+<img src="assets/images/calculator.jpg" width="100">
+
+You will need a calculator for this course. Any calculator is fine.
 
 ---
 
