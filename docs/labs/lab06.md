@@ -121,10 +121,11 @@ stargazer(r1, r2, r3, r4, r5, type="text")
 
 - Create a new script that does the same 5 regressions as above, except:
   - It uses data from California 2014 instead of 2019.
-  - Include a new variable, `AGESQ`, which is equal to the square of `AGE`, in regressions `r2` thru `r5`.
+  - Include a new variable, `AGESQ`, which is equal to the square of `AGE`, in regressions `r2` thru `r5`. 
+      - *Hint:* To take a square in R, do `df$AGESQ <- df$AGE**2`
   - Include dummy variables for `COUNTYFIP` in `r4` and `r5`.
 
-- Upload the script to the Lab 06 Script assignment.
+- Show me your script and output to receive your grade and be dismissed. If you aren't able to complete the assignment in class, you can upload the script to the Lab 06 Script assignment.
 
 ---
 

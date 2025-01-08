@@ -58,8 +58,8 @@ df$EMPSTAT <- na_if(df$EMPSTAT, 9)
 
 # First, calculate average income of employed individuals by
 # age and sex, using data from 2019
-df_employed_2019 <- filter(df, YEAR==2019 & EMPSTAT==1) 
-inc_by_age_sex <- df_employed_2019 %>%
+inc_by_age_sex <- df %>%
+  filter(YEAR==2019 & EMPSTAT==1) %>%
   group_by(AGE, SEX) %>%
   summarize(
     AVG_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE)
@@ -98,8 +98,8 @@ df$EMPSTAT <- na_if(df$EMPSTAT, 9)
 df$COLLEGE <- df$EDUC>=10
 
 # Total population by county, using 2019 data
-df2019 <- filter(df, YEAR==2019)
-county_pop <- df2019 %>%
+county_pop <- df %>%
+  filter(YEAR==2019) %>%
   group_by(COUNTYFIP) %>%
   summarize(
     POPULATION = sum(PERWT, na.rm=TRUE)
@@ -107,16 +107,16 @@ county_pop <- df2019 %>%
   
 # Percent of age 25+ people with 4+ years of college,
 # using 2019 data
-df2019_adult <- filter(df, YEAR==2019 & AGE>=25)
-county_educ <- df2019_adult %>%
+county_educ <- df %>%
+  filter(YEAR==2019 & AGE>=25) %>%
   group_by(COUNTYFIP) %>%
   summarize(
     PCT_COLLEGE = weighted.mean(COLLEGE, PERWT, na.rm=TRUE)
   )
   
 # Average income of employed individuals, using data from 2019
-df2019_employed <- filter(df, YEAR==2019 & EMPSTAT==1)
-county_inc <- df2019_employed %>%
+county_inc <- df %>%
+  filter(YEAR==2019 & EMPSTAT==1) %>%
   group_by(COUNTYFIP) %>%
   summarize(
     AVG_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE)
@@ -156,8 +156,8 @@ df$EMPSTAT <- na_if(df$EMPSTAT, 9)
 
 # First, calculate average income of employed individuals by race,  
 # using data from 2019
-df_employed_2019 <- filter(df, YEAR==2019 & EMPSTAT==1)
-inc_by_race <- df_employed_2019 %>%
+inc_by_race <- df %>%
+  filter(YEAR==2019 & EMPSTAT==1) %>%
   group_by(RACHSING) %>%
   summarize(
     AVG_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE)
@@ -186,8 +186,7 @@ ggplot(data=inc_by_race) +
 	- Create a horizontal bar chart showing the above data. Make sure you use `DEGFIELD_LABELS.csv` to make the degree fields human-readable in the chart.
 	- Give the chart the following title: "Percent Female by Degree Field, California 2019"
 
-- Upload the script to the Lab 05 Script assignment.
-
+- Show me your script and output to receive your grade and be dismissed. If you aren't able to complete the assignment in class, you can upload the script to the Lab 05 Script assignment.
 ---
 
 ## Takeaways

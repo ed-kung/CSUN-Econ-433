@@ -125,7 +125,7 @@ If you missed something during lecture, or if you need a refresher, you may find
     
     *Hint*: You'll need to look up the codes for `EMPSTAT` and `SEX` in IPUMS.
     
-- Upload the script to the Lab 02 Script assignment.
+- Show me your script and output to receive your grade and be dismissed. If you aren't able to complete the assignment in class, you can upload the script to the Lab 02 Script assignment.
 
 ---
 

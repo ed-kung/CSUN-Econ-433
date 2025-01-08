@@ -105,7 +105,8 @@ stargazer(r1, r2, r3, type="text")
 
 - Create a new script that repeats the analysis, but shows the effect of Airbnb regulations on building permits.
 
-- Upload the script to the Lab 09 Script Assignment
+- Show me your script and output to receive your grade and be dismissed. If you aren't able to complete the assignment in class, you can upload the script to the Lab 09 Script assignment.
+
 
 ---
 

@@ -96,7 +96,7 @@ Create a new script that accomplishes the following tasks:
 
 11. *Extra Credit.* A critic argues that the study has no external validity because families that signed up for the experimental cohort are different than families who did not sign up for the experimental cohort.  Run a regression to show that this critique is not well founded.
 
-Upload the script to the Lab 08 Script assignment.
+Show me your script and output to receive your grade and be dismissed. If you aren't able to complete the assignment in class, you can upload the script to the Lab 08 Script assignment.
 
 ---
 

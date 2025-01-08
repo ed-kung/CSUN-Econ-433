@@ -79,7 +79,7 @@ Create a new script that accomplishes the following tasks:
     - Regression 3: In addition to all the variables in regression 2, include `COUNTYFIP`, `IND`, and `OCC` as dummy variables.
     - Don't forget to use `HHWT` as the survey weights in the regression.
     
-Upload the script to the Lab 07 Script assignment.
+Show me your script and output to receive your grade and be dismissed. If you aren't able to complete the assignment in class, you can upload the script to the Lab 07 Script assignment.
 
 ---
 

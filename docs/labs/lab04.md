@@ -138,7 +138,7 @@ If you missed something during lecture, or if you need a refresher, you may find
 	
 	    *Hint: You can only use `inner_join` on two dataframes at a time, so you'll have to first merge `county_pop` with `county_emp`, then merge the resulting dataframe with `county_educ`, and that result with `county_inc`.*
 
-- Upload the script to the Lab 04 Script assignment.
+- Show me your script and output to receive your grade and be dismissed. If you aren't able to complete the assignment in class, you can upload the script to the Lab 04 Script assignment.
 
 ---
 
