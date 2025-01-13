@@ -90,19 +90,18 @@ The presentations will be graded according to the following rubric:
 
 ## Important Dates
 
-- **Monday 11/11**: Preferences Survey Due
-- **Monday 11/18**: Progress Report #1 Due
-- **Monday 11/25**: Progress Report #2 Due
-- **Monday 12/2**: Progress Report #3 Due
-- **Monday 12/9**: Progress Report #4 Due
-- **Monday 12/16**: Final Project Report Due
+- **Monday 4/14**: Preferences Survey Due
+- **Monday 4/21**: Progress Report #1 Due
+- **Monday 4/28**: Progress Report #2 Due
+- **Monday 5/5**: Progress Report #3 Due
+- **Monday 5/12**: Final Project Report Due
 - **Date TBD**: Presentations
 
 ## Grading
 
 - Research Report (25 pts)
 - Replication Instructions (5 pts)
-- Replication Code (10 pts)
+- Replication Code (5 pts)
 - Presentation (15 pts)
 
 You will also be required to submit frequent drafts of your report, replication instructions, and replication code. Each draft is worth 5 points and will simply be graded on whether or not you followed instructions, not on whether they are accurate or polished.

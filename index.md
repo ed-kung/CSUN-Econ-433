@@ -99,21 +99,21 @@ This course meets once a week, in-person. The first half of each class session w
 | Week | Dates         | Lecture                              | Lab                                         |  
 | ---: | :------------ | :----------------------------------- | :------------------------------------------ | 
 |    1 | 1/21          | Intro & Review of Micro Principles   | Lab 1: Introduction to IPUMS                |   
-|    2 | 1/28, 1/30    | Public Goods                         | Lab 2: Introduction to R                    |
-|    3 | 2/4, 2/6      | Common Resources                     | Lab 3: Summary Statistics                   |
-|    4 | 2/11, 2/13    | Economics of Education               | Lab 4: Combining Datasets                   |
-|    5 | 2/18, 2/20    | Economics of Healthcare              | Lab 5: Data Visualization                   |  
-|    6 | 2/25, 2/278   | **Midterm 1**                        | *Break*                                     |
-|    7 | 3/4, 3/67     | Linear Regressions I                 | Lab 6: Linear Regressions I                 |
-|    8 | 3/11, 3/13    | Linear Regressions II                | Lab 7: Linear Regressions II                | 
-|    9 | 3/18, 3/20    | **NO CLASS - SPRING BREAK**          | **NO CLASS - SPRING BREAK**                 |
-|   10 | 3/25, 3/27    | Research Design                      | Lab 8: Linear Regressions III               |
-|   11 | 4/1, 4/3      | Difference-in-Differences            | Lab 9: Difference-in-Differences            |
-|   12 | 4/8, 4/10     | **Midterm 2**                        | *Break*                                     |
-|   13 | 4/15, 4/17    | Group Project Demo                   | Group Project Meeting #1                    |
-|   14 | 4/22, 4/24    | Economics of Home Sharing            | Group Project Meeting #2                    |
-|   15 | 4/29, 5/1     | Theory of Public Choice              | Group Project Meeting #3                    |
-|   16 | 5/6, 5/8      | Group Project Meeting #4             | Group Project Meeting #4                    |
+|    2 | 1/28          | Public Goods                         | Lab 2: Introduction to R                    |
+|    3 | 2/4           | Common Resources                     | Lab 3: Summary Statistics                   |
+|    4 | 2/11          | Economics of Education               | Lab 4: Combining Datasets                   |
+|    5 | 2/18          | Economics of Healthcare              | Lab 5: Data Visualization                   |  
+|    6 | 2/25          | **Midterm 1**                        | *Break*                                     |
+|    7 | 3/4           | Linear Regressions I                 | Lab 6: Linear Regressions I                 |
+|    8 | 3/11          | Linear Regressions II                | Lab 7: Linear Regressions II                | 
+|    9 | 3/18          | **NO CLASS - SPRING BREAK**          | **NO CLASS - SPRING BREAK**                 |
+|   10 | 3/25          | Research Design                      | Lab 8: Linear Regressions III               |
+|   11 | 4/1           | Difference-in-Differences            | Lab 9: Difference-in-Differences            |
+|   12 | 4/8           | **Midterm 2**                        | *Break*                                     |
+|   13 | 4/15          | Group Project Demo                   | Group Project Meeting #1                    |
+|   14 | 4/22          | Economics of Home Sharing            | Group Project Meeting #2                    |
+|   15 | 4/29          | Theory of Public Choice              | Group Project Meeting #3                    |
+|   16 | 5/6           | Group Project Meeting #4             | Group Project Meeting #4                    |
 
 
 Final Exam:
