@@ -29,9 +29,11 @@ nav_order: 1
 - Dr. Edward Kung
 - edward.kung@csun.edu
 
-### Lectures
+### Meetings
 
-- Section 01: Tu 7:00pm - 9:45pm @ Bookstein 1232
+- Section 01: 
+    - Lectures: Tu 7:00pm - 8:15pm @ Bookstein 1232
+	- Labs: Tu 8:30pm - 9:45pm @ Bookstein 2129 
 
 ### Office Hours
 
