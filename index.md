@@ -100,11 +100,11 @@ This course meets once a week, in-person. The first half of each class session w
 
 | Week | Dates         | Lecture                              | Lab                                         |  
 | ---: | :------------ | :----------------------------------- | :------------------------------------------ | 
-|    1 | 1/21          | Intro & Review of Micro Principles   | Lab 1: Introduction to IPUMS                |   
-|    2 | 1/28          | Public Goods                         | Lab 2: Introduction to R                    |
-|    3 | 2/4           | Common Resources                     | Lab 3: Summary Statistics                   |
-|    4 | 2/11          | Economics of Education               | Lab 4: Combining Datasets                   |
-|    5 | 2/18          | Economics of Healthcare              | Lab 5: Data Visualization                   |  
+|    1 | 1/21          | Intro & Review of Micro Principles   | ~~Lab 1: Introduction to IPUMS~~                |   
+|    2 | 1/28          | Public Policy Rationales             | ~~Lab 2: Introduction to R~~ Lab 1: Introduction to IPUMS                    |
+|    3 | 2/4           | Economics of Education               | ~~Lab 3: Summary Statistics~~                    |
+|    4 | 2/11          | Economics of Healthcare              | ~~Lab 4: Combining Datasets~~ Lab 2: Introduction to R                   |
+|    5 | 2/18          | ~~Social Choice Theory~~ Lab 3: Summary Statistics                 | ~~Lab 5: Data Visualization~~ Lab 4: Combining Datasets                   |  
 |    6 | 2/25          | **Midterm 1**                        | *Break*                                     |
 |    7 | 3/4           | Linear Regressions I                 | Lab 6: Linear Regressions I                 |
 |    8 | 3/11          | Linear Regressions II                | Lab 7: Linear Regressions II                | 
@@ -113,8 +113,8 @@ This course meets once a week, in-person. The first half of each class session w
 |   11 | 4/1           | Difference-in-Differences            | Lab 9: Difference-in-Differences            |
 |   12 | 4/8           | **Midterm 2**                        | *Break*                                     |
 |   13 | 4/15          | Group Project Demo                   | Group Project Meeting #1                    |
-|   14 | 4/22          | Economics of Home Sharing            | Group Project Meeting #2                    |
-|   15 | 4/29          | Theory of Public Choice              | Group Project Meeting #3                    |
+|   14 | 4/22          | ~~Economics of Home Sharing~~ Lab 5: Data Visualization            | Group Project Meeting #2                    |
+|   15 | 4/29          | ~~Theory of Public Choice~~ Economics of Home Sharing              | Group Project Meeting #3                    |
 |   16 | 5/6           | Group Project Meeting #4             | Group Project Meeting #4                    |
 
 
