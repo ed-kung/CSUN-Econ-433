@@ -104,18 +104,18 @@ This course meets once a week, in-person. The first half of each class session w
 |    2 | 1/28          | Public Policy Rationales             | ~~Lab 2: Introduction to R~~ Lab 1: Introduction to IPUMS                    |
 |    3 | 2/4           | Economics of Education               | ~~Lab 3: Summary Statistics~~                    |
 |    4 | 2/11          | Economics of Healthcare              | ~~Lab 4: Combining Datasets~~ Lab 2: Introduction to R                   |
-|    5 | 2/18          | ~~Social Choice Theory~~ Lab 3: Summary Statistics                 | ~~Lab 5: Data Visualization~~ Lab 4: Combining Datasets                   |  
-|    6 | 2/25          | **Midterm 1**                        | *Break*                                     |
-|    7 | 3/4           | Linear Regressions I                 | Lab 6: Linear Regressions I                 |
-|    8 | 3/11          | Linear Regressions II                | Lab 7: Linear Regressions II                | 
+|    5 | 2/18          | Social Choice Theory                 | ~~Lab 5: Data Visualization~~ Lab 3: Summary Statistics                   |  
+|    6 | 2/25          | ~~**Midterm 1**~~ Economics of Home Sharing                          | ~~*Break*~~ Lab 4: Combining Datasets                                     |
+|    7 | 3/4           | ~~Linear Regressions I~~ **Midterm 1**                 | ~~Lab 6: Linear Regressions I~~ *Break*                 |
+|    8 | 3/11          | ~~Linear Regressions II~~ Linear Regressions I                | ~~Lab 7: Linear Regressions II~~ Lab 6: Linear Regressions I                | 
 |    9 | 3/18          | **NO CLASS - SPRING BREAK**          | **NO CLASS - SPRING BREAK**                 |
-|   10 | 3/25          | Research Design                      | Lab 8: Linear Regressions III               |
-|   11 | 4/1           | Difference-in-Differences            | Lab 9: Difference-in-Differences            |
-|   12 | 4/8           | **Midterm 2**                        | *Break*                                     |
-|   13 | 4/15          | Group Project Demo                   | Group Project Meeting #1                    |
-|   14 | 4/22          | ~~Economics of Home Sharing~~ Lab 5: Data Visualization            | Group Project Meeting #2                    |
-|   15 | 4/29          | ~~Theory of Public Choice~~ Economics of Home Sharing              | Group Project Meeting #3                    |
-|   16 | 5/6           | Group Project Meeting #4             | Group Project Meeting #4                    |
+|   10 | 3/25          | ~~Research Design~~ Linear Regressions II                      | ~~Lab 8: Linear Regressions III~~ Lab 7: Linear Regressions II               |
+|   11 | 4/1           | ~~Difference-in-Differences~~ Research Design            | ~~Lab 9: Difference-in-Differences~~ Lab 8: Linear Regressions III            |
+|   12 | 4/8           | ~~**Midterm 2**~~ Difference-in-Differences                        | ~~*Break*~~ Lab 9: Difference-in-Differences                                     |
+|   13 | 4/15          | Group Project Demo                   | ~~Group Project Meeting #1~~ **Midterm 2**                    |
+|   14 | 4/22          | ~~Economics of Home Sharing~~ Group Project Meeting #1            | ~~Group Project Meeting #2~~                    |
+|   15 | 4/29          | ~~Theory of Public Choice~~ Group Project Meeting #2              | ~~Group Project Meeting #3~~                    |
+|   16 | 5/6           | ~~Group Project Meeting #4~~ Group Project Meeting #3             | ~~Group Project Meeting #4~~                    |
 
 
 Final Exam:
