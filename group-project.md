@@ -79,7 +79,7 @@ The replication code will be graded on the same general rubric as explained [her
 
 ## Presentation
 
-The presentations will be held during the normally scheduled final exam period. The presentations should use Google Slides and be about 10-15 minutes long. Not everyone in the group has to present. Choose to present in whatever way best conveys the results of your project.
+The presentations will be recorded and uploaded to YouTube. The presentations should be about 10-15 minutes long and use slides (Google Slides, PowerPoint, or similar). Not everyone in the group has to present. Choose to present in whatever way best conveys the results of your project.
 
 The presentations will be graded according to the following rubric:
 
@@ -90,12 +90,11 @@ The presentations will be graded according to the following rubric:
 
 ## Important Dates
 
-- **Monday 4/14**: Preferences Survey Due
 - **Monday 4/21**: Progress Report #1 Due
 - **Monday 4/28**: Progress Report #2 Due
 - **Monday 5/5**: Progress Report #3 Due
 - **Monday 5/12**: Final Project Report Due
-- **Date TBD**: Presentations
+- **Tuesday 5/13**: Presentation Due
 
 ## Grading
 
