@@ -9,7 +9,7 @@ nav_order: 1
 
 ![course logo](/CSUN-Econ-433/assets/images/logo.jpg)
 
-## Spring 2025 Syllabus
+## Spring 2026 Syllabus
 {: .no_toc }
 
 ## Table of Contents
@@ -32,34 +32,31 @@ nav_order: 1
 ### Meetings
 
 - Section 01: 
-    - Lectures: Tu 7:00pm - 8:15pm @ Bookstein 1232
-	- Labs: Tu 8:30pm - 9:45pm @ Bookstein 2129 
+    - Lectures/Labs: Th 7:00pm - 9:45pm @ Bookstein 2212
 
 ### Office Hours
 
-- Tu 2:30pm - 3:30pm @ Bookstein 4252 
+- Th 4:30pm - 5:30pm @ Bookstein 4252 
 
 ### Course Organization
 
-This course meets once a week, in-person. The first half of each class session will usually be a lecture, while the second half will be a lab. Attendance is checked and required.
+This course meets for one 150 minute session each week, in-person. 
 
 ### Grading
 
-- **Attendance (10%)**
+- **Participation (15%)**
 
-    Attendance in this class will be checked. Everyone starts with full credit (10 pts). You can miss one class for any reason, without penalty. Every subsequent absence will deduct 2 pts from your attendance score, to a minimum of zero.
+    You are expected to participate in class. You earn participation credit for answering questions, asking questions about the lecture, or offering thoughts and opinions about the material.
+	
+	- Each student can earn a maximum of 1 participation credit per lecture.
+	- The first 3 participation credits during the semester are worth 5% of the final grade each.
+	- Participation credits after the first 3 are worth 1% extra credit each, up to a maximum of 5.
+	
+	You are encouraged to participate regardless of whether you need additional credits.
 
-- **Professionalism (10%)**
-
-	I am generally very lenient and flexible with students who are showing effort. However, if you act unprofessionally, I will not hesitate to call you out on it. Examples of unprofessional behavior include: repeated tardiness, lazy effort on assignments, not paying attention in class, and leaving the class early without notifying me beforehand. Everyone starts with full credit for professionalism (10 pts), but points may be deducted for unprofessional behavior. 
-    
 - **Homework Assignments (20%)** 
 
-    Weekly homework assignments will consist of one or more of the following items:
-	
-	- A reading assignment (textbook chapter or article).
-	- A discussion assignment related to the assigned reading. The discussion will be held on Packback, an online discussion platform.
-	- An online Canvas quiz.  
+    Weekly homework assignments will consist of a variety of activities, including reading assignments, writing assignments, and online Canvas quizzes.
 
 - **Lab Assignments (20%)**
 
@@ -69,10 +66,9 @@ This course meets once a week, in-person. The first half of each class session w
 
 	There will be two midterm exams that test your understanding of the course material. These will be in-person, on-paper exams that test both theoretical understanding and empirical skills.
 	
-- **Group Project (20%)**
+- **Group Project (25%)**
 
-    There will be a group data project. More details to follow.
-
+    There will be a group project. More details [here](/CSUN-Econ-433/group-project).
 
 - **Grading Scale**
 
@@ -98,24 +94,24 @@ This course meets once a week, in-person. The first half of each class session w
 
 ## Tentative Schedule
 
-| Week | Dates         | Lecture                              | Lab                                         |  
-| ---: | :------------ | :----------------------------------- | :------------------------------------------ | 
-|    1 | 1/21          | Intro & Review of Micro Principles   | ~~Lab 1: Introduction to IPUMS~~                |   
-|    2 | 1/28          | Public Policy Rationales             | ~~Lab 2: Introduction to R~~ Lab 1: Introduction to IPUMS                    |
-|    3 | 2/4           | Economics of Education               | ~~Lab 3: Summary Statistics~~                    |
-|    4 | 2/11          | Economics of Healthcare              | ~~Lab 4: Combining Datasets~~ Lab 2: Introduction to R                   |
-|    5 | 2/18          | Social Choice Theory                 | ~~Lab 5: Data Visualization~~ Lab 3: Summary Statistics                   |  
-|    6 | 2/25          | ~~**Midterm 1**~~ Economics of Home Sharing                          | ~~*Break*~~ Lab 4: Combining Datasets                                     |
-|    7 | 3/4           | ~~Linear Regressions I~~ **Midterm 1**                 | ~~Lab 6: Linear Regressions I~~ *Break*                 |
-|    8 | 3/11          | ~~Linear Regressions II~~ Linear Regressions I                | ~~Lab 7: Linear Regressions II~~ Lab 6: Linear Regressions I                | 
-|    9 | 3/18          | **NO CLASS - SPRING BREAK**          | **NO CLASS - SPRING BREAK**                 |
-|   10 | 3/25          | ~~Research Design~~ Linear Regressions II                      | ~~Lab 8: Linear Regressions III~~ Lab 7: Linear Regressions II               |
-|   11 | 4/1           | ~~Difference-in-Differences~~ Research Design            | ~~Lab 9: Difference-in-Differences~~ Lab 8: Linear Regressions III            |
-|   12 | 4/8           | ~~**Midterm 2**~~ Difference-in-Differences                        | ~~*Break*~~ Lab 9: Difference-in-Differences                                     |
-|   13 | 4/15          | Group Project Demo                   | ~~Group Project Meeting #1~~ **Midterm 2**                    |
-|   14 | 4/22          | ~~Economics of Home Sharing~~ Group Project Meeting #1            | ~~Group Project Meeting #2~~                    |
-|   15 | 4/29          | ~~Theory of Public Choice~~ Group Project Meeting #2              | ~~Group Project Meeting #3~~                    |
-|   16 | 5/6           | ~~Group Project Meeting #4~~ Group Project Meeting #3             | ~~Group Project Meeting #4~~                    |
+| Week | Dates | Lecture                              | Lab                                         |  
+| ---: | :-----| :----------------------------------- | :------------------------------------------ | 
+|    1 | 1/22  | Intro & Review of Micro Principles   | Lab 1: Introduction to IPUMS                |   
+|    2 | 1/29  | Public Policy Rationales             | Lab 2: Introduction to R                    |
+|    3 | 2/5   | Social Choice Theory                 | Lab 3: Summary Statistics                   |
+|    4 | 2/12  | Economics of Education               | Lab 4: Combining Datasets                   |
+|    5 | 2/19  | Economics of Healthcare              | Lab 5: Data Visualization                   |
+|    6 | 2/26  | **Midterm 1**                        |                                             |
+|    7 | 3/5   | Linear Regressions I                 | Lab 6: Linear Regressions I                 |
+|    8 | 3/12  | Linear Regressions II                | Lab 7: Linear Regressions II                | 
+|    9 | 3/19  | **NO CLASS - SPRING BREAK**          | **NO CLASS - SPRING BREAK**                 |
+|   10 | 3/26  | Research Design                      | Lab 8: Linear Regressions III               |
+|   11 | 4/2   | Difference-in-Differences            | Lab 9: Difference-in-Differences            |
+|   12 | 4/9   | **Midterm 2**                        |                                             |
+|   13 | 4/16  | Data Project Demo                    | Group Project Meeting #1                    |
+|   14 | 4/23  | Economics of Home Sharing            | Group Project Meeting #2                    |
+|   15 | 4/30  | TBD                                  | Group Project Meeting #3                    |
+|   16 | 5/7   | Group Project Meeting #4             | Group Project Meeting #4                    |
 
 
 Final Exam:
@@ -212,11 +208,9 @@ Requests for absences, extensions, or late submissions must be submitted by emai
 
 **AI Policy**
 
-You are allowed to use AI in homework assignments to help refine your writing and your thinking. You are not allowed to copy and paste text or code directly from an AI generator.
+You are allowed to use AI for any at-home assignments to help refine your writing and your thinking. However, you are not allowed to directly submit AI generated content, either in part or in whole, and **you must be able to understand and explain any material that you submit**.
 
-If I suspect your work of being copy-pasted from AI, and if that is also corroborated through an AI detection tool, you will receive a reduced grade. You will receive the reduced grade even if you did not actually use AI. This is because "writing too much like AI" is itself a weakness. For example, if your cover letter on a job application looks like it was written by AI, the recruiter may think you are too lazy or disinterested to write the letter yourself.
-
-If you are concerned about the possibility that you write too much like AI, you can run your own work through an AI detector first. 
+If I suspect your submission of being generated by AI, you may be asked to explain your submission via oral examination. If you cannot demonstrate a level of understanding consistent with the submitted work, you will receive a penalty on the assignment (including potentially a zero) and you may be referred to Student Affairs under the academic integrity policy.
 
 **Academic Integrity**
 
@@ -224,15 +218,7 @@ By taking this course, you certify that all work is your own and that you have a
 
 Plagiarism is not allowed, and you are not allowed to have someone else do any course work in your place unless explicitly allowed by the syllabus. 
 
-If you are suspected of violating academic integrity on any assignment, you may be asked to demonstrate your understanding of the material in an oral assessment. Failure to demonstrate and equivalent level of understanding as that which was demonstrated in the suspected assignment may result in a reduced grade for the assignment.
-
-If it is discovered that you have violated academic integrity on any assignment, you may receive a grade of zero for that assignment. Repeated violations of academic integrity may result in a failing grade for the entire course.
-
-**Minimum Attempt Policy**
-
-You must at least attempt to answer every question on an assignment. If you skip a question without attempting an answer, you may receive a grade of zero for the entire assignment.
-
-Why do I have a minimum attempt policy? Because demonstrating effort is important, especially in the workplace. Not even attempting a task is worse than attempting it and getting it wrong. I want to encourage all students to at least make an attempt at all tasks. As Wayne Gretzky said, "You miss 100% of the shots you don't take."
+If it is discovered that you have violated academic integrity on any assignment, you may receive a grade of zero for that assignment. Repeated violations of academic integrity may result in a failing grade for the entire course or a referral to Student Affairs.
 
 **Special Needs**
 
