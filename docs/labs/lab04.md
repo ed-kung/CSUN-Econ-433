@@ -22,14 +22,14 @@ You will also learn how to save a modified dataset for future use.
 ## Preparation
 
 Before starting the lab, you should download these files from Canvas and upload them to your R Studio Cloud files directory.
-- `IPUMS_ACS2019_CA_1.csv`
-    - Contains basic geographic and demographic information for people in California in 2019
-- `IPUMS_ACS2019_CA_2.csv`
-	- Contains additional education and occupational information for people in California in 2019
-- `IPUMS_ACS2014_CA_1.csv`
-    - Contains basic geographic and demographic information for people in California in 2014
-- `IPUMS_ACS2014_CA_2.csv`
-	- Contains additional education and occupational information for people in California in 2014
+- `IPUMS_ACS2023_CA_1.csv`
+    - Contains basic geographic and demographic information for people in California in 2023
+- `IPUMS_ACS2023_CA_2.csv`
+	- Contains additional education and occupational information for people in California in 2023
+- `IPUMS_ACS2018_CA_1.csv`
+    - Contains basic geographic and demographic information for people in California in 2018
+- `IPUMS_ACS2018_CA_2.csv`
+	- Contains additional education and occupational information for people in California in 2018
 
 You'll also need to have `dplyr` installed. If you did the previous lab successfully, `dplyr` should already be installed in your R Studio Cloud workspace. If it is not, follow the instructions [here](/CSUN-Econ-433/docs/vignettes/installing-packages){:target="_blank""}
 
@@ -39,13 +39,13 @@ Follow along as I show the class how to conduct today's lab.  If you followed al
 
 The first script does the following:
 - Clear the workspace and load the required libraries.
-- Read the two 2014 CSV files into dataframes, then merge them into a single 2014 dataframe.
-- Read the two 2019 CSV files into dataframes, then merge them into a single 2019 dataframe.
-- Append the 2014 and 2019 dataframes together.
-- Save the resulting dataframe into a CSV file called `IPUMS_ACS_CA_2014_2019.csv`.
+- Read the two 2018 CSV files into dataframes, then merge them into a single 2018 dataframe.
+- Read the two 2023 CSV files into dataframes, then merge them into a single 2023 dataframe.
+- Append the 2018 and 2023 dataframes together.
+- Save the resulting dataframe into a CSV file called `IPUMS_ACS_CA_2018_2023.csv`.
 
 The second script does the following:
-- Loads `IPUMS_ACS_CA_2014_2019.csv`, which you created in the first script.
+- Loads `IPUMS_ACS_CA_2018_2023.csv`, which you created in the first script.
 - Calculates the total population, by county and year.
 - Calculates the percent of people aged 25+ with 4+ years of college education, by county and year.
 - Create a single county-by-year dataframe that contains information about the total population and the percent of people aged 25+ with 4+ years of college education in each county/year.
@@ -59,24 +59,21 @@ rm(list=ls())   # Clear the workspace
 library(dplyr)  # Load the packages
 #(If dplyr is not installed, run install.packages("dplyr") from the console first)
 
-# Read the 2014 CSV files and merge them
-df_2014_1 <- read.csv("IPUMS_ACS2014_CA_1.csv")
-df_2014_2 <- read.csv("IPUMS_ACS2014_CA_2.csv")
-df2014 <- inner_join(df_2014_1, df_2014_2, by=c("YEAR","SERIAL","PERNUM"))
+# Read the 2018 CSV files and merge them
+df_2018_1 <- read.csv("IPUMS_ACS2018_CA_1.csv")
+df_2018_2 <- read.csv("IPUMS_ACS2018_CA_2.csv")
+df2018 <- inner_join(df_2018_1, df_2018_2, by=c("YEAR","SERIAL","PERNUM"))
 
-# Read the 2019 CSV files and merge them
-df_2019_1 <- read.csv("IPUMS_ACS2019_CA_1.csv")
-df_2019_2 <- read.csv("IPUMS_ACS2019_CA_2.csv")
-df2019 <- inner_join(df_2019_1, df_2019_2, by=c("YEAR","SERIAL","PERNUM"))
+# Read the 2023 CSV files and merge them
+df_2023_1 <- read.csv("IPUMS_ACS2023_CA_1.csv")
+df_2023_2 <- read.csv("IPUMS_ACS2023_CA_2.csv")
+df2023 <- inner_join(df_2023_1, df_2023_2, by=c("YEAR","SERIAL","PERNUM"))
 
-# Append the 2014 and 2019 dataframes
-df <- rbind(df2014, df2019)
-
-# Show the structure of the resulting dataframe
-str(df)
+# Append the 2018 and 2023 dataframes
+df <- rbind(df2018, df2023)
 
 # Save the resulting dataframe
-write.csv(df, "IPUMS_ACS_CA_2014_2019.csv", row.names=FALSE)
+write.csv(df, "IPUMS_ACS_CA_2018_2023.csv", row.names=FALSE)
 ```
 
 ---
@@ -87,8 +84,8 @@ write.csv(df, "IPUMS_ACS_CA_2014_2019.csv", row.names=FALSE)
 rm(list=ls())  # Clear the workspace
 library(dplyr) # Load the required packages
 
-# Read in the 2014/2019 California ACS data
-df <- read.csv("IPUMS_ACS_CA_2014_2019.csv")
+# Read in the 2018/2023 California ACS data
+df <- read.csv("IPUMS_ACS_CA_2018_2023.csv")
 
 # Create a variable indicating whether the person has 4+ 
 # years of college education
@@ -129,7 +126,7 @@ If you missed something during lecture, or if you need a refresher, you may find
 
 ## Assignment
 
-- Create a new script that uses `IPUMS_ACS_CA_2014_2019.csv`, which you already created, to calculate the following summary statistics:
+- Create a new script that uses `IPUMS_ACS_CA_2018_2023.csv`, which you already created, to calculate the following summary statistics:
 	- The total population by county and year. Call this dataframe `county_pop`.
 	- The employment rate by county and year. Call this dataframe `county_emp`.
 	    - *Hint: Remember to deal with invalid values for `EMPSTAT` and refer to Lab 3 if you forgot how to do this.*

@@ -185,6 +185,16 @@ inc_by_race_median <- df %>%
   summarize(
     MEDIAN_INCOME = weighted.median(INCWAGE, PERWT, na.rm=TRUE)
   )
+
+# You can also generate multiple statistics at once for the same groups:
+stats_by_race <- df %>%
+  filter(EMPSTAT==1) %>%
+  group_by(WHITE, BLACK, ASIAN, HISPANIC) %>%
+  summarize(
+    TOTAL_EMPLOYED_POP = sum(PERWT, na.rm=TRUE),
+    AVG_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE),
+    MEDIAN_INCOME = weighted.median(INCWAGE, PERWT, na.rm=TRUE)
+  )
 ```
 
 If you missed something during lecture, or if you need a refresher, you may find the following docs helpful:
