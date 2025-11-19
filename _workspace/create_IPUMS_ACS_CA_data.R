@@ -2,77 +2,24 @@ rm(list=ls())
 
 library(dplyr)
 
-df <- read.csv("IPUMS_ACS2023_CA_raw.csv")
+for (yr in c("2018", "2023")) {
+  inputfile <- paste0("IPUMS_ACS", yr, "_CA_raw.csv")
+  outputfile1 <- paste0("IPUMS_ACS", yr, "_CA_1.csv")
+  outputfile2 <- paste0("IPUMS_ACS", yr, "_CA_2.csv")
+  
+  df <- read.csv(inputfile)
 
-df1 <- df %>% select(
-  YEAR,
-  SERIAL,
-  PERNUM,
-  PERWT,
-  STATEFIP,
-  COUNTYFIP,
-  AGE,
-  SEX,
-  MARST,
-  RACAMIND,
-  RACASIAN,
-  RACBLK,
-  RACPACIS,
-  RACWHT,
-  HISPAN,
-  EMPSTAT,
-  INCWAGE
-)
+  df1 <- df %>% select(
+    YEAR, SERIAL, PERNUM, PERWT, STATEFIP, COUNTYFIP, 
+    AGE, SEX, MARST, RACAMIND, RACASIAN, RACBLK,
+    RACPACIS, RACWHT, HISPAN, EMPSTAT, INCWAGE
+  )
+  
+  df2 <- df %>% select(
+    YEAR, SERIAL, PERNUM, EDUC, DEGFIELD,
+    OCC, IND, UHRSWORK
+  )
 
-df2 <- df %>% select(
-  YEAR,
-  SERIAL,
-  PERNUM,
-  EDUC,
-  DEGFIELD,
-  OCC, 
-  IND,
-  UHRSWORK
-)
-
-write.csv(df1, "IPUMS_ACS2023_CA_1.csv", row.names=FALSE)
-write.csv(df2, "IPUMS_ACS2023_CA_2.csv", row.names=FALSE)
-
-
-
-
-df <- read.csv("IPUMS_ACS2014_CA_raw.csv")
-
-df1 <- df %>% select(
-  YEAR,
-  SERIAL,
-  PERNUM,
-  PERWT,
-  STATEFIP,
-  COUNTYFIP,
-  AGE,
-  SEX,
-  MARST,
-  RACHSING,
-  EMPSTAT,
-  INCWAGE
-)
-
-df2 <- df %>% select(
-  YEAR,
-  SERIAL,
-  PERNUM,
-  EDUC,
-  DEGFIELD,
-  OCC, 
-  IND,
-  UHRSWORK
-)
-
-write.csv(df1, "IPUMS_ACS2014_CA_1.csv", row.names=FALSE)
-write.csv(df2, "IPUMS_ACS2014_CA_2.csv", row.names=FALSE)
-
-
-
-
-
+  write.csv(df1, outputfile1, row.names=FALSE)
+  write.csv(df2, outputfile2, row.names=FALSE)
+}
