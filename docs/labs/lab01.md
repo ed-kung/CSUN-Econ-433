@@ -25,7 +25,7 @@ The Census and the ACS are two of the main surveys researchers use to track U.S.
 
 ## Instructions
 
-I will walk you through the process of signing up for IPUMS and downloading ACS microdata for the state of California in 2019.
+I will walk you through the process of signing up for IPUMS and downloading ACS microdata for the state of California in 2023.
 
 ### Account Creation
 
@@ -71,7 +71,7 @@ The first step is to select the variables you want to include.
 
 - Go to `PERSON`->`DEMOGRAPHIC` and click on the `+` symbol for the variables: `SEX`, `AGE`, and `MARST`. These variables will tell us the individual's sex, age, and marital status.
 
-- Go to `PERSON`->`RACE, ETHNICITY, and NATIVITY` and add `RACHSING`. This variable tells us the individual's race.
+- Go to `PERSON`->`RACE, ETHNICITY, and NATIVITY` and add `RACAMIND`, `RACASIAN`, `RACBLK`, `RACPACIS`, `RACWHT`, and `HISPAN`. These variables tell us about the individual's race.
 
 - Go to `PERSON`->`EDUCATION` and add `EDUC`. This variable tells us the individual's educational attainment.
 
@@ -81,13 +81,13 @@ The first step is to select the variables you want to include.
 
 ### Creating the Extract
 
-We're done selecting variables! Now, let's tell IPUMS that we only want data from California in 2019.
+We're done selecting variables! Now, let's tell IPUMS that we only want data from California in 2023.
 
 - On the main data selection screen, click `SELECT SAMPLES`.
 
-- Uncheck `Default sample from each year`. Check `ACS` for the year 2019. Make sure that's the only box you have checked.  Then click `SUBMIT SAMPLE SELECTIONS`.
+- Uncheck `Default sample from each year`. Check `ACS` for the year 2023. Make sure that's the only box you have checked.  Then click `SUBMIT SAMPLE SELECTIONS`.
 
-- Your data cart should say `11 VARIABLES` and `1 SAMPLE`. Click `VIEW CART` to review your variable and sample selections, then click `CREATE DATA EXTRACT`.
+- Your data cart should say `17 VARIABLES` and `1 SAMPLE`. Click `VIEW CART` to review your variable and sample selections, then click `CREATE DATA EXTRACT`.
 
 By default, IPUMS will give you data from the entire U.S., making for a very large dataset. Large datasets are hard to work with, so let's narrow the data down to California.
 
@@ -110,13 +110,13 @@ It will take a few minutes for the extract to be ready. Once it's ready, you sho
 > 
 > Students often run into issues unzipping this file. If you're having trouble on your computer, you can also try an online extraction utility like [Ezyzip](https://www.ezyzip.com/unzip-tar-gz-file-online.html){:target="_blank"}. 
 
-- Open the file in Excel. How many rows are there? How many columns?
+- Open the file in Excel (or Numbers in Mac). How many rows are there? How many columns?
 
 ## Extra Credit
 
-Los Angeles county is represented in the data by the `COUNTYFIP` code 37. Try caculating the average wage and salary income (`INCWAGE`) for employed people (`EMPSTAT==1`) between the ages of 25 and 65 in Los Angeles county in 2019. You'll have to ignore people with invalid codes for `INCWAGE` (see the codebook to learn what these invalid codes are.)
+Los Angeles county is represented in the data by the `COUNTYFIP` code 37. Try caculating the average wage and salary income (`INCWAGE`) for employed people (`EMPSTAT==1`) between the ages of 25 and 65 in Los Angeles county in 2023. You'll have to ignore people with invalid codes for `INCWAGE` (see the codebook to learn what these invalid codes are.)
 
-You may use Excel or R or any other program to make this calculation. Submit the answer on your Week 1 Problem Set.
+You may use Excel or R or any other program to make this calculation. 
 
 ## Takeaways
 
