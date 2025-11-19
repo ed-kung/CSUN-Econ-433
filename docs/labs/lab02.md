@@ -29,22 +29,24 @@ Follow along as I show the class how to conduct today's lab.
 If you followed along correctly, you should end up with the following script. The script shows you how to:
 - Read data from a CSV file into R and store it in a dataframe.
 - Display the variables inside a dataframe and their data types.
-- Tabulate and show summary statistics for variables in a dataframe.
 - Create new variables based on existing variables.
+- Tabulate and show basic summary statistics for variables in a dataframe.
 
 ```r
 rm(list=ls())   # Clear the workspace
 
-# Read IPUMS_ACS2019_CA_1.csv and store it in df
-df <- read.csv("IPUMS_ACS2019_CA_1.csv")
+# Read IPUMS_ACS2023_CA_1.csv and store it in df
+df <- read.csv("IPUMS_ACS2023_CA_1.csv")
 
 # Show the "structure" of the data
 str(df)
 
-# Tabulate SEX, MARST, and RACHSING
+# Tabulate SEX, MARST, and some RACE variables
 table(df$SEX)
 table(df$MARST)
-table(df$RACHSING)
+table(df$RACWHT)
+table(df$RACBLK)
+table(df$HISPAN)
 
 # Show summary statistics for AGE and INCWAGE
 summary(df$AGE)
@@ -111,19 +113,15 @@ If you missed something during lecture, or if you need a refresher, you may find
 ## Assignment
 
 - Create a **new** script that accomplishes the following tasks:
-    - Read `IPUMS_ACS2019_CA_1.csv` and store it in a dataframe called `df`.
-    - Create a boolean variable called `UNEMPLOYED_WORKING_AGE_MALE` that is `TRUE` if the person is:
-        - Unemployed (but in the labor force)
-        - Between the ages of 25 and 65
-        - Male
+    - Read `IPUMS_ACS2023_CA_1.csv` and store it in a dataframe called `df`.
+    - Create a boolean variable called `IS_HISPANIC` that is `TRUE` if the person is of any hispanic origin.
     - Create a boolean variable called `NLF_WORKING_AGE_MALE` that is `TRUE` if the person is:
         - Not in the labor force
         - Between the ages of 25 and 65
         - Male
-    - Show the structure of the data after having created the above two variables
-    - Tabulate `UNEMPLOYED_WORKING_AGE_MALE` and `NLF_WORKING_AGE_MALE`
+    - Tabulate `IS_HISPANIC` and `NLF_WORKING_AGE_MALE`
     
-    *Hint*: You'll need to look up the codes for `EMPSTAT` and `SEX` in IPUMS.
+    *Hint*: You'll need to look up the codes for `HISPAN`, `EMPSTAT`, and `SEX` in IPUMS.
     
 - Show me your script and output to receive your grade and be dismissed. If you aren't able to complete the assignment in class, you can upload the script to the Lab 02 Script assignment.
 

@@ -2,7 +2,7 @@ rm(list=ls())
 
 library(dplyr)
 
-df <- read.csv("IPUMS_ACS2019_CA_raw.csv")
+df <- read.csv("IPUMS_ACS2023_CA_raw.csv")
 
 df1 <- df %>% select(
   YEAR,
@@ -14,7 +14,12 @@ df1 <- df %>% select(
   AGE,
   SEX,
   MARST,
-  RACHSING,
+  RACAMIND,
+  RACASIAN,
+  RACBLK,
+  RACPACIS,
+  RACWHT,
+  HISPAN,
   EMPSTAT,
   INCWAGE
 )
