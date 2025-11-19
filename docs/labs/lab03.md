@@ -29,7 +29,7 @@ This lab shows you how to calculate population statistics accurately in a strati
 
 Before starting the lab, you should make sure the following CSV file has been uploaded to your R Studio Cloud files directory.
 
-- `IPUMS_ACS2019_CA_1.csv`
+- `IPUMS_ACS2023_CA_1.csv`
 
 You'll also need to [install some packages](/CSUN-Econ-433/docs/vignettes/installing-packages){:target="_blank"}. A package is a collection of functions and tools that expands R's baseline functionality. Packages are written by authors and developers from around the world, and are made available for free on [CRAN](https://cran.r-project.org/){:target="_blank"} (the Comprehensive R Archive Network).
 
@@ -63,10 +63,12 @@ If you followed along correctly, you should end up with the following script. Th
 ```r
 rm(list=ls())   # Clear the workspace
 library(dplyr)  # Load the packages
-#(If dplyr is not installed, run install.packages("dplyr") from the console first)
+library(spatstat)
+#(If dplyr or is not installed, run install.packages("dplyr") from the console first)
+#(Same with spatstat)
 
 # Load the data from csv file
-df <- read.csv("IPUMS_ACS2019_CA_1.csv")
+df <- read.csv("IPUMS_ACS2023_CA_1.csv")
 
 # Replace invalid values of INCWAGE with NA
 # (Necessary for calculating accurate income statistics)
@@ -74,22 +76,18 @@ df <- read.csv("IPUMS_ACS2019_CA_1.csv")
 df$INCWAGE <- na_if(df$INCWAGE, 999999)
 df$INCWAGE <- na_if(df$INCWAGE, 999998)
 
-# Replace invalid values of EMPSTAT with NA
-# (Necessary for calculating accurate employment statistics)
-# See: https://usa.ipums.org/usa-action/variables/EMPSTAT#codes_section
-df$EMPSTAT <- na_if(df$EMPSTAT, 0)
-df$EMPSTAT <- na_if(df$EMPSTAT, 9)
-
 # Create a boolean variable for whether the person is employed
 # (We'll need it later to calculate employment rate)
 df$EMPLOYED <- df$EMPSTAT==1
 
-# Calculate total population
-sum(df$PERWT, na.rm=TRUE)
+# Create a helpful race related booleans
+df$WHITE <- df$RACWHT==2
+df$BLACK <- df$RACBLK==2
+df$ASIAN <- df$RACASIAN==2
+df$HISPANIC <- df$HISPAN>=1
 
-# Calculate population by race
-pop_by_race <- df %>%
-  group_by(RACHSING) %>%
+# Calculate total population
+pop <- df %>%
   summarize(
     TOTAL_POP = sum(PERWT, na.rm=TRUE)
   )
@@ -101,41 +99,91 @@ pop_by_empstat <- df %>%
     TOTAL_POP = sum(PERWT, na.rm=TRUE)
   )
 
+# Calculate population by sex
+pop_by_sex <- df %>%
+  group_by(SEX) %>%
+  summarize(
+    TOTAL_POP = sum(PERWT, na.rm=TRUE)
+  )
+
+# Calculate population by sex and employment status
+pop_by_sex_empstat <- df %>%
+  group_by(SEX, EMPSTAT) %>%
+  summarize(
+    TOTAL_POP = sum(PERWT, na.rm=TRUE)
+  )
+
+# Calculate population by all whether white
+pop_by_white <- df %>%
+  group_by(WHITE) %>% 
+  summarize(
+    TOTAL_POP = sum(PERWT, na.rm=TRUE)
+  )
+
+# Calculate population by all selected race combinations
+pop_by_race_combo <- df %>%
+  group_by(WHITE, BLACK, ASIAN, HISPANIC) %>%
+  summarize(
+    TOTAL_POP = sum(PERWT, na.rm=TRUE)
+  )
+
 # Calculate overall employment rate
-weighted.mean(df$EMPLOYED, df$PERWT, na.rm=TRUE)
-
-# Calculate employment rate by race
-emprate_by_race <- df %>%
-  group_by(RACHSING) %>%
+emprate <- df %>%
   summarize(
     EMPLOYMENT_RATE = weighted.mean(EMPLOYED, PERWT, na.rm=TRUE)
   )
 
-# Calculate employment rate by race and sex
-emprate_by_race_sex <- df %>%
-  group_by(RACHSING, SEX) %>% 
+# Calculate employment rate by sex
+emprate_by_sex <- df %>%
+  group_by(SEX) %>%
   summarize(
     EMPLOYMENT_RATE = weighted.mean(EMPLOYED, PERWT, na.rm=TRUE)
   )
 
-# Create a filtered dataframe that contains only employed individuals
-df_employed <- filter(df, EMPSTAT==1)
+# Calculate employment rate by race combination
+emprate_by_race_combo <- df %>%
+  group_by(WHITE, BLACK, ASIAN, HISPANIC) %>%
+  summarize(
+    EMPLOYMENT_RATE = weighted.mean(EMPLOYED, PERWT, na.rm=TRUE)
+  )
 
-# Calculate overall average income of employed individuals
-weighted.mean(df_employed$INCWAGE, df_employed$PERWT, na.rm=TRUE)
+# Calculate average age by race combination
+age_by_race_combo <- df %>%
+  group_by(WHITE, BLACK, ASIAN, HISPANIC) %>%
+  summarize(
+    AVG_AGE = weighted.mean(AGE, PERWT, na.rm=TRUE)
+  )
 
-# Calculate average income of employed individuals, by race
-inc_by_race <- df_employed %>%
-  group_by(RACHSING) %>%
+
+# Calculate average income of employed individuals
+inc <- df %>%
+  filter(EMPSTAT==1) %>%
   summarize(
     AVG_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE)
   )
 
-# Calculate average income of employed individuals, by race and sex
-inc_by_race_sex <- df_employed %>%
-  group_by(RACHSING, SEX) %>% 
+# Calculate average income of employed individuals, by sex
+inc_by_sex <- df %>%
+  filter(EMPSTAT==1) %>%
+  group_by(SEX) %>%
   summarize(
     AVG_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE)
+  )
+
+# Calculate average income of employed individuals, by race combination
+inc_by_race_combo <- df %>%
+  filter(EMPSTAT==1) %>%
+  group_by(WHITE, BLACK, ASIAN, HISPANIC) %>% 
+  summarize(
+    AVG_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE)
+  )
+
+# Calculate the median income of employed individuals, by race combination
+inc_by_race_median <- df %>%
+  filter(EMPSTAT==1) %>%
+  group_by(WHITE, BLACK, ASIAN, HISPANIC) %>%
+  summarize(
+    MEDIAN_INCOME = weighted.median(INCWAGE, PERWT, na.rm=TRUE)
   )
 ```
 
@@ -155,14 +203,13 @@ If you missed something during lecture, or if you need a refresher, you may find
 ## Assignment
 
 - Create a new script that accomplishes the following tasks:
-	- Read `IPUMS_ACS2019_CA_1.csv` and store it in a dataframe called `df`.
-	- Assign `NA` to invalid values of `EMPSTAT` and `INCWAGE`.
+	- Read `IPUMS_ACS2023_CA_1.csv` and store it in a dataframe called `df`.
+	- Assign `NA` to invalid values of `INCWAGE`.
 	- Calculate the following summary statistics:
-		- The total population in each county
-		- The population of each race in each county
-		- The employment rate in each county
-		- The average income of employed individuals, by county
-		- The average income of employed individuals, by county, race, and sex
+		- The total population by county
+		- The employment rate by county
+    - The average income of employed individuals by county
+    - The average income of employed individuals by county and sex
 	
 	*Hint*: `COUNTYFIP` is the variable that contains the county codes.
 

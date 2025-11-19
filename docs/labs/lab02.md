@@ -76,15 +76,13 @@ df$LOG_INCWAGE <- log(df$INCWAGE)
 # equal to YEAR minus AGE
 df$BIRTH_YEAR <- df$YEAR - df$AGE
 
-# Show structure of data again
-str(df)
-
 # Tabulate EMPLOYED, WORKING_AGE, and WORKING_ADULT
 table(df$EMPLOYED)
 table(df$WORKING_AGE)
 table(df$WORKING_AGE_EMPLOYED)
 
-# Show summary statistics of LOG_INCWAGE
+# Show summary statistics of BIRTH_YEAR and LOG_INCWAGE
+summary(df$BIRTH_YEAR)
 summary(df$LOG_INCWAGE)
 ```
 
