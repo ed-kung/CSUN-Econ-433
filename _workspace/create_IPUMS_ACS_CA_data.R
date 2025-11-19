@@ -35,8 +35,8 @@ df2 <- df %>% select(
   UHRSWORK
 )
 
-write.csv(df1, "IPUMS_ACS2019_CA_1.csv", row.names=FALSE)
-write.csv(df2, "IPUMS_ACS2019_CA_2.csv", row.names=FALSE)
+write.csv(df1, "IPUMS_ACS2023_CA_1.csv", row.names=FALSE)
+write.csv(df2, "IPUMS_ACS2023_CA_2.csv", row.names=FALSE)
 
 
 
