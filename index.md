@@ -96,6 +96,26 @@ This course meets for one 150 minute session each week, in-person.
 
 | Week | Dates | Lecture                              | Lab                                         |  
 | ---: | :-----| :----------------------------------- | :------------------------------------------ | 
+|    1 | 1/22  | *No class - locked out*              |                                             |
+|    2 | 1/29  | Intro & Review of Micro Principles   | Lab 1: Introduction to IPUMS                |
+|    3 | 2/5   | Public Policy Rationales             | Lab 2: Introduction to R                    |
+|    4 | 2/12  | Social Choice Theory                 | Lab 3: Summary Statistics                   |
+|    5 | 2/19  | Economics of Education               | Lab 4: Combining Datasets                   |
+|    6 | 2/26  | Economics of Healthcare              | Lab 5: Data Visualization                   |
+|    7 | 3/5   | **Midterm 1**                        |                                             |
+|    8 | 3/12  | Linear Regressions I                 | Lab 6: Linear Regressions I                 | 
+|    9 | 3/19  | **NO CLASS - SPRING BREAK**          | **NO CLASS - SPRING BREAK**                 |
+|   10 | 3/26  | Linear Regressions II                | Lab 7: Linear Regressions II                |
+|   11 | 4/2   | Research Design                      | Lab 8: Linear Regressions III               |
+|   12 | 4/9   | **Midterm 2**                        |                                             |
+|   13 | 4/16  | Data Project Demo                    | Group Project Meeting #1                    |
+|   14 | 4/23  | Difference-in-Differences            | Group Project Meeting #2                    |
+|   15 | 4/30  | Economics of Home Sharing            | Group Project Meeting #3                    |
+|   16 | 5/7   | Group Project Meeting #4             | Group Project Meeting #4                    |
+
+<!--
+| Week | Dates | Lecture                              | Lab                                         |  
+| ---: | :-----| :----------------------------------- | :------------------------------------------ | 
 |    1 | 1/22  | Intro & Review of Micro Principles   | Lab 1: Introduction to IPUMS                |   
 |    2 | 1/29  | Public Policy Rationales             | Lab 2: Introduction to R                    |
 |    3 | 2/5   | Social Choice Theory                 | Lab 3: Summary Statistics                   |
@@ -112,7 +132,7 @@ This course meets for one 150 minute session each week, in-person.
 |   14 | 4/23  | Economics of Home Sharing            | Group Project Meeting #2                    |
 |   15 | 4/30  | TBD                                  | Group Project Meeting #3                    |
 |   16 | 5/7   | Group Project Meeting #4             | Group Project Meeting #4                    |
-
+-->
 
 Final Exam:
 
