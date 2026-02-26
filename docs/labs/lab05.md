@@ -29,11 +29,11 @@ install.packages("dplyr")
 
 ## Instructions
 
-Follow along as I show the class how to conduct today's lab.  If you followed along correctly, you should end up with the following three scripts.
+Follow along as I show the class how to conduct today's lab.  If you followed along correctly, you should end up with the following script.
 
 ### Line Plots
 
-This script makes a line plot showing average income by age for employed individuals, using data from California 2023.  The lines are plotted separately for males and for females.
+This script makes a line plot showing average income by age for employed individuals, using data from California in 2023.  The lines are plotted separately for males and for females.  It also makes a line plot showing the percent change in average income from 2018 to 2023, by age and by sex.
 
 ```r
 rm(list=ls())   # Clear workspace
@@ -49,21 +49,49 @@ df$INCWAGE <- na_if(df$INCWAGE, 999998)
 df$EMPSTAT <- na_if(df$EMPSTAT, 0)
 df$EMPSTAT <- na_if(df$EMPSTAT, 9)
 
-# First, calculate average income of employed individuals by
-# age and sex, using data from 2023
-inc_by_age_sex <- df %>%
-  filter(YEAR==2023 & EMPSTAT==1) %>%
+
+# ---- Line plot: Average income of employed individuals by age and sex, 2023
+
+# First, calculate average income of employed individuals by age and by sex using data from 2023
+inc_by_age_sex_2023 <- df %>%
+  filter(YEAR==2023 & EMPSTAT==1 & AGE>=25 & AGE<=65) %>%
   group_by(AGE, SEX) %>%
   summarize(
-    AVG_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE)
+    AVG_INCOME_2023 = weighted.mean(INCWAGE, PERWT, na.rm=TRUE)
   )
-  
-# Now create the line plot using the dataframe containing the stats
-ggplot(data=inc_by_age_sex) +
-  geom_line(aes(x=AGE, y=AVG_INCOME, color=as.factor(SEX))) + 
+ 
+# Then, make the line plot
+ggplot(data=inc_by_age_sex_2023) +
+  geom_line(aes(x=AGE, y=AVG_INCOME_2023, color=as.factor(SEX))) + 
   xlab("Age") + 
   ylab("Average Income") + 
   ggtitle("Average Income of Employed Individuals by Age and Sex, California 2023")
+
+
+# ---- Line plot: Change in average income of employed individuals by age and sex, 2018-2023
+
+# First, calculate average income of employed individuals by age and sex using data from 2018
+inc_by_age_sex_2018 <- df %>%
+  filter(YEAR==2018 & EMPSTAT==1 & AGE>=25 & AGE<=65) %>%
+  group_by(AGE, SEX) %>%
+  summarize(
+    AVG_INCOME_2018 = weighted.mean(INCWAGE, PERWT, na.rm=TRUE)
+  )
+  
+# Merge the two inc_by_age_sex tables
+inc_by_age_sex <- inner_join(inc_by_age_sex_2018, inc_by_age_sex_2023, by=c("AGE", "SEX"))
+
+# Calculate changes
+inc_by_age_sex$PCT_CHG <- (inc_by_age_sex$AVG_INCOME_2023 - 
+  inc_by_age_sex$AVG_INCOME_2018) /
+  (inc_by_age_sex$AVG_INCOME_2018)
+ 
+# plot changes
+ggplot(data=inc_by_age_sex) + 
+  geom_line(aes(x=AGE, y=PCT_CHG, color=as.factor(SEX))) + 
+  xlab("AGE") + 
+  ylab("Pct Change in Average Income") + 
+  ggtitle("Pct Chg in Avg Income of Employed Individuals by Age and Sex, California 2018-2023")
 ```
 
 ---
@@ -83,6 +111,7 @@ Hints:
 - You'll then need to create a new variable called `INC_CHG`
 
 Show me your script and output to receive your grade and be dismissed. If you aren't able to complete the assignment in class, you can upload the script to the Lab 05 Script assignment.
+
 ---
 
 ## Takeaways
