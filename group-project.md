@@ -24,7 +24,7 @@ This option is designed for students who want to learn how to work with primary 
 - Conduct the analysis.
 - Present the results to the class.
 
-Maximum group size: 3
+Maximum group size: 4
 
 ### Deliverables
 
@@ -82,7 +82,7 @@ This option is designed for students who do not want to work directly with data.
 - Research the background and motivation of the policy.
 - Research the arguments for and against the policy.
 - Write a position paper analyzing the policy and explaining whether you support or oppose it.
-- Advocate for your position in front of the class as if we were lawmakers.
+- Advocate for your position in front of the class.
 
 Maximum group size: 2
 
@@ -117,7 +117,7 @@ The position paper must be submitted as a Google Doc. Be sure to give edit acces
 
 ### Presentation
 
-You will present your report and recommendations to me and the rest of the class as if we were lawmakers. You should be prepared to answer questions from the floor. The presentation should use Google Slides and be about 15 minutes long, plus 5 minutes for questions.
+You will present your report and recommendations to me and the rest of the class. You should be prepared to answer questions from the floor. The presentation should use Google Slides and be about 15 minutes long, plus 5 minutes for questions.
 
 ### Grading
 
@@ -129,12 +129,13 @@ The project will be graded holistically on the following factors:
 - **Professionalism**. Were the paper and slides professionally formatted and attractive? Did the team dress in professional attire and use professional language? 
 - **Mastery**. Did the group demonstrate a mastery of the topic? Were they able to answer questions appropriately and accurately during the presentation?
 
-Because the secondary research option is easier than the primary research option, and more easily assisted by AI, grading will be more strict for groups opting for the secondary research option.
+Because the secondary research option is easier than the primary research option, and more easily assisted by AI, grading will be more strict for groups opting for the secondary research option. I *will* be aggressive, attack your arguments, and question your understanding of the evidence. If you cannot back up your claims with solid evidence, or if you cannot explain the evidence, you will lose points.
 
 ---
 
 ## Important Dates
 
+- **Wednesday 4/15**: Groups formations + general topic idea due 
 - **Wednesday 4/22**: Progress Report #1 Due
 - **Wednesday 4/29**: Progress Report #2 Due
 - **Wednesday 5/6**: Progress Report #3 Due
@@ -144,8 +145,7 @@ Because the secondary research option is easier than the primary research option
 ## Grading
 
 - Progress Reports (15 pts)
-- Research Report / Position Paper (25 pts)
-- Presentation (20 pts)
+- Final Report and Presentation (100 pts)
 
 Each progress report is a draft of the final paper. Each draft is worth 5 points and will simply be graded on whether or not you followed instructions and listened to feedback, not on the accuracy of the results or the polish of the report.
 
@@ -156,6 +156,11 @@ An example primary research project (written by me) is available.
 - [Example Report](https://docs.google.com/document/d/14jO3EYfanzdl073uTcW73cinJSFvKQVaOnQaVrvM7Hc/edit?usp=sharing){:target="_blank"}
 - [Example Replication Instructions](https://docs.google.com/document/d/11DES3N-0FUEgME-vZ2Qi9npbSPym2qUc_rnBRtbXl9M/edit?usp=sharing){:target="_blank"}
 - [Example Code](https://docs.google.com/document/d/1AcO-9GhNXgwLDcy2kElDzgIyYv_NOoZAkUsIn66-zQY/edit?usp=sharing){:target="_blank"}
+
+
+## Note on Teamwork and Responsibility
+
+You are expected to work professionally with your teammates. If I receive substantive complaints about a student who is failing to meet their responsibilities within the group, that student may lose points on the project individually.
 
 
 
