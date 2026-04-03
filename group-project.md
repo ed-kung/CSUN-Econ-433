@@ -84,7 +84,7 @@ This option is designed for students who do not want to work directly with data.
 - Write a position paper analyzing the policy and explaining whether you support or oppose it.
 - Advocate for your position in front of the class.
 
-Maximum group size: 2
+Maximum group size: 3
 
 ### Deliverables
 
