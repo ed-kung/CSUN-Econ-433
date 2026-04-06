@@ -136,7 +136,7 @@ This course meets for one 150 minute session each week, in-person.
 
 Final Exam:
 
-- TBD
+- Thursday 5/14/2026, 8:00PM - 10:00PM @ Bookstein 2212
 
 In lieu of a final exam, we will be having group project presentations.
 
@@ -225,6 +225,8 @@ My preferred form of communication is in-person after class or at office hours, 
 **Late and Missing Assignment Policy**
 
 Requests for absences, extensions, or late submissions must be submitted by email with accompanying documentation. Only unanticipated family and medical emergencies, or other extraordinary events, will be considered valid reasons. Events that could have reasonably been anticipated, such as heavy academic workload, busy work schedule, or friends' birthday parties, will not be accepted as valid reasons.
+
+No makeups will be given for the midterms. If you have a valid reason for missing a midterm, you will be excused from the midterm. The weight of the midterm for your final grade will be allocated to the final exam.
 
 **AI Policy**
 
