@@ -110,7 +110,7 @@ Hints:
 - You'll then need to merge those two dataframes on `COUNTYFIP`, `COLLEGE`
 - You'll then need to create a new variable called `INC_CHG`
 
-Show me your script and output to receive your grade and be dismissed. If you aren't able to complete the assignment in class, you can upload the script to the Lab 05 Script assignment.
+Show me your script and output to receive your grade and be dismissed.
 
 ---
 

@@ -129,7 +129,7 @@ stargazer(r1, r2, r3, r4, r5, type="text")
 
 - Hint: You should start by copy and pasting the original script, then making the necessary modifications
 
-- Show me your script and output to receive your grade and be dismissed. If you aren't able to complete the assignment in class, you can upload the script to the Lab 06 Script assignment.
+- Show me your script and output to receive your grade and be dismissed.
 
 ---
 
