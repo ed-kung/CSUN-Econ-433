@@ -60,7 +60,7 @@ This course meets for one 150 minute session each week, in-person.
 
 - **Lab Assignments (20%)**
 
-    In-class lab sessions where you get hands-on experience working with data analysis relevant to public economics. Each lab session will require you to complete a short statistical programming assignment in-class. If you can't finish the assignment in-class, you can submit it online in Canvas as a script.
+    In-class lab sessions where you get hands-on experience working with data analysis relevant to public economics. Each lab session will require you to complete a short statistical programming assignment in-class.
     
 - **Midterm Exams (20%)**
 
