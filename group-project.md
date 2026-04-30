@@ -43,10 +43,11 @@ The research report must be submitted as a Google Doc. Be sure to give edit acce
   - What did you expect to find?
 - **Data and Methodology**
     - What data did you use to conduct the analysis?
-        - What was the outcome variable?
-        - What were the main covariates of interest?
-        - What were the nuissance variables?
-        - What was the unit of analysis?
+        - What is the unit of analysis?
+        - What is(are) the outcome variable(s) of interest?
+        - What is(are) the main covariate(s) of interest?
+        - What other control variables are included?
+		- Did you apply any sample selection criteria or filters to the data?
     - Why did you choose to use this data?
     - How will you use the data to answer the research question?
 - **Results and Discussion**
