@@ -7,31 +7,24 @@ nav_order: 3
 # Group Project
 {: .no_toc }
 
-There will be a group project. Students can choose from one of two options: [primary research option](#primary-research-option) or [secondary research option](#secondary-research-option).
-
-- TOC
-{:toc}
-
----
-
-## Primary Research Option
-
-This option is designed for students who want to learn how to work with primary data sources directly. The group will:
+There will be a group data project. Students will:
 
 - Propose a research question using ACS/Census data from IPUMS (or another dataset of the group's choice).
 - Propose a methodology for answering the question.
 - Acquire the necessary data.
 - Conduct the analysis.
+- Write a final report.
 - Present the results to the class.
 
-Maximum group size: 4
+- TOC
+{:toc}
 
-### Deliverables
+## Deliverables
 
 1. Research report
 2. Presentation
 
-### Research Report
+## Research Report
 
 The research report must be submitted as a Google Doc. Be sure to give edit access to `edward.kung@gmail.com`.  The report should not exceed 5 pages, except to include tables and figures. The research report should include the following sections:
 
@@ -59,11 +52,11 @@ The research report must be submitted as a Google Doc. Be sure to give edit acce
   - A brief, one paragraph concluding remarks.
 - **References**
 
-### Presentation
+## Presentation
 
 The group will report their findings to the class. The presentation should be 10-15 minutes long and use Google Slides. The group should be prepared to answer questions from the floor about their research.
 
-### Grading
+## Grading
 
 The research project will be graded holistically on the following factors:
 
@@ -73,86 +66,26 @@ The research project will be graded holistically on the following factors:
 - **Professionalism**. Were the report and presentation formatted professionally and attractively? Was the language professional? Were the appropriate tables and figures included? Were references properly cited?
 - **Mastery**. Did the group demonstrate a mastery of the topic? Were they able to answer questions appropriately and accurately during the presentation?
 
----
-
-## Secondary Research Option
-
-This option is designed for students who do not want to work directly with data. The group will:
-
-- Identify a specific policy issue to research.
-- Research the background and motivation of the policy.
-- Research the arguments for and against the policy.
-- Write a position paper analyzing the policy and explaining whether you support or oppose it.
-- Advocate for your position in front of the class.
-
-Maximum group size: 3
-
-### Deliverables
-
-1. Position paper
-2. Presentation
-
-### Position Paper
-
-The position paper must be submitted as a Google Doc. Be sure to give edit access to `edward.kung@gmail.com`. The paper should not exceed 10 pages, except to include tables and figures. It should be professionally formatted and attractive. The position paper should include the following sections:
-
-- **Executive Summary**
-  - A <1 page summary of the rest of the paper.
-- **Introduction**
-  - Describe the background and motivation for the policy you are studying.
-  - What problem is the policy trying to solve?
-- **Analysis**
-  - Analyze the problem that the policy is trying to solve.
-  - What existing incentive structures give rise to the problem?
-  - How do people currently adapt to the problem?
-  - What policy solutions have been tried?
-- **Recommendations**
-  - Do you recommend for or against the policy?
-  - If you recommend against it, explain why and explain what you think is a better alternative.
-  - If you recommend for it, explain why and explain how it addresses the incentive issues identified in the previous section.
-- **Objections**
-  - Respond to potential objections people may have to your recommendations.
-- **Conclusion**
-  - A brief, one paragraph concluding remarks.
-- **References**
-
-### Presentation
-
-You will present your report and recommendations to me and the rest of the class. You should be prepared to answer questions from the floor. The presentation should use Google Slides and be about 15 minutes long, plus 5 minutes for questions.
-
-### Grading
-
-The project will be graded holistically on the following factors:
-
-- **Clarity**. Was I able to understand the paper and presentation? Were parts of it confusing or hard to understand?
-- **Accuracy**. Did the paper and presentation use factual information? Did the analysis use sound and logical reasoning? Were appropriate citations made?
-- **Comprehensiveness**. Did the paper and presentation cover all relevant angles? Did the team miss an important aspect of the debate? 
-- **Professionalism**. Were the paper and slides professionally formatted and attractive? Did the team dress in professional attire and use professional language? 
-- **Mastery**. Did the group demonstrate a mastery of the topic? Were they able to answer questions appropriately and accurately during the presentation?
-
-Because the secondary research option is easier than the primary research option, and more easily assisted by AI, grading will be more strict for groups opting for the secondary research option. I *will* be aggressive, attack your arguments, and question your understanding of the evidence. If you cannot back up your claims with solid evidence, or if you cannot explain the evidence, you will lose points.
-
----
-
 ## Important Dates
 
-- **Wednesday 4/15**: Groups formations + general topic idea due 
-- **Wednesday 4/22**: Progress Report #1 Due
-- **Wednesday 4/29**: Progress Report #2 Due
-- **Wednesday 5/6**: Progress Report #3 Due
-- **Wednesday 5/13**: Final Report/Paper Due
-- **TBD**: Presentation Due
+- **Tuesday 11/3**: Group formation due
+- **Sunday 11/8**: Topic proposal due
+- **Monday 11/16**: Progress Report #1 Due
+- **Monday 11/30**: Progress Report #2 Due
+- **Monday 12/7**: Progress Report #3 Due
+- **Monday 12/14**: Final Report/Paper Due
+- **TBD**: Prsentation Due 
 
 ## Grading
 
 - Progress Reports (15 pts)
 - Final Report and Presentation (100 pts)
 
-Each progress report is a draft of the final paper. Each draft is worth 5 points and will simply be graded on whether or not you followed instructions and listened to feedback, not on the accuracy of the results or the polish of the report.
+Each progress report is a draft of the final paper, plus submission of relevant code. Each progress report is worth 5 points and will simply be graded on whether or not you followed instructions and listened to feedback, not on the accuracy of the results or the polish of the report.
 
 ## Example Project
 
-An example primary research project (written by me) is available.
+An example project (written by me) is available.
 
 - [Example Report](https://docs.google.com/document/d/14jO3EYfanzdl073uTcW73cinJSFvKQVaOnQaVrvM7Hc/edit?usp=sharing){:target="_blank"}
 - [Example Replication Instructions](https://docs.google.com/document/d/11DES3N-0FUEgME-vZ2Qi9npbSPym2qUc_rnBRtbXl9M/edit?usp=sharing){:target="_blank"}

@@ -9,7 +9,7 @@ nav_order: 1
 
 ![course logo](/CSUN-Econ-433/assets/images/logo.jpg)
 
-## Spring 2026 Syllabus
+## Fall 2026 Syllabus
 {: .no_toc }
 
 ## Table of Contents
@@ -31,18 +31,21 @@ nav_order: 1
 
 ### Meetings
 
-- Section 01: 
-    - Lectures/Labs: Th 7:00pm - 9:45pm @ Bookstein 2212
+- Section 01: MW 1:00pm - 2:15pm @ Bookstein 2212
 
 ### Office Hours
 
-- Th 4:30pm - 5:30pm @ Bookstein 4252 
+- M 2:20pm - 3:20pm @ Bookstein 4252 
 
 ### Course Organization
 
-This course meets for one 150 minute session each week, in-person. 
+This course meets in-person for one lecture a week and one lab session a week. 
 
 ### Grading
+
+- **Attendance (5%)**
+    
+	Everyone starts with full credit. Attendance will only be checked if the classroom looks half empty. Those not present when attendance is checked will lose 1 attendance point (out of 5 total).
 
 - **Participation (15%)**
 
@@ -54,15 +57,17 @@ This course meets for one 150 minute session each week, in-person.
 	
 	You are encouraged to participate regardless of whether you need additional credits.
 
-- **Homework Assignments (20%)** 
+	If your midterm exam scores (averaged) is higher than your participation score, your participation score will be replaced by your midterm exam score.
+
+- **Homework Assignments (15%)** 
 
     Weekly homework assignments will consist of a variety of activities, including reading assignments, writing assignments, and online Canvas quizzes.
 
-- **Lab Assignments (20%)**
+- **Lab Assignments (15%)**
 
     In-class lab sessions where you get hands-on experience working with data analysis relevant to public economics. Each lab session will require you to complete a short statistical programming assignment in-class.
     
-- **Midterm Exams (20%)**
+- **Midterm Exams (25%)**
 
 	There will be two midterm exams that test your understanding of the course material. These will be in-person, on-paper exams that test both theoretical understanding and empirical skills.
 	
@@ -94,51 +99,31 @@ This course meets for one 150 minute session each week, in-person.
 
 ## Tentative Schedule
 
-| Week | Dates | Lecture                              | Lab                                         |  
-| ---: | :-----| :----------------------------------- | :------------------------------------------ | 
-|    1 | 1/22  | *No class - locked out*              |                                             |
-|    2 | 1/29  | Intro & Review of Micro Principles   | Lab 1: Introduction to IPUMS                |
-|    3 | 2/5   | Public Policy Rationales             | Lab 2: Introduction to R                    |
-|    4 | 2/12  | Social Choice Theory                 | Lab 3: Summary Statistics                   |
-|    5 | 2/19  | Economics of Education               | Lab 4: Combining Datasets                   |
-|    6 | 2/26  | Economics of Healthcare              | Lab 5: Data Visualization                   |
-|    7 | 3/5   | **Midterm 1**                        |                                             |
-|    8 | 3/12  | Linear Regressions I                 | Lab 6: Linear Regressions I                 | 
-|    9 | 3/19  | **NO CLASS - SPRING BREAK**          | **NO CLASS - SPRING BREAK**                 |
-|   10 | 3/26  | Linear Regressions II                | Lab 7: Linear Regressions II                |
-|   11 | 4/2   | Research Design                      | Lab 8: Linear Regressions III               |
-|   12 | 4/9   | **Midterm 2**                        |                                             |
-|   13 | 4/16  | Data Project Demo                    | Group Project Meeting #1                    |
-|   14 | 4/23  | Difference-in-Differences            | Group Project Meeting #2                    |
-|   15 | 4/30  | Economics of Home Sharing            | Group Project Meeting #3                    |
-|   16 | 5/7   | Group Project Meeting #4             | Group Project Meeting #4                    |
-
-<!--
-| Week | Dates | Lecture                              | Lab                                         |  
-| ---: | :-----| :----------------------------------- | :------------------------------------------ | 
-|    1 | 1/22  | Intro & Review of Micro Principles   | Lab 1: Introduction to IPUMS                |   
-|    2 | 1/29  | Public Policy Rationales             | Lab 2: Introduction to R                    |
-|    3 | 2/5   | Social Choice Theory                 | Lab 3: Summary Statistics                   |
-|    4 | 2/12  | Economics of Education               | Lab 4: Combining Datasets                   |
-|    5 | 2/19  | Economics of Healthcare              | Lab 5: Data Visualization                   |
-|    6 | 2/26  | **Midterm 1**                        |                                             |
-|    7 | 3/5   | Linear Regressions I                 | Lab 6: Linear Regressions I                 |
-|    8 | 3/12  | Linear Regressions II                | Lab 7: Linear Regressions II                | 
-|    9 | 3/19  | **NO CLASS - SPRING BREAK**          | **NO CLASS - SPRING BREAK**                 |
-|   10 | 3/26  | Research Design                      | Lab 8: Linear Regressions III               |
-|   11 | 4/2   | Difference-in-Differences            | Lab 9: Difference-in-Differences            |
-|   12 | 4/9   | **Midterm 2**                        |                                             |
-|   13 | 4/16  | Data Project Demo                    | Group Project Meeting #1                    |
-|   14 | 4/23  | Economics of Home Sharing            | Group Project Meeting #2                    |
-|   15 | 4/30  | TBD                                  | Group Project Meeting #3                    |
-|   16 | 5/7   | Group Project Meeting #4             | Group Project Meeting #4                    |
--->
+| Week | Dates         | Monday                               | Wednesday                                   |  
+| ---: | :------------ | :----------------------------------- | :------------------------------------------ | 
+|    1 | 8/24, 8/26    | Intro & Review of Micro Principles   | Lab 1: Introduction to IPUMS                |   
+|    2 | 8/31, 9/2     | Public Policy Rationales             | Lab 2: Introduction to R                    |
+|    3 | 9/7, 9/9      | **NO CLASS - LABOR DAY**             | Lab 3: Summary Statistics                   |
+|    4 | 9/14, 9/16    | Social Choice Theory                 | Lab 4: Combining Datasets                   |
+|    5 | 9/21, 9/23    | Economics of Education               | Lab 5: Data Visualization                   |
+|    6 | 9/28, 9/30    | Economics of Healthcare              | **MIDTERM 1**                               |
+|    7 | 10/5, 10/7    | Linear Regressions I                 | Lab 6: Linear Regressions I                 |
+|    8 | 10/12, 10/14  | Linear Regressions II                | Lab 7: Linear Regressions II                |
+|    9 | 10/19, 10/21  | Research Design                      | Lab 8: Linear Regressions III               |
+|   10 | 10/26, 10/28  | Difference-in-Differences            | Lab 9: Difference-in-Differences            |
+|   11 | 11/2, 11/4    | **MIDTERM 2**                        | Data Project Demo                           |
+|   12 | 11/9, 11/11   | Group Meeting #1                     | **NO CLASS - VETERANS DAY**                 |
+|   13 | 11/16, 11/18  | Economics of Home Sharing            | Group Meeting #2                            |
+|   14 | 11/23, 11/25  | Economics of Housing Regulations     | **NO CLASS - HAPPY THANKSGIVING**           |
+|   15 | 11/30, 12/2   | Economics of Digital Platforms       | Group Meeting #3                            |
+|   16 | 12/7, 12/9    | Group Meeting #4                     | Group Meeting #5                            |    
 
 Final Exam:
 
-- Thursday 5/14/2026, 8:00PM - 10:00PM @ Bookstein 2212
-
 In lieu of a final exam, we will be having group project presentations.
+
+- Date and location TBD
+
 
 ---
 
