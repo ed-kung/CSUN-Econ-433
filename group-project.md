@@ -29,7 +29,7 @@ There will be a group data project. Students will:
 The research report must be submitted as a Google Doc. Be sure to give edit access to `edward.kung@gmail.com`.  The report should not exceed 5 pages, except to include tables and figures. The research report should include the following sections:
 
 - **Project Description**
-  - What was the research question that you studied?
+  - What is the research question that you studied?
 - **Background and Motivation**
   - Why is the question important or interesting?
 - **Hypothesis**
@@ -37,10 +37,11 @@ The research report must be submitted as a Google Doc. Be sure to give edit acce
 - **Data and Methodology**
     - What data did you use to conduct the analysis?
         - What is the unit of analysis?
+        - What is the geographic and temporal scope of the data?
+        - Did you apply any sample selection criteria or filters to the data?
         - What is(are) the outcome variable(s) of interest?
         - What is(are) the main covariate(s) of interest?
         - What other control variables are included?
-		- Did you apply any sample selection criteria or filters to the data?
     - Why did you choose to use this data?
     - How will you use the data to answer the research question?
 - **Results and Discussion**
