@@ -43,23 +43,11 @@ This course meets in-person for one lecture a week and one lab session a week.
 
 ### Grading
 
-- **Attendance (5%)**
+- **Attendance (10%)**
     
-	Everyone starts with full credit. Attendance will only be checked if the classroom looks half empty. Those not present when attendance is checked will lose 1 attendance point (out of 5 total).
+	Everyone starts with full credit. Attendance will be checked randomly or if the classroom looks half empty. Those not present when attendance is checked will lose 1 attendance point (out of 10 total).
 
-- **Participation (15%)**
-
-    You are expected to participate in class. You earn participation credit for answering questions, asking questions about the lecture, or offering thoughts and opinions about the material.
-	
-	- Each student can earn a maximum of 1 participation credit per lecture.
-	- The first 3 participation credits during the semester are worth 5% of the final grade each.
-	- Participation credits after the first 3 are worth 1% extra credit each, up to a maximum of 5.
-	
-	You are encouraged to participate regardless of whether you need additional credits.
-
-	If your midterm exam scores (averaged) is higher than your participation score, your participation score will be replaced by your midterm exam score.
-
-- **Homework Assignments (15%)** 
+- **Homework Assignments (20%)** 
 
     Weekly homework assignments will consist of a variety of activities, including reading assignments, writing assignments, and online Canvas quizzes.
 
@@ -71,9 +59,13 @@ This course meets in-person for one lecture a week and one lab session a week.
 
 	There will be two midterm exams that test your understanding of the course material. These will be in-person, on-paper exams that test both theoretical understanding and empirical skills.
 	
-- **Group Project (25%)**
+- **Group Project (30%)**
 
     There will be a group project. More details [here](/CSUN-Econ-433/group-project).
+
+- **Participation Extra Credit (5%)**
+
+    You can earn extra credit (up to 5 points) for contributing interesting or insightful questions or comments during class. Maximum of 1 point per lecture.
 
 - **Grading Scale**
 
