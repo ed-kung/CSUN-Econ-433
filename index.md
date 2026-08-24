@@ -67,6 +67,10 @@ This course meets in-person for one lecture a week and one lab session a week.
 
     You can earn extra credit (up to 5 points) for contributing interesting or insightful questions or comments during class. Maximum of 1 point per lecture.
 
+- **Coursera Microcredential Extra Credit (10%)**
+
+    You can earn 10 points of extra credit for completing the Coursera course *Introduction to R Programming for Data Science*. You must log in through the Canvas link and using your CSUN email address.
+
 - **Grading Scale**
 
 	|  A     |  A-   |  B+   |  B    |  B-   |  C+   |  C    |  C-   |  D    |  F   |
