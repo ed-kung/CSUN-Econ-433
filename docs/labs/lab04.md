@@ -130,6 +130,7 @@ If you missed something during lecture, or if you need a refresher, you may find
 	- The total population by county and year. Call this dataframe `county_pop`.
 	- The employment rate by county and year. Call this dataframe `county_emp`.
 	    - *Hint: Remember to deal with invalid values for `EMPSTAT` and refer to Lab 3 if you forgot how to do this.*
+		- *Note: The correct employment rate calculation will reflect the percent of people working out of the total population. It should be around 40 to 50 percent.*
 	- The percent of people aged 25+ with 4+ years college education, by county and year. Call this dataframe `county_educ`.
 	- The average income of employed individuals, by county and year. Call this dataframe `county_inc`.
 	    - *Hint: Remember to use only employed people when calculating this average and to deal with invalid values for income. Refer to Lab 3 for a reminder.*
