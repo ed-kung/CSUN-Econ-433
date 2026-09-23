@@ -19,11 +19,7 @@ In this lab, we'll walk through some data visualization coding patterns. You'll 
 
 You should already have `IPUMS_ACS_CA_2018_2023.csv` in your R Studio Cloud files directory. If you don't have this file, check the instructions for [Lab 4](/CSUN-Econ-433/docs/labs/lab04).
 
-You'll also need the package `dplyr`, which should already be installed. If it's not installed you can install it by typing this into the console:
-
-```r
-install.packages("dplyr")
-```
+You'll also need the packages `dplyr` and `ggpot2`. `dplyr` should already be installed. If it's not installed you can install it by typing `install.packages("dplyr")` into the console.  `ggplot2` probably isn't installed yet.  Install it with `install.packages("ggplot2")` in the console.
 
 ---
 
@@ -140,6 +136,7 @@ Hints:
 - Then create a dataframe that shows average income and pct college by county in 2023.
 - Then merge the two and calculate the change as a new column.
 - Then plot the changes.
+- Use the same filters as in the example script (employed people between the ages of 25 and 65)
 
 Show me your script and output to receive your grade and be dismissed.
 
