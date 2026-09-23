@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 5. Putting it All Together
+title: 5. Data Visualization
 parent: Labs
 nav_order: 5
 ---
@@ -8,10 +8,10 @@ nav_order: 5
 # Lab 5
 {: .no_toc }
 
-## Putting it All Together
+## Data Visualization
 {: .no_toc }
 
-In this lab you'll put together the tools you learned in the previous 4 labs to create a table showing changes in income for college vs. non-college educated individuals from 2018 to 2023.
+In this lab, we'll walk through some data visualization coding patterns. You'll learn how to create line plots, which shows the relationship between two variables, scatter plots, which shows the relationship between two variables for multiple units of observation, and bar charts, which shows the relationship between a continuous and a categorical variable.
 
 ---
 
@@ -31,10 +31,6 @@ install.packages("dplyr")
 
 Follow along as I show the class how to conduct today's lab.  If you followed along correctly, you should end up with the following script.
 
-### Line Plots
-
-This script makes a line plot showing average income by age for employed individuals, using data from California in 2023.  The lines are plotted separately for males and for females.  It also makes a line plot showing the percent change in average income from 2018 to 2023, by age and by sex.
-
 ```r
 rm(list=ls())   # Clear workspace
 library(dplyr)  # Load required packages
@@ -53,6 +49,7 @@ df$EMPSTAT <- na_if(df$EMPSTAT, 9)
 # ---- Line plot: Average income of employed individuals by age and sex, 2023
 
 # First, calculate average income of employed individuals by age and by sex using data from 2023
+
 inc_by_age_sex_2023 <- df %>%
   filter(YEAR==2023 & EMPSTAT==1 & AGE>=25 & AGE<=65) %>%
   group_by(AGE, SEX) %>%
@@ -61,6 +58,7 @@ inc_by_age_sex_2023 <- df %>%
   )
  
 # Then, make the line plot
+
 ggplot(data=inc_by_age_sex_2023) +
   geom_line(aes(x=AGE, y=AVG_INCOME_2023, color=as.factor(SEX))) + 
   xlab("Age") + 
@@ -68,47 +66,79 @@ ggplot(data=inc_by_age_sex_2023) +
   ggtitle("Average Income of Employed Individuals by Age and Sex, California 2023")
 
 
-# ---- Line plot: Change in average income of employed individuals by age and sex, 2018-2023
+# ---- Scatter plot: Average income vs. college education by county, 2023
 
-# First, calculate average income of employed individuals by age and sex using data from 2018
-inc_by_age_sex_2018 <- df %>%
-  filter(YEAR==2018 & EMPSTAT==1 & AGE>=25 & AGE<=65) %>%
-  group_by(AGE, SEX) %>%
+# First, calculate average income and college percentage by county in 2023
+
+df$COLLEGE <- df$EDUC>=10
+
+county_df <- df %>%
+  filter(YEAR==2023 & EMPSTAT==1 & AGE>=25 & AGE<=65) %>%
+  group_by(COUNTYFIP) %>%
   summarize(
-    AVG_INCOME_2018 = weighted.mean(INCWAGE, PERWT, na.rm=TRUE)
+    AVERAGE_INCOME = weighted.mean(INCWAGE, PERWT, na.rm=TRUE),
+	PCT_COLLEGE = weighted.mean(COLLEGE, PERWT, na.rm=TRUE)
   )
   
-# Merge the two inc_by_age_sex tables
-inc_by_age_sex <- inner_join(inc_by_age_sex_2018, inc_by_age_sex_2023, by=c("AGE", "SEX"))
+# Now make the scatter plot
 
-# Calculate changes
-inc_by_age_sex$PCT_CHG <- (inc_by_age_sex$AVG_INCOME_2023 - 
-  inc_by_age_sex$AVG_INCOME_2018) /
-  (inc_by_age_sex$AVG_INCOME_2018)
+ggplot(data=county_df) + 
+  geom_point(aes(x=PCT_COLLEGE, y=AVERAGE_INCOME)) + 
+  xlab("Pct College Educated") + 
+  ylab("Average Income")
+  ggtitle("Average Income of Employed Adults vs. Pct College Educated, California 2023")
+
+
+
+# ---- Bar chart: Change in Percent College Educated by Sex, 2018-2023
+
+# First, create two dataframes, one for 2018 and 2023, each one showing pct college
+# educated by sex for that year
+
+educ_by_sex_2018 <- df %>%
+  filter(year==2018 & AGE>=25 & AGE<=65) %>%
+  group_by(SEX) %>%
+  summarize(
+    PCT_COLLEGE_2018 = weighted.mean(COLLEGE, PERWT, na.rm=TRUE)
+  )
  
-# plot changes
-ggplot(data=inc_by_age_sex) + 
-  geom_line(aes(x=AGE, y=PCT_CHG, color=as.factor(SEX))) + 
-  xlab("AGE") + 
-  ylab("Pct Change in Average Income") + 
-  ggtitle("Pct Chg in Avg Income of Employed Individuals by Age and Sex, California 2018-2023")
+educ_by_sex_2023 <- df %>%
+  filter(year==2023 & AGE>=25 & AGE<=65) %>%
+  group_by(SEX) %>%
+  summarize(
+    PCT_COLLEGE_2023 = weighted.mean(COLLEGE, PERWT, na.rm=TRUE)
+  )
+
+# Second, merge them and then calculate the change in pct college
+ 
+my_df <- inner_join(
+  educ_by_sex_2018,
+  educ_by_sex_2023,
+  by=c("SEX")
+)
+
+my_df$PCT_COLLEGE_CHG <- my_df$PCT_COLLEGE_2023 - my_df$PCT_COLLEGE_2018
+
+
+# Now make the bar chart
+ggplot(data=my_df) + 
+  geom_col(aes(x=SEX, y=PCT_COLLEGE_CHG)) + 
+  ylab("Change in Pct College Educated, 2018-2023") + 
+  xlab("Sex (1=MALE, 2=FEMALE)")
+  
 ```
 
 ---
 
 ## Assignment
 
-For this lab, you need to create a script that builds a dataframe with columns: 
-- `COUNTYFIP`: The county
-- `COLLEGE`: A boolean for whether a person has 4+ years of college education
-- `INC_2018`: The average income of employed individuals in 2018, by `COUNTYFIP` and `COLLGE`
-- `INC_2023`: The average income of employed individuals in 2023, by `COUTYFIP` and `COLLEGE`
-- `INC_CHG`: The percentage change in average income of employed individuals from 2018 to 2023, by `COUTYFIP` and `COLLEGE`
+For this lab, create a scatter plot that shows *change* in average income and *change* in percent college educated by county.
 
 Hints:
-- You'll need to first create two separate dataframes with average income by county/college, one for 2018 and one for 2023
-- You'll then need to merge those two dataframes on `COUNTYFIP`, `COLLEGE`
-- You'll then need to create a new variable called `INC_CHG`
+- First create a dataframe that shows average income and pct college by county in 2018.
+- Then create a dataframe that shows average income and pct college by county in 2023.
+- Then merge the two and calculate the change as a new column.
+- Then plot the changes.
 
 Show me your script and output to receive your grade and be dismissed.
 
@@ -116,7 +146,7 @@ Show me your script and output to receive your grade and be dismissed.
 
 ## Takeaways
 
-- You can work on complex data wrangling tasks independently in R.
+- You can work on complex data wrangling and visualization tasks independently in R.
 
 
 
