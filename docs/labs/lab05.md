@@ -85,7 +85,7 @@ county_df <- df %>%
 ggplot(data=county_df) + 
   geom_point(aes(x=PCT_COLLEGE, y=AVERAGE_INCOME)) + 
   xlab("Pct College Educated") + 
-  ylab("Average Income")
+  ylab("Average Income") + 
   ggtitle("Average Income of Employed Adults vs. Pct College Educated, California 2023")
 
 
@@ -96,14 +96,14 @@ ggplot(data=county_df) +
 # educated by sex for that year
 
 educ_by_sex_2018 <- df %>%
-  filter(year==2018 & AGE>=25 & AGE<=65) %>%
+  filter(YEAR==2018 & AGE>=25 & AGE<=65) %>%
   group_by(SEX) %>%
   summarize(
     PCT_COLLEGE_2018 = weighted.mean(COLLEGE, PERWT, na.rm=TRUE)
   )
  
 educ_by_sex_2023 <- df %>%
-  filter(year==2023 & AGE>=25 & AGE<=65) %>%
+  filter(YEAR==2023 & AGE>=25 & AGE<=65) %>%
   group_by(SEX) %>%
   summarize(
     PCT_COLLEGE_2023 = weighted.mean(COLLEGE, PERWT, na.rm=TRUE)
@@ -124,7 +124,8 @@ my_df$PCT_COLLEGE_CHG <- my_df$PCT_COLLEGE_2023 - my_df$PCT_COLLEGE_2018
 ggplot(data=my_df) + 
   geom_col(aes(x=SEX, y=PCT_COLLEGE_CHG)) + 
   ylab("Change in Pct College Educated, 2018-2023") + 
-  xlab("Sex (1=MALE, 2=FEMALE)")
+  xlab("Sex (1=MALE, 2=FEMALE)") + 
+  ggtitle("Change in Percent of Adults College Educated by Sex, California 2018-2023")
   
 ```
 
